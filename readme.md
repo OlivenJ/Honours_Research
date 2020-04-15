@@ -1,3 +1,5 @@
+#Introduction
 This repository includes every documents relate with my honours thesis
 
-Folder ___ includes 
+- Research Proposal: includes my research proposals and presentation slide for the week 10 preliminary speech 
+
