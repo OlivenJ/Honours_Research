@@ -1,0 +1,42 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{mathptmx}
+\usepackage{setspace}
+\usepackage{amssymb}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{subfigure}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{appendix}
+\usepackage{bm}
+\usepackage{tcolorbox}
+\onehalfspacing
+
+\usepackage{fontspec}
+\setmainfont{Times New Roman}
+\addtolength{\jot}{0.3em}
+
+\title{Understanding of Factor Strength}
+\author{Zhiyuan Jiang\\I.D:28710967}
+\date{\today}
+
+\begin{document}
+	\maketitle	
+		\section{How to understand the strength of factor (intuitively)}
+We define the factor's strength from a basic idea: The strength of a factor should relates with it's ability of influencing different observations. We call this the pervasiveness of that factor. The stronger the factor is, the more observation (securities from S\&P 500 in our project) it can influence. 
+
+If a factor can influence every observations, than we call that factor a strong factor. The less observation a factor can influence, the weaker the factor is. 
+
+	\section{How the factor strength is defined and calculated (simplified)}
+First we define a single factor CAPM model:
+\[  y_{it} = \beta_0 + \beta_{it}x_t + \epsilon_{it}  \tag{1}\label{simpleCAPM} \]
+We have n different securities $(i = 1, 2, 3, \dots , n)$ for each security we obtains T different observations ($t = 1, 2, 3, \dots, T$). The $y_{it}$ from equation \eqref{simpleCAPM} is the excess return of security i at time t. $x_t$ is the factor at time t. Therefore $\beta_{it}$ is the factor's loading at time t for the securities i .
+
+By running OLS for every observations, we collect a bunch of $\beta_{it}$, for each of those $\beta_{it}$, we calculate their t-statistics and compare with the corresponding critical value, if the t-statistics is larger than the threshold value, we count one. After that, we calculate the proportion of significant factor's amount to the total observations amount. That proportion is denoted by variable $\pi_{nT} $. After obtain the $\pi_{nT}$, we can use the following formula to estimate our strength indicator $\alpha$:
+\[ \hat{\alpha} = \begin{cases}
+1+\frac{\ln(\hat{\pi}_{nT})}{\ln n} & \text{if}\; \hat{\pi}_{nT} > 0,\\
+	0, & \text{if}\; \hat{\pi}_{nT} = 0.
+\end{cases} \]
+
+\end{document}
