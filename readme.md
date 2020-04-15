@@ -4,3 +4,4 @@ This repository includes every documents relate with my honours thesis
 - Research Proposal: includes my research proposals and presentation slide for the week 10 preliminary speech 
 - Scripts: included R codes for the Monte Carlo simulations 
 - Thesis: Includes my final thesis and the presentation slide for the final speech 
+- Graph: Relative graphs are involved in this folder
