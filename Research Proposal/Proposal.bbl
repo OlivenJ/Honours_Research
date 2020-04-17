@@ -1,0 +1,60 @@
+\begin{thebibliography}{}
+
+\bibitem [\protect \citeauthoryear {%
+Bailey%
+, Kapetanios%
+\BCBL {}\ \BBA {} Pesaran%
+}{%
+Bailey%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2016}}%
+}]{%
+Bailey2016}
+\APACinsertmetastar {%
+Bailey2016}%
+\begin{APACrefauthors}%
+Bailey, N.%
+, Kapetanios, G.%
+\BCBL {}\ \BBA {} Pesaran, M\BPBI H.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2016}{sep}{}.
+\newblock
+{\BBOQ}\APACrefatitle {{Exponent of Cross-Sectional Dependence: Estimation and
+  Inference}} {{Exponent of Cross-Sectional Dependence: Estimation and
+  Inference}}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Journal of Applied Econometrics}{31}{6}{929--960}.
+\newblock
+\begin{APACrefURL} \url{http://doi.wiley.com/10.1002/jae.2476} \end{APACrefURL}
+\newblock
+\begin{APACrefDOI} \doi{10.1002/jae.2476} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Bailey%
+, Kapetanios%
+\BCBL {}\ \BBA {} Pesaran%
+}{%
+Bailey%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2020}}%
+}]{%
+Bailey2020}
+\APACinsertmetastar {%
+Bailey2020}%
+\begin{APACrefauthors}%
+Bailey, N.%
+, Kapetanios, G.%
+\BCBL {}\ \BBA {} Pesaran, M\BPBI H.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2020}{}{}.
+\newblock
+\APACrefbtitle {{Measurement of Factor Strength: Theory and Practice}.}
+  {{Measurement of Factor Strength: Theory and Practice}.}
+\PrintBackRefs{\CurrentBib}
+
+\end{thebibliography}
