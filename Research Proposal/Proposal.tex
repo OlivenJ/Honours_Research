@@ -26,11 +26,11 @@
 	\maketitle	
 \
 	\section*{How the factor strength is defined and calculated }
-Factor strength has been elaborated by \citeA{Bailey2020}, and the following section will re-iterate their definition of factor strength as well as the method to estimate it.\\
+Factor strength has been elaborated by \citeA{Bailey2020}, The following section will re-iterate their definition of factor strength as well as the method to estimate it.\\
 To start with, we define a single factor CAPM model:
 \[  y_{it} = \beta_i + \theta_{i}x_t + \epsilon_{it}  \tag{1}\label{simpleCAPM} \]
 
-Assume we have $n$ different assets (for instance, $n$ = 500 if using data from S\&P 500 index), and collecting those assets returns from $T$ different observations. $y_{it}$ on the left hand side of equation \ref{simpleCAPM} is the excess return of asset $i$ at time $t$, The excess return equals to the asset return minus the risk free return. $x_t$  in the right hand side is the factor with interest at time $t$. Therefore, $\theta_{i}$ is the loading of factor $x_{t}$. $\beta_{i}$ is the constant term, represent the asset's ability to generate abnormal return from the market. $\epsilon_{it}$ as the idiosyncratic error term has been assumed to follow independent, identical distribution, with zero mean and time invariant variance  $\sigma_i^2$,
+Assume we have $n$ different assets (for instance, $n$ = 500 if using data from S\&P 500 index). Collecting and calculating those assets returns from $T$ different observations. $y_{it}$ on the left hand side of equation (\ref{simpleCAPM}) is the excess return of asset $i$ at time $t$, The excess return equals to the asset return minus the risk free return. $x_t$  in the right hand side is the factor with interest at time $t$. Therefore, $\theta_{i}$ is the loading of factor $x_{t}$. $\beta_{i}$ is the constant term, represent the asset's ability to generate abnormal return from the market. $\epsilon_{it}$ as the idiosyncratic error term has been assumed to follow independent, identical distribution, with zero mean and time invariant variance  $\sigma_i^2$,
 
 
 After settle down, we run OLS for this model and obtain the results:
@@ -41,12 +41,12 @@ Both $\hat{\beta_i}$ and $\hat{\theta_{i}}$ are the OLS estimation results of eq
 
 \[  \hat{\pi}_{nT} = \frac{\sum_{i=1}^n \hat{\ell}_{i,nT}}{n} \tag{2} \label{pi_function} \]
 
-$\ell_{i,nT}$ is an indicator function as: $\ell_{i,nT} := {\bf1}[|t_{i}|>c(n)]$. If the t-statistic $t_i$ is greater than the critical value $c_p(n)$, $\hat{\ell}_{i,nT} = 1$. In other word, we will count one if the factor loading $\hat{\theta}_{i}$ is significant. $c_p(n)$ represent the critical value of a test with test size $p$. The critical value is calculated by:
+$\ell_{i,nT}$ is an indicator function as: $\ell_{i,nT} := {\bf1}[|t_{i}|>c(n)]$. If the t-statistic $t_i$ is greater than the critical value $c_p(n)$,  $\hat{\ell}_{i,nT} = 1$. In other word, we will count one if the factor loading $\hat{\theta}_{i}$ is significant. $c_p(n)$ represent the critical value of a test with test size $p$. The critical value is calculated by:
 
 \[   c_p(n) = \Phi^{-1}(1 - \frac{p}{2n^\delta})   \tag{3} \label{critical_value_function} \]
 
 Here, $\Phi^{-1}(\cdot)$ is the inverse cumulative distribution function of a standard normal distribution, and $\delta$ is a non-negative value represent the critical value exponent. 
-The traditional method to calculate critical value has not fixed the multiple testing problem. One of the most commonly used adjustment for multiple testing problem is Bonferroni correction. When $n$ as sample size goes to infinity, however, the Bonferroni correction can not yield satisfying results since the $\frac{p}{2n^{\delta}} \to 0$ when $n \to \infty$. Therefore, \citeA{Bailey2016} provides another adjustment with additional exponent $\delta$ to constrain $n$.
+The traditional method to calculate critical value has not fixed the multiple testing problem. One of the most commonly used adjustment for multiple testing problem is Bonferroni correction. When $n$ as sample size goes to infinity, however, the Bonferroni correction can not yield satisfying results since the $\frac{p}{2n^{\delta}} \to 0$ when $n \to \infty$. Therefore, \citeA{Bailey2016} provides another adjustment with additional exponent $\delta$ to constrain the behaviour of $n$.
 
  After obtain the $\hat{\pi}_{nT}$, we can use the following formula to estimate our strength indicator $\alpha$:
 \[ \hat{\alpha} = \begin{cases}
