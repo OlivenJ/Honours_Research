@@ -19,21 +19,22 @@ error <- matrix(rnorm(n*t, 0,1), nrow = n, ncol = t)
 #Assume the error term follows a standard normal distribution
 
 alpha <- c( rep(0.55, k),1)
-
-#the factor strength, with the first term as market factor strength, which equals to 1
+#the factor strength, with the last term as market factor strength, which equals to 1
 #represents that market factor influence all the strocks, the rest 30 factors have 
 #strength 0.55, which is pretty low.
 
 
 Sigma <- diag(1, k+1)
 factor <- matrix(rep(rmvnorm(1,rep(0, nrow(Sigma)), Sigma), t),ncol = t)
-market_factor <- factor[1]
-#random generate factor list, the first one is the market facotr which by definition
+market_factor <- factor[length(factor)]
+#random generate factor list, the last one is the market facotr which by definition
 #equals to the difference between makret return and risk free return
 
-sig_count <- c(as.integer((n)^alpha))
+sig_count <- as.integer((n)^alpha)
 #Indicates under the factor strength setting, how many factor laodings are significnatly
-#different from 0. We only take the integer part.
+#different from 0. We only take the integer part. From the result we can see that 
+#when the factor strengh is 0.55, 30 amongh 500 stocks will be significant from 0,
+# and when the factor strengh is 1, all 500 loading will be significant
 
 mu_var = 0.71
 mu <- matrix(runif(n*k+1,mu_var-0.2, mu_var + 0.2), ncol = k+1, nrow = n)
