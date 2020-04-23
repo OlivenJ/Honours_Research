@@ -54,10 +54,10 @@ loading_assign <- function(origin, count){
     pos = pos+1}
   return(origin)
   }
-
+#Function help assign significant loading, and change the non-significant to 0
 loading <- loading_assign(mu, sig_count)
 
-return = constant + loading %*% factor + error
+
 
 estimation <- for(i in 1:nrow(factor)){
   for(j in 1:nrow(return))
