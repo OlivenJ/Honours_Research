@@ -1,4 +1,3 @@
-library(mvtnorm)
 library(tidyverse)
 library(broom)
 
@@ -25,7 +24,8 @@ alpha <- c( rep(0.55, k),1)
 
 
 Sigma <- diag(1, k+1)
-factor <- matrix(rep(rmvnorm(1,rep(0, nrow(Sigma)), Sigma), t),ncol = t)
+
+factor <- matrix(rep(Sigma %*% rnorm(k+1),t),nrow = k+1, ncol = t)
 market_factor <- factor[length(factor)]
 #random generate factor list, the last one is the market facotr which by definition
 #equals to the difference between makret return and risk free return
@@ -38,6 +38,7 @@ sig_count <- as.integer((n)^alpha)
 
 mu_var = 0.71
 mu <- matrix(runif(n*k+1,mu_var-0.2, mu_var + 0.2), ncol = k+1, nrow = n)
+
 
 
 loading_assign <- function(origin, count){
@@ -57,12 +58,30 @@ loading_assign <- function(origin, count){
 #Function help assign significant loading, and change the non-significant to 0
 loading <- loading_assign(mu, sig_count)
 
+return = constant + loading[,31]%*%t(factor[31,]) + error
 
 
-estimation <- for(i in 1:nrow(factor)){
-  for(j in 1:nrow(return))
-  lm(return[j,]~factor[i,])
+estimate <-function(loading, factor){
+  estimation <- tibble()
+      for(i in 1:k){
+        for(j in 1:n){
+        comb <- matrix(loading[,i])%*%t(matrix(factor[i,]))
+        estimation <- 
+          add_column(tidy(lm(return ~ constant +comb + error)) %>% 
+                       filter(term == "comb1", response == "Y1") %>% 
+                       mutate(factor = i, stock = j))
+      }}
+  return(estimation)
 }
 
+comb <- matrix(loading[,1])%*%t(matrix(factor[1,]))
+estimation <- 
+  add_column(tidy(lm(return ~ constant +comb + error)))
 
 
+
+
+
+
+result <- estimate(loading, factor)
+result %>% filter(term == "comb1", p.value < 0.05)
