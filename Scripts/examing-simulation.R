@@ -1,15 +1,16 @@
 library(tidyverse)
 library(broom)
+library(mvtnorm)
 
-set.seed(19970628)
+set.seed(19890604)
 
-t <- 120
+t <- 12
 #the time periods, i.e. the observations amount: we mimic the real stock's monthely
 #return, 12 months a year and 10 years, so we will generate 120 different returns 
-n <- 500
+n <- 10
 #How many independent cross-section observation we have. Since in the real data scenario
 #we will use S&P 500, so we set the sample size to 500 to mimic it.
-k <- 30
+k <- 5
 # the number of factors
 constant <- matrix(runif(n*t, -0.5, 0.5), nrow = n, ncol = t)
 #Assume the constant term ( the alpha term from CAPM model) follows uniform distribution
@@ -23,10 +24,13 @@ alpha <- c( rep(0.55, k),1)
 #strength 0.55, which is pretty low.
 
 
-Sigma <- diag(1, k+1)
+Sigma <- diag(1,k+1)
 
-factor <- matrix(rep(Sigma %*% rnorm(k+1),t),nrow = k+1, ncol = t)
-market_factor <- factor[length(factor)]
+factor <- matrix(Sigma %*% rnorm(k+1),nrow = k+1)
+
+factor <- t(rmvnorm(t,mean = rep(0, k+1), Sigma))
+
+market_factor <- matrix(factor[nrow(factor),])
 #random generate factor list, the last one is the market facotr which by definition
 #equals to the difference between makret return and risk free return
 
@@ -58,30 +62,22 @@ loading_assign <- function(origin, count){
 #Function help assign significant loading, and change the non-significant to 0
 loading <- loading_assign(mu, sig_count)
 
-return = constant + loading[,31]%*%t(factor[31,]) + error
+return = constant + loading%*%factor + error
 
 
-estimate <-function(loading, factor){
-  estimation <- tibble()
-      for(i in 1:k){
+estimate <-function(return, factor){
+  estimation <- tidy(lm(return[1,] ~ factor[1,])) %>% mutate(factor = 1, stock = 1) %>% filter(term !="(Intercept)")
+      for(i in 1:(k+1)){
         for(j in 1:n){
-        comb <- matrix(loading[,i])%*%t(matrix(factor[i,]))
-        estimation <- 
-          add_column(tidy(lm(return ~ constant +comb + error)) %>% 
-                       filter(term == "comb1", response == "Y1") %>% 
-                       mutate(factor = i, stock = j))
+        estimation  <- estimation %>% 
+          add_row(tidy(lm(return[j,] ~ factor[i,])) %>% 
+                    mutate(factor = i, stock = j)) %>% filter(term !="(Intercept)") %>% filter(term != "factor[1, ]")
       }}
   return(estimation)
 }
 
-comb <- matrix(loading[,1])%*%t(matrix(factor[1,]))
-estimation <- 
-  add_column(tidy(lm(return ~ constant +comb + error)))
+result <- estimate(return, factor)
+
+result
 
 
-
-
-
-
-result <- estimate(loading, factor)
-result %>% filter(term == "comb1", p.value < 0.05)
