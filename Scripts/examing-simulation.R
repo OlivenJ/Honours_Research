@@ -1,13 +1,14 @@
 library(tidyverse)
 library(broom)
 library(mvtnorm)
+library(modeerndive)
 
 set.seed(19890604)
 
 t <- 12
 #the time periods, i.e. the observations amount: we mimic the real stock's monthely
 #return, 12 months a year and 10 years, so we will generate 120 different returns 
-n <- 10
+n <- 5
 #How many independent cross-section observation we have. Since in the real data scenario
 #we will use S&P 500, so we set the sample size to 500 to mimic it.
 k <- 5
@@ -22,11 +23,12 @@ alpha <- c( rep(0.55, k),1)
 #the factor strength, with the last term as market factor strength, which equals to 1
 #represents that market factor influence all the strocks, the rest 30 factors have 
 #strength 0.55, which is pretty low.
+critical_value <- qnorm(1-0.025/(2*n^1.96))
+  
 
 
 Sigma <- diag(1,k+1)
 
-factor <- matrix(Sigma %*% rnorm(k+1),nrow = k+1)
 
 factor <- t(rmvnorm(t,mean = rep(0, k+1), Sigma))
 
@@ -62,22 +64,36 @@ loading_assign <- function(origin, count){
 #Function help assign significant loading, and change the non-significant to 0
 loading <- loading_assign(mu, sig_count)
 
-return = constant + loading%*%factor + error
+return <-  constant + loading%*%factor + error
+colnames(return) <- paste0("m", 1:t)
+return <- as_tibble(return) %>% mutate(stock = 1:n) %>% select(stock, everything())
 
+return <- return %>%
+  pivot_longer(c(paste0("m", 1:t)), names_to = "month", values_to = "return")
 
-estimate <-function(return, factor){
-  estimation <- tidy(lm(return[1,] ~ factor[1,])) %>% mutate(factor = 1, stock = 1) %>% filter(term !="(Intercept)")
-      for(i in 1:(k+1)){
-        for(j in 1:n){
-        estimation  <- estimation %>% 
-          add_row(tidy(lm(return[j,] ~ factor[i,])) %>% 
-                    mutate(factor = i, stock = j)) %>% filter(term !="(Intercept)") %>% filter(term != "factor[1, ]")
-      }}
-  return(estimation)
+colnames(factor) <- paste0("m", 1:t)
+factor <- as_tibble(factor) %>% mutate(factor = 1:(k+1)) %>% select(factor,everything())
+factor <- factor %>% 
+  pivot_longer(c(paste0("m", 1:t)), names_to = "month", values_to = "factor_val")
+
+combine_table <- right_join(return, factor)
+
+factor_group <- combine_table %>% group_by(factor,stock) %>% nest()
+
+factor_regress <-function(data){
+  lm(return ~ factor_val, data)
 }
 
-result <- estimate(return, factor)
+factor_group <- factor_group %>% 
+  mutate(model = map(data, factor_regress))
+factor_group %>% filter(factor == 1) 
 
-result
 
+temp <- map(factor_group$data, factor_regress)
+temp[2]
+
+
+(factor_group %>% filter(stock == 1 & factor == 1) %>% select(model))
+
+result <- map(factor_group$data, factor_regress)
 
