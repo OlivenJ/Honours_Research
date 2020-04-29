@@ -5,13 +5,13 @@ library(modeerndive)
 
 set.seed(19890604)
 
-t <- 12
+t <- 120
 #the time periods, i.e. the observations amount: we mimic the real stock's monthely
 #return, 12 months a year and 10 years, so we will generate 120 different returns 
-n <- 5
+n <- 500
 #How many independent cross-section observation we have. Since in the real data scenario
 #we will use S&P 500, so we set the sample size to 500 to mimic it.
-k <- 5
+k <- 50
 # the number of factors
 constant <- matrix(runif(n*t, -0.5, 0.5), nrow = n, ncol = t)
 #Assume the constant term ( the alpha term from CAPM model) follows uniform distribution
@@ -81,17 +81,19 @@ combine_table <- right_join(return, factor)
 factor_group <- combine_table %>% group_by(factor,stock) %>% nest()
 
 factor_regress <-function(data){
-  lm(return ~ factor_val, data)
+  lm(return ~ factor_val, data)$coefficient[2]
 }
-
+##Notice that i add  a $coefficient here
 factor_group <- factor_group %>% 
-  mutate(model = map(data, factor_regress))
+  mutate(coefficient = map(data, factor_regress))
 factor_group %>% filter(factor == 1) 
 
 
-temp <- map(factor_group$data, factor_regress)
-temp[2]
+factor_group %>% unnest(coefficient) %>% group_by(factor)
 
+
+
+#subset the second element from the 1st subset from the 1 setlist 
 
 (factor_group %>% filter(stock == 1 & factor == 1) %>% select(model))
 
