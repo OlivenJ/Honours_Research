@@ -52,17 +52,34 @@ loading_assign <- function(origin, count){
   for(i in count){
     if(i < n){
       while(i < n){
-        origin[i+1,pos] = 0 
-        i = i+1}
+        #origin[i+1,pos] = 0 
+        #i = i+1}
+        ind <- which(mu[,pos] %in% sample(mu[,pos],i))
+        mu[ind,pos] <- 0}
     }
     else{
       next
     }
     pos = pos+1}
   return(origin)
+}
+
+loading_generate<- function(zero_amount){
+  loading <- matrix(0, n, k+1)
+  for(i in 1:(k+1)){
+  col <- runif(n,mu_var-0.2, mu_var + 0.2)
+  ind <- which(col %in% sample(col,n-zero_amount[i]))
+  col[ind] <- 0
+  loading[,i] <- col
   }
+  return(loading)
+}
+
+
+
 #Function help assign significant loading, and change the non-significant to 0
 loading <- loading_assign(mu, sig_count)
+loading <- loading_generate(sig_count)
 
 return <-  constant + loading%*%factor + error
 colnames(return) <- paste0("m", 1:t)
@@ -81,21 +98,16 @@ combine_table <- right_join(return, factor)
 factor_group <- combine_table %>% group_by(factor,stock) %>% nest()
 
 factor_regress <-function(data){
-  lm(return ~ factor_val, data)$coefficient[2]
+  tidy(lm(return ~ factor_val, data))
 }
-##Notice that i add  a $coefficient here
+
 factor_group <- factor_group %>% 
   mutate(coefficient = map(data, factor_regress))
 factor_group %>% filter(factor == 1) 
 
 
-factor_group %>% unnest(coefficient) %>% group_by(factor)
+factor_group %>% unnest(coefficient) %>%
+  select(-data) %>% filter(term != "(Intercept)") %>% 
+  group_by(factor)
 
-
-
-#subset the second element from the 1st subset from the 1 setlist 
-
-(factor_group %>% filter(stock == 1 & factor == 1) %>% select(model))
-
-result <- map(factor_group$data, factor_regress)
 
