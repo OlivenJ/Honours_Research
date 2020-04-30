@@ -18,17 +18,14 @@ constant <- matrix(runif(n*t, -0.5, 0.5), nrow = n, ncol = t)
 
 error <- matrix(rnorm(n*t, 0,1), nrow = n, ncol = t)
 #Assume the error term follows a standard normal distribution
-
-alpha <- c( rep(0.55, k),1)
+alpha = 1
+strength <- c( rep(alpha, k),1)
 #the factor strength, with the last term as market factor strength, which equals to 1
 #represents that market factor influence all the strocks, the rest 30 factors have 
 #strength 0.55, which is pretty low.
 critical_value <- qnorm(1-0.025/(2*n^1.96))
-  
-
 
 Sigma <- diag(1,k+1)
-
 
 factor <- t(rmvnorm(t,mean = rep(0, k+1), Sigma))
 
@@ -36,33 +33,15 @@ market_factor <- matrix(factor[nrow(factor),])
 #random generate factor list, the last one is the market facotr which by definition
 #equals to the difference between makret return and risk free return
 
-sig_count <- as.integer((n)^alpha)
+sig_count <- as.integer((n)^strength)
 #Indicates under the factor strength setting, how many factor laodings are significnatly
 #different from 0. We only take the integer part. From the result we can see that 
 #when the factor strengh is 0.55, 30 amongh 500 stocks will be significant from 0,
 # and when the factor strengh is 1, all 500 loading will be significant
+adj_stat <- pnorm(1-(0.025/(2*n^1.68)))
+
 
 mu_var = 0.71
-mu <- matrix(runif(n*k+1,mu_var-0.2, mu_var + 0.2), ncol = k+1, nrow = n)
-
-
-
-loading_assign <- function(origin, count){
-  pos = 1
-  for(i in count){
-    if(i < n){
-      while(i < n){
-        #origin[i+1,pos] = 0 
-        #i = i+1}
-        ind <- which(mu[,pos] %in% sample(mu[,pos],i))
-        mu[ind,pos] <- 0}
-    }
-    else{
-      next
-    }
-    pos = pos+1}
-  return(origin)
-}
 
 loading_generate<- function(zero_amount){
   loading <- matrix(0, n, k+1)
@@ -75,10 +54,6 @@ loading_generate<- function(zero_amount){
   return(loading)
 }
 
-
-
-#Function help assign significant loading, and change the non-significant to 0
-loading <- loading_assign(mu, sig_count)
 loading <- loading_generate(sig_count)
 
 return <-  constant + loading%*%factor + error
@@ -97,17 +72,23 @@ combine_table <- right_join(return, factor)
 
 factor_group <- combine_table %>% group_by(factor,stock) %>% nest()
 
+
+
 factor_regress <-function(data){
   tidy(lm(return ~ factor_val, data))
 }
 
 factor_group <- factor_group %>% 
   mutate(coefficient = map(data, factor_regress))
-factor_group %>% filter(factor == 1) 
 
 
-factor_group %>% unnest(coefficient) %>%
+
+strength_result <- factor_group %>% unnest(coefficient) %>%
   select(-data) %>% filter(term != "(Intercept)") %>% 
-  group_by(factor)
+  group_by(factor) %>% filter(statistic > adj_stat) %>% 
+  summarize(alpha_hat =(log(n())/log(n)))
 
+summary(strength_result)
+strength_result %>% filter(alpha_hat >= 0.99) %>% 
+  summarize(n())
 
