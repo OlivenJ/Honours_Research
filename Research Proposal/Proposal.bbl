@@ -19,13 +19,13 @@ Bailey, N.%
 \end{APACrefauthors}%
 \unskip\
 \newblock
-\APACrefYearMonthDay{2016}{sep}{}.
+\APACrefYearMonthDay{2016}{9}{}.
 \newblock
-{\BBOQ}\APACrefatitle {{Exponent of Cross-Sectional Dependence: Estimation and
-  Inference}} {{Exponent of Cross-Sectional Dependence: Estimation and
-  Inference}}.{\BBCQ}
+{\BBOQ}\APACrefatitle {Exponent of Cross-Sectional Dependence: Estimation and
+  Inference} {Exponent of cross-sectional dependence: Estimation and
+  inference}.{\BBCQ}
 \newblock
-\APACjournalVolNumPages{Journal of Applied Econometrics}{31}{6}{929--960}.
+\APACjournalVolNumPages{Journal of Applied Econometrics}{31}{}{929-960}.
 \newblock
 \begin{APACrefURL} \url{http://doi.wiley.com/10.1002/jae.2476} \end{APACrefURL}
 \newblock
@@ -53,8 +53,242 @@ Bailey, N.%
 \newblock
 \APACrefYearMonthDay{2020}{}{}.
 \newblock
-\APACrefbtitle {{Measurement of Factor Strength: Theory and Practice}.}
-  {{Measurement of Factor Strength: Theory and Practice}.}
+\APACrefbtitle {Measurement of Factor Strength: Theory and Practice.}
+  {Measurement of factor strength: Theory and practice.}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Fama%
+\ \BBA {} French%
+}{%
+Fama%
+\ \BBA {} French%
+}{%
+{\protect \APACyear {1992}}%
+}]{%
+Fama1992}
+\APACinsertmetastar {%
+Fama1992}%
+\begin{APACrefauthors}%
+Fama, E\BPBI F.%
+\BCBT {}\ \BBA {} French, K\BPBI R.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{1992}{6}{}.
+\newblock
+{\BBOQ}\APACrefatitle {The Cross-Section of Expected Stock Returns} {The
+  cross-section of expected stock returns}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{The Journal of Finance}{47}{}{427-465}.
+\newblock
+\begin{APACrefURL}
+  \url{http://doi.wiley.com/10.1111/j.1540-6261.1992.tb04398.x}
+  \end{APACrefURL}
+\newblock
+\begin{APACrefDOI} \doi{10.1111/j.1540-6261.1992.tb04398.x} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Gospodinov%
+, Kan%
+\BCBL {}\ \BBA {} Robotti%
+}{%
+Gospodinov%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2017}}%
+}]{%
+Gospodinov2017}
+\APACinsertmetastar {%
+Gospodinov2017}%
+\begin{APACrefauthors}%
+Gospodinov, N.%
+, Kan, R.%
+\BCBL {}\ \BBA {} Robotti, C.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2017}{9}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Spurious Inference in Reduced-Rank Asset-Pricing Models}
+  {Spurious inference in reduced-rank asset-pricing models}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Econometrica}{85}{}{1613-1628}.
+\newblock
+\begin{APACrefDOI} \doi{10.3982/ecta13750} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Harvey%
+\ \BBA {} Liu%
+}{%
+Harvey%
+\ \BBA {} Liu%
+}{%
+{\protect \APACyear {2019}}%
+}]{%
+Harvey2019}
+\APACinsertmetastar {%
+Harvey2019}%
+\begin{APACrefauthors}%
+Harvey, C\BPBI R.%
+\BCBT {}\ \BBA {} Liu, Y.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2019}{3}{}.
+\newblock
+{\BBOQ}\APACrefatitle {A Census of the Factor Zoo} {A census of the factor
+  zoo}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{SSRN Electronic Journal}{}{}{}.
+\newblock
+\begin{APACrefDOI} \doi{10.2139/ssrn.3341728} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Harvey%
+, Liu%
+\BCBL {}\ \BBA {} Zhu%
+}{%
+Harvey%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2015}}%
+}]{%
+Harvey2015}
+\APACinsertmetastar {%
+Harvey2015}%
+\begin{APACrefauthors}%
+Harvey, C\BPBI R.%
+, Liu, Y.%
+\BCBL {}\ \BBA {} Zhu, H.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2015}{10}{}.
+\newblock
+{\BBOQ}\APACrefatitle {… and the Cross-Section of Expected Returns} {… and
+  the cross-section of expected returns}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{The Review of Financial Studies}{29}{}{5-68}.
+\newblock
+\begin{APACrefURL} \url{https://doi.org/10.1093/rfs/hhv059} \end{APACrefURL}
+\newblock
+\begin{APACrefDOI} \doi{10.1093/rfs/hhv059} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Kan%
+\ \BBA {} Zhang%
+}{%
+Kan%
+\ \BBA {} Zhang%
+}{%
+{\protect \APACyear {1999}}%
+}]{%
+Kan1999}
+\APACinsertmetastar {%
+Kan1999}%
+\begin{APACrefauthors}%
+Kan, R.%
+\BCBT {}\ \BBA {} Zhang, C.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{1999}{2}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Two-Pass Tests of Asset Pricing Models with Useless
+  Factors} {Two-pass tests of asset pricing models with useless
+  factors}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{The Journal of Finance}{54}{}{203-235}.
+\newblock
+\begin{APACrefURL} \url{http://doi.wiley.com/10.1111/0022-1082.00102}
+  \end{APACrefURL}
+\newblock
+\begin{APACrefDOI} \doi{10.1111/0022-1082.00102} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Kleibergen%
+}{%
+Kleibergen%
+}{%
+{\protect \APACyear {2009}}%
+}]{%
+Kleibergen2009}
+\APACinsertmetastar {%
+Kleibergen2009}%
+\begin{APACrefauthors}%
+Kleibergen, F.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2009}{4}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Tests of risk premia in linear factor models} {Tests of
+  risk premia in linear factor models}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Journal of Econometrics}{149}{}{149-173}.
+\newblock
+\begin{APACrefDOI} \doi{10.1016/j.jeconom.2009.01.013} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Lintner%
+}{%
+Lintner%
+}{%
+{\protect \APACyear {1965}}%
+}]{%
+Lintner1965}
+\APACinsertmetastar {%
+Lintner1965}%
+\begin{APACrefauthors}%
+Lintner, J.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{1965}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {The Valuation of Risk Assets and the Selection of Risky
+  Investments in Stock Portfolios and Capital Budgets} {The valuation of risk
+  assets and the selection of risky investments in stock portfolios and capital
+  budgets}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{The Review of Economics and Statistics}{47}{}{13-37}.
+\newblock
+\begin{APACrefDOI} \doi{10.2307/1924119} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Sharpe%
+}{%
+Sharpe%
+}{%
+{\protect \APACyear {1964}}%
+}]{%
+Sharpe1964}
+\APACinsertmetastar {%
+Sharpe1964}%
+\begin{APACrefauthors}%
+Sharpe, W\BPBI F.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{1964}{9}{}.
+\newblock
+{\BBOQ}\APACrefatitle {CAPITAL ASSET PRICES: A THEORY OF MARKET EQUILIBRIUM
+  UNDER CONDITIONS OF RISK} {Capital asset prices: A theory of market
+  equilibrium under conditions of risk}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{The Journal of Finance}{19}{}{425-442}.
+\newblock
+\begin{APACrefURL}
+  \url{http://doi.wiley.com/10.1111/j.1540-6261.1964.tb02865.x}
+  \end{APACrefURL}
+\newblock
+\begin{APACrefDOI} \doi{10.1111/j.1540-6261.1964.tb02865.x} \end{APACrefDOI}
 \PrintBackRefs{\CurrentBib}
 
 \end{thebibliography}

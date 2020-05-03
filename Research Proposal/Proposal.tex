@@ -16,7 +16,7 @@
 
 \usepackage{fontspec}
 \setmainfont{Times New Roman}
-\addtolength{\jot}{0.3em}
+\addtolength{\jot}{0.5em}
 
 \title{Understanding of Factor Strength}
 \author{Zhiyuan Jiang\\I.D:28710967}
@@ -27,27 +27,33 @@
 	\newpage
 	\tableofcontents
 	\newpage
-	\section{Introduction and Motivation}
-Capital Asset Pricing Model (CAPM), created by (      )    is one of the most famous, and wildly used model to explain the relationship between financial asset's risk and return, especially for the securities.  
-The original factors developed by ( ) only contains one explanatory variable nowadays called market factor. 
-Since then, many scholars are trying to find and add new variable to the CAPM model to enhance it's ability of capturing dynamics between stock  return and return volatility. 
-Two examples of new factors are the size factor (SMB) and book-to-market factor(HML). 
+	\section{Introduction and Motivation} \label{Intro}
+Capital Asset Pricing Model (CAPM), created by \citeA{Sharpe1964} and \citeA{Lintner1965} is one of the most famous, and wildly used model to explain the relationship between financial asset's risk and return, especially for the securities.  
+The original model only contains one explanatory variable nowadays called market factor. 
+Since then, many scholars are trying to find and add new variable to the CAPM model to enhance it's ability of capturing the dynamics  between stock return and return volatility. 
+Two examples of new factors are the size factor (SMB) and book-to-market factor(HML) found by \citeA{Fama1992} 
 
-A recent study by (   ) reveal the fact that, after 2004, new factors and paper illustrate how those new factors are helping explain the relationship between risk and return were abundance in the economic and finance journal. 
-In (   ),  the author coin the term "factor zoo" precisely describe the situation of factor models: This field has way too many factors and some, if not most,of them can provide seemly significant results is purely out of luck. 
-(  ) provide some insight behind this phenomena. 
-Among those over 500 factors, the ability of each factor to explain the risk and return is different. 
-In order to precisely evaluate this kind of  discrepancy ( )  introduce the concept of factor strength. 
-The stronger a factor is, the more different asset's relationship it can capture. 
-However, (  ) indicates that involving weak factor to explain risk return relationship will lead to problem such as: (      ), therefore appropriately identified the  strength of factors becomes crucial.
+A recent study by \citeA{Harvey2019}, after examining top economics and financial economics journals, revealed the fact that, after 2004, new factors and paper illustrate how those new factors are helping explain the relationship between risk and return were in abundance.
+In their 2015 papers, \citeauthor{Harvey2015}  coined a term "factor zoo" which precisely capture the situation that the field of financial economics has too many factors. And some, if not most,of them can provide seemly significant results purely because of luck. 
+\citeA{Harvey2017b} provides some insight and explanation about this phenomena.
+
+Among all those factors, the ability of each factor to explain the risk and return is different. 
+In their recent paper, \cite{Bailey2020} introduce a new framework to measure a factor's ability or strength of pricing the risk of  assets.
+The idea is that for a factor, the more different asset's relationship between risk and return it can capture, the stronger it is.
+We will review this concept in the following section \ref{strength}
+
+Some researches (see \citeNP{Kleibergen2009}, and \citeNP{Gospodinov2017}) argues that for a factor with small coefficient or even no coefficient, the statistic inference for model containing such factors will be unreliable.
+\citeA{Kan1999} warned that when including a factor has no correlation with the asset return in a two-pass method of testing the pricing model, the model will falsely identified that useless model as significant more usually than it should. 
+Therefore, appropriately identified the  strength of factors and eliminate the factors that has limited explaining power before contains it into the CAPM becomes crucial.
 
 This project, adopt the framework provided by \citeA{Bailey2020} to exam the strength of factors from (   )'s factor zoo. 
 In addition, we implied several machine learning algorithm to help exam (                   )
 
 
 
-	\section{Methodology}
-Factor strength has been elaborated by \citeA{Bailey2020}, The following section will re-iterate their definition of factor strength as well as the method to estimate it.\\
+	\section{Methodology}\label{Method}
+	\subsection{Factor Strength: Definition and Estimation}\label{strength}
+Factor strength has been elaborated by \citeA{Bailey2020}, the following section will re-iterate their definition of factor strength as well as the method to estimate it.\\
 To start with, we define a single factor CAPM model:
 \[  y_{it} = \beta_i + \theta_{i}x_t + \epsilon_{it}  \tag{1}\label{simpleCAPM} \]
 
@@ -57,7 +63,7 @@ $y_{it}$ on the left hand side of equation (\ref{simpleCAPM}) is the excess retu
 $x_t$  in the right hand side is the factor with interest at time $t$. 
 Therefore, $\theta_{i}$ is the loading of factor $x_{t}$. 
 $\beta_{i}$ is the constant term, represent the asset's ability to generate abnormal return from the market. 
-$\epsilon_{it}$ as the idiosyncratic error term has been assumed to follow independent, identical distribution, with zero mean and time invariant variance  $\sigma_i^2$,
+$\epsilon_{it}$ as the idiosyncratic error term has been assumed to follow independent, identical distribution, with zero mean and time invariant variance  $\sigma_i^2$.
 
 
 After settle down, we run OLS for this model and obtain the results:
@@ -102,9 +108,53 @@ For factor $\theta_{i}$:
 For a factor has strength $\alpha = 1$,  factor will be significant  for every assets at every time. 
 The more observation the factor can significantly influence, the stronger the factor is, and vice versa.\textsl{}
 
+	\section{Monte Carlo Simulation}\label{MC}
+	\subsection{General Design}
+In this Monte Carlo simulation, we consider a dataset has $i = 1, 2,\dots, n$ different assets, with $t= 1, 2,\dots, T$ different observations. 
+$j = 1, 2, \dots, k$ different factors and one market factors are included in the simulation. 
+All returns of this study are generated from the following model with stochastic error.
+
+\[  r_{it} = f_1(\bar{r_{t}} - r_f) + f_2( \beta_{ij}\theta{jt}) +\epsilon_{it}  \]
+
+$f_1(\cdot)$ and $f_2(\cdot)$ are two different functions represent the unknown mechanism of market factor and other factors pricing asset risk.
+$(\bar{r_{t}}- r_f) $ is the market return, calculated from market or index return$\bar{r_{t}}$ minus risk free return$r_f$. 
+We obtain the market factor from the existing data. 
+$r_{it}$ is the stock return, $\theta_{jt}$denotes factors other than market factors and $\beta_{ij}$is the corresponding factor loading. 
+$\epsilon_{it}$ is error. 
+Notice that the $\beta_{ij}$ will be influenced by each factor's strength $\alpha_j$, where we have $\alpha$ as defined in section $\ref{strength}$. 
+And for each factors, we assume they follow a multinomial distributions  with mean zero and a $k\times k$ variance-covariance matrix $\Sigma$. 
+The matrix $\Sigma$ indicates the correlation among  all $k$ factors. 
+
+In this model, we can control several parts to investigates different scenarios of the simulation:
+\begin{enumerate}
+	\item The function $f_1(\cdot)$and $f_2(\cdot)$.
+	\item The strength $\alpha$ of each factor.
+	\item The correlation among each factors.
+	\item The stochastic error term $\epsilon_{it}$
+\end{enumerate}
+\subsection{Baseline Design}\label{base}
+As beginning point, we consider a baseline design with $k = 30$, $n = 500$, and $T = 120$.
+Both $f_1(a)$ and $f_2(a)$ are linear function:
+\begin{align*}
+f_1(a ) &= c_{i} +\beta_i a\\
+f_2(a) &=a
+\end{align*}
+Here the $c_i$ as constant are generated from a uniform distribution $\mathnormal{U}[-0.5, 0.5]$.
+To generate the factors loading, we employed a two steps strategy.
+First we generate a whole factor loadings matrix with $t$ columns represent t different time observations, and $k+1$ rows denote k factors plus one extra market factors. 
+All element of the matrix follow a independent identical uniform distributions $\mathnormal{IIDU}(\mu_{\beta} -0.2, \mu_{\beta} + 0.2)$. 
+The $\mu_{\beta}$ has been equals to 0.71 in this case to set all values apart from zero. 
+After generate the matrix, we randomly selected $[n^{\alpha_{q}}],\; \{q = 1, 2, 3\dots k+1\}$ elements from each column to keep their value  and set the other elements to zero. 
+This step ensures the loading reflects the true strength of each factors. 
+
+
+	
+	 
+	
+
 
 \newpage
 \bibliographystyle{apacite}
-\bibliography{proposal_bib.bib}
+\bibliography{proposal.bib}
 
 \end{document}

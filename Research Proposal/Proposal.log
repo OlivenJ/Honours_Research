@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019) (preloaded format=xelatex 2020.2.23)  24 APR 2020 23:04
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019) (preloaded format=xelatex 2020.2.23)  3 MAY 2020 16:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -694,30 +694,90 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
  [1
 
 ]
-(./Proposal.toc)
+(./Proposal.toc
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 3.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 3.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 3.
+)
 \tf@toc=\write6
 \openout6 = `Proposal.toc'.
 
  [2]
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 52.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 52.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 52.
- [3]
+
+LaTeX Warning: Citation `Harvey2017b' undefined on input line 38.
+
+[3] [4]
 LaTeX Font Info:    Font shape `TU/TimesNewRoman(0)/m/sl' in size <12> not avai
 lable
 (Font)              Font shape `TU/TimesNewRoman(0)/m/it' tried instead on inpu
-t line 103.
- [4] [5] (./Proposal.bbl) [6] (./Proposal.aux) ) 
+t line 109.
+ [5] [6] (./Proposal.bbl
+Underfull \hbox (badness 10000) in paragraph at lines 73--91
+[]\TU/TimesNewRoman(0)/m/n/12 Fama, E. F., & French, K. R.  (1992, 6).  The cro
+ss-section of expected
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 73--91
+\TU/TimesNewRoman(0)/m/n/12 stock returns.  \TU/TimesNewRoman(0)/m/it/12 The Jo
+urnal of Finance\TU/TimesNewRoman(0)/m/n/12 , \TU/TimesNewRoman(0)/m/it/12 47\T
+U/TimesNewRoman(0)/m/n/12 , 427-465.  Retrieved from
+ []
+
+
+Underfull \hbox (badness 3312) in paragraph at lines 162--179
+[]\TU/TimesNewRoman(0)/m/n/12 Harvey, C. R., Liu, Y., & Zhu, H.  (2015, 10).  …
+ and the cross-section of ex-
+ []
+
+
+Underfull \hbox (badness 4699) in paragraph at lines 162--179
+\TU/TimesNewRoman(0)/m/n/12 pected returns.  \TU/TimesNewRoman(0)/m/it/12 The R
+eview of Financial Studies\TU/TimesNewRoman(0)/m/n/12 , \TU/TimesNewRoman(0)/m/
+it/12 29\TU/TimesNewRoman(0)/m/n/12 , 5-68.  Retrieved from
+ []
+
+
+Underfull \hbox (badness 4954) in paragraph at lines 193--211
+[]\TU/TimesNewRoman(0)/m/n/12 Kan, R., & Zhang, C.  (1999, 2).  Two-pass tests 
+of asset pricing models with
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 193--211
+\TU/TimesNewRoman(0)/m/n/12 useless factors.  \TU/TimesNewRoman(0)/m/it/12 The 
+Journal of Finance\TU/TimesNewRoman(0)/m/n/12 , \TU/TimesNewRoman(0)/m/it/12 54
+\TU/TimesNewRoman(0)/m/n/12 , 203-235.  Retrieved from
+ []
+
+
+Underfull \hbox (badness 2150) in paragraph at lines 275--293
+[]\TU/TimesNewRoman(0)/m/n/12 Sharpe, W. F.  (1964, 9).  Capital asset prices: 
+A theory of market equilibrium un-
+ []
+
+
+Underfull \hbox (badness 2653) in paragraph at lines 275--293
+\TU/TimesNewRoman(0)/m/n/12 der conditions of risk.  \TU/TimesNewRoman(0)/m/it/
+12 The Journal of Finance\TU/TimesNewRoman(0)/m/n/12 , \TU/TimesNewRoman(0)/m/i
+t/12 19\TU/TimesNewRoman(0)/m/n/12 , 425-442.  Retrieved from
+ []
+
+) [7] (./Proposal.aux)
+
+LaTeX Warning: There were undefined references.
+
+ ) 
 Here is how much of TeX's memory you used:
- 16065 strings out of 479808
- 352326 string characters out of 5893232
- 635532 words of memory out of 5000000
- 32906 multiletter control sequences out of 15000+600000
- 551222 words of font info for 94 fonts, out of 8000000 for 9000
+ 16098 strings out of 479808
+ 352806 string characters out of 5893232
+ 637288 words of memory out of 5000000
+ 32938 multiletter control sequences out of 15000+600000
+ 551230 words of font info for 95 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  59i,9n,75p,831b,240s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on Proposal.pdf (6 pages).
+Output written on Proposal.pdf (7 pages).
