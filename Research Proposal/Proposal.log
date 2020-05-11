@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019) (preloaded format=xelatex 2020.2.23)  4 MAY 2020 16:33
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019) (preloaded format=xelatex 2020.2.23)  10 MAY 2020 23:17
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -544,6 +544,107 @@ Invalid UTF-8 byte or sequence at line 296 replaced by U+FFFD.
 \bframebox=\box64
 LaTeX Info: Redefining \\ on input line 3056.
 )
+(/usr/local/texlive/2019/texmf-dist/tex/latex/diagbox/diagbox.sty
+Package: diagbox 2020/02/09 v2.3 Making table heads with diagonal lines
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/pict2e/pict2e.sty
+Package: pict2e 2019/08/20 v0.3c Improved picture commands (HjG,RN,JT)
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/pict2e/pict2e.cfg
+File: pict2e.cfg 2016/02/05 v0.1u pict2e configuration for teTeX/TeXLive
+)
+Package pict2e Info: Driver file: xetex.def on input line 119.
+Package pict2e Info: Driver file for pict2e: p2e-xetex.def on input line 121.
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/pict2e/p2e-xetex.def
+File: p2e-xetex.def 2016/02/05 v0.1u Driver-dependant file (RN,HjG,JT)
+)
+\pIIe@GRAPH=\toks36
+\@arclen=\dimen269
+\@arcrad=\dimen270
+\@tempdimd=\dimen271
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/fp/fp.sty
+Package: fp 1995/04/02
+
+`Fixed Point Package', Version 0.8, April 2, 1995 (C) Michael Mehlich
+(/usr/local/texlive/2019/texmf-dist/tex/latex/fp/defpattern.sty
+Package: defpattern 1994/10/12
+\actioncount=\count289
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/fp/fp-basic.sty
+Package: fp-basic 1996/05/13
+\FP@xs=\count290
+\FP@xia=\count291
+\FP@xib=\count292
+\FP@xfa=\count293
+\FP@xfb=\count294
+\FP@rega=\count295
+\FP@regb=\count296
+\FP@regs=\count297
+\FP@times=\count298
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/fp/fp-addons.sty
+Package: fp-addons 1995/03/15
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/fp/fp-snap.sty
+Package: fp-snap 1995/04/05
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/fp/fp-exp.sty
+Package: fp-exp 1995/04/03
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/fp/fp-trigo.sty
+Package: fp-trigo 1995/04/14
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/fp/fp-pas.sty
+Package: fp-pas 1994/08/29
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/fp/fp-random.sty
+Package: fp-random 1995/02/23
+\FPseed=\count299
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/fp/fp-eqn.sty
+Package: fp-eqn 1995/04/03
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/fp/fp-upn.sty
+Package: fp-upn 1996/10/21
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/fp/fp-eval.sty
+Package: fp-eval 1995/04/03
+))
+(/usr/local/texlive/2019/texmf-dist/tex/latex/tools/calc.sty
+Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count300
+\calc@Bcount=\count301
+\calc@Adimen=\dimen272
+\calc@Bdimen=\dimen273
+\calc@Askip=\skip63
+\calc@Bskip=\skip64
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count302
+\calc@Cskip=\skip65
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/tools/array.sty
+Package: array 2019/08/31 v2.4l Tabular extension package (FMi)
+\col@sep=\dimen274
+\ar@mcellbox=\box65
+\extrarowheight=\dimen275
+\NC@list=\toks37
+\extratabsurround=\skip66
+\backup@length=\skip67
+\ar@cellbox=\box66
+)
+\diagbox@boxa=\box67
+\diagbox@boxb=\box68
+\diagbox@boxm=\box69
+\diagbox@wd=\dimen276
+\diagbox@ht=\dimen277
+\diagbox@insepl=\dimen278
+\diagbox@insepr=\dimen279
+\diagbox@outsepl=\dimen280
+\diagbox@outsepr=\dimen281
+)
 (/usr/local/texlive/2019/texmf-dist/tex/latex/fontspec/fontspec.sty
 (/usr/local/texlive/2019/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
 (/usr/local/texlive/2019/texmf-dist/tex/latex/l3kernel/expl3.sty
@@ -551,35 +652,35 @@ Package: expl3 2020-02-21 L3 programming layer (loader)
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/l3backend/l3backend-xdvipdfmx.def
 File: l3backend-xdvipdfmx.def 2020-02-21 L3 backend support: xdvipdfmx
-\g__graphics_track_int=\count289
-\l__pdf_internal_box=\box65
-\g__pdf_backend_object_int=\count290
-\g__pdf_backend_annotation_int=\count291
+\g__graphics_track_int=\count303
+\l__pdf_internal_box=\box70
+\g__pdf_backend_object_int=\count304
+\g__pdf_backend_annotation_int=\count305
 ))
 Package: xparse 2020-02-14 L3 Experimental document command parser
-\l__xparse_current_arg_int=\count292
-\g__xparse_grabber_int=\count293
-\l__xparse_m_args_int=\count294
-\l__xparse_v_nesting_int=\count295
+\l__xparse_current_arg_int=\count306
+\g__xparse_grabber_int=\count307
+\l__xparse_m_args_int=\count308
+\l__xparse_v_nesting_int=\count309
 )
 Package: fontspec 2020/02/21 v2.7i Font selection for XeLaTeX and LuaLaTeX
  (/usr/local/texlive/2019/texmf-dist/tex/latex/fontspec/fontspec-xetex.sty
 Package: fontspec-xetex 2020/02/21 v2.7i Font selection for XeLaTeX and LuaLaTe
 X
-\l__fontspec_script_int=\count296
-\l__fontspec_language_int=\count297
-\l__fontspec_strnum_int=\count298
-\l__fontspec_tmp_int=\count299
-\l__fontspec_tmpa_int=\count300
-\l__fontspec_tmpb_int=\count301
-\l__fontspec_tmpc_int=\count302
-\l__fontspec_em_int=\count303
-\l__fontspec_emdef_int=\count304
-\l__fontspec_strong_int=\count305
-\l__fontspec_strongdef_int=\count306
-\l__fontspec_tmpa_dim=\dimen269
-\l__fontspec_tmpb_dim=\dimen270
-\l__fontspec_tmpc_dim=\dimen271
+\l__fontspec_script_int=\count310
+\l__fontspec_language_int=\count311
+\l__fontspec_strnum_int=\count312
+\l__fontspec_tmp_int=\count313
+\l__fontspec_tmpa_int=\count314
+\l__fontspec_tmpb_int=\count315
+\l__fontspec_tmpc_int=\count316
+\l__fontspec_em_int=\count317
+\l__fontspec_emdef_int=\count318
+\l__fontspec_strong_int=\count319
+\l__fontspec_strongdef_int=\count320
+\l__fontspec_tmpa_dim=\dimen282
+\l__fontspec_tmpb_dim=\dimen283
+\l__fontspec_tmpc_dim=\dimen284
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/base/fontenc.sty
 Package: fontenc 2020/02/11 v2.0o Standard LaTeX package
@@ -610,27 +711,27 @@ Package fontspec Info: Font family 'TimesNewRoman(0)' created for font 'Times
 (./Proposal.aux)
 \openout1 = `Proposal.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 28.
-LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 2
-8.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 32.
+LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 3
+2.
  (/usr/local/texlive/2019/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: xetex
@@ -667,7 +768,7 @@ LaTeX Font Info:    ... okay on input line 28.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 ABD: EveryShipout initializing macros
-\c@maskedRefs=\count307
+\c@maskedRefs=\count321
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/apacite/english.apc
 File: english.apc 2013/07/21 v6.03 apacite language file
@@ -675,41 +776,41 @@ LaTeX Info: Redefining \BPBI on input line 129.
 LaTeX Info: Redefining \BHBI on input line 130.
 )
 LaTeX Font Info:    Trying to load font information for OT1+ztmcm on input line
- 29.
+ 33.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/psnfss/ot1ztmcm.fd
 File: ot1ztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OT1/ztmcm.
 )
 LaTeX Font Info:    Trying to load font information for OML+ztmcm on input line
- 29.
+ 33.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/psnfss/omlztmcm.fd
 File: omlztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ztmcm.
 )
 LaTeX Font Info:    Trying to load font information for OMS+ztmcm on input line
- 29.
+ 33.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/psnfss/omsztmcm.fd
 File: omsztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMS/ztmcm.
 )
 LaTeX Font Info:    Trying to load font information for OMX+ztmcm on input line
- 29.
+ 33.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/psnfss/omxztmcm.fd
 File: omxztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMX/ztmcm.
 )
-LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 2
-9.
+LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 3
+3.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 29.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 33.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 29.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 33.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 29.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 33.
  [1
 
 ]
@@ -724,16 +825,18 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
 \tf@toc=\write6
 \openout6 = `Proposal.toc'.
 
- [2]
+ [2] [3] [4]
+Overfull \hbox (2.53624pt too wide) in paragraph at lines 132--134
+[]\TU/TimesNewRoman(0)/m/n/12 For each of the those different models, we consid
+er the $\OML/ztmcm/m/it/12 T \OT1/ztmcm/m/n/12 = \OMS/ztmcm/m/n/12 f\OT1/ztmcm/
+m/n/12 120\OML/ztmcm/m/it/12 ; \OT1/ztmcm/m/n/12 240\OML/ztmcm/m/it/12 ; \OT1/z
+tmcm/m/n/12 360\OMS/ztmcm/m/n/12 g$\TU/TimesNewRoman(0)/m/n/12 , $\OML/ztmcm/m/
+it/12 n \OT1/ztmcm/m/n/12 = \OMS/ztmcm/m/n/12 f\OT1/ztmcm/m/n/12 100\OML/ztmcm/
+m/it/12 ; \OT1/ztmcm/m/n/12 300\OML/ztmcm/m/it/12 ; \OT1/ztmcm/m/n/12 500\OMS/z
+tmcm/m/n/12 g$\TU/TimesNewRoman(0)/m/n/12 .
+ []
 
-LaTeX Warning: Citation `Harvey2017b' undefined on input line 41.
-
-[3] [4]
-LaTeX Font Info:    Font shape `TU/TimesNewRoman(0)/m/sl' in size <12> not avai
-lable
-(Font)              Font shape `TU/TimesNewRoman(0)/m/it' tried instead on inpu
-t line 112.
- [5] [6] (./Proposal.bbl
+[5] [6] (./Proposal.bbl
 Underfull \hbox (badness 10000) in paragraph at lines 73--91
 []\TU/TimesNewRoman(0)/m/n/12 Fama, E. F., & French, K. R.  (1992, 6).  The cro
 ss-section of expected
@@ -747,56 +850,52 @@ U/TimesNewRoman(0)/m/n/12 , 427-465.  Retrieved from
  []
 
 
-Underfull \hbox (badness 3312) in paragraph at lines 162--179
+Underfull \hbox (badness 3312) in paragraph at lines 187--204
 []\TU/TimesNewRoman(0)/m/n/12 Harvey, C. R., Liu, Y., & Zhu, H.  (2015, 10).  …
  and the cross-section of ex-
  []
 
 
-Underfull \hbox (badness 4699) in paragraph at lines 162--179
+Underfull \hbox (badness 4699) in paragraph at lines 187--204
 \TU/TimesNewRoman(0)/m/n/12 pected returns.  \TU/TimesNewRoman(0)/m/it/12 The R
 eview of Financial Studies\TU/TimesNewRoman(0)/m/n/12 , \TU/TimesNewRoman(0)/m/
 it/12 29\TU/TimesNewRoman(0)/m/n/12 , 5-68.  Retrieved from
  []
 
 
-Underfull \hbox (badness 4954) in paragraph at lines 193--211
+Underfull \hbox (badness 4954) in paragraph at lines 218--236
 []\TU/TimesNewRoman(0)/m/n/12 Kan, R., & Zhang, C.  (1999, 2).  Two-pass tests 
 of asset pricing models with
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 193--211
+Underfull \hbox (badness 10000) in paragraph at lines 218--236
 \TU/TimesNewRoman(0)/m/n/12 useless factors.  \TU/TimesNewRoman(0)/m/it/12 The 
 Journal of Finance\TU/TimesNewRoman(0)/m/n/12 , \TU/TimesNewRoman(0)/m/it/12 54
 \TU/TimesNewRoman(0)/m/n/12 , 203-235.  Retrieved from
  []
 
 
-Underfull \hbox (badness 2150) in paragraph at lines 275--293
+Underfull \hbox (badness 2150) in paragraph at lines 300--318
 []\TU/TimesNewRoman(0)/m/n/12 Sharpe, W. F.  (1964, 9).  Capital asset prices: 
 A theory of market equilibrium un-
  []
 
 
-Underfull \hbox (badness 2653) in paragraph at lines 275--293
+Underfull \hbox (badness 2653) in paragraph at lines 300--318
 \TU/TimesNewRoman(0)/m/n/12 der conditions of risk.  \TU/TimesNewRoman(0)/m/it/
 12 The Journal of Finance\TU/TimesNewRoman(0)/m/n/12 , \TU/TimesNewRoman(0)/m/i
 t/12 19\TU/TimesNewRoman(0)/m/n/12 , 425-442.  Retrieved from
  []
 
-) [7] (./Proposal.aux)
-
-LaTeX Warning: There were undefined references.
-
- ) 
+) [7] (./appendix.tex) [8] [9] (./Proposal.aux) ) 
 Here is how much of TeX's memory you used:
- 16307 strings out of 479808
- 356048 string characters out of 5893232
- 640599 words of memory out of 5000000
- 33140 multiletter control sequences out of 15000+600000
- 551246 words of font info for 97 fonts, out of 8000000 for 9000
+ 17318 strings out of 479808
+ 368097 string characters out of 5893232
+ 676320 words of memory out of 5000000
+ 34097 multiletter control sequences out of 15000+600000
+ 551230 words of font info for 95 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 59i,9n,75p,831b,240s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 59i,16n,75p,831b,297s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on Proposal.pdf (7 pages).
+Output written on Proposal.pdf (9 pages).

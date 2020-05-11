@@ -1,0 +1,104 @@
+%\documentclass[12pt]{article}
+%\usepackage{amsmath}
+%\usepackage{mathptmx}
+%\usepackage{setspace}
+%\usepackage{amssymb}
+%\usepackage{float}
+%\usepackage{graphicx}
+%\usepackage{booktabs}
+%\usepackage{subfigure}
+%\usepackage[margin=2.5cm]{geometry}
+%\usepackage[title]{appendix}
+%\usepackage{bm}
+%\usepackage{tcolorbox}
+%\usepackage{apacite}
+%\onehalfspacing
+
+%
+
+%\begin{document}
+	\section{Simulation Result Table}\label{simulationtable}
+\begin{table}[!hbt]
+	\caption{Simulation result of single factor model}
+	\label{onefactortable}
+	\centering
+	\begin{tabular}{l|ccc|ccc}
+		\hline
+		\hline
+		& \multicolumn{6}{c}{Single Factor}                                  \\
+		\hline
+		& \multicolumn{3}{c}{Biass}   \vline    & \multicolumn{3}{c}{MSE}  \\
+		\hline 
+		\multicolumn{7}{c}{$\alpha = 0.5$}         \\
+		\hline
+		\diagbox{n}{T}       & 120   & 240   & 360                  & 120   & 240   & 360      \\
+		\hline
+		100                  & 0.194 & 0.188 & 0.199                & 0.050 & 0.047 & 0.053    \\
+		300                  & 0.224 & 0.224 & 0.226                & 0.062 & 0.062 & 0.062    \\
+		500                  & 0.229 & 0.237 & 0.225                & 0.064 & 0.067 & 0.062    \\
+		\hline
+		\multicolumn{7}{c}{$\alpha = 0.7$}         \\
+		\hline
+		100                  & 0.093 & 0.090 & 0.092                & 0.013 & 0.012 & 0.013    \\
+		300                  & 0.101 & 0.098 & 0.101                & 0.014 & 0.008 & 0.014    \\
+		500                  & 0.101 & 0.107 & 0.100                & 0.015 & 0.015 & 0.014    \\
+		\hline
+		\multicolumn{7}{c}{$\alpha = 0.9$}         \\
+		\hline
+		100                  & 0.023 & 0.022 &0.023                 & 0.001 &0.001&0.001     \\
+		300                  & 0.023 &0.023&0.024                 & 0.001 &0.001&0.001     \\
+		500                  & 0.023 &0.023  &0.024                &  0.001&0.001  &0.001     \\
+		\hline
+		\multicolumn{7}{c}{$\alpha = 1.0$}         \\
+		\hline
+		100                  & 0.000 & 0.000 & 0.000                & 0.000 & 0.000 & 0.000    \\
+		300                  & 0.000 & 0.000 & 0.000                & 0.000 & 0.000 & 0.000    \\
+		500                  & 0.000 & 0.000 & 0.000                & 0.000 & 0.000 & 0.000    \\
+		\hline 
+		\hline
+	\end{tabular}
+\end{table}
+
+
+\begin{table}[!hbt]
+	\caption{Simulation result of two factor model}
+	\label{twofactor label}
+	\centering
+	\begin{tabular}{l|ccc|ccc}
+		\hline
+		\hline
+		& \multicolumn{6}{c}{Two Factor}                                  \\
+		\hline
+		& \multicolumn{3}{c}{Biass}   \vline    & \multicolumn{3}{c}{MSE}  \\
+		\hline 
+		\multicolumn{7}{c}{$\alpha_x = 0.5$, $\alpha_m = 1.0$}         \\
+		\hline
+		\diagbox{n}{T}       & 120   & 240   & 360                  & 120   & 240   & 360      \\
+		\hline
+		100                  & 0.221 & 0.219 & 0.221                & 0.050 & 0.049 & 0.050    \\
+		300                  & 0.253 & 0.253 & 0.253                & 0.042 & 0.064 & 0.065    \\
+		500                  & 0.268 & 0.266 & 0.269                & 0.072 & 0.071 & 0.071    \\
+		\hline
+		\multicolumn{7}{c}{$\alpha_x = 0.7$, $\alpha_m = 1.0$}         \\
+		\hline
+		100                  & 0.100 & 0.101 & 0.100                & 0.010 & 0.010 & 0.010    \\
+		300                  & 0.113 & 0.113 & 0.112                & 0.013 & 0.013 & 0.013    \\
+		500                  & 0.118 & 0.118 & 0.119                & 0.014 & 0.014 & 0.014    \\
+		\hline
+		\multicolumn{7}{c}{$\alpha_x = 0.9$, $\alpha_m = 1.0$}         \\
+		\hline
+		100                  & 0.024 & 0.023 & 0.024                & 0.001 & 0.001 & 0.001    \\
+		300                  & 0.025 & 0.025 & 0.025                & 0.001 & 0.001 & 0.001    \\
+		500                  & 0.026 & 0.025 & 0.025                & 0.001 & 0.001 & 0.001    \\
+		\hline
+		\multicolumn{7}{c}{$\alpha_ = 1.0$, $\alpha_m = 1.0$}         \\
+		\hline
+		100                  & 0.000 & 0.000 & 0.000                & 0.000 & 0.000 & 0.000    \\
+		300                  & 0.000 & 0.000 & 0.000                & 0.000 & 0.000 & 0.000    \\
+		500                  & 0.000 & 0.000 & 0.000                & 0.000 & 0.000 & 0.000    \\
+		\hline 
+		\hline
+	\end{tabular}
+\end{table}
+
+%\end{document}

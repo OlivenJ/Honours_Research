@@ -14,47 +14,47 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: proposal.bib
 Warning--entry type for "Bailey2020" isn't style-file defined
 --line 46 of file proposal.bib
-Warning--I didn't find a database entry for "Harvey2017b"
+Warning--I didn't find a database entry for "bibid"
 apacite.bst [2013/07/21 v6.03 APA bibliography style]
-You've used 10 entries,
+You've used 11 entries,
             6951 wiz_defined-function locations,
-            1362 strings with 12583 characters,
-and the built_in function-call counts, 18435 in all, are:
-= -- 2267
-> -- 148
-< -- 840
-+ -- 844
-- -- 20
-* -- 1192
-:= -- 3339
-add.period$ -- 40
-call.type$ -- 10
-change.case$ -- 186
+            1366 strings with 12671 characters,
+and the built_in function-call counts, 19998 in all, are:
+= -- 2461
+> -- 158
+< -- 911
++ -- 908
+- -- 22
+* -- 1285
+:= -- 3609
+add.period$ -- 44
+call.type$ -- 11
+change.case$ -- 205
 chr.to.int$ -- 0
-cite$ -- 20
-duplicate$ -- 468
-empty$ -- 770
-format.name$ -- 242
-if$ -- 3518
+cite$ -- 22
+duplicate$ -- 508
+empty$ -- 841
+format.name$ -- 256
+if$ -- 3830
 int.to.chr$ -- 0
-int.to.str$ -- 30
+int.to.str$ -- 33
 missing$ -- 0
-newline$ -- 274
-num.names$ -- 80
-pop$ -- 238
+newline$ -- 298
+num.names$ -- 88
+pop$ -- 262
 preamble$ -- 1
-purify$ -- 56
+purify$ -- 62
 quote$ -- 0
-skip$ -- 1304
+skip$ -- 1426
 stack$ -- 0
-substring$ -- 918
-swap$ -- 288
-text.length$ -- 36
+substring$ -- 989
+swap$ -- 309
+text.length$ -- 40
 text.prefix$ -- 0
 top$ -- 1
-type$ -- 872
+type$ -- 952
 warning$ -- 0
-while$ -- 100
+while$ -- 107
 width$ -- 0
-write$ -- 333
+write$ -- 359
 (There were 2 warnings)

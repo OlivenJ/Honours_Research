@@ -120,6 +120,31 @@ Gospodinov, N.%
 
 \bibitem [\protect \citeauthoryear {%
 Harvey%
+}{%
+Harvey%
+}{%
+{\protect \APACyear {2017}}%
+}]{%
+Harvey2017b}
+\APACinsertmetastar {%
+Harvey2017b}%
+\begin{APACrefauthors}%
+Harvey, C\BPBI R.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2017}{1}{}.
+\newblock
+{\BBOQ}\APACrefatitle {The Scientific Outlook in Financial Economics} {The
+  scientific outlook in financial economics}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{SSRN Electronic Journal}{}{}{}.
+\newblock
+\begin{APACrefDOI} \doi{10.2139/ssrn.2893930} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Harvey%
 \ \BBA {} Liu%
 }{%
 Harvey%
