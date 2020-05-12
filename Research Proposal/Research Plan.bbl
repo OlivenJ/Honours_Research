@@ -7,38 +7,6 @@ Bailey%
 }{%
 Bailey%
 \ \protect \BOthers {.}}{%
-{\protect \APACyear {2016}}%
-}]{%
-Bailey2016}
-\APACinsertmetastar {%
-Bailey2016}%
-\begin{APACrefauthors}%
-Bailey, N.%
-, Kapetanios, G.%
-\BCBL {}\ \BBA {} Pesaran, M\BPBI H.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{2016}{9}{}.
-\newblock
-{\BBOQ}\APACrefatitle {Exponent of Cross-Sectional Dependence: Estimation and
-  Inference} {Exponent of cross-sectional dependence: Estimation and
-  inference}.{\BBCQ}
-\newblock
-\APACjournalVolNumPages{Journal of Applied Econometrics}{31}{}{929-960}.
-\newblock
-\begin{APACrefURL} \url{http://doi.wiley.com/10.1002/jae.2476} \end{APACrefURL}
-\newblock
-\begin{APACrefDOI} \doi{10.1002/jae.2476} \end{APACrefDOI}
-\PrintBackRefs{\CurrentBib}
-
-\bibitem [\protect \citeauthoryear {%
-Bailey%
-, Kapetanios%
-\BCBL {}\ \BBA {} Pesaran%
-}{%
-Bailey%
-\ \protect \BOthers {.}}{%
 {\protect \APACyear {2020}}%
 }]{%
 Bailey2020}

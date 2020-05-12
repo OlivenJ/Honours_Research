@@ -1,9 +1,9 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019) (preloaded format=xelatex 2020.2.23)  10 MAY 2020 23:17
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019) (preloaded format=xelatex 2020.2.23)  12 MAY 2020 13:45
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**Proposal.tex
-(./Proposal.tex
+**"Research Plan.tex"
+(./Research Plan.tex
 LaTeX2e <2020-02-02> patch level 3
 L3 programming layer <2020-02-21>
 (/usr/local/texlive/2019/texmf-dist/tex/latex/base/article.cls
@@ -708,8 +708,8 @@ Package fontspec Info: Font family 'TimesNewRoman(0)' created for font 'Times
 (fontspec)             - 'bold italic small caps'  (b/scit) with NFSS spec.: 
 
 
-(./Proposal.aux)
-\openout1 = `Proposal.aux'.
+(./Research Plan.aux)
+\openout1 = `"Research Plan.aux"'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 32.
 LaTeX Font Info:    ... okay on input line 32.
@@ -722,7 +722,8 @@ LaTeX Font Info:    ... okay on input line 32.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 32.
 LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 3
 2.
- (/usr/local/texlive/2019/texmf-dist/tex/latex/base/ts1cmr.fd
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
 LaTeX Font Info:    ... okay on input line 32.
@@ -814,7 +815,7 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
  [1
 
 ]
-(./Proposal.toc
+(./Research Plan.toc
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 3.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
@@ -823,7 +824,7 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 3.
 )
 \tf@toc=\write6
-\openout6 = `Proposal.toc'.
+\openout6 = `"Research Plan.toc"'.
 
  [2] [3] [4]
 Overfull \hbox (2.53624pt too wide) in paragraph at lines 132--134
@@ -836,66 +837,66 @@ m/it/12 ; \OT1/ztmcm/m/n/12 300\OML/ztmcm/m/it/12 ; \OT1/ztmcm/m/n/12 500\OMS/z
 tmcm/m/n/12 g$\TU/TimesNewRoman(0)/m/n/12 .
  []
 
-[5] [6] (./Proposal.bbl
-Underfull \hbox (badness 10000) in paragraph at lines 73--91
+[5] [6] (./Research Plan.bbl
+Underfull \hbox (badness 10000) in paragraph at lines 41--59
 []\TU/TimesNewRoman(0)/m/n/12 Fama, E. F., & French, K. R.  (1992, 6).  The cro
 ss-section of expected
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 73--91
+Underfull \hbox (badness 10000) in paragraph at lines 41--59
 \TU/TimesNewRoman(0)/m/n/12 stock returns.  \TU/TimesNewRoman(0)/m/it/12 The Jo
 urnal of Finance\TU/TimesNewRoman(0)/m/n/12 , \TU/TimesNewRoman(0)/m/it/12 47\T
 U/TimesNewRoman(0)/m/n/12 , 427-465.  Retrieved from
  []
 
 
-Underfull \hbox (badness 3312) in paragraph at lines 187--204
+Underfull \hbox (badness 3312) in paragraph at lines 155--172
 []\TU/TimesNewRoman(0)/m/n/12 Harvey, C. R., Liu, Y., & Zhu, H.  (2015, 10).  …
  and the cross-section of ex-
  []
 
 
-Underfull \hbox (badness 4699) in paragraph at lines 187--204
+Underfull \hbox (badness 4699) in paragraph at lines 155--172
 \TU/TimesNewRoman(0)/m/n/12 pected returns.  \TU/TimesNewRoman(0)/m/it/12 The R
 eview of Financial Studies\TU/TimesNewRoman(0)/m/n/12 , \TU/TimesNewRoman(0)/m/
 it/12 29\TU/TimesNewRoman(0)/m/n/12 , 5-68.  Retrieved from
  []
 
 
-Underfull \hbox (badness 4954) in paragraph at lines 218--236
+Underfull \hbox (badness 4954) in paragraph at lines 186--204
 []\TU/TimesNewRoman(0)/m/n/12 Kan, R., & Zhang, C.  (1999, 2).  Two-pass tests 
 of asset pricing models with
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 218--236
+Underfull \hbox (badness 10000) in paragraph at lines 186--204
 \TU/TimesNewRoman(0)/m/n/12 useless factors.  \TU/TimesNewRoman(0)/m/it/12 The 
 Journal of Finance\TU/TimesNewRoman(0)/m/n/12 , \TU/TimesNewRoman(0)/m/it/12 54
 \TU/TimesNewRoman(0)/m/n/12 , 203-235.  Retrieved from
  []
 
 
-Underfull \hbox (badness 2150) in paragraph at lines 300--318
+Underfull \hbox (badness 2150) in paragraph at lines 268--286
 []\TU/TimesNewRoman(0)/m/n/12 Sharpe, W. F.  (1964, 9).  Capital asset prices: 
 A theory of market equilibrium un-
  []
 
 
-Underfull \hbox (badness 2653) in paragraph at lines 300--318
+Underfull \hbox (badness 2653) in paragraph at lines 268--286
 \TU/TimesNewRoman(0)/m/n/12 der conditions of risk.  \TU/TimesNewRoman(0)/m/it/
 12 The Journal of Finance\TU/TimesNewRoman(0)/m/n/12 , \TU/TimesNewRoman(0)/m/i
 t/12 19\TU/TimesNewRoman(0)/m/n/12 , 425-442.  Retrieved from
  []
 
-) [7] (./appendix.tex) [8] [9] (./Proposal.aux) ) 
+) [7] (./appendix.tex) [8] [9] (./Research Plan.aux) ) 
 Here is how much of TeX's memory you used:
- 17318 strings out of 479808
- 368097 string characters out of 5893232
- 676320 words of memory out of 5000000
- 34097 multiletter control sequences out of 15000+600000
+ 17316 strings out of 479808
+ 368159 string characters out of 5893232
+ 676209 words of memory out of 5000000
+ 34095 multiletter control sequences out of 15000+600000
  551230 words of font info for 95 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 59i,16n,75p,831b,297s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 59i,16n,75p,838b,297s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on Proposal.pdf (9 pages).
+Output written on Research Plan.pdf (9 pages).
