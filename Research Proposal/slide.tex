@@ -1,0 +1,199 @@
+\documentclass[12pt]{beamer}
+\usepackage{amsmath}
+\usepackage[utf8]{inputenc}
+\usepackage{apacite}
+\usetheme{Singapore}
+
+\usepackage{soul}
+
+
+	\title{Factor Selection and Factor Strength\\
+A study base on U.S. stock Market}
+	\subtitle{Research Plan Presentation}
+
+		\date{\today}
+		\author[author]{Zhiyuan Jiang\\
+			28710967\\[10mm]{\small Supervisors: Dr. Natalia Bailey \\ \hspace{18mm} Dr. David Frazier}}
+		
+		
+\begin{document}
+	
+\frame[plain]{\titlepage}
+
+%-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------%
+%-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------%
+\section{Introduction and Motivation}
+\begin{frame}{Introduction and Motivation}
+Capital Asset Pricing Model has shaped the way people evaluate the risk and return of assets.
+  \[   r_{it} = c + \beta_0 x_m + \mathbf{\beta_j}^{\prime}\mathbf{x_j} + \varepsilon_{it}  \tag{1}\label{2CAPM} \]
+By adding new factors, we can improve the model's ability of pricing the risk and predict the return.
+ Scholars are always trying to find new factors to add into the $\mathbf{x_j}$  part.
+   
+   Now we have over 500 factors inside our factor zoo, and it is still growing. \cite{Harvey2019}
+\end{frame}
+\begin{frame}[plain]
+	\begin{figure}
+\includegraphics[scale = 0.5]{figure/factor_growth.png}
+\caption{Factor amount growing through the year. }
+	\cite{Harvey2017}
+	\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Introduction and Motivation}
+But some problem exist inside the factor zoo.\\
+
+\begin{itemize}
+\item Not all factors are good or useful
+\begin{itemize}
+\item Predict power drop once published \cite{McLean2016}
+\item Can not been replicated \cite{Hou2018}
+\item Significant because of luck \cite{Harvey2014}
+\end{itemize}
+\item Including weak or useless factors is terrible
+\begin{itemize}
+\item Useless factor in FM first-regression\cite{Fama1973} will yield misleading second regression result \cite{Kan1999}
+\item If the loading is small, regression will report incorrect result \citeA{Kleibergen2009}
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+
+%-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------%
+%-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------%
+	\section{Related Literature}
+	\begin{frame}
+\frametitle{Literature}
+\begin{itemize}
+	\item {\bf Identify factors from the zoo}\\
+	\citeA{Harvey2015}, \citeA{McLean2016}, \citeA{Harvey2017}, \citeA{Barillas2018},\citeA{Pukthuanthong2019}
+	\item {\bf Using machine learning method}\\
+	\citeA{Rapach2013}, \citeA{Feng2019},\citeA{Gu2020}, \citeA{Lettau2020}, \citeA{Freyberger2020}, \citeA{Kozak2020}
+	\end{itemize}
+	\end{frame}
+	
+	
+	
+	
+	
+%	\begin{frame}
+%\frametitle{Identify Useful Factors}
+%There are a bunch of literatures and researches aiming identify useful factors.
+%\begin{enumerate}
+%\item \citeA{Harvey2015} exams over 300 factors, and suggest to arise the p-value threshold to 3 to eliminate some new factors turns to be significant purely by luck.
+%\item \citeA{Harvey2017} introduce a bootstrap method 
+%\item \citeA{Barillas2018} use Bayes procedure to find useful factor
+%\item \citeA{Pukthuanthong2019} defined a protocol to identify priced factor.
+%\end{enumerate}
+	%\end{frame}
+
+%\begin{frame}
+%	\frametitle{Identify Useful Factor}
+%A recent studies shows that using Machine Learning methods in asset pricing can bring huge benefits \cite{Gu2020}\\
+%\begin{itemize}
+%\item Better predict accuracy
+%\item Improved efficiency
+%\end{itemize}
+%\end{frame}
+
+%\begin{frame}
+%	\frametitle{Identify Useful Factor}
+%Some researchers already started using Machine Learning algorithms, especially Lasso, a factor selection algorithm.
+%\begin{enumerate}
+%\item \citeA{Rapach2013} using Lasso to find factor for predicting global stock market return.
+%\item \citeA{Feng2019} used a improved double-selected method in factor selection
+%\item Because Lasso has some limitation, \citeA{Huang2010} implied a group lasso method, trying to overcome such shortcoming.
+%\end{enumerate}
+%\end{frame}
+
+%-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------%
+%-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------%
+
+
+	\section{Methodology}
+
+\begin{frame}
+\frametitle{Methodology}
+This project facing two challenges:
+\begin{enumerate}
+\item	 A Big Zoo:  Too many candidates\\
+Curse of Dimensionality 
+\item 	Correlation among factors \\
+Traditional factor selection algorithm can not handle this
+\end{enumerate}\pause
+Divided this project into two parts:
+\begin{enumerate}
+\item Calculate the factor strength, only focus on factor with certain strength
+\item Use Elastic Net model, overcome the correlation problem 
+\end{enumerate}
+\end{frame}
+	
+\begin{frame}
+\frametitle{Factor Strength}
+Elaborated by  \citeA{Pesaran2019}, \citeA{Bailey2020}
+
+Factor strength represents the factor's pervasiveness.
+
+The stronger a factor is, the more assets it can price, i.e. has loading significantly \alert{different from zero.}
+
+Recall the CAPM model introduced at the beginning, but ignore the market factor.
+
+If a factor $x_j$ has strength $\alpha_j$, we let this factor regress with N different assets.
+\begin{align*}
+\beta_j \neq 0, j &= 1, 2, 3, \cdots, [N^{\alpha_j}]\\
+\beta_j = 0, j &= [N^{\alpha_j} ]+1 ,[N^{\alpha_j}]  +2, [N^{\alpha_j}] +3, \cdots, N
+\end{align*}
+\end{frame}
+
+\begin{frame}
+\frametitle{Elastic Net}
+Introduce by \citeA{Zou2005}, is a improved method to select factor.
+
+Recall OLS estimation, for the factor model (\ref{2CAPM}), OLS will estimates the factor loading by minimise the residual sum of square:
+\[  \hat{\beta}_j  = argmin\{\sum_{i = 1}^{N}(r_{it} - \mathbf{\beta_j }\mathbf{x_j})^2\} \]
+
+For Elastic net, it add two penalty terms into the OLS regression:
+	\[   \hat{\beta}_j  = argmin\{\sum_{i = 1}^{N}(r_{it} - \mathbf{\beta_j }\mathbf{x_j})^2 + \lambda_1\mathbf{\beta_j}^2  + \lambda_2|\mathbf{\beta_j}|  \label{ENcriterion} \tag{2}   \}    \]
+	
+	Advantage of Elastic Net: it can select factors from a group of correlated candidates.
+\end{frame}
+
+
+%-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------%
+%-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------%
+
+
+\section{Future Plan}
+
+
+\begin{frame}
+\frametitle{Future Plan}
+For the next step, we will start the empirical analyses. 
+
+We will collect and exam the data for the empirical research. 
+
+Assets: {\bf Companies from Standard \& Poor (S\&P) 500 index}\\
+We will use those securities return as the left hand side part of the CAPM.
+
+Factor: {\bf Factors from \citeA{Harvey2019}'s factor list}\\
+Using factor strength as the criterion to trim first, and then applied the elastic net method.
+
+\end{frame}
+%-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------%
+%-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------%
+\begin{frame}
+	\centering	
+\huge{ Thanks for listening\\}
+\huge{ Question or Comment}
+\end{frame}
+
+
+%-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------%
+%-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------%
+\begin{frame}[allowframebreaks]
+	\frametitle{Bibliography}
+	\bibliographystyle{apacite}
+	\bibliography{proposal.bib}
+\end{frame}
+
+\end{document}

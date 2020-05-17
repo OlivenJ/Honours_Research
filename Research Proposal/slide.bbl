@@ -1,0 +1,594 @@
+\begin{thebibliography}{}
+
+\bibitem [\protect \citeauthoryear {%
+Bailey%
+, Kapetanios%
+\BCBL {}\ \BBA {} Pesaran%
+}{%
+Bailey%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2020}}%
+}]{%
+Bailey2020}
+\APACinsertmetastar {%
+Bailey2020}%
+\begin{APACrefauthors}%
+Bailey, N.%
+, Kapetanios, G.%
+\BCBL {}\ \BBA {} Pesaran, M\BPBI H.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2020}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Measurement of Factor Strength: Theory and Practice}
+  {Measurement of factor strength: Theory and practice}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{CESifo Working Paper}{}{}{}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Barillas%
+\ \BBA {} Shanken%
+}{%
+Barillas%
+\ \BBA {} Shanken%
+}{%
+{\protect \APACyear {2018}}%
+}]{%
+Barillas2018}
+\APACinsertmetastar {%
+Barillas2018}%
+\begin{APACrefauthors}%
+Barillas, F.%
+\BCBT {}\ \BBA {} Shanken, J.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2018}{4}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Comparing Asset Pricing Models} {Comparing asset pricing
+  models}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{The Journal of Finance}{73}{}{715-754}.
+\newblock
+\begin{APACrefURL} \url{http://doi.wiley.com/10.1111/jofi.12607}
+  \end{APACrefURL}
+\newblock
+\begin{APACrefDOI} \doi{10.1111/jofi.12607} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Fama%
+\ \BBA {} MacBeth%
+}{%
+Fama%
+\ \BBA {} MacBeth%
+}{%
+{\protect \APACyear {1973}}%
+}]{%
+Fama1973}
+\APACinsertmetastar {%
+Fama1973}%
+\begin{APACrefauthors}%
+Fama, E\BPBI F.%
+\BCBT {}\ \BBA {} MacBeth, J\BPBI D.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{1973}{5}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Risk, Return, and Equilibrium: Empirical Tests} {Risk,
+  return, and equilibrium: Empirical tests}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Journal of Political Economy}{81}{}{607-636}.
+\newblock
+\begin{APACrefDOI} \doi{10.1086/260061} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Feng%
+, Giglio%
+\BCBL {}\ \BBA {} Xiu%
+}{%
+Feng%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2019}}%
+}]{%
+Feng2019}
+\APACinsertmetastar {%
+Feng2019}%
+\begin{APACrefauthors}%
+Feng, G.%
+, Giglio, S.%
+\BCBL {}\ \BBA {} Xiu, D.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2019}{1}{}.
+\newblock
+\APACrefbtitle {Taming the Factor Zoo: A Test of New Factors.} {Taming the
+  factor zoo: A test of new factors.}
+\newblock
+\begin{APACrefURL} \url{http://www.nber.org/papers/w25481.pdf} \end{APACrefURL}
+\newblock
+\begin{APACrefDOI} \doi{10.3386/w25481} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Freyberger%
+, Neuhierl%
+\BCBL {}\ \BBA {} Weber%
+}{%
+Freyberger%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2020}}%
+}]{%
+Freyberger2020}
+\APACinsertmetastar {%
+Freyberger2020}%
+\begin{APACrefauthors}%
+Freyberger, J.%
+, Neuhierl, A.%
+\BCBL {}\ \BBA {} Weber, M.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2020}{4}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Dissecting Characteristics Nonparametrically}
+  {Dissecting characteristics nonparametrically}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{The Review of Financial Studies}{33}{}{2326-2377}.
+\newblock
+\begin{APACrefURL} \url{https://doi.org/10.1093/rfs/hhz123} \end{APACrefURL}
+\newblock
+\begin{APACrefDOI} \doi{10.1093/rfs/hhz123} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Gu%
+, Kelly%
+\BCBL {}\ \BBA {} Xiu%
+}{%
+Gu%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2020}}%
+}]{%
+Gu2020}
+\APACinsertmetastar {%
+Gu2020}%
+\begin{APACrefauthors}%
+Gu, S.%
+, Kelly, B.%
+\BCBL {}\ \BBA {} Xiu, D.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2020}{2}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Empirical Asset Pricing via Machine Learning} {Empirical
+  asset pricing via machine learning}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{The Review of Financial Studies}{33}{}{2223-2273}.
+\newblock
+\begin{APACrefURL} \url{https://doi.org/10.1093/rfs/hhaa009} \end{APACrefURL}
+\newblock
+\begin{APACrefDOI} \doi{10.1093/rfs/hhaa009} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Harvey%
+\ \BBA {} Liu%
+}{%
+Harvey%
+\ \BBA {} Liu%
+}{%
+{\protect \APACyear {2014}}%
+}]{%
+Harvey2014}
+\APACinsertmetastar {%
+Harvey2014}%
+\begin{APACrefauthors}%
+Harvey, C\BPBI R.%
+\BCBT {}\ \BBA {} Liu, Y.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2014}{11}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Lucky Factors} {Lucky factors}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{SSRN Electronic Journal}{}{}{}.
+\newblock
+\begin{APACrefDOI} \doi{10.2139/ssrn.2528780} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Harvey%
+\ \BBA {} Liu%
+}{%
+Harvey%
+\ \BBA {} Liu%
+}{%
+{\protect \APACyear {2017}}%
+}]{%
+Harvey2017}
+\APACinsertmetastar {%
+Harvey2017}%
+\begin{APACrefauthors}%
+Harvey, C\BPBI R.%
+\BCBT {}\ \BBA {} Liu, Y.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2017}{12}{}.
+\newblock
+{\BBOQ}\APACrefatitle {False (and Missed) Discoveries in Financial Economics}
+  {False (and missed) discoveries in financial economics}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{SSRN Electronic Journal}{}{}{}.
+\newblock
+\begin{APACrefDOI} \doi{10.2139/ssrn.3073799} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Harvey%
+\ \BBA {} Liu%
+}{%
+Harvey%
+\ \BBA {} Liu%
+}{%
+{\protect \APACyear {2019}}%
+}]{%
+Harvey2019}
+\APACinsertmetastar {%
+Harvey2019}%
+\begin{APACrefauthors}%
+Harvey, C\BPBI R.%
+\BCBT {}\ \BBA {} Liu, Y.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2019}{3}{}.
+\newblock
+{\BBOQ}\APACrefatitle {A Census of the Factor Zoo} {A census of the factor
+  zoo}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{SSRN Electronic Journal}{}{}{}.
+\newblock
+\begin{APACrefDOI} \doi{10.2139/ssrn.3341728} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Harvey%
+, Liu%
+\BCBL {}\ \BBA {} Zhu%
+}{%
+Harvey%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2015}}%
+}]{%
+Harvey2015}
+\APACinsertmetastar {%
+Harvey2015}%
+\begin{APACrefauthors}%
+Harvey, C\BPBI R.%
+, Liu, Y.%
+\BCBL {}\ \BBA {} Zhu, H.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2015}{10}{}.
+\newblock
+{\BBOQ}\APACrefatitle {… and the Cross-Section of Expected Returns} {… and
+  the cross-section of expected returns}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{The Review of Financial Studies}{29}{}{5-68}.
+\newblock
+\begin{APACrefURL} \url{https://doi.org/10.1093/rfs/hhv059} \end{APACrefURL}
+\newblock
+\begin{APACrefDOI} \doi{10.1093/rfs/hhv059} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Hou%
+, Xue%
+\BCBL {}\ \BBA {} Zhang%
+}{%
+Hou%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2018}}%
+}]{%
+Hou2018}
+\APACinsertmetastar {%
+Hou2018}%
+\begin{APACrefauthors}%
+Hou, K.%
+, Xue, C.%
+\BCBL {}\ \BBA {} Zhang, L.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2018}{12}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Replicating Anomalies} {Replicating anomalies}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{The Review of Financial Studies}{33}{}{2019-2133}.
+\newblock
+\begin{APACrefURL} \url{https://doi.org/10.1093/rfs/hhy131} \end{APACrefURL}
+\newblock
+\begin{APACrefDOI} \doi{10.1093/rfs/hhy131} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Kan%
+\ \BBA {} Zhang%
+}{%
+Kan%
+\ \BBA {} Zhang%
+}{%
+{\protect \APACyear {1999}}%
+}]{%
+Kan1999}
+\APACinsertmetastar {%
+Kan1999}%
+\begin{APACrefauthors}%
+Kan, R.%
+\BCBT {}\ \BBA {} Zhang, C.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{1999}{2}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Two-Pass Tests of Asset Pricing Models with Useless
+  Factors} {Two-pass tests of asset pricing models with useless
+  factors}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{The Journal of Finance}{54}{}{203-235}.
+\newblock
+\begin{APACrefURL} \url{http://doi.wiley.com/10.1111/0022-1082.00102}
+  \end{APACrefURL}
+\newblock
+\begin{APACrefDOI} \doi{10.1111/0022-1082.00102} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Kleibergen%
+}{%
+Kleibergen%
+}{%
+{\protect \APACyear {2009}}%
+}]{%
+Kleibergen2009}
+\APACinsertmetastar {%
+Kleibergen2009}%
+\begin{APACrefauthors}%
+Kleibergen, F.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2009}{4}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Tests of risk premia in linear factor models} {Tests of
+  risk premia in linear factor models}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Journal of Econometrics}{149}{}{149-173}.
+\newblock
+\begin{APACrefDOI} \doi{10.1016/j.jeconom.2009.01.013} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Kozak%
+, Nagel%
+\BCBL {}\ \BBA {} Santosh%
+}{%
+Kozak%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2020}}%
+}]{%
+Kozak2020}
+\APACinsertmetastar {%
+Kozak2020}%
+\begin{APACrefauthors}%
+Kozak, S.%
+, Nagel, S.%
+\BCBL {}\ \BBA {} Santosh, S.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2020}{2}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Shrinking the cross-section} {Shrinking the
+  cross-section}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Journal of Financial Economics}{135}{}{271-292}.
+\newblock
+\begin{APACrefDOI} \doi{10.1016/j.jfineco.2019.06.008} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Lettau%
+\ \BBA {} Pelger%
+}{%
+Lettau%
+\ \BBA {} Pelger%
+}{%
+{\protect \APACyear {2020}}%
+}]{%
+Lettau2020}
+\APACinsertmetastar {%
+Lettau2020}%
+\begin{APACrefauthors}%
+Lettau, M.%
+\BCBT {}\ \BBA {} Pelger, M.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2020}{2}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Estimating latent asset-pricing factors} {Estimating
+  latent asset-pricing factors}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Journal of Econometrics}{}{}{}.
+\newblock
+\begin{APACrefDOI} \doi{10.1016/j.jeconom.2019.08.012} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+McLean%
+\ \BBA {} Pontiff%
+}{%
+McLean%
+\ \BBA {} Pontiff%
+}{%
+{\protect \APACyear {2016}}%
+}]{%
+McLean2016}
+\APACinsertmetastar {%
+McLean2016}%
+\begin{APACrefauthors}%
+McLean, R\BPBI D.%
+\BCBT {}\ \BBA {} Pontiff, J.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2016}{2}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Does Academic Research Destroy Stock Return
+  Predictability?} {Does academic research destroy stock return
+  predictability?}{\BBCQ}
+\newblock
+\APACjournalVolNumPages{The Journal of Finance}{71}{}{5-32}.
+\newblock
+\begin{APACrefURL} \url{http://doi.wiley.com/10.1111/jofi.12365}
+  \end{APACrefURL}
+\newblock
+\begin{APACrefDOI} \doi{10.1111/jofi.12365} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Pesaran%
+\ \BBA {} Smith%
+}{%
+Pesaran%
+\ \BBA {} Smith%
+}{%
+{\protect \APACyear {2019}}%
+}]{%
+Pesaran2019}
+\APACinsertmetastar {%
+Pesaran2019}%
+\begin{APACrefauthors}%
+Pesaran, M\BPBI H.%
+\BCBT {}\ \BBA {} Smith, R\BPBI P.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2019}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {The Role of Factor Strength and Pricing Errors for
+  Estimation and Inference in Asset Pricing Models} {The role of factor
+  strength and pricing errors for estimation and inference in asset pricing
+  models}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{CESifo Working Paper Series}{}{}{}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Pukthuanthong%
+, Roll%
+\BCBL {}\ \BBA {} Subrahmanyam%
+}{%
+Pukthuanthong%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2019}}%
+}]{%
+Pukthuanthong2019}
+\APACinsertmetastar {%
+Pukthuanthong2019}%
+\begin{APACrefauthors}%
+Pukthuanthong, K.%
+, Roll, R.%
+\BCBL {}\ \BBA {} Subrahmanyam, A.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2019}{8}{}.
+\newblock
+{\BBOQ}\APACrefatitle {A protocol for factor identification} {A protocol for
+  factor identification}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Review of Financial Studies}{32}{}{1573-1607}.
+\newblock
+\begin{APACrefURL} \url{https://doi.org/10.1093/rfs/hhy093} \end{APACrefURL}
+\newblock
+\begin{APACrefDOI} \doi{10.1093/rfs/hhy093} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Rapach%
+, Strauss%
+\BCBL {}\ \BBA {} Zhou%
+}{%
+Rapach%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2013}}%
+}]{%
+Rapach2013}
+\APACinsertmetastar {%
+Rapach2013}%
+\begin{APACrefauthors}%
+Rapach, D\BPBI E.%
+, Strauss, J\BPBI K.%
+\BCBL {}\ \BBA {} Zhou, G.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2013}{8}{}.
+\newblock
+{\BBOQ}\APACrefatitle {International Stock Return Predictability: What Is the
+  Role of the United States?} {International stock return predictability: What
+  is the role of the united states?}{\BBCQ}
+\newblock
+\APACjournalVolNumPages{The Journal of Finance}{68}{}{1633-1662}.
+\newblock
+\begin{APACrefURL} \url{http://doi.wiley.com/10.1111/jofi.12041}
+  \end{APACrefURL}
+\newblock
+\begin{APACrefDOI} \doi{10.1111/jofi.12041} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Zou%
+\ \BBA {} Hastie%
+}{%
+Zou%
+\ \BBA {} Hastie%
+}{%
+{\protect \APACyear {2005}}%
+}]{%
+Zou2005}
+\APACinsertmetastar {%
+Zou2005}%
+\begin{APACrefauthors}%
+Zou, H.%
+\BCBT {}\ \BBA {} Hastie, T.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2005}{4}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Regularization and variable selection via the elastic
+  net} {Regularization and variable selection via the elastic net}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Journal of the Royal Statistical Society: Series B
+  (Statistical Methodology)}{67}{}{301-320}.
+\newblock
+\begin{APACrefURL} \url{http://doi.wiley.com/10.1111/j.1467-9868.2005.00503.x}
+  \end{APACrefURL}
+\newblock
+\begin{APACrefDOI} \doi{10.1111/j.1467-9868.2005.00503.x} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\end{thebibliography}
