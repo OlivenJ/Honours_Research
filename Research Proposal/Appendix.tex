@@ -17,6 +17,57 @@
 %
 
 %\begin{document}
+
+		\section{Monte Carlo Design}\label{MC}
+	In this section, I will introduce the baseline design setting of the Monte Carlo Simulation and provides a preliminary result of the simulation.
+	
+		\subsection{Monte Carlo Design}
+	Before start using the real data, we want to study the property of $\alpha$ by running Monte Carlo simulation and in this section, I will introduce the basic simulation design.
+	
+	Consider the following model with stochastic error:
+	
+	\[  r_{it} = f_1(\bar{r_{t}} - r_f) + f_2( \theta_{i}x_{t}) +\epsilon_{it} \tag{2}\label{baselineequation} \]
+	
+	In this Monte Carlo simulation, we consider a dataset has $i = 1, 2,\dots, n$ different assets, with $t= 1, 2,\dots, T$ different observations. 
+	$j = 1, 2, \dots, k$ different factors and one market factors are included in the simulation. 
+	
+	
+	$f_1(\cdot)$ and $f_2(\cdot)$ are two different functions represent the unknown mechanism of market factor and other factors in pricing asset risk.
+	$(\bar{r_{t}}- r_f) $ is the market return, calculated from market or index return $\bar{r_{t}}$ minus risk free return $r_f$. 
+	$r_{it}$ is the stock return, $\theta_{jt}$ denotes factors other than market factors and $\beta_{ij}$is the corresponding factor loading. 
+	$\epsilon_{it}$ is random error with structure can be defined in different designs.
+	Notice that the $\beta_{ij}$ will be influenced by each factor's strength $\alpha_j$, where we have $\alpha$ as defined in section $\ref{strength}$. 
+	And for each factor, we assume they follow a multinomial distribution with mean zero and a $k\times k$ variance-covariance matrix $\Sigma$. 
+	The diagonal of matrix $\Sigma$ indicates the variance of each factor, and the rest represent the correlation among all $k$ factors.
+	In this model, we can control several parts to investigates different scenarios of the simulation:
+	\subsection{Baseline Design}\label{base}
+	Follow the model (\ref{baselineequation}), we assume both $f_1(a)$ and $f_2(a)$ are linear function:
+	\begin{align*}
+	f_1(a ) &= c_{i} +\beta_{} a\\
+	f_2(a) &=a
+	\end{align*}
+	Therefore, the model with single factor can be write as:
+	\[   r_{it} = c_i +   \theta_{i}x_{t} +\epsilon_{it}   \]
+	
+	The constant$c_i$ is generated from a uniform distribution $\mathnormal{U}[-0.5, 0.5]$.
+	$\theta_{i}$ is the factor loading, and $x_t$ is factor with strength $\alpha_{x}$.
+	To generate factors loading, we employed a two steps strategy.
+	First we generate a whole factor loadings vector $\mathbf{\theta_i} = (\theta_{i1}, \theta_{i2} \cdots, \theta_{in})$,
+	All elements of the vector follows $\mathnormal{IIDU}(\mu_{\theta} -0.2, \mu_{\theta} + 0.2)$. 
+	The $\mu_{\theta}$ has been equalled to 0.71 to ensure all values apart from zero. 
+	After generating the vector, we randomly selected $[n^{\alpha_{x}}]$ elements from $\mathbf{\theta_i}$ to keep their value and set the other elements to zero. 
+	This step ensures the loading reflects the strength of each factor. 
+	For the stochastic error term, in this baseline design, we assume it follows a Standard Gaussian distribution, but we can easily extend it into a more complex form.
+	
+	Follow the same idea, we also construct a two factor model:
+	\[   r_{it} = c_i + \lambda x_m  + \theta_{i}x_{t} +\epsilon_{it}   \]
+	Here the $x_m$ is the market factor which assumably  has strength $\alpha_{m} = 1$. 
+	$\mathbf{\lambda}$ is the market factor loading as a vector with all elements different from zero. 
+	
+	For each of the those different models, we consider the $T = \{120, 240, 360\}$, $n =\{100, 300, 500\} $.
+	The market factor will have strength $\alpha_m = 1$ all the time, and the strength of the other factor in two factor model will be $\alpha_{x} = \{0.5, 0.7, 0.9,1\}$. For every setting, we will replicate 500 times independently, all the constant $c_i$ and loading $\theta_i$ will be re-generated for each replication.
+\newpage
+
 	\section{Simulation Result Table}\label{simulationtable}
 \begin{table}[!hbt]
 	\caption{Simulation result of single factor model}
