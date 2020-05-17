@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019) (preloaded format=xelatex 2020.2.23)  12 MAY 2020 13:45
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019) (preloaded format=xelatex 2020.2.23)  17 MAY 2020 23:27
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -711,28 +711,28 @@ Package fontspec Info: Font family 'TimesNewRoman(0)' created for font 'Times
 (./Research Plan.aux)
 \openout1 = `"Research Plan.aux"'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 32.
-LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 3
-2.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 26.
+LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 2
+6.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: xetex
@@ -776,58 +776,175 @@ File: english.apc 2013/07/21 v6.03 apacite language file
 LaTeX Info: Redefining \BPBI on input line 129.
 LaTeX Info: Redefining \BHBI on input line 130.
 )
+(./titlepage.tex [1
+
+]) (./Research Plan.toc
 LaTeX Font Info:    Trying to load font information for OT1+ztmcm on input line
- 33.
+ 4.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/psnfss/ot1ztmcm.fd
 File: ot1ztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OT1/ztmcm.
 )
 LaTeX Font Info:    Trying to load font information for OML+ztmcm on input line
- 33.
+ 4.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/psnfss/omlztmcm.fd
 File: omlztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ztmcm.
 )
 LaTeX Font Info:    Trying to load font information for OMS+ztmcm on input line
- 33.
+ 4.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/psnfss/omsztmcm.fd
 File: omsztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMS/ztmcm.
 )
 LaTeX Font Info:    Trying to load font information for OMX+ztmcm on input line
- 33.
+ 4.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/psnfss/omxztmcm.fd
 File: omxztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMX/ztmcm.
 )
-LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 3
-3.
+LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 4
+.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 33.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 33.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 33.
- [1
-
-]
-(./Research Plan.toc
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 3.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 4.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 3.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 4.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 3.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 4.
 )
 \tf@toc=\write6
 \openout6 = `"Research Plan.toc"'.
 
- [2] [3] [4]
-Overfull \hbox (2.53624pt too wide) in paragraph at lines 132--134
+ [1] [2]
+[3] [4] [5] [6] [7] (./Research Plan.bbl
+Underfull \hbox (badness 10000) in paragraph at lines 156--173
+[]\TU/TimesNewRoman(0)/m/n/12 Carhart, M. M.  (1997, 3).  On persistence in mut
+ual fund perfor-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 156--173
+\TU/TimesNewRoman(0)/m/n/12 mance.  \TU/TimesNewRoman(0)/m/it/12 The Journal of
+ Finance\TU/TimesNewRoman(0)/m/n/12 , \TU/TimesNewRoman(0)/m/it/12 52\TU/TimesN
+ewRoman(0)/m/n/12 , 57-82.  Retrieved from
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 235--253
+[]\TU/TimesNewRoman(0)/m/n/12 Fama, E. F., & French, K. R.  (1992, 6).  The cro
+ss-section of expected
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 235--253
+\TU/TimesNewRoman(0)/m/n/12 stock returns.  \TU/TimesNewRoman(0)/m/it/12 The Jo
+urnal of Finance\TU/TimesNewRoman(0)/m/n/12 , \TU/TimesNewRoman(0)/m/it/12 47\T
+U/TimesNewRoman(0)/m/n/12 , 427-465.  Retrieved from
+ []
+
+[8]
+Underfull \hbox (badness 1824) in paragraph at lines 352--369
+[]\TU/TimesNewRoman(0)/m/n/12 Freyberger, J., Neuhierl, A., & Weber, M.  (2020,
+ 4).  Dissecting characteristics non-
+ []
+
+
+Underfull \hbox (badness 1490) in paragraph at lines 352--369
+\TU/TimesNewRoman(0)/m/n/12 parametrically.  \TU/TimesNewRoman(0)/m/it/12 The R
+eview of Financial Studies\TU/TimesNewRoman(0)/m/n/12 , \TU/TimesNewRoman(0)/m/
+it/12 33\TU/TimesNewRoman(0)/m/n/12 , 2326-2377.  Retrieved from
+ []
+
+
+Underfull \hbox (badness 5460) in paragraph at lines 412--429
+[]\TU/TimesNewRoman(0)/m/n/12 Gu, S., Kelly, B., & Xiu, D.  (2020, 2).  Empiric
+al asset pricing via machine
+ []
+
+
+Underfull \hbox (badness 5388) in paragraph at lines 412--429
+\TU/TimesNewRoman(0)/m/n/12 learning.  \TU/TimesNewRoman(0)/m/it/12 The Review 
+of Financial Studies\TU/TimesNewRoman(0)/m/n/12 , \TU/TimesNewRoman(0)/m/it/12 
+33\TU/TimesNewRoman(0)/m/n/12 , 2223-2273.  Retrieved from
+ []
+
+
+Underfull \hbox (badness 3312) in paragraph at lines 499--516
+[]\TU/TimesNewRoman(0)/m/n/12 Harvey, C. R., Liu, Y., & Zhu, H.  (2015, 10).  …
+ and the cross-section of ex-
+ []
+
+
+Underfull \hbox (badness 4699) in paragraph at lines 499--516
+\TU/TimesNewRoman(0)/m/n/12 pected returns.  \TU/TimesNewRoman(0)/m/it/12 The R
+eview of Financial Studies\TU/TimesNewRoman(0)/m/n/12 , \TU/TimesNewRoman(0)/m/
+it/12 29\TU/TimesNewRoman(0)/m/n/12 , 5-68.  Retrieved from
+ []
+
+
+Underfull \hbox (badness 4954) in paragraph at lines 589--607
+[]\TU/TimesNewRoman(0)/m/n/12 Kan, R., & Zhang, C.  (1999, 2).  Two-pass tests 
+of asset pricing models with
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 589--607
+\TU/TimesNewRoman(0)/m/n/12 useless factors.  \TU/TimesNewRoman(0)/m/it/12 The 
+Journal of Finance\TU/TimesNewRoman(0)/m/n/12 , \TU/TimesNewRoman(0)/m/it/12 54
+\TU/TimesNewRoman(0)/m/n/12 , 203-235.  Retrieved from
+ []
+
+
+Underfull \hbox (badness 1137) in paragraph at lines 621--637
+[]\TU/TimesNewRoman(0)/m/n/12 Kelly, B. T., Pruitt, S., & Su, Y.  (2019, 12).  
+Characteristics are covariances: A uni-
+ []
+
+[9]
+Underfull \hbox (badness 4608) in paragraph at lines 789--807
+[]\TU/TimesNewRoman(0)/m/n/12 McLean, R. D., & Pontiff, J.  (2016, 2).  Does ac
+ademic research destroy stock
+ []
+
+
+Underfull \hbox (badness 5622) in paragraph at lines 789--807
+\TU/TimesNewRoman(0)/m/n/12 return predictability?  \TU/TimesNewRoman(0)/m/it/1
+2 The Journal of Finance\TU/TimesNewRoman(0)/m/n/12 , \TU/TimesNewRoman(0)/m/it
+/12 71\TU/TimesNewRoman(0)/m/n/12 , 5-32.  Retrieved from
+ []
+
+
+Underfull \hbox (badness 2452) in paragraph at lines 849--866
+[]\TU/TimesNewRoman(0)/m/n/12 Pukthuanthong, K., Roll, R., & Subrahmanyam, A.  
+(2019, 8).  A protocol for fac-
+ []
+
+
+Underfull \hbox (badness 2376) in paragraph at lines 849--866
+\TU/TimesNewRoman(0)/m/n/12 tor identification.  \TU/TimesNewRoman(0)/m/it/12 R
+eview of Financial Studies\TU/TimesNewRoman(0)/m/n/12 , \TU/TimesNewRoman(0)/m/
+it/12 32\TU/TimesNewRoman(0)/m/n/12 , 1573-1607.  Retrieved from
+ []
+
+
+Underfull \hbox (badness 2150) in paragraph at lines 911--929
+[]\TU/TimesNewRoman(0)/m/n/12 Sharpe, W. F.  (1964, 9).  Capital asset prices: 
+A theory of market equilibrium un-
+ []
+
+
+Underfull \hbox (badness 2653) in paragraph at lines 911--929
+\TU/TimesNewRoman(0)/m/n/12 der conditions of risk.  \TU/TimesNewRoman(0)/m/it/
+12 The Journal of Finance\TU/TimesNewRoman(0)/m/n/12 , \TU/TimesNewRoman(0)/m/i
+t/12 19\TU/TimesNewRoman(0)/m/n/12 , 425-442.  Retrieved from
+ []
+
+[10]) [11] (./appendix.tex [12]
+Overfull \hbox (2.53624pt too wide) in paragraph at lines 67--69
 []\TU/TimesNewRoman(0)/m/n/12 For each of the those different models, we consid
 er the $\OML/ztmcm/m/it/12 T \OT1/ztmcm/m/n/12 = \OMS/ztmcm/m/n/12 f\OT1/ztmcm/
 m/n/12 120\OML/ztmcm/m/it/12 ; \OT1/ztmcm/m/n/12 240\OML/ztmcm/m/it/12 ; \OT1/z
@@ -837,66 +954,14 @@ m/it/12 ; \OT1/ztmcm/m/n/12 300\OML/ztmcm/m/it/12 ; \OT1/ztmcm/m/n/12 500\OMS/z
 tmcm/m/n/12 g$\TU/TimesNewRoman(0)/m/n/12 .
  []
 
-[5] [6] (./Research Plan.bbl
-Underfull \hbox (badness 10000) in paragraph at lines 41--59
-[]\TU/TimesNewRoman(0)/m/n/12 Fama, E. F., & French, K. R.  (1992, 6).  The cro
-ss-section of expected
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 41--59
-\TU/TimesNewRoman(0)/m/n/12 stock returns.  \TU/TimesNewRoman(0)/m/it/12 The Jo
-urnal of Finance\TU/TimesNewRoman(0)/m/n/12 , \TU/TimesNewRoman(0)/m/it/12 47\T
-U/TimesNewRoman(0)/m/n/12 , 427-465.  Retrieved from
- []
-
-
-Underfull \hbox (badness 3312) in paragraph at lines 155--172
-[]\TU/TimesNewRoman(0)/m/n/12 Harvey, C. R., Liu, Y., & Zhu, H.  (2015, 10).  …
- and the cross-section of ex-
- []
-
-
-Underfull \hbox (badness 4699) in paragraph at lines 155--172
-\TU/TimesNewRoman(0)/m/n/12 pected returns.  \TU/TimesNewRoman(0)/m/it/12 The R
-eview of Financial Studies\TU/TimesNewRoman(0)/m/n/12 , \TU/TimesNewRoman(0)/m/
-it/12 29\TU/TimesNewRoman(0)/m/n/12 , 5-68.  Retrieved from
- []
-
-
-Underfull \hbox (badness 4954) in paragraph at lines 186--204
-[]\TU/TimesNewRoman(0)/m/n/12 Kan, R., & Zhang, C.  (1999, 2).  Two-pass tests 
-of asset pricing models with
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 186--204
-\TU/TimesNewRoman(0)/m/n/12 useless factors.  \TU/TimesNewRoman(0)/m/it/12 The 
-Journal of Finance\TU/TimesNewRoman(0)/m/n/12 , \TU/TimesNewRoman(0)/m/it/12 54
-\TU/TimesNewRoman(0)/m/n/12 , 203-235.  Retrieved from
- []
-
-
-Underfull \hbox (badness 2150) in paragraph at lines 268--286
-[]\TU/TimesNewRoman(0)/m/n/12 Sharpe, W. F.  (1964, 9).  Capital asset prices: 
-A theory of market equilibrium un-
- []
-
-
-Underfull \hbox (badness 2653) in paragraph at lines 268--286
-\TU/TimesNewRoman(0)/m/n/12 der conditions of risk.  \TU/TimesNewRoman(0)/m/it/
-12 The Journal of Finance\TU/TimesNewRoman(0)/m/n/12 , \TU/TimesNewRoman(0)/m/i
-t/12 19\TU/TimesNewRoman(0)/m/n/12 , 425-442.  Retrieved from
- []
-
-) [7] (./appendix.tex) [8] [9] (./Research Plan.aux) ) 
+[13]) [14] [15] (./Research Plan.aux) ) 
 Here is how much of TeX's memory you used:
- 17316 strings out of 479808
- 368159 string characters out of 5893232
- 676209 words of memory out of 5000000
- 34095 multiletter control sequences out of 15000+600000
- 551230 words of font info for 95 fonts, out of 8000000 for 9000
+ 17368 strings out of 479808
+ 368994 string characters out of 5893232
+ 678638 words of memory out of 5000000
+ 34142 multiletter control sequences out of 15000+600000
+ 541900 words of font info for 74 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  59i,16n,75p,838b,297s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on Research Plan.pdf (9 pages).
+Output written on Research Plan.pdf (16 pages).
