@@ -19,45 +19,45 @@ Repeated entry---line 271 of file proposal.bib
  :                    ,
 I'm skipping whatever remains of this entry
 apacite.bst [2013/07/21 v6.03 APA bibliography style]
-You've used 34 entries,
+You've used 31 entries,
             6951 wiz_defined-function locations,
-            1553 strings with 16790 characters,
-and the built_in function-call counts, 61196 in all, are:
-= -- 7421
-> -- 509
-< -- 2770
-+ -- 2717
-- -- 68
-* -- 3964
-:= -- 10921
-add.period$ -- 136
-call.type$ -- 34
-change.case$ -- 636
+            1533 strings with 16422 characters,
+and the built_in function-call counts, 55993 in all, are:
+= -- 6787
+> -- 462
+< -- 2556
++ -- 2502
+- -- 62
+* -- 3632
+:= -- 10038
+add.period$ -- 124
+call.type$ -- 31
+change.case$ -- 579
 chr.to.int$ -- 0
-cite$ -- 68
-duplicate$ -- 1695
-empty$ -- 2644
-format.name$ -- 848
-if$ -- 11782
+cite$ -- 62
+duplicate$ -- 1537
+empty$ -- 2410
+format.name$ -- 768
+if$ -- 10757
 int.to.chr$ -- 0
-int.to.str$ -- 102
+int.to.str$ -- 93
 missing$ -- 0
-newline$ -- 932
-num.names$ -- 272
-pop$ -- 847
+newline$ -- 848
+num.names$ -- 248
+pop$ -- 773
 preamble$ -- 1
-purify$ -- 194
+purify$ -- 176
 quote$ -- 0
-skip$ -- 4239
+skip$ -- 3874
 stack$ -- 0
-substring$ -- 2982
-swap$ -- 1000
-text.length$ -- 126
+substring$ -- 2741
+swap$ -- 907
+text.length$ -- 114
 text.prefix$ -- 0
 top$ -- 1
-type$ -- 2792
+type$ -- 2552
 warning$ -- 0
-while$ -- 353
+while$ -- 321
 width$ -- 0
-write$ -- 1142
+write$ -- 1037
 (There was 1 error message)

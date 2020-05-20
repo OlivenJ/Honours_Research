@@ -36,6 +36,38 @@ Bailey%
 }{%
 Bailey%
 \ \protect \BOthers {.}}{%
+{\protect \APACyear {2016}}%
+}]{%
+Bailey2016}
+\APACinsertmetastar {%
+Bailey2016}%
+\begin{APACrefauthors}%
+Bailey, N.%
+, Kapetanios, G.%
+\BCBL {}\ \BBA {} Pesaran, M\BPBI H.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2016}{9}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Exponent of Cross-Sectional Dependence: Estimation and
+  Inference} {Exponent of cross-sectional dependence: Estimation and
+  inference}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Journal of Applied Econometrics}{31}{}{929-960}.
+\newblock
+\begin{APACrefURL} \url{http://doi.wiley.com/10.1002/jae.2476} \end{APACrefURL}
+\newblock
+\begin{APACrefDOI} \doi{10.1002/jae.2476} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Bailey%
+, Kapetanios%
+\BCBL {}\ \BBA {} Pesaran%
+}{%
+Bailey%
+\ \protect \BOthers {.}}{%
 {\protect \APACyear {2020}}%
 }]{%
 Bailey2020}
@@ -178,9 +210,9 @@ J.~Cochrane%
 }{%
 {\protect \APACyear {2005}}%
 }]{%
-CoChrane2005}
+Cochrane2005}
 \APACinsertmetastar {%
-CoChrane2005}%
+Cochrane2005}%
 \begin{APACrefauthors}%
 Cochrane, J.%
 \end{APACrefauthors}%
@@ -249,34 +281,6 @@ Fama, E\BPBI F.%
   \end{APACrefURL}
 \newblock
 \begin{APACrefDOI} \doi{10.1111/j.1540-6261.1992.tb04398.x} \end{APACrefDOI}
-\PrintBackRefs{\CurrentBib}
-
-\bibitem [\protect \citeauthoryear {%
-Fama%
-\ \BBA {} French%
-}{%
-Fama%
-\ \BBA {} French%
-}{%
-{\protect \APACyear {2015}}%
-}]{%
-Fama2015}
-\APACinsertmetastar {%
-Fama2015}%
-\begin{APACrefauthors}%
-Fama, E\BPBI F.%
-\BCBT {}\ \BBA {} French, K\BPBI R.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{2015}{4}{}.
-\newblock
-{\BBOQ}\APACrefatitle {A five-factor asset pricing model} {A five-factor asset
-  pricing model}.{\BBCQ}
-\newblock
-\APACjournalVolNumPages{Journal of Financial Economics}{116}{}{1-22}.
-\newblock
-\begin{APACrefDOI} \doi{10.1016/j.jfineco.2014.10.010} \end{APACrefDOI}
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
@@ -515,36 +519,6 @@ Harvey, C\BPBI R.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
-Hou%
-, Xue%
-\BCBL {}\ \BBA {} Zhang%
-}{%
-Hou%
-\ \protect \BOthers {.}}{%
-{\protect \APACyear {2018}}%
-}]{%
-Hou2018}
-\APACinsertmetastar {%
-Hou2018}%
-\begin{APACrefauthors}%
-Hou, K.%
-, Xue, C.%
-\BCBL {}\ \BBA {} Zhang, L.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{2018}{12}{}.
-\newblock
-{\BBOQ}\APACrefatitle {Replicating Anomalies} {Replicating anomalies}.{\BBCQ}
-\newblock
-\APACjournalVolNumPages{The Review of Financial Studies}{33}{}{2019-2133}.
-\newblock
-\begin{APACrefURL} \url{https://doi.org/10.1093/rfs/hhy131} \end{APACrefURL}
-\newblock
-\begin{APACrefDOI} \doi{10.1093/rfs/hhy131} \end{APACrefDOI}
-\PrintBackRefs{\CurrentBib}
-
-\bibitem [\protect \citeauthoryear {%
 Huang%
 , Horowitz%
 \BCBL {}\ \BBA {} Wei%
@@ -603,36 +577,6 @@ Kan, R.%
   \end{APACrefURL}
 \newblock
 \begin{APACrefDOI} \doi{10.1111/0022-1082.00102} \end{APACrefDOI}
-\PrintBackRefs{\CurrentBib}
-
-\bibitem [\protect \citeauthoryear {%
-Kelly%
-, Pruitt%
-\BCBL {}\ \BBA {} Su%
-}{%
-Kelly%
-\ \protect \BOthers {.}}{%
-{\protect \APACyear {2019}}%
-}]{%
-Kelly2019}
-\APACinsertmetastar {%
-Kelly2019}%
-\begin{APACrefauthors}%
-Kelly, B\BPBI T.%
-, Pruitt, S.%
-\BCBL {}\ \BBA {} Su, Y.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{2019}{12}{}.
-\newblock
-{\BBOQ}\APACrefatitle {Characteristics are covariances: A unified model of risk
-  and return} {Characteristics are covariances: A unified model of risk and
-  return}.{\BBCQ}
-\newblock
-\APACjournalVolNumPages{Journal of Financial Economics}{134}{}{501-524}.
-\newblock
-\begin{APACrefDOI} \doi{10.1016/j.jfineco.2019.05.001} \end{APACrefDOI}
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
@@ -771,38 +715,6 @@ Lintner, J.%
 \APACjournalVolNumPages{The Review of Economics and Statistics}{47}{}{13-37}.
 \newblock
 \begin{APACrefDOI} \doi{10.2307/1924119} \end{APACrefDOI}
-\PrintBackRefs{\CurrentBib}
-
-\bibitem [\protect \citeauthoryear {%
-McLean%
-\ \BBA {} Pontiff%
-}{%
-McLean%
-\ \BBA {} Pontiff%
-}{%
-{\protect \APACyear {2016}}%
-}]{%
-McLean2016}
-\APACinsertmetastar {%
-McLean2016}%
-\begin{APACrefauthors}%
-McLean, R\BPBI D.%
-\BCBT {}\ \BBA {} Pontiff, J.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{2016}{2}{}.
-\newblock
-{\BBOQ}\APACrefatitle {Does Academic Research Destroy Stock Return
-  Predictability?} {Does academic research destroy stock return
-  predictability?}{\BBCQ}
-\newblock
-\APACjournalVolNumPages{The Journal of Finance}{71}{}{5-32}.
-\newblock
-\begin{APACrefURL} \url{http://doi.wiley.com/10.1111/jofi.12365}
-  \end{APACrefURL}
-\newblock
-\begin{APACrefDOI} \doi{10.1111/jofi.12365} \end{APACrefDOI}
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%

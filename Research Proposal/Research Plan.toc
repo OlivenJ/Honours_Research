@@ -1,12 +1,12 @@
 \contentsline {section}{\numberline {1}Introduction and Motivation}{2}%
 \contentsline {section}{\numberline {2}Related Literature}{3}%
-\contentsline {section}{\numberline {3}Methodology}{5}%
-\contentsline {subsection}{\numberline {3.1}Factor Strength}{5}%
+\contentsline {section}{\numberline {3}Methodology}{4}%
+\contentsline {subsection}{\numberline {3.1}Factor Strength}{4}%
 \contentsline {subsection}{\numberline {3.2}Elastic Net}{6}%
 \contentsline {section}{\numberline {4}Preliminary Result}{6}%
 \contentsline {section}{\numberline {5}Further Plan}{7}%
 \contentsline {section}{References}{8}%
-\contentsline {section}{\numberline {A}Monte Carlo Design}{12}%
-\contentsline {subsection}{\numberline {A.1}Monte Carlo Design}{12}%
-\contentsline {subsection}{\numberline {A.2}Baseline Design}{12}%
-\contentsline {section}{\numberline {B}Simulation Result Table}{14}%
+\contentsline {section}{\numberline {A}Monte Carlo Design}{11}%
+\contentsline {subsection}{\numberline {A.1}Monte Carlo Design}{11}%
+\contentsline {subsection}{\numberline {A.2}Baseline Design}{11}%
+\contentsline {section}{\numberline {B}Simulation Result Table}{13}%
