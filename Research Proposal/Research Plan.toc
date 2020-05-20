@@ -3,7 +3,7 @@
 \contentsline {section}{\numberline {3}Methodology}{4}%
 \contentsline {subsection}{\numberline {3.1}Factor Strength}{4}%
 \contentsline {subsection}{\numberline {3.2}Elastic Net}{6}%
-\contentsline {section}{\numberline {4}Preliminary Result}{6}%
+\contentsline {section}{\numberline {4}Preliminary Result}{7}%
 \contentsline {section}{\numberline {5}Further Plan}{7}%
 \contentsline {section}{References}{8}%
 \contentsline {section}{\numberline {A}Monte Carlo Design}{11}%

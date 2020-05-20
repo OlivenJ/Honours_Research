@@ -181,41 +181,43 @@ Therefore, we can use the factor strength to exclude those factor has only very 
 
 \subsection{Elastic Net}
 
-Elastic net  is a factor selection model introduced by \citeA{Zou2005}.
-The primary feature of the elastic net is that it has two penalty terms, combined the advantages of both ridge regression and lasso regression.
-
-Applying elastic net method to estimate the factor loading $\beta_{ij}$ requires:
-	\[   \hat{\beta}_{ij}  = \argmin_{\beta_{ij}}\{\sum_{i = 1}^{N}[(r_{it} - r_{ft}) - \beta_{ij }f_{jt}]^2 + \lambda_2\sum_{i = 1}^{N}\beta_{ij}^2  + \lambda_1\sum_{i = 1}^{N}|\beta_{ij}|  \label{ENcriterion} \tag{4}   \}    \]
-
-Here, we can see the elastic net estimation contains both a $L^1$ norm from the lasso regression $(|\beta_{ij}|)$ and a $L^2$ norm from the reidge regression $(\beta_{ij}^2)$
-
-
-
-
-
-
+Elastic net  is variable selection model that can be used for factor selection, introduced by \citeA{Zou2005}. Applying elastic net method to estimate the factor loading $\beta_{ij}$ requires:
+	\[   \hat{\beta}_{ij}  = \argmin_{\beta_{ij}}\{\sum_{i = 1}^{n}[(r_{it} - r_{ft}) - \beta_{ij }f_{jt}]^2 + \lambda_2\sum_{i = 1}^{n}\beta_{ij}^2  + \lambda_1\sum_{i = 1}^{n}|\beta_{ij}|  \label{ENcriterion} \tag{4}   \}    \]
+	
+	
+	
+Because the Lasso regression only contains $L_1$ penalty term $\sum_{i = 1}^{n} |\beta_{ij}|$, it will treat every potential variable in the same manner when they are correlated. 
+So when using Lasso regression to select factors, it will either randomly choose factors from highly correlated candidates, or eliminate them as a whole.  
+Elastic Net, however, by containing $L_2$ penalty term $\sum_{i=1}^{n}\beta_{ij}^2$, solves this problem. 
+The $L_2$ penalty term tend to shrink the potential parameters when they does not provide enough explanatory power, but it will not remove redundant factors.
+Therefore, the elastic net method will shrink those parameters associated with the correlated factors and keep them, or drop them if they are redundant at pricing risk. 
+	
 
 
 \section{Preliminary Result}
-In current stage, we have only studied the property of factor strength $\alpha$ under finite sample scenario.
+In current stage, we have studied the property of estimator of factor strength $\alpha$ under finite sample scenario.
 In purpose of this, we have designed and applied a Monte Carlo Simulation.
-The design details and result table can be seen at the Appendix \ref{MC} and Appendix \ref{simulationtable} 
+The design details and result table can be find at the Appendix \ref{MC} and Appendix \ref{simulationtable} 
 
-To measure the goodness of simulation, we calculate the difference between the estimated factor strength and assigned factor strength as bias.
-Base on the bias,, we also calculated the Mean Squared Error (MSE) for each setting.
+To measure the goodness of simulation, we calculate the difference between the estimated factor strength and assigned true factor strength and refer the difference as bias.
+Base on the bias, we also calculated the Mean Squared Error (MSE) for each setting.
 
-From the result, we can easily find out that the error converge to zero when the strength $\alpha$ increases. 
-When the $\alpha _x= 1$, we obtain the unbiased $\hat{\alpha}_{x}$
+The table shows that both the bias and MSE of $\hat{\alpha}$ for different value of the $\alpha$, N and T.
 
-In the other hand, when the $\alpha$ is at a relatively low level, the estimation result will tend to overestimate the strength, and the level of overestimation decrease with the actual strength increase.
+From the table \ref{simutable1} and table \ref{simutable2} we can see that when the $\alpha$ is at a relatively low level, the estimator  tends to overestimate the strength.
+For instance, under the  setting of $T = 120, N = 500$ and $\alpha = 0.5$, the bias is over 0,2, indicates that the estimated strength $\hat{\alpha}$ is around 0.7.
+The overestimation, however decreased with the increase of the $\alpha$.
+Under the same setting as above, if the strength is assigned to 0.9, the bias significantly reduced to only 0.023.
+When the $\alpha$ touched it's upper bound as $\alpha = 1$, the bias disappears.
+Therefore we can conclude that the error converge to zero when the strength $\alpha$ increases. 
+Precision of this estimator improves as $\alpha$ increases toward unity for given T and N increases as well.
 
 			\section{Further Plan}
 For the next step of this project, we will start the empirical analyse. 
 
-We will use companies return from Standard \& Poors (S\&P) 500 index as assets, to exam factors from \citeA{Harvey2017}'s factor list. 
-The time span will be 30 years. 
+Considering the variations of companies included, we will use companies return from Standard \& Poors (S\&P) 500 index as assets, and examine the strength of potential factors (150 in total) to be included in the final factor model specification. 
+The time span will be 10 years, and since we consider monthly return, so the time observation for each stock will be t = 120
 
-For the purpose of evaluation the selecting factors, we are planing using Out of Sample (OOS) method to predict the future return, and therefore exam how good those selected factors are. 
 
 
 \newpage
