@@ -21,43 +21,43 @@ I'm skipping whatever remains of this entry
 apacite.bst [2013/07/21 v6.03 APA bibliography style]
 You've used 20 entries,
             6951 wiz_defined-function locations,
-            1434 strings with 14156 characters,
-and the built_in function-call counts, 35694 in all, are:
-= -- 4341
-> -- 321
-< -- 1536
-+ -- 1506
+            1439 strings with 14366 characters,
+and the built_in function-call counts, 36527 in all, are:
+= -- 4430
+> -- 316
+< -- 1643
++ -- 1599
 - -- 40
-* -- 2283
-:= -- 6197
+* -- 2371
+:= -- 6510
 add.period$ -- 80
 call.type$ -- 20
-change.case$ -- 376
+change.case$ -- 378
 chr.to.int$ -- 0
 cite$ -- 40
-duplicate$ -- 1017
-empty$ -- 1577
-format.name$ -- 542
-if$ -- 6960
+duplicate$ -- 1002
+empty$ -- 1575
+format.name$ -- 534
+if$ -- 7040
 int.to.chr$ -- 0
 int.to.str$ -- 60
 missing$ -- 0
-newline$ -- 565
+newline$ -- 564
 num.names$ -- 160
-pop$ -- 494
+pop$ -- 491
 preamble$ -- 1
-purify$ -- 116
+purify$ -- 118
 quote$ -- 0
-skip$ -- 2532
+skip$ -- 2541
 stack$ -- 0
-substring$ -- 1659
-swap$ -- 596
-text.length$ -- 76
+substring$ -- 1749
+swap$ -- 595
+text.length$ -- 78
 text.prefix$ -- 0
 top$ -- 1
 type$ -- 1672
 warning$ -- 0
-while$ -- 219
+while$ -- 216
 width$ -- 0
-write$ -- 707
+write$ -- 703
 (There was 1 error message)

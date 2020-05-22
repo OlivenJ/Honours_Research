@@ -19,53 +19,55 @@
 %\begin{document}
 
 		\section{Monte Carlo Design}\label{MC}
-	In this section, I will introduce the baseline design setting of the Monte Carlo Simulation and provides a preliminary result of the simulation.
+	In this section, I will introduce the baseline design setting of the Monte Carlo Simulation and  for the preliminary result please see section (\ref{preli})
 	
 		\subsection{Monte Carlo Design}
-	Before start using the real data, we want to study the property of $\alpha$ by running Monte Carlo simulation and in this section, I will introduce the basic simulation design.
+	First, we will discuss the general design.
 	
 	Consider the following model with stochastic error:
 	
-	\[  r_{it} = f_1(\bar{r_{t}} - r_f) + f_2( \theta_{i}x_{t}) +\epsilon_{it} \tag{2}\label{baselineequation} \]
+	\[  r_{it} - r_{ft} = f_1({r_{mt}} - r_f) + f_2( \beta_{ij}f_{jt}) +\epsilon_{it}  \]
 	
 	In this Monte Carlo simulation, we consider a dataset has $i = 1, 2,\dots, n$ different assets, with $t= 1, 2,\dots, T$ different observations. 
-	$j = 1, 2, \dots, k$ different factors and one market factors are included in the simulation. 
-	
+	$j = 1, 2, \dots, k$ different risk factors and one market factors are also included.
 	
 	$f_1(\cdot)$ and $f_2(\cdot)$ are two different functions represent the unknown mechanism of market factor and other factors in pricing asset risk.
-	$(\bar{r_{t}}- r_f) $ is the market return, calculated from market or index return $\bar{r_{t}}$ minus risk free return $r_f$. 
-	$r_{it}$ is the stock return, $\theta_{jt}$ denotes factors other than market factors and $\beta_{ij}$is the corresponding factor loading. 
+	$({r_{mt}}- r_f) $ is the market return, calculated by market  return ${r_{mt}}$ minus risk free return $r_{ft}$. 
+	$r_{it}$ is the stock return, $f_{jt}$ denotes factors other than market factors and $\beta_{ij}$ is the corresponding factor loading. 
 	$\epsilon_{it}$ is random error with structure can be defined in different designs.
-	Notice that the $\beta_{ij}$ will be influenced by each factor's strength $\alpha_j$, where we have $\alpha$ as defined in section $\ref{strength}$. 
+	Notice that the $\beta_{ij}$ will be influenced by each factor's strength $\alpha_j$, where we have $\alpha$ as defined in section ($\ref{strength}$)
 	And for each factor, we assume they follow a multinomial distribution with mean zero and a $k\times k$ variance-covariance matrix $\Sigma$. 
 	The diagonal of matrix $\Sigma$ indicates the variance of each factor, and the rest represent the correlation among all $k$ factors.
 	In this model, we can control several parts to investigates different scenarios of the simulation:
 	\subsection{Baseline Design}\label{base}
-	Follow the model (\ref{baselineequation}), we assume both $f_1(a)$ and $f_2(a)$ are linear function:
+	Follow the general model above, we assume both $f_1(a)$ and $f_2(a)$ are linear function:
 	\begin{align*}
-	f_1(a ) &= c_{i} +\beta_{} a\\
-	f_2(a) &=a
+f_1({r_{mt} - r_f}) &= a_{i} +\beta_{im} (r_{mt} - r_{ft})\\
+	f_2(\beta_{ij}f_{jt}) &=\sum_{j = 1}^{k}\beta_{ij}f_{ij}
 	\end{align*}
 	Therefore, the model with single factor can be write as:
-	\[   r_{it} = c_i +   \theta_{i}x_{t} +\epsilon_{it}   \]
+	\[   r_{it} = a_i + \sum_{j = 1}^{k+1}  \beta_{ij}f_{ij} +\epsilon_{it}   \]
 	
-	The constant$c_i$ is generated from a uniform distribution $\mathnormal{U}[-0.5, 0.5]$.
-	$\theta_{i}$ is the factor loading, and $x_t$ is factor with strength $\alpha_{x}$.
+	The constant $a_i$ is generated from a uniform distribution $\mathnormal{U}[-0.5, 0.5]$.
+	$\beta_{ij}$ is the factor loading, and $f_{ij}$ is factor with strength $\alpha_{j}$. 
+	Notice that here we have included the market factor $r_{mi - r_f}$ as $f_{i1}$, which has strength equals to 1.
 	To generate factors loading, we employed a two steps strategy.
-	First we generate a whole factor loadings vector $\mathbf{\theta_i} = (\theta_{i1}, \theta_{i2} \cdots, \theta_{in})$,
-	All elements of the vector follows $\mathnormal{IIDU}(\mu_{\theta} -0.2, \mu_{\theta} + 0.2)$. 
-	The $\mu_{\theta}$ has been equalled to 0.71 to ensure all values apart from zero. 
-	After generating the vector, we randomly selected $[n^{\alpha_{x}}]$ elements from $\mathbf{\theta_i}$ to keep their value and set the other elements to zero. 
+	First we generate a whole factor loadings vector $\mathbf{\beta_i} = (\beta_{i1}, \beta_{i2} \cdots, \beta_{ik+1})$,
+	All elements of the vector follows $\mathnormal{IIDU}(\mu_{\beta} -0.2, \mu_{\beta} + 0.2)$. 
+	The $\mu_{\beta}$ has been equalled to 0.71 to ensure all values apart from zero. 
+	After generating the vector, we randomly selected $[n^{\alpha_{j}}]$ elements from $\mathbf{\beta_i}$ to keep their value and set the other elements value to zero. 
 	This step ensures the loading reflects the strength of each factor. 
 	For the stochastic error term, in this baseline design, we assume it follows a Standard Gaussian distribution, but we can easily extend it into a more complex form.
 	
 	Follow the same idea, we also construct a two factor model:
-	\[   r_{it} = c_i + \lambda x_m  + \theta_{i}x_{t} +\epsilon_{it}   \]
-	Here the $x_m$ is the market factor which assumably  has strength $\alpha_{m} = 1$. 
-	$\mathbf{\lambda}$ is the market factor loading as a vector with all elements different from zero. 
+	\[   r_{it} = a_i + \beta_{im} (r_{mt} - r_{ft})  + \sum_{j = 1}^k\beta_{ij}f_{jt} +\epsilon_{it}   \]
+	Here the $r_{mt} - r_{ft}$ is the market factor which assumably  has strength $\alpha_{m} = 1$. 
+	${\beta_m}$ is the market factor loading as a vector with all elements different from zero. 
 	
 	For each of the those different models, we consider the $T = \{120, 240, 360\}$, $n =\{100, 300, 500\} $.
-	The market factor will have strength $\alpha_m = 1$ all the time, and the strength of the other factor in two factor model will be $\alpha_{x} = \{0.5, 0.7, 0.9,1\}$. For every setting, we will replicate 500 times independently, all the constant $c_i$ and loading $\theta_i$ will be re-generated for each replication.
+	The market factor will have strength $\alpha_m = 1$ all the time, and the strength of the other factor in two factor model will be $\alpha_{x} = \{0.5, 0.7, 0.9,1\}$. For every setting, we will replicate 500 times independently, all the constant $a_i$ and loading $\beta_i$ will be re-generated for each replication.
+	To exam the goodness of estimation, we calculate the bias between our true underneath factor strength $\alpha$ and the estimated strength $\hat{\alpha}$ as $ bias = |\alpha - \hat{\alpha}|$. 
+	We also use the bias to calculate the Mean Square Error (MSE) $MSE =\frac{1}{n}\sum_{i=1}^{n}(bias_i)^2 $
 \newpage
 
 	\section{Simulation Result Table}\label{simulationtable}
@@ -78,7 +80,7 @@
 		\hline
 		& \multicolumn{6}{c}{Single Factor}                                  \\
 		\hline
-		& \multicolumn{3}{c}{Biass}   \vline    & \multicolumn{3}{c}{MSE}  \\
+		& \multicolumn{3}{c}{Bias}   \vline    & \multicolumn{3}{c}{MSE}  \\
 		\hline 
 		\multicolumn{7}{c}{$\alpha = 0.5$}         \\
 		\hline
@@ -108,6 +110,9 @@
 		\hline 
 		\hline
 	\end{tabular}
+\bigskip\\
+This table shows the result of one risk factor model.
+We simulated scenarios of factor strength equals to 0.5, 0.7, 0.9, and 1 with different time, assets size combination. The replication times is 500
 \end{table}
 
 
@@ -120,9 +125,9 @@
 		\hline
 		& \multicolumn{6}{c}{Two Factor}                                  \\
 		\hline
-		& \multicolumn{3}{c}{Biass}   \vline    & \multicolumn{3}{c}{MSE}  \\
+		& \multicolumn{3}{c}{Bias}   \vline    & \multicolumn{3}{c}{MSE}  \\
 		\hline 
-		\multicolumn{7}{c}{$\alpha_x = 0.5$, $\alpha_m = 1.0$}         \\
+		\multicolumn{7}{c}{$\alpha_j = 0.5$, $\alpha_m = 1.0$}         \\
 		\hline
 		\diagbox{n}{T}       & 120   & 240   & 360                  & 120   & 240   & 360      \\
 		\hline
@@ -130,19 +135,19 @@
 		300                  & 0.253 & 0.253 & 0.253                & 0.042 & 0.064 & 0.065    \\
 		500                  & 0.268 & 0.266 & 0.269                & 0.072 & 0.071 & 0.071    \\
 		\hline
-		\multicolumn{7}{c}{$\alpha_x = 0.7$, $\alpha_m = 1.0$}         \\
+		\multicolumn{7}{c}{$\alpha_j = 0.7$, $\alpha_m = 1.0$}         \\
 		\hline
 		100                  & 0.100 & 0.101 & 0.100                & 0.010 & 0.010 & 0.010    \\
 		300                  & 0.113 & 0.113 & 0.112                & 0.013 & 0.013 & 0.013    \\
 		500                  & 0.118 & 0.118 & 0.119                & 0.014 & 0.014 & 0.014    \\
 		\hline
-		\multicolumn{7}{c}{$\alpha_x = 0.9$, $\alpha_m = 1.0$}         \\
+		\multicolumn{7}{c}{$\alpha_j = 0.9$, $\alpha_m = 1.0$}         \\
 		\hline
 		100                  & 0.024 & 0.023 & 0.024                & 0.001 & 0.001 & 0.001    \\
 		300                  & 0.025 & 0.025 & 0.025                & 0.001 & 0.001 & 0.001    \\
 		500                  & 0.026 & 0.025 & 0.025                & 0.001 & 0.001 & 0.001    \\
 		\hline
-		\multicolumn{7}{c}{$\alpha_ = 1.0$, $\alpha_m = 1.0$}         \\
+		\multicolumn{7}{c}{$\alpha_j = 1.0$, $\alpha_m = 1.0$}         \\
 		\hline
 		100                  & 0.000 & 0.000 & 0.000                & 0.000 & 0.000 & 0.000    \\
 		300                  & 0.000 & 0.000 & 0.000                & 0.000 & 0.000 & 0.000    \\
@@ -150,6 +155,9 @@
 		\hline 
 		\hline
 	\end{tabular}
+\bigskip\\
+This table shows the result of two factor model, with one market factor and one risk factor.
+We simulated scenarios of factor strength equals to 0.5, 0.7, 0.9, and 1 with different time, assets size combination. The replication times is 500
 \end{table}
 
 %\end{document}

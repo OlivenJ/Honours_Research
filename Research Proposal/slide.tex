@@ -2,13 +2,16 @@
 \usepackage{amsmath}
 \usepackage[utf8]{inputenc}
 \usepackage{apacite}
+%\renewcommand\bibliographytypesize{\footnotesize}
 \usetheme{Singapore}
 
+\DeclareMathOperator*{\argmin}{arg\,min}
 \usepackage{soul}
 
 
-	\title{Factor Selection and Factor Strength\\
-A study base on U.S. stock Market}
+	\title{Factor Strength and Factor Selection\\
+		\large
+An Application to U.S. Stock Market }
 	\subtitle{Research Plan Presentation}
 
 		\date{\today}
@@ -24,38 +27,50 @@ A study base on U.S. stock Market}
 %-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------%
 \section{Introduction and Motivation}
 \begin{frame}{Introduction and Motivation}
-Capital Asset Pricing Model has shaped the way people evaluate the risk and return of assets.
-  \[   r_{it} = c + \beta_0 x_m + \mathbf{\beta_j}^{\prime}\mathbf{x_j} + \varepsilon_{it}  \tag{1}\label{2CAPM} \]
-By adding new factors, we can improve the model's ability of pricing the risk and predict the return.
- Scholars are always trying to find new factors to add into the $\mathbf{x_j}$  part.
-   
-   Now we have over 500 factors inside our factor zoo, and it is still growing. \cite{Harvey2019}
+Capital Asset Pricing Model (CAPM) is the benchmark of risk pricing.
+\[r_{it} - r_{ft} = a_i + \beta_{im}(r_{mt} - r_{ft}) + \sum_{j=1}^{k}\beta_{ij}f_{jt} + \varepsilon_{it} \]
+
+New factors are added into the model to enhance risk pricing.
 \end{frame}
+
+
+
+
 \begin{frame}[plain]
 	\begin{figure}
 \includegraphics[scale = 0.5]{figure/factor_growth.png}
 \caption{Factor amount growing through the year. }
-	\cite{Harvey2017}
+	\cite{Harvey2017}\\
 	\end{figure}
 \end{frame}
 
+
+
+\begin{frame}
+	\frametitle{Factor Strength}
+	Factor strength $\alpha \in [0,1]$ is the factor's pervasiveness.\cite{Pesaran2019}
+	
+	
+	
+	Strong factor $\Rightarrow$ price more asset's risk $\Rightarrow$ generate more significantly loadings.
+
+	 Assume we have N different assets.
+%	If a factor $x_j$ has strength $\alpha_j$, we let this factor regress with N different assets.
+	\begin{align*}
+	\beta_j \neq 0, j &= 1, 2, 3, \cdots, [N^{\alpha_j}]\\
+	\beta_j = 0, j &= [N^{\alpha_j} ]+1 ,[N^{\alpha_j}]  +2, [N^{\alpha_j}] +3, \cdots, N
+	\end{align*}
+\end{frame}
 \begin{frame}
 \frametitle{Introduction and Motivation}
-But some problem exist inside the factor zoo.\\
+But some problems exist among all those factors.\\
+
 
 \begin{itemize}
-\item Not all factors are good or useful
-\begin{itemize}
-\item Predict power drop once published \cite{McLean2016}
-\item Can not been replicated \cite{Hou2018}
-\item Significant because of luck \cite{Harvey2014}
+\item Including Factor without correlation with return in FM first-regression\cite{Fama1973} will yield misleading second regression result \cite{Kan1999}
+\item If the factor loading is small, estimated risk premia will be spurious \citeA{Kleibergen2009}
 \end{itemize}
-\item Including weak or useless factors is terrible
-\begin{itemize}
-\item Useless factor in FM first-regression\cite{Fama1973} will yield misleading second regression result \cite{Kan1999}
-\item If the loading is small, regression will report incorrect result \citeA{Kleibergen2009}
-\end{itemize}
-\end{itemize}
+
 \end{frame}
 
 
@@ -65,7 +80,9 @@ But some problem exist inside the factor zoo.\\
 	\begin{frame}
 \frametitle{Literature}
 \begin{itemize}
-	\item {\bf Identify factors from the zoo}\\
+	\item{\bf Consequences of including weak factors}\\
+	\citeA{Kan1999}, \citeA{Kleibergen2009}, \citeA{Kleibergen2015}, \citeA{Gospodinov2017}, \citeA{Anatolyev2018}
+	\item {\bf Identify factors}\\
 	\citeA{Harvey2015}, \citeA{McLean2016}, \citeA{Harvey2017}, \citeA{Barillas2018},\citeA{Pukthuanthong2019}
 	\item {\bf Using machine learning method}\\
 	\citeA{Rapach2013}, \citeA{Feng2019},\citeA{Gu2020}, \citeA{Lettau2020}, \citeA{Freyberger2020}, \citeA{Kozak2020}
@@ -113,49 +130,34 @@ But some problem exist inside the factor zoo.\\
 	\section{Methodology}
 
 \begin{frame}
-\frametitle{Methodology}
-This project facing two challenges:
+\frametitle{Main Problem}
+This project faces two challenges:
 \begin{enumerate}
-\item	 A Big Zoo:  Too many candidates\\
-Curse of Dimensionality 
+\item	 High dimensions of data group\\
+How to identify the significant one. $\Rightarrow$ \alert{use factor strength as criteria.}
 \item 	Correlation among factors \\
-Traditional factor selection algorithm can not handle this
-\end{enumerate}\pause
-Divided this project into two parts:
-\begin{enumerate}
-\item Calculate the factor strength, only focus on factor with certain strength
-\item Use Elastic Net model, overcome the correlation problem 
+Traditional variable selection algorithm (Lasso) can not handle this.
 \end{enumerate}
 \end{frame}
+
+%\begin{frame}
+%\frametitle{Methodology}
+%For each of the problems mentioned above
+%\begin{enumerate}
+%\item Calculate the factor strength, only focus on factor with certain strength
+%\item Use Elastic Net model, overcome the correlation problem 
+%\end{enumerate}
+%\end{frame}
 	
-\begin{frame}
-\frametitle{Factor Strength}
-Elaborated by  \citeA{Pesaran2019}, \citeA{Bailey2020}
-
-Factor strength represents the factor's pervasiveness.
-
-The stronger a factor is, the more assets it can price, i.e. has loading significantly \alert{different from zero.}
-
-Recall the CAPM model introduced at the beginning, but ignore the market factor.
-
-If a factor $x_j$ has strength $\alpha_j$, we let this factor regress with N different assets.
-\begin{align*}
-\beta_j \neq 0, j &= 1, 2, 3, \cdots, [N^{\alpha_j}]\\
-\beta_j = 0, j &= [N^{\alpha_j} ]+1 ,[N^{\alpha_j}]  +2, [N^{\alpha_j}] +3, \cdots, N
-\end{align*}
-\end{frame}
-
 \begin{frame}
 \frametitle{Elastic Net}
 Introduce by \citeA{Zou2005}, is a improved method to select factor.
 
-Recall OLS estimation, for the factor model (\ref{2CAPM}), OLS will estimates the factor loading by minimise the residual sum of square:
-\[  \hat{\beta}_j  = argmin\{\sum_{i = 1}^{N}(r_{it} - \mathbf{\beta_j }\mathbf{x_j})^2\} \]
-
-For Elastic net, it add two penalty terms into the OLS regression:
-	\[   \hat{\beta}_j  = argmin\{\sum_{i = 1}^{N}(r_{it} - \mathbf{\beta_j }\mathbf{x_j})^2 + \lambda_1\mathbf{\beta_j}^2  + \lambda_2|\mathbf{\beta_j}|  \label{ENcriterion} \tag{2}   \}    \]
+	\[   \hat{\beta}_{ij}  = \argmin_{\beta_{ij}}\{\sum_{i = 1}^{n}[(r_{it} - r_{ft}) - \beta_{ij }f_{jt}]^2 + \lambda_2\sum_{i = 1}^{n}\beta_{ij}^2  + \lambda_1\sum_{i = 1}^{n}|\beta_{ij}|     \}    \]
 	
-	Advantage of Elastic Net: it can select factors from a group of correlated candidates.
+	The $L_1$ norm $\sum_{i = 1}^{n}|\beta_{ij}|$ helps select the factor, reduce redundancy.\\
+    The $L_2$ norm $\sum_{i = 1}^{n}\beta_{ij}^2 $ helps handle the correlation.
+
 \end{frame}
 
 
@@ -163,8 +165,19 @@ For Elastic net, it add two penalty terms into the OLS regression:
 %-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------%
 
 
-\section{Future Plan}
+\section{Preliminary and Future Plan}
 
+
+\begin{frame}
+	\frametitle{Preliminary Result}
+Use Monte Carlo simulation to study the property of estimated factor strength.\\
+\begin{itemize}
+\item Overestimates occurs when strength is low $\alpha = 0.5, \hat{\alpha} \approx 0.7$
+\item But the precision improved with strength increase $alpha = 0.7, \hat{\alpha} = 0.8$
+\item When we have the strong factor, we have the unbiased estimator $\alpha = \hat{\alpha} = 1$
+\end{itemize}
+	
+\end{frame}
 
 \begin{frame}
 \frametitle{Future Plan}
@@ -184,7 +197,6 @@ Using factor strength as the criterion to trim first, and then applied the elast
 \begin{frame}
 	\centering	
 \huge{ Thanks for listening\\}
-\huge{ Question or Comment}
 \end{frame}
 
 
@@ -193,7 +205,7 @@ Using factor strength as the criterion to trim first, and then applied the elast
 \begin{frame}[allowframebreaks]
 	\frametitle{Bibliography}
 	\bibliographystyle{apacite}
-	\bibliography{proposal.bib}
+{\footnotesize\bibliography{proposal.bib}}
 \end{frame}
 
 \end{document}

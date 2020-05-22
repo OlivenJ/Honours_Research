@@ -1,5 +1,5 @@
 \beamer@sectionintoc {1}{Introduction and Motivation}{2}{0}{1}
-\beamer@sectionintoc {2}{Related Literature}{5}{0}{2}
-\beamer@sectionintoc {3}{Methodology}{6}{0}{3}
-\beamer@sectionintoc {4}{Future Plan}{10}{0}{4}
+\beamer@sectionintoc {2}{Related Literature}{6}{0}{2}
+\beamer@sectionintoc {3}{Methodology}{7}{0}{3}
+\beamer@sectionintoc {4}{Preliminary and Future Plan}{9}{0}{4}
 \contentsline {section}{References}
