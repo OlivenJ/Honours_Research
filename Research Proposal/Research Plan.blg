@@ -1,4 +1,4 @@
-This is BibTeX, Version 0.99d (TeX Live 2019)
+This is BibTeX, Version 0.99d (TeX Live 2020)
 Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: Research Plan.aux
 The style file: apacite.bst
@@ -19,45 +19,45 @@ Repeated entry---line 271 of file proposal.bib
  :                    ,
 I'm skipping whatever remains of this entry
 apacite.bst [2013/07/21 v6.03 APA bibliography style]
-You've used 32 entries,
+You've used 31 entries,
             6951 wiz_defined-function locations,
-            1542 strings with 16623 characters,
-and the built_in function-call counts, 58181 in all, are:
-= -- 7037
-> -- 485
-< -- 2680
-+ -- 2613
-- -- 64
-* -- 3804
-:= -- 10460
-add.period$ -- 128
-call.type$ -- 32
-change.case$ -- 600
+            1534 strings with 16457 characters,
+and the built_in function-call counts, 56329 in all, are:
+= -- 6813
+> -- 471
+< -- 2588
++ -- 2527
+- -- 62
+* -- 3679
+:= -- 10109
+add.period$ -- 124
+call.type$ -- 31
+change.case$ -- 581
 chr.to.int$ -- 0
-cite$ -- 64
-duplicate$ -- 1585
-empty$ -- 2493
-format.name$ -- 802
-if$ -- 11154
+cite$ -- 62
+duplicate$ -- 1539
+empty$ -- 2418
+format.name$ -- 778
+if$ -- 10805
 int.to.chr$ -- 0
-int.to.str$ -- 96
+int.to.str$ -- 93
 missing$ -- 0
-newline$ -- 883
-num.names$ -- 256
-pop$ -- 774
+newline$ -- 856
+num.names$ -- 248
+pop$ -- 751
 preamble$ -- 1
-purify$ -- 184
+purify$ -- 178
 quote$ -- 0
-skip$ -- 4023
+skip$ -- 3900
 stack$ -- 0
-substring$ -- 2850
-swap$ -- 944
-text.length$ -- 120
+substring$ -- 2757
+swap$ -- 915
+text.length$ -- 116
 text.prefix$ -- 0
 top$ -- 1
-type$ -- 2632
+type$ -- 2552
 warning$ -- 0
-while$ -- 331
+while$ -- 322
 width$ -- 0
-write$ -- 1085
+write$ -- 1052
 (There was 1 error message)

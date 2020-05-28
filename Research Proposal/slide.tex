@@ -30,13 +30,13 @@ An Application to U.S. Stock Market }
 Capital Asset Pricing Model (CAPM) is the benchmark of risk pricing.
 \[r_{it} - r_{ft} = a_i + \beta_{im}(r_{mt} - r_{ft}) + \sum_{j=1}^{k}\beta_{ij}f_{jt} + \varepsilon_{it} \]
 
-\frametitle{explanation}
+\frametitle{Motivation}
 \begin{columns}
 	\begin{column}{0.5\textwidth}
 \begin{itemize}
 \item $r_{it}$: asset's return
 \item $r_{ft}$: risk free return
-\item $a_i$:constant/intercept
+\item $a_i$: constant/intercept
 \item $\beta_{im}$: market factor loading
 \end{itemize}
 	\end{column}
@@ -45,7 +45,7 @@ Capital Asset Pricing Model (CAPM) is the benchmark of risk pricing.
 \begin{itemize}
 \item $r_{mt}$: market return 
 \item$\beta_{ij}$: risk factor loading
-\item $f_{jt}$: risk factor loading
+\item $f_{jt}$: risk factor
 \item $\varepsilon_{it}$: stochastic error
 \end{itemize}
 		\end{center}
@@ -65,7 +65,7 @@ Capital Asset Pricing Model (CAPM) is the benchmark of risk pricing.
 	\begin{figure}
 \includegraphics[scale = 0.5]{figure/factor_growth.png}
 \caption{Factor amount growing through the year. }
-	\cite{Harvey2017}\\
+	\cite{Harvey2019}\\
 	\end{figure}
 \end{frame}
 
@@ -77,15 +77,17 @@ Capital Asset Pricing Model (CAPM) is the benchmark of risk pricing.
 
 	Consistency of risk pricing is dependent on the strength of factor \cite{Pesaran2019}
 	
-	Factor strength is defined in terms of factor loading \cite{Bailey2020} as follow.
+
 
 	Strong factor $\Rightarrow$ price more asset's risk $\Rightarrow$ generate more significantly loadings.
+	
+		Factor strength is defined in terms of factor loading \cite{Bailey2020} as follow.
 
 	 Assume we have N different assets.
 %	If a factor $x_j$ has strength $\alpha_j$, we let this factor regress with N different assets.
 	\begin{align*}
-	|\beta_j| \neq 0, j &= 1, 2, 3, \cdots, [N^{\alpha_j}]\\
-	|\beta_j |= 0, j &= [N^{\alpha_j} ]+1 ,[N^{\alpha_j}]  +2, [N^{\alpha_j}] +3, \cdots, N
+	|\beta_j| &> CV , j = 1, 2, 3, \cdots, [N^{\alpha_j}]\\
+	|\beta_j |&= 0, j = [N^{\alpha_j} ]+1 ,[N^{\alpha_j}]  +2, [N^{\alpha_j}] +3, \cdots, N
 	\end{align*}
 \end{frame}
 \begin{frame}
@@ -210,7 +212,7 @@ Use Monte Carlo simulation to study the property of estimated factor strength.\\
 \end{cases} \]
 \begin{itemize}
 \item Overestimates occurs when strength is low $\alpha = 0.5, \hat{\alpha} \approx 0.7$
-\item But the precision improved with strength increase $alpha = 0.7, \hat{\alpha} = 0.8$
+\item But the precision improved with strength increase $\alpha = 0.7, \hat{\alpha} = 0.8$
 \item When we have the strong factor, we have the unbiased estimator $\alpha = \hat{\alpha} = 1$
 \end{itemize}
 	
@@ -220,7 +222,7 @@ Use Monte Carlo simulation to study the property of estimated factor strength.\\
 \frametitle{Future Plan}
 For the next step, we will start the empirical analyses. 
 
-We will collect and exam the data for the empirical research. 
+We will collect and examine the data for the empirical research. 
 \begin{itemize}
 \item {\bf Assets}:  Companies from Standard \& Poor (S\&P) 500 index\\
 \item {\bf Time period}: 2008-2018, 10 years, monthly return. \\
@@ -229,7 +231,7 @@ We will collect and exam the data for the empirical research.
 %{\bf Assets}:  Companies from Standard \& Poor (S\&P) 500 index\\
 %{\bf Time period}: 2008-2018, 10 years, monthly return. \\
 %{\bf Factor}:  Factors from \citeA{Harvey2019}'s factor list\\
-Using factor strength as the criterion to trim first, and then applied the elastic net method.
+Using factor strength as the criterion to trim first, and then apply the elastic net method.
 \end{frame}
 %-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------%
 %-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------%
