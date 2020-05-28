@@ -1,0 +1,7 @@
+\contentsline {section}{\numberline {1}Introduction and Motivation}{3}%
+\contentsline {section}{\numberline {2}Methodology}{4}%
+\contentsline {subsection}{\numberline {2.1}Factor Strength: Definition and Estimation}{4}%
+\contentsline {section}{\numberline {3}Monte Carlo Simulation}{5}%
+\contentsline {subsection}{\numberline {3.1}General Design}{5}%
+\contentsline {subsection}{\numberline {3.2}Baseline Design}{6}%
+\contentsline {section}{References}{7}%
