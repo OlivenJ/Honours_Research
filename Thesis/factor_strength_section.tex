@@ -1,0 +1,88 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{mathptmx}
+\usepackage{setspace}
+\usepackage{amssymb}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{subfigure}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage[title]{appendix}
+\usepackage{bm}
+\usepackage{tcolorbox}
+\usepackage{apacite}
+\onehalfspacing
+\usepackage{lineno}
+\linenumbers
+\usepackage{diagbox}
+
+\DeclareMathOperator*{\argmin}{arg\,min}
+
+\usepackage{fontspec}
+\setmainfont{Times New Roman}
+\addtolength{\jot}{0.5em}
+\linespread{1.5}
+		
+		\begin{document}
+\section{Factor Strength}\label{strength}
+The concept of factor strength used in this project was introduced by \citeA{Pesaran2019}. 
+In general, the factor strength $\alpha$ represents the pervasiveness of factor's loading.
+
+% Capital Asset Pricing Model (CAPM) is the benchmark for pricing the systematic risk of a portfolio. 
+Consider the following multi-factor models for n different assets and T observations with stochastic error term $\varepsilon_{it}$
+\[   r_{it} - r_{ft} = a_i + \beta_{im}(r_{mt} - r_{ft}) + \sum_{j=1}^{k}\beta_{ij}f_{jt} + \varepsilon_{it} \tag{1}\label{2CAPM} \]
+In the left-hand side, we have $r_{it}$ denotes the return of  security i at time t, where $i = 1, 2,3, \cdots, N$ and $t = 1,2,3, \cdots T$.  
+$r_{ft}$ denotes the risk free rate at time t.
+In the other hand, $a_i$ is the constant term. 
+$r_{mt}$ is the market average return and therefore, $(r_{mt} - r_{ft}) $ is the excess return of the market. 
+Corresponding $\beta_{im}$ is the lading of market excess return or market factor.
+$f_{jt}$ of $j = 1, 2, 3\cdots k$ is potential risk factor under consideration.
+$b_{ij}$ represents the factor loading for each k risk factors.
+
+The factor strength of factor $f_{jt}$ as $\alpha_j$ from \citeA{Pesaran2019}, and \citeA{Bailey2020} is defined as the pervasiveness of a factor.
+
+If we run the OLS regression for equation (\ref{2CAPM}) with only one facto  $f_{jt}$, we will obtain n different factor loading $\hat{\beta}_{it}$. For each of the  factor loading $\hat{\beta}_{ij}$, we can construct a t-test to test does the loading equals to zero. The test statistic will be $t_{jt} = \frac{\hat{\beta}_{ij} - 0}{\hat{\sigma}_{jt}}$ where $\hat{\sigma}_{i}$ is the standard error of $\hat{\beta}_{ij}$.  
+Then we defined $\pi_{nT}$ as the proportion of significant factor's amount to the total factor loadings amount:
+
+\[  \hat{\pi}_{nT} = \frac{\sum_{i=1}^n \hat{\ell}_{i,nT}}{n} \tag{2} \label{pi_function} \]
+
+$\ell_{i,nT}$ is an indicator function as: $\ell_{i,nT} := {\bf1}[|t_{jt}|>c(n)]$. 
+If the t-statistic $t_{jt}$ is greater than the critical value $c_p(n)$,  $\hat{\ell}_{i,nT} = 1$. 
+In other word, we will count one if the factor loading $\hat{\beta}_{ij}$ is significant. 
+$c_p(n)$ represent the critical value of a test with test size $p$. 
+The critical value is calculated by:
+
+\[   c_p(n) = \Phi^{-1}(1 - \frac{p}{2n^\delta})   \tag{3} \label{critical_value_function} \]
+
+Here, $\Phi^{-1}(\cdot)$ is the inverse cumulative distribution function of a standard normal distribution, and $\delta$ is a non-negative value represent the critical value exponent. 
+The traditional method to calculate critical value has not fixed the multiple testing problem. 
+One of the most commonly used adjustment for multiple testing problem is Bonferroni correction. 
+When $n$ as sample size goes to infinity, however, the Bonferroni correction can not yield satisfying results since the $\frac{p}{2n^{\delta}} \to 0$ when $n \to \infty$. 
+Therefore, \citeA{Bailey2016} provides another adjustment with additional exponent $\delta$ to constrain the behaviour of $n$.
+
+After obtain the $\hat{\pi}_{nT}$, we can use the following formula to estimate our strength indicator $\alpha_j$:
+\[ \hat{\alpha} = \begin{cases}
+1+\frac{\ln(\hat{\pi}_{nT})}{\ln n} & \text{if}\; \hat{\pi}_{nT} > 0,\\
+0, & \text{if}\; \hat{\pi}_{nT} = 0.
+\end{cases} \]
+From the estimation, we can find out that $\hat{\alpha} \in [0,1]$
+
+$\hat{\alpha}$ represent the pervasiveness of a factor. 
+Here we denote $[n^{\alpha}]$ , $[\cdot]$ will take the integer part of number inside. 
+For factor $f_{jt}$:
+
+\begin{align*}
+|f_{jt}| &> c_p(n)\quad i = 1, 2,  \dots, [n^{\alpha_j}]\\
+|f_{jt}| &= 0 \quad i = [n^{\alpha_j}] + 1, [n^{\alpha_j}] +2 ,\dots, n
+\end{align*}
+For a factor has strength $\alpha = 1$,  factor loading will be significant for every assets at every time. 
+The more observation the factor can significantly influence, the stronger the factor is, and vice versa.
+Therefore, we can use the factor strength to exclude those factor has only very limited pricing power, in other word, those factor can only generate significant loading on very small portion of assets. 
+
+\newpage
+\bibliographystyle{apacite}
+\bibliography{thesis.bib}
+
+
+		\end{document}
