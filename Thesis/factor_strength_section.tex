@@ -26,59 +26,185 @@
 		
 		\begin{document}
 \section{Factor Strength}\label{strength}
-The concept of factor strength used in this project was introduced by \citeA{Pesaran2019}. 
+The concept of factor strength in this project was introduced by \citeA{Pesaran2019}. 
 In general, the factor strength $\alpha$ represents the pervasiveness of factor's loading.
+	\subsection{Definition}
 
 % Capital Asset Pricing Model (CAPM) is the benchmark for pricing the systematic risk of a portfolio. 
-Consider the following multi-factor models for n different assets and T observations with stochastic error term $\varepsilon_{it}$
-\[   r_{it} - r_{ft} = a_i + \beta_{im}(r_{mt} - r_{ft}) + \sum_{j=1}^{k}\beta_{ij}f_{jt} + \varepsilon_{it} \tag{1}\label{2CAPM} \]
-In the left-hand side, we have $r_{it}$ denotes the return of  security i at time t, where $i = 1, 2,3, \cdots, N$ and $t = 1,2,3, \cdots T$.  
+Consider the following multi-factor model for n different assets and T observations with  k various risk factors.
+
+\[   r_{it} - r_{ft} = a_{it}+ \beta_{im}(r_{mt} - r_{ft}) + \sum_{j=1}^{k}\beta_{ij}f_{jt} + \varepsilon_{it} \tag{1}\label{2CAPM} \]
+In the left-hand side, we have $r_{it}$ denotes the return of  security i at time t, where $i = 1, 2,3, \cdots, n$ and $t = 1,2,3, \cdots T$.  
 $r_{ft}$ denotes the risk free rate at time t.
-In the other hand, $a_i$ is the constant term. 
-$r_{mt}$ is the market average return and therefore, $(r_{mt} - r_{ft}) $ is the excess return of the market. 
-Corresponding $\beta_{im}$ is the lading of market excess return or market factor.
-$f_{jt}$ of $j = 1, 2, 3\cdots k$ is potential risk factor under consideration.
-$b_{ij}$ represents the factor loading for each k risk factors.
+In the other hand, $a_{it}$ is the constant term. 
+$r_{mt}$ is the market average return and therefore, $(r_{mt} - r_{ft}) $ is the excess return of the market, or market factor.
+Corresponding $\beta_{im}$ is the loading of market excess return.
+$f_{jt}$ of $j = 1, 2, 3\cdots k$ is potential risk factor.
+$\varepsilon_{it}$ is the stochastic error term.
 
-The factor strength of factor $f_{jt}$ as $\alpha_j$ from \citeA{Pesaran2019}, and \citeA{Bailey2020} is defined as the pervasiveness of a factor.
+The factor strength$\alpha_j$ of factor $f_{jt}$ as is dependent on how many significant factor loadings it can generate.
+The more statistically non-zero loading a factor can generate, the stronger the factor is.
+When we have n assets, there are $[n^{\alpha}]$ are not zero, $[\cdot]$ denotes the integer number operator, which will take the integer part of number inside. 
+For factor $f_{j}$ with loading $\beta_j$, we assume it should have:
+\begin{align*}
+|\beta_{j}| &> c_p(n)\quad i = 1, 2,  \dots, [n^{\alpha_j}]\\
+|\beta_{j}| &= 0 \quad i = [n^{\alpha_j}] + 1, [n^{\alpha_j}] +2 ,\dots, n
+\end{align*}
+The factor loadings of first $[n^{\alpha_j}]$ terms are all bigger than critical value $c_p(n)$, this indicates that those factors are all significantly different from zero.
+Then the rest $n - [n^{\alpha_j}]$ term are equal to zero, which means the factors can not pricing the risk for those $n - [n^\alpha_j]$ assets.
+For a factor has strength $\alpha = 1$,  factor loading will be significant for every assets at every time. 
+And if we have factor strength $\alpha = 0$, it means that the factor cannot generate any loading different from zero, in other words the factor can not pricing risk of any assets.
 
-If we run the OLS regression for equation (\ref{2CAPM}) with only one facto  $f_{jt}$, we will obtain n different factor loading $\hat{\beta}_{it}$. For each of the  factor loading $\hat{\beta}_{ij}$, we can construct a t-test to test does the loading equals to zero. The test statistic will be $t_{jt} = \frac{\hat{\beta}_{ij} - 0}{\hat{\sigma}_{jt}}$ where $\hat{\sigma}_{i}$ is the standard error of $\hat{\beta}_{ij}$.  
-Then we defined $\pi_{nT}$ as the proportion of significant factor's amount to the total factor loadings amount:
+	\subsection{Estimation}\label{estimation}
+To estimate the $\alpha$, \citeA{Bailey2020} provides a consistent method.
 
-\[  \hat{\pi}_{nT} = \frac{\sum_{i=1}^n \hat{\ell}_{i,nT}}{n} \tag{2} \label{pi_function} \]
+Here we consider a simplified model (\ref{2CAPM}), the CAPM model with only one factor named $f$ with different value $f_t$ at different time. 
+For simplify, we use $x_{it}:= r_{it} - r_{ft}$ to denoted the left hand side of the model (\ref{2CAPM}), the excess return of assets, $\beta_{it}$ is the factor loading of assets i at time t.
+$v_{it}$ is the stochastic error term.
 
-$\ell_{i,nT}$ is an indicator function as: $\ell_{i,nT} := {\bf1}[|t_{jt}|>c(n)]$. 
+\[  x_{it} = a_{it} +  \beta_{it}f_{t} + v_{it} \tag{2} \label{1CAPM}\]
+
+Assume we have n different assets and T observations for each assets: $i = 1, 2, 3, \cdots, n$ and $t = 1,2,3, \cdots T$.
+Running the OLS regression for each $i = 1,2,3\cdots, n$, to obtain:
+\[   x_{it} = \hat{a}_{iT} +  \hat{\beta}_{iT}f_{t} + \hat{v}_{it}  \]
+
+For every factor loading $\hat{\beta}_{iT}$, we can exam their significance by constructing a t-test.
+The t-test statistic will be $t_{iT} = \frac{\hat{\beta}_{iT} - 0}{\hat{\sigma}_{iT}}$.  
+Then the test statistic for the corresponding $\hat{\beta}_i$ will be:
+
+\[t_{i T}=\frac{\left(\mathbf{f}^{\prime} \mathbf{M}_{\tau} \mathbf{f}\right)^{1 / 2} \hat{\gamma}_{i T}}{\hat{\sigma}_{i T}}=\frac{\left(\mathbf{f}^{\prime} \mathbf{M}_{\tau} \mathbf{f}\right)^{-1 / 2}\left(\mathbf{f}^{\prime} \mathbf{M}_{\tau} \mathbf{x}_{i}\right)}{\hat{\sigma}_{i T}}\]
+Here, the $\mathbf{M}_{\tau} = \mathbf{I}_T - T^{-1}\mathbf{\tau}\mathbf{\tau^\prime}$, and the $\mathbf{\tau}$ is a $T\times 1$ vector with every elements equals to 1.
+$\mathbf{f}$ and $\mathbf{x_i}$ are two vectors with: $\mathbf{f} = (f_1, f_2 \cdots, f_T)^{\prime}$   $\mathbf{x_i} = (x_{i1}, x_{i2}, \cdots, x_{iT})$.
+The denominator $\hat{\sigma}_{iT} = \frac{\sum_{i=1}^{T} \hat{v}^2_{it} }{T}$.
+
+With those test statistic, we then defined $\pi_{nT}$ as the proportion of significant factor loading amount to the total factor loadings amount:
+
+\[  \hat{\pi}_{nT} = \frac{\sum_{i=1}^n \hat{\ell}_{i,nT}}{n} \tag{3} \label{pi_function} \]
+
+$\ell_{i,nT}$ is an indicator function as: $\ell_{i,nT} := {\bf1}[|t_{it}|>c(n)]$. 
 If the t-statistic $t_{jt}$ is greater than the critical value $c_p(n)$,  $\hat{\ell}_{i,nT} = 1$. 
 In other word, we will count one if the factor loading $\hat{\beta}_{ij}$ is significant. 
 $c_p(n)$ represent the critical value of a test with test size $p$. 
 The critical value is calculated by:
 
-\[   c_p(n) = \Phi^{-1}(1 - \frac{p}{2n^\delta})   \tag{3} \label{critical_value_function} \]
+\[   c_p(n) = \Phi^{-1}(1 - \frac{p}{2n^\delta})   \tag{4} \label{critical_value_function} \]
 
 Here, $\Phi^{-1}(\cdot)$ is the inverse cumulative distribution function of a standard normal distribution, and $\delta$ is a non-negative value represent the critical value exponent. 
-The traditional method to calculate critical value has not fixed the multiple testing problem. 
-One of the most commonly used adjustment for multiple testing problem is Bonferroni correction. 
-When $n$ as sample size goes to infinity, however, the Bonferroni correction can not yield satisfying results since the $\frac{p}{2n^{\delta}} \to 0$ when $n \to \infty$. 
-Therefore, \citeA{Bailey2016} provides another adjustment with additional exponent $\delta$ to constrain the behaviour of $n$.
+The traditional method to calculate critical value $\Phi^{-1}(1 - \frac{p}{2}) $ does not take multiple-test problem into the consideration.
+Here, by adding the $n^\delta$ term into the denominator, the new critical value has adjusted the multiple-test problem. 
+Therefore, we will use this critical value $c_p(n)$ to compare with the test statistic to justify does the factor loading is significantly different from zero.
+%One of the most commonly used adjustment for multiple testing problem is Bonferroni correction. 
+%When $n$ as sample size goes to infinity, however, the Bonferroni correction can not yield satisfying asymptotic results since the $\frac{p}{2n^{\delta}} \to 0$ when $n \to \infty$. 
+%Therefore, \citeA{Bailey2020} provides another adjustment with additional exponent $\delta$ to constrain the behaviour of $n$.
+%In this case, the $\delta$ is the critical value of standard t-test with same significant level and degree of freedom. 
 
-After obtain the $\hat{\pi}_{nT}$, we can use the following formula to estimate our strength indicator $\alpha_j$:
+After obtain the $\hat{\pi}_{nT}$, we can use the following formula provided by \citeA{Bailey2020} to estimate our strength indicator $\alpha_j$:
 \[ \hat{\alpha} = \begin{cases}
 1+\frac{\ln(\hat{\pi}_{nT})}{\ln n} & \text{if}\; \hat{\pi}_{nT} > 0,\\
 0, & \text{if}\; \hat{\pi}_{nT} = 0.
 \end{cases} \]
+
+Whenever we have $\hat{\pi}_{nT}$, the estimated $\hat{\alpha}$ will be equal to zero. 
 From the estimation, we can find out that $\hat{\alpha} \in [0,1]$
 
-$\hat{\alpha}$ represent the pervasiveness of a factor. 
-Here we denote $[n^{\alpha}]$ , $[\cdot]$ will take the integer part of number inside. 
-For factor $f_{jt}$:
+%\subsection{Extension to Multi-factor Model}
+%This estimation method can be easily extended into a multi-factor scenario.
+%Consider the similar model as model(\ref{2CAPM}), but here we write the market factor $\r_{mt} - r_{ft}$ as a risk factor:
 
+%\[  x_{it} = a_i + \sum_{j = 1}^{k+1}\beta_{ij}f_{jt} + v_{it} =a_i + \mathbf{\beta_{ij}f_{jt}} + v_{it}, \text{for}\;\;i = 1,2,3, \cdots, n, \text{and}\;\; t = 1,2,3, \cdots, T\]
+
+	\section{Monte Carlo Design}\label{MC}
+In order to study the limited sample property of factor strength $\alpha$, we designed several Monte Carlo simulations, to observe the behaviours of the factors strength under different settings. 
+We consider the following data generating process (DGP): a CAPM model with market factor and risk factor
+
+\[ x_{it} = q_1({r_{mt}} - r_f) + q_2( \sum_{j=1}^k\beta_{ij}f_{jt}) +\epsilon_{it}  \]
+
+In the simulation, we consider a dataset has $i = 1, 2,\dots, n$ different assets, with $t= 1, 2,\dots, T$ different observations. 
+k different risk factors represents by the subscript j and one market factors are also included.
+
+$q_1(\cdot)$ and $q_2(\cdot)$ are two different functions represent the unknown mechanism of market factor and other risk factors in pricing asset risk.
+$({r_{mt}}- r_f) $ is the excess market return, calculated by average market  return ${r_{mt}}$ minus risk free return $r_{ft}$. 
+$r_{it}$ is the stock return, $f_{jt}$ denotes factors other than market factors and $\beta_{ij}$ is the corresponding factor loading. 
+$\epsilon_{it}$ is random error with structure can be defined in different designs.
+ For each factor, we assume they follow a multinomial distribution with mean zero and a $k\times k$ variance-covariance matrix $\Sigma$. 
 \begin{align*}
-|f_{jt}| &> c_p(n)\quad i = 1, 2,  \dots, [n^{\alpha_j}]\\
-|f_{jt}| &= 0 \quad i = [n^{\alpha_j}] + 1, [n^{\alpha_j}] +2 ,\dots, n
+\mathbf{f_t} = \begin{pmatrix}
+f_{i,t}\\f_{2,t}\\\vdots\\f_{k,t}
+\end{pmatrix} \sim MVN(\mathbf{0}, \Sigma) \quad
+ \Sigma := 
+\begin{pmatrix}
+\sigma^2_{f_1}, & \rho_{12}\sigma_{f1}\sigma_{f2} &\cdots  & \rho_{1k}\sigma_{f1}\sigma_{fk}\\
+\rho_{12}\sigma_{f2}\sigma_{f1}, & \sigma^2_{f2} &\cdots  & \rho_{2k}\sigma_{f2}\sigma_{fk}\\
+\vdots & \vdots & \ddots & \vdots \\
+\rho_{1k}\sigma_{fk}\sigma_{f1}, & \rho_{k2}\sigma_{fk}\sigma_{f2} &\cdots  & \sigma^2_{fk}\\
+\end{pmatrix}
 \end{align*}
-For a factor has strength $\alpha = 1$,  factor loading will be significant for every assets at every time. 
-The more observation the factor can significantly influence, the stronger the factor is, and vice versa.
-Therefore, we can use the factor strength to exclude those factor has only very limited pricing power, in other word, those factor can only generate significant loading on very small portion of assets. 
+The diagonal of matrix $\Sigma$ indicates the variance of each factor, and the rest represent the correlation among all $k$ factors.
+In this model, we can control several parts to investigates different scenarios of the simulation:
+\subsection{Baseline Design}\label{base}
+Follow the general model above, we assume both $q_1(a)$ and $q_2(a)$ are linear function:
+\begin{align*}
+q_1({r_{mt} - r_f}) &= a_{it} +\beta_{im} (r_{mt} - r_{ft})\\
+q_2(\sum_{j = 1}^{k}\beta_{ij}f_{jt}) &=\sum_{j = 1}^{k}\beta_{ij}f_{jt}
+\end{align*}
+Therefore, if we include the market factor with other risk factors, the model with single factor can be write as:
+	\[   x_{it} = a_{it} + \sum_{j = 1}^{k+1}  \beta_{ij}f_{ij} +\epsilon_{it}  \tag{5} \label{singlefactor} \]
+
+%The constant $a_{it}$ is generated from a uniform distribution $\mathnormal{U}[-0.5, 0.5]$.
+%Since we have n different assets, and for each asset we have T different observations, we will construct a $n\times T$ matrix to store all constant $a_{it}$
+%	\[   \mathbf{a} = \begin{pmatrix}
+%a_{11}& a_{12}&\cdots& a_{1T}\\
+%a_{21}& a_{22}&\cdots& a_{2T}\\
+%\vdots,& \vdots&\ddots&\vdots\\
+%a_{k1}& a_{k2}&\cdots& a_{kT}\\
+%	\end{pmatrix} \]
+%$\beta_{ij}$ is the factor loading, and $f_{ij}$ is factor with strength $\alpha_{j}$. 
+%Notice that here we have included the market factor $r_{mi - r_f}$ as $f_{i1}$, which has strength equals to 1.
+
+To generate factor loadings and asset's return, we follow the next procedures:
+First, we generate the constant term $a_{it}$ which has a uniform distribution from -0.5 to 0.5, $a_{it} \sim \mathnormal{U}[-0.5,0.5]$.
+%For each asset we generate T different time observations, so we will obtain $n\times T$ different constant term.
+Then, in this baseline design, we assume the error term $\epsilon_{it}\sim N(0,1)$, this means that the error term has mean zero and variance equals to one .
+Next, we will set up the true factor strength $\alpha$.
+Because here we allocate the market factor which as factor strength equals to one at the top of every factor, the factor strength vector will have k+1 elements:
+\[  \mathbf{\alpha} = \begin{pmatrix}
+1,&\alpha_2,&\alpha_3,&\cdots,&\alpha_{k+1}
+\end{pmatrix}  \]
+The other strengths will be adjusted to various values base on the simulation's design.
+After having the factor strength, we can calculate for each factors, how many loadings will be significantly different from zero.
+Since we assume for any random factors j with strength $\alpha_j$, it will have $[n^\alpha_j]$, so we 
+
+For each factors, we assume they follow the multinomial standard distribution with mean 0 and variance $\Sigma$, but in this baseline design, each factors are independent with each others, and each factors has same variance as one, so the $\Sigma$ will be:
+\[ \Sigma = \begin{pmatrix}
+1 & 0 &\cdots  & 0\\
+0&1 &\cdots  & 0\\
+\vdots & \vdots & \ddots & \vdots \\
+0 &0 &\cdots  & 1\\
+\end{pmatrix}  \]
+After that, we will generate the factor loadings from a uniform distribution.
+In order to make sure every factor loading is sufficiently larger than 0, we set the expected value of those loadings  $\mu_{\beta} = 0.71$, $\beta_{ij} \sim \mathnormal{IIDU}(\mu_{\beta}-0.2,\, \mu_{\beta}+0.2)$.
+Then we randomly assign $n - [n^\alpha]$ factor loadings as zero, to reflect the fact that only $[n^\alpha]$ factor loadings are significantly different from zero. 
+After generate constant term, factor, factor loading, and the error term, we can calculate the simulated asset's return by using the equation (\ref{singlefactor}).
+With the return and factors, we can re-calculate the factors loading and use the estimation method discussed in section \ref{estimation}.
+
+%First we generate a whole factor loadings vector $\mathbf{\beta_i} = (\beta_{i1}, \beta_{i2} \cdots, \beta_{ik+1})$,
+%All elements of the vector follows $\mathnormal{IIDU}(\mu_{\beta} -0.2, \mu_{\beta} + 0.2)$. 
+%The $\mu_{\beta}$ has been equalled to 0.71 to ensure all values apart from zero. 
+%After generating the vector, we randomly selected $[n^{\alpha_{j}}]$ elements from $\mathbf{\beta_i}$ to keep their value and set the other elements value to zero. 
+%This step ensures the loading reflects the strength of each factor. 
+%For the stochastic error term, in this baseline design, we assume it follows a Standard Gaussian distribution, but we can easily extend it into a more complex form.
+
+%Follow the same idea, we also construct a two factor model:
+%\[   r_{it}-r_{ft} = a_{it} + \beta_{im} (r_{mt} - r_{ft})  + \sum_{j = 1}^k\beta_{ij}f_{jt} +\epsilon_{it}   \]
+%Here the $r_{mt} - r_{ft}$ is the market factor which assumably  has strength $\alpha_{m} = 1$. 
+%${\beta_m}$ is the market factor loading as a vector with all elements different from zero. 
+
+For this baseline design, we consider the different combinations of T and n with $T = \{120, 240, 360\}$, $n =\{100, 300, 500\} $.
+The market factor will have strength $\alpha_m = 1$ all the time, and the strength of the other factor will be $\alpha_{x} = \{0.5, 0.7, 0.9,1\}$. For every setting, we will replicate 500 times independently, all the constant $a_{it}$ and loading $\beta_i$ will be re-generated for each replication.
+To exam the goodness of estimation, we calculate the bias between our true underneath factor strength $\alpha$ and the estimated strength $\hat{\alpha}$ as $ bias = |\alpha - \hat{\alpha}|$. 
+We also use the bias to calculate the Mean Square Error (MSE).
+To calculate the MSE, we will collect the bias for each replication, and then use the formula: 
+\[ MSE =\frac{1}{n}\sum_{i=1}^{500}(bias_i)^2 \]
 
 \newpage
 \bibliographystyle{apacite}

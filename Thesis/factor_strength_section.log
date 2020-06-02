@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2020.5.27)  28 MAY 2020 13:57
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2020.5.27)  1 JUN 2020 16:14
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -766,22 +766,26 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 30.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 30.
+ [1
 
-Overfull \hbox (3.64551pt too wide) in paragraph at lines 33--34
-[]\TU/TimesNewRoman(0)/m/n/12 Consider the following multi-factor models for n 
-different assets and T observations with stochas-
+] [2]
+[3] [4]
+Overfull \hbox (18.69707pt too wide) in paragraph at lines 202--207
+[]\TU/TimesNewRoman(0)/m/n/12 For this baseline design, we consider the differe
+nt combinations of T and n with $\OML/ztmcm/m/it/12 T \OT1/ztmcm/m/n/12 = \OMS/
+ztmcm/m/n/12 f\OT1/ztmcm/m/n/12 120\OML/ztmcm/m/it/12 ; \OT1/ztmcm/m/n/12 240\O
+ML/ztmcm/m/it/12 ; \OT1/ztmcm/m/n/12 360\OMS/ztmcm/m/n/12 g$\TU/TimesNewRoman(0
+)/m/n/12 ,
  []
 
-[1
-
-] [2] (./factor_strength_section.bbl) [3] (./factor_strength_section.aux) ) 
+[5] (./factor_strength_section.bbl) [6] (./factor_strength_section.aux) ) 
 Here is how much of TeX's memory you used:
- 16618 strings out of 479282
- 361054 string characters out of 5880512
+ 16621 strings out of 479282
+ 361191 string characters out of 5880512
  650026 words of memory out of 5000000
- 33961 multiletter control sequences out of 15000+600000
- 541860 words of font info for 69 fonts, out of 8000000 for 9000
+ 33964 multiletter control sequences out of 15000+600000
+ 541868 words of font info for 70 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 59i,9n,75p,846b,228s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 59i,16n,75p,846b,228s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on factor_strength_section.pdf (3 pages).
+Output written on factor_strength_section.pdf (6 pages).
