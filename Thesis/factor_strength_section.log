@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2020.5.27)  3 JUN 2020 23:39
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2020.5.27)  5 JUN 2020 23:19
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -769,8 +769,8 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
  [1
 
 ] [2]
-[3] [4]
-Overfull \hbox (18.69707pt too wide) in paragraph at lines 222--227
+[3] [4] [5]
+Overfull \hbox (18.69707pt too wide) in paragraph at lines 243--248
 []\TU/TimesNewRoman(0)/m/n/12 For this baseline design, we consider the differe
 nt combinations of T and n with $\OML/ztmcm/m/it/12 T \OT1/ztmcm/m/n/12 = \OMS/
 ztmcm/m/n/12 f\OT1/ztmcm/m/n/12 120\OML/ztmcm/m/it/12 ; \OT1/ztmcm/m/n/12 240\O
@@ -778,14 +778,27 @@ ML/ztmcm/m/it/12 ; \OT1/ztmcm/m/n/12 360\OMS/ztmcm/m/n/12 g$\TU/TimesNewRoman(0
 )/m/n/12 ,
  []
 
-[5] [6] (./factor_strength_section.bbl) [7] (./factor_strength_section.aux) ) 
+[6] [7] (./factor_strength_section.bbl
+Underfull \hbox (badness 10000) in paragraph at lines 105--123
+[]\TU/TimesNewRoman(0)/m/n/12 Fama, E. F., & French, K. R.  (1992, 6).  The cro
+ss-section of expected
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 105--123
+\TU/TimesNewRoman(0)/m/n/12 stock returns.  \TU/TimesNewRoman(0)/m/it/12 The Jo
+urnal of Finance\TU/TimesNewRoman(0)/m/n/12 , \TU/TimesNewRoman(0)/m/it/12 47\T
+U/TimesNewRoman(0)/m/n/12 , 427-465.  Retrieved from
+ []
+
+) [8] (./appendix.tex) [9] [10] (./factor_strength_section.aux) ) 
 Here is how much of TeX's memory you used:
- 16627 strings out of 479282
- 361304 string characters out of 5880512
- 649026 words of memory out of 5000000
- 33968 multiletter control sequences out of 15000+600000
+ 16645 strings out of 479282
+ 361547 string characters out of 5880512
+ 654131 words of memory out of 5000000
+ 33984 multiletter control sequences out of 15000+600000
  541876 words of font info for 71 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 59i,16n,75p,846b,228s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 59i,16n,75p,846b,297s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on factor_strength_section.pdf (7 pages).
+Output written on factor_strength_section.pdf (10 pages).

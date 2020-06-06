@@ -60,6 +60,68 @@ Bailey, N.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
+Bailey%
+, Pesaran%
+\BCBL {}\ \BBA {} Smith%
+}{%
+Bailey%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2019}}%
+}]{%
+Bailey2019}
+\APACinsertmetastar {%
+Bailey2019}%
+\begin{APACrefauthors}%
+Bailey, N.%
+, Pesaran, M\BPBI H.%
+\BCBL {}\ \BBA {} Smith, L\BPBI V.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2019}{2}{}.
+\newblock
+{\BBOQ}\APACrefatitle {A multiple testing approach to the regularisation of
+  large sample correlation matrices} {A multiple testing approach to the
+  regularisation of large sample correlation matrices}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Journal of Econometrics}{208}{}{507-534}.
+\newblock
+\begin{APACrefDOI} \doi{10.1016/j.jeconom.2018.10.006} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Fama%
+\ \BBA {} French%
+}{%
+Fama%
+\ \BBA {} French%
+}{%
+{\protect \APACyear {1992}}%
+}]{%
+Fama1992}
+\APACinsertmetastar {%
+Fama1992}%
+\begin{APACrefauthors}%
+Fama, E\BPBI F.%
+\BCBT {}\ \BBA {} French, K\BPBI R.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{1992}{6}{}.
+\newblock
+{\BBOQ}\APACrefatitle {The Cross-Section of Expected Stock Returns} {The
+  cross-section of expected stock returns}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{The Journal of Finance}{47}{}{427-465}.
+\newblock
+\begin{APACrefURL}
+  \url{http://doi.wiley.com/10.1111/j.1540-6261.1992.tb04398.x}
+  \end{APACrefURL}
+\newblock
+\begin{APACrefDOI} \doi{10.1111/j.1540-6261.1992.tb04398.x} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 Pesaran%
 \ \BBA {} Smith%
 }{%
