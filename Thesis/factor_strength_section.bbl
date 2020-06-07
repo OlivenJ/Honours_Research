@@ -38,6 +38,37 @@ Bailey%
 \BCBL {}\ \BBA {} Pesaran%
 }{%
 Bailey%
+, Kapetanios%
+\BCBL {}\ \BBA {} Pesaran%
+}{%
+{\protect \APACyear {2019}}%
+}]{%
+BKP2019}
+\APACinsertmetastar {%
+BKP2019}%
+\begin{APACrefauthors}%
+Bailey, N.%
+, Kapetanios, G.%
+\BCBL {}\ \BBA {} Pesaran, M\BPBI H.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2019}{9}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Exponent of Cross-sectional Dependence for Residuals}
+  {Exponent of cross-sectional dependence for residuals}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Sankhya B}{81}{}{46-102}.
+\newblock
+\begin{APACrefDOI} \doi{10.1007/s13571-019-00196-9} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Bailey%
+, Kapetanios%
+\BCBL {}\ \BBA {} Pesaran%
+}{%
+Bailey%
 \ \protect \BOthers {.}}{%
 {\protect \APACyear {2020}}%
 }]{%
@@ -65,7 +96,9 @@ Bailey%
 \BCBL {}\ \BBA {} Smith%
 }{%
 Bailey%
-\ \protect \BOthers {.}}{%
+, Pesaran%
+\BCBL {}\ \BBA {} Smith%
+}{%
 {\protect \APACyear {2019}}%
 }]{%
 Bailey2019}
