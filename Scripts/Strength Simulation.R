@@ -38,23 +38,36 @@ market_calc <-function(regress_result){
   return(regress_result)
 }
 
-one_factor$sig_indi <-  if_else(one_factor$statistic > adj_stat, 1, 0)
+loading_generate<- function(nonzero_amount){
+  loading <- matrix(0, n, k+1)
+  for(i in 1:(k+1)){
+    col <- runif(n,mu_var-0.2,  mu_var + 0.2)
+    ind <- which(col %in% sample(col,n-nonzero_amount[i]))
+    col[ind] <- 0
+    loading[,i] <- col
+  }
+  return(loading)
+}
 
-one_factor %>% 
-  filter(factor == 2)
-one_factor %>% select(-data) %>% 
-  filter(term == "factor_val") %>% 
-  group_by(factor) %>% 
-  summarize(pi_hat = sum(sig_indi)/n)
+#one_factor$sig_indi <-  if_else(one_factor$statistic > adj_stat, 1, 0)
+
+#one_factor %>% 
+ # filter(factor == 2)
+#one_factor %>% select(-data) %>% 
+ # filter(term == "factor_val") %>% 
+#  group_by(factor) %>% 
+ # summarize(pi_hat = sum(sig_indi)/n)
+rep = 2000
+
+result_table <- tibble(alpha_hat = 0, diff = 0, RMSE = 0)
 
 
-
-
-rep = 500
 diff_table <- tibble(diff = 0)
 mse_table <- tibble(mse = 0)
 diff_market <- tibble(diff = 0)
 mse_market <- tibble(mse = 0)
+strength_table <- tibble(strength = 0)
+market_strength_table <- tibble(strength = 0)
 #result_table2 <- tibble(mse = 0)
 
 
@@ -70,9 +83,10 @@ n <- 500
 k <- 1
 
 # the number of factors
-alpha = 1
+alpha = 0.7
 
-constant <- matrix(runif(n*t, -0.5, 0.5), nrow = n, ncol = t)
+#constant <- matrix(runif(n*t, -0.5, 0.5), nrow = n, ncol = t)
+constant <- matrix(rep(runif(n, -0.5, 0.5), t), nrow = n, ncol = t)
 #Assume the constant term ( the alpha term from CAPM model) follows uniform distribution
 error <- matrix(rnorm(n*t, 0,1), nrow = n, ncol = t)
 #Assume the error term follows a standard normal distribution
@@ -99,19 +113,11 @@ market_factor <- as_tibble(market_factor)%>%
 #Indicates under the factor strength setting, how many factor laodings are significnatly
 #different from 0. We only take the integer part. From the result we can see that 
 
-adj_stat <- pnorm(1-(0.05/(2*n^1.96)))
+adj_stat <- pnorm(1-(0.05/(2*n^1.5)))
+###Notice that here has been changed into 1.5
+
 
 mu_var = 0.71
-loading_generate<- function(nonzero_amount){
-  loading <- matrix(0, n, k+1)
-  for(i in 1:(k+1)){
-    col <- runif(n,mu_var-0.2,  mu_var + 0.2)
-    ind <- which(col %in% sample(col,n-nonzero_amount[i]))
-    col[ind] <- 0
-    loading[,i] <- col
-  }
-  return(loading)
-}
 loading <- loading_generate(sig_count)
 #==============+==============+==============+==============+==============+==============+==============+#
 ##Wrap the generate factor and return into tibble
@@ -168,12 +174,15 @@ one_factor_result %>%
   mutate(diff = alpha_hat - alpha) %>% 
   summarize(mean(diff^2))
 
+  
+
 temp1_mse <- one_factor_result %>% 
   mutate(diff = alpha_hat - alpha) %>% 
   summarize(mean(diff^2))
 temp1_diff <- one_factor_result %>% 
   mutate(diff = alpha_hat - alpha) %>% select(diff)
 
+strength_table <- strength_table %>% add_row(strength = one_factor_result[[3]])
 diff_table <- diff_table %>% add_row(diff = temp1_diff[[1]])
 mse_table <- mse_table %>% add_row(mse = temp1_mse[[1]])
 
@@ -232,6 +241,7 @@ print(nrow(diff_table)-1)
 if(nrow(diff_table)>rep){
   mse_table <- mse_table %>% tail(-1)
   diff_table <- diff_table %>% tail(-1)
+  strength_table <- strength_table %>% tail(-1)
   #diff_market <- diff_market %>% tail(-1)
   #mse_market <- mse_market %>% tail(-1)
   print("repeat finish")
@@ -245,6 +255,7 @@ summary(diff_table)
 #summary(diff_market)
 summary(mse_table)
 #summary(mse_market)
+summary(strength_table)
 
 #summary(result_table2)
 
