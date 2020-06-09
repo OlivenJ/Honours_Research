@@ -47,18 +47,24 @@ loading_generate<- function(nonzero_amount){
 }
 
 result_table <- tibble()
+cont = 0
 
 times <- c(120, 240, 360)
 unit <- c(100, 300, 500)
-strength <- c(0.7, 0.75, 0.8, 0.85, 0.9, 0.95, 1)
+strength_seq <- seq(0.7, 1 ,0.05)
 
+for(var1 in times){
+  for(var2 in unit){
+    for(var3 in strength_seq){
+      
+      cont<- cont +1
 
   
 
-rep = 200
-  t <- 120
-  n <- 500
-  alpha = 0.7
+rep = 1
+  t <- var1
+  n <- var2
+  alpha <- var3
   k <- 1
   
 repeat{
@@ -113,6 +119,8 @@ repeat{
     strength_calc()
   
   one_factor_result <- one_factor_result %>% 
+    mutate(time = t, unit = n, alpha = alpha) %>% 
+    dplyr::select(time, unit, alpha, everything()) %>% 
     mutate(bias = alpha_hat - alpha) %>% 
           mutate( z = (log(n)*(alpha_hat-alpha)-0.05*(n-n^alpha_hat)*n^(-0.5-alpha_hat))/
              sqrt(0.05*(n-n^alpha_hat)*(n^(-0.5-2*alpha_hat))*(1-(0.05/(n^0.5)))) ) %>% 
@@ -124,11 +132,18 @@ repeat{
 #==============+==============+==============+==============+==============+==============+==============+#
   
   print(nrow(result_table))
-  if(nrow(result_table) == rep ){
+  if(nrow(result_table) == cont * rep ){
     print("Repeat finish")
     break
   }
 }
+  
+  }
+ }
+}
+
+
+
 
 result_table %>% 
   mutate(sqr = bias^2) %>% 
