@@ -154,32 +154,4 @@ Fama, E\BPBI F.%
 \begin{APACrefDOI} \doi{10.1111/j.1540-6261.1992.tb04398.x} \end{APACrefDOI}
 \PrintBackRefs{\CurrentBib}
 
-\bibitem [\protect \citeauthoryear {%
-Pesaran%
-\ \BBA {} Smith%
-}{%
-Pesaran%
-\ \BBA {} Smith%
-}{%
-{\protect \APACyear {2019}}%
-}]{%
-Pesaran2019}
-\APACinsertmetastar {%
-Pesaran2019}%
-\begin{APACrefauthors}%
-Pesaran, M\BPBI H.%
-\BCBT {}\ \BBA {} Smith, R\BPBI P.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{2019}{}{}.
-\newblock
-{\BBOQ}\APACrefatitle {The Role of Factor Strength and Pricing Errors for
-  Estimation and Inference in Asset Pricing Models} {The role of factor
-  strength and pricing errors for estimation and inference in asset pricing
-  models}.{\BBCQ}
-\newblock
-\APACjournalVolNumPages{CESifo Working Paper Series}{}{}{}.
-\PrintBackRefs{\CurrentBib}
-
 \end{thebibliography}

@@ -27,9 +27,9 @@
 		\begin{document}
 \section{Factor Strength}\label{strength}
 The concept of factor strength employed by this project comes from \citeA{Bailey2020}, and it was first introduced by \citeA{Bailey2016}.
-They defined the strength of factor from prospect of the cross-section dependences and connect it to the pervasiveness of the factor, which is captured by the factor loadings.
-The method present in the initial paper is limited, since the factor strength can only be consistently estimated when the strength is higher than $0.5$.
-In a latter paper, \citeA{BKP2019} extended the method present before bt loosen some restrictions, and further developed into the method we employed in this project \cite{Bailey2020}.
+They defined the strength of factor from prospect of the cross-section dependences of large panel and connect it to the pervasiveness of the factor, which is captured by the factor loadings.
+The method present in the initial paper focusing the estimation from unobserved factor.
+In a latter paper, \citeA{BKP2019} extended the method from estimating the strength from the residuals, and further developed into the method, which focus on the observed factors we employed in this project \cite{Bailey2020}.
 
 		\subsection{Definition}\label{definiton}
 
@@ -38,24 +38,24 @@ Consider the following multi-factor model for n different cross-section units an
 
 \[  x_{it} = a_{t}+  \sum_{j=1}^{k}\beta_{ij}f_{jt} + \varepsilon_{it} \tag{1}\label{definition_model} \]
 In the left-hand side, we have $x_{it}$ denotes the cross-section unit i at time t, where $i = 1, 2,3, \cdots, n$ and $t = 1,2,3, \cdots T$.  
-In the other hand, $a_{i}$ is the constant term, which does not variate through the time.
+In the other hand, $a_{i}$ is the constant term.
 $f_{jt}$ of $j = 1, 2, 3\cdots k$ is factors included in the model, and $\beta_{ij}$ is the corresponding factor loading.
 $\varepsilon_{it}$ is the stochastic error term.
 
-The factor strength is dependent on how many non-zero loadings a factor can generate.
-For factor $f_{jt}$ with n different factor loading $\beta_{ij}$, we assume that:
+The factor strength is relates to how many non-zero loadings correspond to a factor.
+More precisely, for a factor $f_{jt}$ with n different factor loading $\beta_{ij}$, we assume that:
 \begin{align*}
 |\beta_{j}| &> 0\quad i = 1, 2,  \dots, [n^{\alpha_j}]\\
 |\beta_{j}| &= 0 \quad i = [n^{\alpha_j}] + 1, [n^{\alpha_j}] +2 ,\dots, n
 \end{align*}
-The $\alpha_j$ represents strength of facto $f_{jt}$ and $\alpha_j \in [0,1]$.
+The $\alpha_j$ represents strength of factor $f_{jt}$ and $\alpha_j \in [0,1]$.
 If factor has strength $\alpha_j$, we will assume that the first $[n^{\alpha_j}]$ loadings are all different from zero, and here $[\cdot] $  is defined as integral operator, which will only take the integral part of inside value.% which indicates that those factors can capture the dynamic behind the cross-section unit effectively.
 The rest $n - [n^{\alpha_j}]$ terms are all equal to zero. % which means the factors can not provides any information of interest of  those $n - [n^\alpha_j]$  units.
 Assume for a factor which has strength $\alpha = 1$, the factor's loadings will be non-zero for all cross-section units.
 We will refer such factor as strong factor.
-And if we have factor strength $\alpha = 0$, it means that the factor cannot generate any loading different from zero, and we will describe such factor as useless factor of.
-For any factor with strength in [0.5, 1], we will refer them as semi-strong factor.
-In general term, the more non-zero loading a factor can generate, the stronger the factor's strength is. 
+And if we have factor strength $\alpha = 0$, it means that the factor has all factor loadings equal to zero, and we will describe such factor as weak factor \cite{Bailey2016}.
+For any factor with strength in [0.5, 1], we will refer such factor as semi-strong factor.
+In general term, the more non-zero loading a factor has, the stronger the factor's strength is. 
 
 
 %The idea of factor loading is trying to describe for a factor, how many non-zero loadings it can generate through a group of cross-section units.
@@ -77,17 +77,17 @@ In general term, the more non-zero loading a factor can generate, the stronger t
 	\subsection{Estimation}\label{estimation}
 To estimate the strength $\alpha_j$, \citeA{Bailey2020} provides following estimation.
 
-Here we consider a simplified model (\ref{definition_model}), a factor model with only one factor named $f$ with different value $f_t$ at different time. 
- $\beta_{it}$ is the factor loading of unit i at time t.
+To begin with, we consider a single-factor model with only factor named $f_t$. 
+ $\beta_{i}$ is the factor loading of unit i.
 $v_{it}$ is the stochastic error term.
 
-\[  x_{it} = a_{i} +  \beta_{it}f_{t} + v_{it} \tag{2} \label{estimation_model}\]
+\[  x_{it} = a_{i} +  \beta_{i}f_{t} + v_{it} \tag{2} \label{estimation_model}\]
 
-Assume we have n different assets and T observations for each assets: $i = 1, 2, 3, \cdots, n$ and $t = 1,2,3, \cdots T$.
+Assume we have n different units and T observations for each unit: $i = 1, 2, 3, \cdots, n$ and $t = 1,2,3, \cdots T$.
 Running the OLS regression for each $i = 1,2,3\cdots, n$, we obtain:
 \[   x_{it} = \hat{a}_{iT} +  \hat{\beta}_{iT}f_{t} + \hat{v}_{it}  \]
 
-For every factor loading $\hat{\beta}_{iT}$, we can exam their significance by constructing a t-test.
+For every factor loading $\hat{\beta}_{iT}$, we can examining their significance by constructing a t-test.
 The t-test statistic will be $t_{iT} = \frac{\hat{\beta}_{iT} - 0}{\hat{\sigma}_{iT}}$.  
 Then the test statistic for the corresponding $\hat{\beta}_i$ will be:
 
@@ -96,15 +96,17 @@ Here, the $\mathbf{M}_{\tau} = \mathbf{I}_T - T^{-1}\mathbf{\tau}\mathbf{\tau^\p
 $\mathbf{f}$ and $\mathbf{x_i}$ are two vectors with: $\mathbf{f} = (f_1, f_2 \cdots, f_T)^{\prime}$   $\mathbf{x_i} = (x_{i1}, x_{i2}, \cdots, x_{iT})$.
 The denominator $\hat{\sigma}_{iT} = \frac{\sum_{i=1}^{T} \hat{v}^2_{it} }{T}$.
 
-Using this test statistic, we then defined an  indicator function as: $\ell_{i,nT} := {\bf1}[|t_{it}|>c(n)]$.
-If the t-statistic $t_{iT}$ is greater than certain critical value $c_p(n)$,  $\hat{\ell}_{i,nT} = 1$. 
-In other word, we will count one if the factor loading $\hat{\beta}_{ij}$ is significant. 
-With the indicator function, we then defined $\pi_{nT}$ as the proportion of significant factor loading amount to the total factor loadings amount:
+Using this test statistic, we can then define an indicator function as: $\ell_{i,n} := {\bf1}[|\beta_i|>0]$.
+If the factor loading is none-zero, $\ell_{i,n} = 1$.
+In practice, we use the $\hat{\ell}_{i,nT} = := {\bf1}[|t_{it}|>c_p(n)]$
+Here, if the t-statistic $t_{iT}$ is greater than critical value $c_p(n)$,  $\hat{\ell}_{i,n} = 1$, otherwise $\hat{\ell}_{i,n} = 0$
+In other word, we are counting how many $\hat{\beta}_{iT}$ are significant.
+With the indicator function, we then defined $\hat{\pi}_{nT}$ as the fraction of significant factor loading amount to the total factor loadings:
 
 \[  \hat{\pi}_{nT} = \frac{\sum_{i=1}^n \hat{\ell}_{i,nT}}{n} \tag{4} \label{pi_function} \]
 
 
-For the critical value $c_p(n)$, rather than use the traditional critical value from student-t distribution $\Phi^{-1}(1-\frac{P}{2})$, we use:
+In term of the critical value $c_p(n)$, rather than use the traditional critical value from student-t distribution $\Phi^{-1}(1-\frac{P}{2})$, we use:
 %represent the critical value of a test with test size $p$. 
 %The critical value is calculated by:
 
@@ -137,6 +139,9 @@ From the estimation, we can find out that $\hat{\alpha} \in [0,1]$
 %Consider the similar model as model(\ref{2CAPM}), but here we write the market factor $\r_{mt} - r_{ft}$ as a risk factor:
 
 %\[  x_{it} = a_i + \sum_{j = 1}^{k+1}\beta_{ij}f_{jt} + v_{it} =a_i + \mathbf{\beta_{ij}f_{jt}} + v_{it}, \text{for}\;\;i = 1,2,3, \cdots, n, \text{and}\;\; t = 1,2,3, \cdots, T\]
+
+This estimation can also be extended into a multi-factor set up.
+
 
 %+==================+==================+==================+===============&
 %+==================+==================+==================+===============&
