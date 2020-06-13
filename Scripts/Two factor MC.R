@@ -62,7 +62,7 @@ for(var1 in times){
       
       
       
-      rep = 1
+      rep = 10
       t <- var1
       n <- var2
       alpha <- var3
@@ -103,7 +103,7 @@ market_factor <- as_tibble(market_factor)%>%
 #Indicates under the factor strength setting, how many factor laodings are significnatly
 #different from 0. We only take the integer part. From the result we can see that 
 
-adj_stat <- pnorm(1-(0.05/(2*n^1.5)))
+adj_stat <- pnorm(1-(p/(2*n^sigma)))
 ###Notice that here has been changed into 1.5
 
 
@@ -158,9 +158,9 @@ two_factor_result <- two_factor_result %>%
           part2 = n - n^alpha_hat,
           power_part1 = -sigma-alpha_hat,
           power_part2 = -sigma-2*alpha_hat,
-          part3 = (1 - p/n^sigma),
+          part3 = (1 - p/(n^sigma)),
           numerator = logn*part1 - p*part2*n^power_part1,
-          denominator = sqrt(p*part2*n^power_part2*part3),
+          denominator = sqrt(p*part2*(n^power_part2)*part3),
           z = numerator/denominator) %>% 
   mutate(size_count = if_else(alpha_hat == 1,0,if_else(abs(z) > 1.96, 1, 0)) )
   

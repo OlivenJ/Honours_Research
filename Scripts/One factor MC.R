@@ -61,11 +61,14 @@ for(var1 in times){
 
 
 
-rep = 5
+rep = 10
 t <- var1
 n <- var2
 alpha <- var3
 k <- 1
+p = 0.05
+sigma = 0.5
+logn = log(n)
   
 repeat{
   #constant <- matrix(runif(n*t, -0.5, 0.5), nrow = n, ncol = t)
@@ -82,11 +85,8 @@ repeat{
   Sigma <- diag(1,k)
   factor <- t(rmvnorm(t,mean = rep(0, k), Sigma))
   
-  p = 0.05
-  sigma = 1.96
-  logn = log(n)
-  
-  adj_stat <- pnorm(1-(0.05/(2*n^0.25)))
+
+  adj_stat <- pnorm(1-(p/(2*n^sigma)))
   ###Notice that here has been changed into 1.5
 
   mu_var = 0.71
@@ -129,7 +129,7 @@ repeat{
                   part2 = n - n^alpha_hat,
                   power_part1 = -sigma-alpha_hat,
                   power_part2 = -sigma-2*alpha_hat,
-                  part3 = (1 - p/n^sigma),
+                  part3 = (1 - p/(n^sigma)),
                   numerator = logn*part1 - p*part2*n^power_part1,
                   denominator = sqrt(p*part2*(n^power_part2)*part3),
                   z = numerator/denominator) %>% 
@@ -160,3 +160,5 @@ summary_result <-  result_table %>% group_by(time, unit, alpha) %>%
             size = sum(size_count)/rep)
 view(summary_result)
 view(result_table)
+
+summary(summary_result )
