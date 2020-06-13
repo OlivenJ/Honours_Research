@@ -59,13 +59,13 @@ for(var1 in times){
       
       cont<- cont +1
 
-  
 
-rep = 1
-  t <- var1
-  n <- var2
-  alpha <- var3
-  k <- 1
+
+rep = 5
+t <- var1
+n <- var2
+alpha <- var3
+k <- 1
   
 repeat{
   #constant <- matrix(runif(n*t, -0.5, 0.5), nrow = n, ncol = t)
@@ -81,7 +81,10 @@ repeat{
   
   Sigma <- diag(1,k)
   factor <- t(rmvnorm(t,mean = rep(0, k), Sigma))
-
+  
+  p = 0.05
+  sigma = 1.96
+  logn = log(n)
   
   adj_stat <- pnorm(1-(0.05/(2*n^0.25)))
   ###Notice that here has been changed into 1.5
@@ -122,8 +125,14 @@ repeat{
     mutate(time = t, unit = n, alpha = alpha) %>% 
     dplyr::select(time, unit, alpha, everything()) %>% 
     mutate(bias = alpha_hat - alpha) %>% 
-          mutate( z = (log(n)*(alpha_hat-alpha)-0.05*(n-n^alpha_hat)*n^(-0.5-alpha_hat))/
-             sqrt(0.05*(n-n^alpha_hat)*(n^(-0.5-2*alpha_hat))*(1-(0.05/(n^0.5)))) ) %>% 
+          mutate( part1 = alpha_hat - alpha,
+                  part2 = n - n^alpha_hat,
+                  power_part1 = -sigma-alpha_hat,
+                  power_part2 = -sigma-2*alpha_hat,
+                  part3 = (1 - p/n^sigma),
+                  numerator = logn*part1 - p*part2*n^power_part1,
+                  denominator = sqrt(p*part2*(n^power_part2)*part3),
+                  z = numerator/denominator) %>% 
     mutate(size_count = if_else(abs(z) > 1.96, 1, 0)) %>% 
     rename(repe = factor)
   
@@ -143,11 +152,11 @@ repeat{
 }
 
 
-
-
-result_table %>% 
+summary_result <-  result_table %>% group_by(time, unit, alpha) %>% 
   mutate(sqr = bias^2) %>% 
   summarize(alpha_hat = mean(alpha_hat),
             bias = mean(bias),
             RMSE = sqrt(sum(sqr)/n),
             size = sum(size_count)/rep)
+view(summary_result)
+view(result_table)
