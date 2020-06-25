@@ -61,8 +61,14 @@
 \hline
 \end{tabular}
 \bigskip\\
-This table shows the result of one risk factor model.
-In this experiment, we have standard normal errors and factors. Factor loadings come form uniform distribution $IIDU(\mu_{\beta} - 0.2, \mu_{\beta}+0.2)$. $[n^{\alpha_{j}}]$
+{\bf Notes:}
+This table shows the result of  experiment 1.
+Factors and error are generate from standard normal distribution.
+Factor loadings come form uniform distribution $IIDU(\mu_{\beta} - 0.2, \mu_{\beta}+0.2)$, and $\mu_{\beta} = 0.71$.
+We keep  $[n^{\alpha_{j}}]$ amount of loadings and assign the rest as zero.
+For each different time-unit combinations, we replicate 2000 times.
+For the size of the test, we use a two-tail test, under the hypothesis of $H_0, \hat{\alpha}_j = \alpha_j\; j=1,2$.
+Cause under the scenarios of $\alpha = 1$, the size of the test will collapse, therefore the table does not report the sizes for $\alpha_1 = 1$.
 \end{table}
 
 
@@ -105,8 +111,15 @@ In this experiment, we have standard normal errors and factors. Factor loadings 
 \multicolumn{1}{l|}{500}                & 0      & 0      & \multicolumn{1}{c|}{0}      & 0      & 0     & \multicolumn{1}{c|}{0}     & -           & -          & -           \\ \hline\hline
 	\end{tabular}
 \bigskip\\
-This table shows the result of two factor model, with one market factor and one risk factor.
-We simulated scenarios of factor strength equals to 0.5, 0.7, 0.9, and 1 with different time, assets size combination. The replication times is 500
+{\bf Notes:}
+This table shows the result of  experiment 2.
+Factors and errors are generate from standard normal distribution.
+Between two factors, we assume they have no correlation.
+Factor loadings come form uniform distribution $IIDU(\mu_{\beta} - 0.2, \mu_{\beta}+0.2)$, and $\mu_{\beta}$ is set to 0.71.
+We keep  $[n^{\alpha_{j}}]$ amount of loadings and assign the rest as zero.
+For each different time-unit combinations, we replicate 2000 times.
+For the size of the test, we use a two-tail test, under the hypothesis of $H_0, \hat{\alpha}_j = \alpha_j\; j=1,2$.
+Cause under the scenarios of $\alpha = 1$, the size of the test will collapse, therefore the table does not report the sizes for $\alpha_1 = \alpha_2 = 1$
 \end{table}
 
 
@@ -148,6 +161,16 @@ We simulated scenarios of factor strength equals to 0.5, 0.7, 0.9, and 1 with di
 		\multicolumn{1}{l|}{300}                & 0      & 0      & \multicolumn{1}{c|}{0}      & 0     & 0     & \multicolumn{1}{c|}{0}     & -            & -          & -          \\
 		\multicolumn{1}{l|}{500}                & 0      & 0      & \multicolumn{1}{c|}{0}      & 0     & 0     & \multicolumn{1}{c|}{0}     & -            & -          & -          \\ \hline\hline
 	\end{tabular}
+\bigskip \\
+{\bf Notes:}
+This table shows the result of  experiment 2.
+Factors and errors are generate from standard normal distribution.
+Between two factors, we assume they have correlation $\rho_{12} = 0.3$
+Factor loadings come form uniform distribution $IIDU(\mu_{\beta} - 0.2, \mu_{\beta}+0.2)$, and $\mu_{\beta}$ is set to 0.71.
+We keep  $[n^{\alpha_{j}}]$ amount of loadings and assign the rest as zero.
+For each different time-unit combinations, we replicate 2000 times.
+For the size of the test, we use a two-tail test, under the hypothesis of $H_0, \hat{\alpha}_j = \alpha_j\; j=1,2$.
+Cause under the scenarios of $\alpha = 1$, the size of the test will collapse, therefore the table does not report the sizes when $\alpha_1 = \alpha_2 = 1$
 \end{table}
 
 

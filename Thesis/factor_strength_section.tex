@@ -107,7 +107,7 @@ After obtain the $\hat{\pi}_{nT}$, we can use the following formula provided by 
 \[ \hat{\alpha} = \begin{cases}
 1+\frac{\ln(\hat{\pi}_{nT})}{\ln n} & \text{if}\; \hat{\pi}_{nT} > 0,\\
 0, & \text{if}\; \hat{\pi}_{nT} = 0.
-\end{cases} \]
+	\end{cases} \tag{6} \label{estimation_method} \]
 
 Whenever we have $\hat{\pi}_{nT}$, the estimated $\hat{\alpha}$ will be equal to zero. 
 From the estimation, we can find out that $\hat{\alpha} \in [0,1]$
@@ -193,7 +193,7 @@ q_1({f_{mt}}) &= a_{i} +\beta_{im} f_{mt}\\
 q_2(\sum_{j = 1}^{k}\beta_{ij}f_{jt}) &=\sum_{j = 1}^{k}\beta_{ij}f_{jt}
 \end{align*}
 To start the simulation, we consider a two factor model:
-\[    x_{it} = a_{i} + \beta_{i1}f_{1t} + \beta_{i2}f_{2t}+\epsilon_{it} \tag{6} \label{two_factor}   \]
+\[    x_{it} = a_{i} + \beta_{i1}f_{1t} + \beta_{i2}f_{2t}+\epsilon_{it} \tag{7} \label{two_factor}   \]
 %Therefore, if we include the market factor with other risk factors together, the model can be simplified as:
 %	\[   x_{it} = a_{it} + \sum_{j = 1}^{k+1}  \beta_{ij}f_{jt} +\epsilon_{it}  \tag{6} \label{simplified_multi}  \x]
 %And in this first baseline experiment, we will  use the single factor model as:
@@ -207,7 +207,6 @@ $\alpha_1$ and $\alpha_2$ are the true factor strength of $f_1$ and $f_2$.
 In this simulation, we will start the factor strength from 0.7 and increase it gradually till unity with pace 0.05, say $(\alpha_{1}, \alpha_{2}) = \{0.7, 0.75,0.8,\cdots,1\}$.
  $[\cdot]$ is the integer operator defined at section (\ref{estimation}).
 This step reflects the fact that only $[n^\alpha]$ factor loadings are non-zero.
-
 In terms of the factors, they comes from a multinomial distribution $MVN(\mathbf{0}, \Sigma) $, as we discuss before.
 
 Currently, we consider three different experiments set up:
@@ -235,12 +234,12 @@ Where the R represent the total replicate times.
 The size of the test is under the hypothesis that $H_0: \hat{\alpha_j} = \alpha_j,\;j =1, 2$ against the alternative hypothesis $H_1:\hat{\alpha_j} \neq \alpha_j,\; j=1,2$.
 Here we employed the following test statistic from \citeA{Bailey2020}.
 
-\[  z_{\hat{\alpha_j}:\alpha_j} =\frac{(\ln n)\left(\hat{\alpha_j}-\alpha_{j}\right)-p\left(n-n^{\hat{\alpha_j}}\right) n^{-\delta-\hat{\alpha_j}}}{\left[p\left(n-n^{\hat{\alpha}_j}\right) n^{-\delta-2 \hat{\alpha}_j}\left(1-\frac{p}{n^{\delta}}\right)\right]^{1 / 2}}\quad j=1,2 \]
+	\[  z_{\hat{\alpha_j}:\alpha_j} =\frac{(\ln n)\left(\hat{\alpha_j}-\alpha_{j}\right)-p\left(n-n^{\hat{\alpha_j}}\right) n^{-\delta-\hat{\alpha_j}}}{\left[p\left(n-n^{\hat{\alpha}_j}\right) n^{-\delta-2 \hat{\alpha}_j}\left(1-\frac{p}{n^{\delta}}\right)\right]^{1 / 2}}\quad j=1,2 \tag{8}  \label{z_indicator}\]
 
-Here we set a indicator function $\mathbf{1}(|z_{\hat{\alpha_j}:\alpha_j} |>c|H_0)$.
+Define a indicator function $\mathbf{1}(|z_{\hat{\alpha_j}:\alpha_j} |>c|H_0)$.
 For each replication, if this test statistic is greater than the critical value of standard normal distribution: $c = 1.96$, the indicator function will return value 1, and 0 otherwise.
 Therefore, we calculate the size of the test base on:
-\[ size = \frac{\sum_{r=1}^{R} \mathbf{1}(|z_{\hat{\alpha_j}:\alpha_j} |>1.96|H_0)}{R} \quad j =1,2\]
+	\[ size = \frac{\sum_{r=1}^{R} \mathbf{1}(|z_{\hat{\alpha_j}:\alpha_j} |>1.96|H_0)}{R} \quad j =1,2 \tag{9}, \label{size_calculator}\]
 
 %Next, we set up the true factor strength $\alpha$.
 %Through the whole simulation, we will assign the strength with different value $\alpha = \{0.5, 0.7, 0.9, 1\}$, and since in this baseline design we only contain one factor, the only factor's strength will be selected from the above set. 
@@ -290,26 +289,28 @@ The market factor, if included in the experiment, will have strength $\alpha_m =
 We report the results in Table (\ref{exp1_table}) , (\ref{exp2_table}) and (\ref{exp3_table}) in Appendix \ref{simulationtable}.
 
 Table (\ref{exp1_table}) provides the results under the experiment 1.
-The estimation method we applied tends to under-estimate the strength slightly when the true strength is relatively weak under the single factor set up.
+The estimation method we applied tends to under-estimate the strength slightly most of the time when the true strength is relatively weak under the single factor set up.
 The bias is about 0.01 lower when the true underlying factor strength is 0.7.
-This indicates that the estimated strength $\hat{\alpha}$ is around 0.69 to 0.68.
-Such bias, however, decrease gradually while time t, and  $\alpha$ increase.
+Such bias, however, vanish quickly while time t, unit amount n, and  $\alpha$ increase.
 When we increase the time spam by including more data from the time dimensions, the bias, as well as the RMSE decrease significantly.
-By contrast, when including more cross-section unit n into the simulation, the results does not shows significant improvements.
-Another more interesting result is that, the gap between estimation and true strength will vanish when we have $\alpha = 1$, the strongest we can have.
+Also, when including more cross-section unit n into the simulation, the performance of the estimation improves, showing by the decrease bias and RMSE values.
+An impressing result is that, the gap between estimation and true strength will goes to zero when we have $\alpha = 1$, the strongest we can have.
 With the strength approaching unity, the both bias and RMSE will converge to zero.
-After turn our attention to the size of the test, under the single factor setting.
-The size of the test will not various too much when the strength increases, so as the unit increases,
-But we can observe that the when observations for each unit increase, the size will shrinkage dramatically, although overall the size is still larger than the usual threshold 0.05.
+Then we turn our attention to the size of the test.
+The size of the test will not variate too much when the strength increases, so as the unit increases,
+But we can observe that when observations for each unit increase, in other word, when t increases, the size will shrinkage dramatically.
+The size will smaller than the 0.05 threshold after we extend the t to 240, or empirically  speaking, when we included 20 years monthly return data into estimation.
+Notice that, from the equation (\ref{z_indicator}), when $\hat{\alpha} = \alpha = 1$, the nominator will becomes zero.
+Therefore, the size will collapse into zero in all settings, so we do not report the size for $\hat{\alpha} = \alpha = 1$
 
-Fro the two factors scenarios, both the correlation zero and correlation point three, we have similar but better conclusions.
-The result of no correlation settings is shown in the table (\ref{exp2_table}), and the table (\ref{exp3_table}) shows the result when the correlation between two factors is point three.
+For the two factors scenarios, we obtain similar conclusions in both the no correlation setting and weak correlation setting.
+The result of no correlation settings is shown in the table (\ref{exp2_table}), and the table (\ref{exp3_table}) shows the result when the correlation between two factors is 0.3.
 Same as the single factor results, in most of the time, our estimation method will slightly under estimates the factor strength. 
-But for when the we increase either the observations amount t, or the cross-section units amount n, the improvement of estimation is significant. 
-Even when the factor strength is relatively weak, when the n and t are large enough, we can have unbiased estimation (see table (\ref{exp3_table})).
-Also, when same as the experiment one, when the true factor strength goes to one, we will consistently obtain unbiased estimation for every time-unit combinations.
-The results of the  size of the test in two factors setting are performing better than the single factor result. 
-Although the size is excess the 0.05 threshold when observation amount is small, it will decrease quickly and dramatically when the observations amount increase.
+But we can improve the estimation result by increasing either the observations amount t, or the cross-section units amount n.
+We also have the same unbiased estimation when true factor strength is unity under all unit-time combination.
+In some cases, even when the factor strength is relatively weak,we can have unbiased estimation if the n and t are big enough. (see table (\ref{exp3_table})).
+The results of size of the test in two factors setting are performing similar to the single factor result. 
+The size will shrink with the observation amount t increasing, and when we have t grater than 240, the size will be smaller than 0.05 threshold in all situations.
 
 %Same results are found in the two factors experiments.
 %Table (\ref{exp2_table}) and Table (\ref{exp3_table}) shows the result of experiment 2 and 3.
