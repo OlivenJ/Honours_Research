@@ -15,6 +15,8 @@ risk_free <- risk_free %>% select(Date, everything())
 risk_factors <- read_excel("Documents/Honours/Data and Scripts/Data/Risk_factors.xlsx")%>% 
   rename(Date = `in per cent!`)
 risk_factors$Date <- (seq.Date(ymd("1976-07-01"), ymd("2017-12-01"), "month"))
+risk_factors <- risk_factors %>% 
+  pivot_longer(c(variable.names(risk_factors)[-1]), names_to = "Factor", values_to = "Value" )
 
 
 #=============================================================================================#
