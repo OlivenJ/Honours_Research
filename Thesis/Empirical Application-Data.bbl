@@ -1,0 +1,36 @@
+\begin{thebibliography}{}
+
+\bibitem [\protect \citeauthoryear {%
+Feng%
+, Giglio%
+\BCBL {}\ \BBA {} Xiu%
+}{%
+Feng%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2020}}%
+}]{%
+Feng2020}
+\APACinsertmetastar {%
+Feng2020}%
+\begin{APACrefauthors}%
+Feng, G.%
+, Giglio, S.%
+\BCBL {}\ \BBA {} Xiu, D.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2020}{6}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Taming the Factor Zoo: A Test of New Factors} {Taming
+  the factor zoo: A test of new factors}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{The Journal of Finance}{75}{}{1327-1370}.
+\newblock
+\begin{APACrefURL}
+  \url{https://onlinelibrary.wiley.com/doi/abs/10.1111/jofi.12883}
+  \end{APACrefURL}
+\newblock
+\begin{APACrefDOI} \doi{10.1111/jofi.12883} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\end{thebibliography}
