@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2020.5.27)  28 MAY 2020 00:05
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2020.5.27)  26 JUN 2020 11:04
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -525,25 +525,6 @@ Package: apacite 2013/07/21 v6.03 APA citation
 \bibitemsep=\skip61
 \biblabelsep=\skip62
 )
-(/usr/local/texlive/2020/texmf-dist/tex/latex/lineno/lineno.sty
-Package: lineno 2005/11/02 line numbers on paragraphs v4.41
-Invalid UTF-8 byte or sequence at line 296 replaced by U+FFFD.
-\linenopenalty=\count282
-\output=\toks36
-\linenoprevgraf=\count283
-\linenumbersep=\dimen264
-\linenumberwidth=\dimen265
-\c@linenumber=\count284
-\c@pagewiselinenumber=\count285
-\c@LN@truepage=\count286
-\c@internallinenumber=\count287
-\c@internallinenumbers=\count288
-\quotelinenumbersep=\dimen266
-\bframerule=\dimen267
-\bframesep=\dimen268
-\bframebox=\box64
-LaTeX Info: Redefining \\ on input line 3056.
-)
 (/usr/local/texlive/2020/texmf-dist/tex/latex/diagbox/diagbox.sty
 Package: diagbox 2020/02/09 v2.3 Making table heads with diagonal lines
 
@@ -559,43 +540,43 @@ Package pict2e Info: Driver file for pict2e: p2e-xetex.def on input line 121.
 (/usr/local/texlive/2020/texmf-dist/tex/latex/pict2e/p2e-xetex.def
 File: p2e-xetex.def 2016/02/05 v0.1u Driver-dependant file (RN,HjG,JT)
 )
-\pIIe@GRAPH=\toks37
-\@arclen=\dimen269
-\@arcrad=\dimen270
-\@tempdimd=\dimen271
+\pIIe@GRAPH=\toks36
+\@arclen=\dimen264
+\@arcrad=\dimen265
+\@tempdimd=\dimen266
 )
 (/usr/local/texlive/2020/texmf-dist/tex/latex/tools/calc.sty
 Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count289
-\calc@Bcount=\count290
-\calc@Adimen=\dimen272
-\calc@Bdimen=\dimen273
+\calc@Acount=\count282
+\calc@Bcount=\count283
+\calc@Adimen=\dimen267
+\calc@Bdimen=\dimen268
 \calc@Askip=\skip63
 \calc@Bskip=\skip64
 LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count291
+\calc@Ccount=\count284
 \calc@Cskip=\skip65
 )
 (/usr/local/texlive/2020/texmf-dist/tex/latex/tools/array.sty
 Package: array 2019/08/31 v2.4l Tabular extension package (FMi)
-\col@sep=\dimen274
-\ar@mcellbox=\box65
-\extrarowheight=\dimen275
-\NC@list=\toks38
+\col@sep=\dimen269
+\ar@mcellbox=\box64
+\extrarowheight=\dimen270
+\NC@list=\toks37
 \extratabsurround=\skip66
 \backup@length=\skip67
-\ar@cellbox=\box66
+\ar@cellbox=\box65
 )
-\diagbox@boxa=\box67
-\diagbox@boxb=\box68
-\diagbox@boxm=\box69
-\diagbox@wd=\dimen276
-\diagbox@ht=\dimen277
-\diagbox@insepl=\dimen278
-\diagbox@insepr=\dimen279
-\diagbox@outsepl=\dimen280
-\diagbox@outsepr=\dimen281
+\diagbox@boxa=\box66
+\diagbox@boxb=\box67
+\diagbox@boxm=\box68
+\diagbox@wd=\dimen271
+\diagbox@ht=\dimen272
+\diagbox@insepl=\dimen273
+\diagbox@insepr=\dimen274
+\diagbox@outsepl=\dimen275
+\diagbox@outsepr=\dimen276
 )
 (/usr/local/texlive/2020/texmf-dist/tex/latex/fontspec/fontspec.sty
 (/usr/local/texlive/2020/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
@@ -604,38 +585,38 @@ Package: expl3 2020-05-15 L3 programming layer (loader)
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/l3backend/l3backend-xdvipdfmx.def
 File: l3backend-xdvipdfmx.def 2020-05-05 L3 backend support: xdvipdfmx
-\g__graphics_track_int=\count292
-\l__pdf_internal_box=\box70
-\g__pdf_backend_object_int=\count293
-\g__pdf_backend_annotation_int=\count294
+\g__graphics_track_int=\count285
+\l__pdf_internal_box=\box69
+\g__pdf_backend_object_int=\count286
+\g__pdf_backend_annotation_int=\count287
 ))
 Package: xparse 2020-05-15 L3 Experimental document command parser
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/l3packages/xparse/xparse-generic.
 tex
-\l__xparse_current_arg_int=\count295
-\g__xparse_grabber_int=\count296
-\l__xparse_m_args_int=\count297
-\l__xparse_v_nesting_int=\count298
+\l__xparse_current_arg_int=\count288
+\g__xparse_grabber_int=\count289
+\l__xparse_m_args_int=\count290
+\l__xparse_v_nesting_int=\count291
 ))
 Package: fontspec 2020/02/21 v2.7i Font selection for XeLaTeX and LuaLaTeX
  (/usr/local/texlive/2020/texmf-dist/tex/latex/fontspec/fontspec-xetex.sty
 Package: fontspec-xetex 2020/02/21 v2.7i Font selection for XeLaTeX and LuaLaTe
 X
-\l__fontspec_script_int=\count299
-\l__fontspec_language_int=\count300
-\l__fontspec_strnum_int=\count301
-\l__fontspec_tmp_int=\count302
-\l__fontspec_tmpa_int=\count303
-\l__fontspec_tmpb_int=\count304
-\l__fontspec_tmpc_int=\count305
-\l__fontspec_em_int=\count306
-\l__fontspec_emdef_int=\count307
-\l__fontspec_strong_int=\count308
-\l__fontspec_strongdef_int=\count309
-\l__fontspec_tmpa_dim=\dimen282
-\l__fontspec_tmpb_dim=\dimen283
-\l__fontspec_tmpc_dim=\dimen284
+\l__fontspec_script_int=\count292
+\l__fontspec_language_int=\count293
+\l__fontspec_strnum_int=\count294
+\l__fontspec_tmp_int=\count295
+\l__fontspec_tmpa_int=\count296
+\l__fontspec_tmpb_int=\count297
+\l__fontspec_tmpc_int=\count298
+\l__fontspec_em_int=\count299
+\l__fontspec_emdef_int=\count300
+\l__fontspec_strong_int=\count301
+\l__fontspec_strongdef_int=\count302
+\l__fontspec_tmpa_dim=\dimen277
+\l__fontspec_tmpb_dim=\dimen278
+\l__fontspec_tmpc_dim=\dimen279
 (/usr/local/texlive/2020/texmf-dist/tex/latex/base/fontenc.sty
 Package: fontenc 2020/02/11 v2.0o Standard LaTeX package
 )
@@ -665,28 +646,28 @@ Package fontspec Info: Font family 'TimesNewRoman(0)' created for font 'Times
 (./Research Plan.aux)
 \openout1 = `"Research Plan.aux"'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 27.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 26.
 LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 2
-7.
+6.
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: xetex
@@ -723,7 +704,7 @@ LaTeX Font Info:    ... okay on input line 27.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 ABD: EveryShipout initializing macros
-\c@maskedRefs=\count310
+\c@maskedRefs=\count303
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/apacite/english.apc
 File: english.apc 2013/07/21 v6.03 apacite language file
@@ -897,12 +878,12 @@ tmcm/m/n/12 g$\TU/TimesNewRoman(0)/m/n/12 .
 
 [12]) [13] [14] (./Research Plan.aux) ) 
 Here is how much of TeX's memory you used:
- 16734 strings out of 479282
- 362858 string characters out of 5880512
- 656624 words of memory out of 5000000
- 34064 multiletter control sequences out of 15000+600000
- 541908 words of font info for 75 fonts, out of 8000000 for 9000
+ 16526 strings out of 479282
+ 359627 string characters out of 5880512
+ 654315 words of memory out of 5000000
+ 33863 multiletter control sequences out of 15000+600000
+ 541892 words of font info for 73 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 59i,16n,75p,838b,297s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 59i,16n,75p,838b,291s stack positions out of 5000i,500n,10000p,200000b,80000s
 
 Output written on Research Plan.pdf (15 pages).
