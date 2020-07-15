@@ -18,7 +18,8 @@ risk_factors$Date <- (seq.Date(ymd("1976-07-01"), ymd("2017-12-01"), "month"))
 risk_factors <- risk_factors %>% 
   pivot_longer(c(variable.names(risk_factors)[-1]), names_to = "Factor", values_to = "Value" )
 
-
+Market_factor <- risk_factors %>% filter(Factor == "MktRf")
+risk_factor<- risk_factors %>% filter(Factor !="MktRf")
 #=============================================================================================#
 #=============================================================================================#
 #Return#
@@ -55,6 +56,12 @@ ten_name <- price %>%
   summarise(length = n()) %>% 
   filter(length == 121)
 
+fifty_name <-price %>% 
+  filter(Date < ymd("2018-01-01") & Date > ymd("2002-11-01")) %>% 
+  group_by(Ticker) %>% 
+  summarise(length = n()) %>% 
+  filter(length == 181)
+
 twenty_name <- price %>% 
   filter(Date < ymd("2018-01-01") & Date > ymd("1997-11-01")) %>% 
   group_by(Ticker) %>% 
@@ -71,6 +78,10 @@ ten_return <- semi_join(return, ten_name, by = "Ticker") %>%
   filter(Date < ymd("2018-01-01") & Date > ymd("2007-12-01")) %>% 
   select(-Rf, -Adj.Close)
 
+fifty_return <- semi_join(return, fifty_name, by = "Ticker") %>% 
+  filter(Date < ymd("2018-01-01") & Date > ymd("2002-12-01")) %>% 
+  select(-Rf, -Adj.Close)
+
 twenty_return <- semi_join(return, twenty_name, by = "Ticker") %>% 
   filter(Date < ymd("2018-01-01") & Date > ymd("1997-12-01")) %>% 
   select(-Rf, -Adj.Close)
@@ -80,5 +91,24 @@ thirty_return <- semi_join(return, thirty_name, by = "Ticker") %>%
   select(-Rf, -Adj.Close)
 
 ten_return$Date <- as.Date(ten_return$Date)
+fifty_return$Date <- as.Date(fifty_return$Date)
 twenty_return$Date <- as.Date(twenty_return$Date)
 thirty_return$Date <- as.Date(thirty_return$Date)
+
+ten_return <- inner_join(ten_return, risk_factor, by = "Date") %>% inner_join(Market_factor, by = "Date")%>% 
+  rename(Factor = Factor.x, Value = Value.x, Market = Value.y) %>% 
+  select(-Factor.y) 
+
+fifty_return <- inner_join(fifty_return, risk_factor, by = "Date") %>% inner_join(Market_factor, by = "Date")%>% 
+  rename(Factor = Factor.x, Value = Value.x, Market = Value.y) %>% 
+  select(-Factor.y) 
+
+twenty_return<- inner_join(twenty_return, risk_factor, by = "Date") %>% 
+  inner_join(Market_factor, by = "Date")%>% 
+  rename(Factor = Factor.x, Value = Value.x, Market = Value.y) %>% 
+  select(-Factor.y) 
+
+thirty_return<- inner_join(thirty_return, risk_factor, by = "Date") %>%
+  inner_join(Market_factor, by = "Date")%>% 
+  rename(Factor = Factor.x, Value = Value.x, Market = Value.y) %>% 
+  select(-Factor.y) 
