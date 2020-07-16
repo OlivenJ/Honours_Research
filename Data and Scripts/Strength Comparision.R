@@ -3,6 +3,8 @@ library(broom)
 library(mvtnorm)
 library(xtable)
 
+
+
 #=========================#======================#=======================#
 #=========================#======================#=======================#
 one_thirty <- thirty_return %>% filter(Date >= ymd("1988-01-01") & Date < ymd("1998-01-01")) %>% 
@@ -65,4 +67,25 @@ thirty_combine <- one_thirty_result %>%
     select(Factor,diff, everything()) 
   
   view(twenty_combine)
+  
+  
+  
+  
+  ten_plot <- ten_result %>% inner_join(factor_ancillary, by = "Factor") %>% 
+    filter(strength >= 0.5) %>% 
+    ggplot(aes(x = Year , y = strength)) +
+    geom_point()
+  
+  
+  twenty_plot <- twenty_result %>% inner_join(factor_ancillary, by = "Factor") %>% 
+    filter(strength >= 0.5) %>% 
+    ggplot(aes(x = Year , y = strength)) +
+    geom_point()
+  
+  thirty_plot <- thirty_result %>% inner_join(factor_ancillary, by = "Factor") %>% 
+    filter(strength >= 0.5) %>% 
+    ggplot(aes(x = Year , y = strength)) +
+    geom_point()
+  
+  ggarrange(ten_plot, twenty_plot, thirty_plot)
   
