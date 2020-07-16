@@ -3,6 +3,9 @@ library(broom)
 library(mvtnorm)
 library(xtable)
 
+
+
+
 nested_ten_return<- ten_return %>% 
   group_by(Factor) %>% 
   nest()
@@ -18,6 +21,7 @@ nested_twenty_return<- twenty_return %>%
 nested_thirty_return<- thirty_return %>% 
   group_by(Factor) %>% 
   nest()
+
 
 model <- function(data){
   lm(Excess ~ Market + Value + 1, data = data)
@@ -69,7 +73,7 @@ twenty_result %>%
   ggplot(aes(x = strength)) +
   geom_histogram()
 
-ten_result %>% 
+three_combine <- ten_result %>% 
   rename(ten_strength = strength) %>% 
   right_join(twenty_result, by = "Factor") %>% 
   rename(twenty_strength = strength) %>% 
@@ -78,10 +82,28 @@ ten_result %>%
   select(-pi.x, -pi, -pi.y) %>% 
   mutate(mean = (ten_strength+twenty_strength+thirty_strength)/3,
          var = ((ten_strength-mean)^2 +(twenty_strength - mean)^2 +(thirty_strength - mean)^2)/3,
-         std = sqrt(var)) %>% 
-  arrange(desc(std), mean) %>% 
-  view()
+         std = sqrt(var)) 
 
+  view(three_combine %>% arrange(desc(std), mean) %>% 
+  select(-Market_strength.x, -Market_strength.y,-Market_strength))
+
+  
+  ten_result %>% inner_join(thirty_result, by = "Factor") %>% 
+    rename(Market_ten = Market_strength.x,
+           strength_ten = strength.x,
+           Market_thirty = Market_strength.y,
+           strength_thirty = strength.y) %>% 
+    select(-pi.x,-pi.y,-Market_ten, -Market_thirty) %>% 
+    mutate(diff = abs(strength_ten - strength_thirty)) %>% 
+    select(Factor,diff, everything()) %>% 
+    view()
+    
+    
+    #mutate(mean = (strength_ten + strength_thirty)/2,
+     #      var = ((strength_ten - mean)^2+ (strength_thirty - mean)^2)/2,
+      #     std = sqrt(var)) %>% view()
+    
+  
 ten_result %>% filter(strength >= 0.5)  %>% arrange(desc(strength)) 
 fifty_result %>% filter(strength >= 0.7) %>% arrange(desc(strength))
 twenty_result %>% filter(strength >= 0.7)  %>% arrange(desc(strength))
