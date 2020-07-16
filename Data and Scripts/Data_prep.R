@@ -18,8 +18,12 @@ risk_factors$Date <- (seq.Date(ymd("1976-07-01"), ymd("2017-12-01"), "month"))
 risk_factors <- risk_factors %>% 
   pivot_longer(c(variable.names(risk_factors)[-1]), names_to = "Factor", values_to = "Value" )
 
+factor_ancillary <- read_excel("Desktop/Ancillary Materials for Honours/Book1.xlsx", 
+                            col_types = c("text", "text", "skip", 
+                                          "numeric"))
+
 Market_factor <- risk_factors %>% filter(Factor == "MktRf")
-risk_factor<- risk_factors %>% filter(Factor !="MktRf")
+risk_factor<- risk_factors %>% filter(Factor !="MktRf") 
 #=============================================================================================#
 #=============================================================================================#
 #Return#

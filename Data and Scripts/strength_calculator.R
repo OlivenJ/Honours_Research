@@ -2,8 +2,7 @@ library(tidyverse)
 library(broom)
 library(mvtnorm)
 library(xtable)
-
-
+library(ggpubr)
 
 
 nested_ten_return<- ten_return %>% 
@@ -51,8 +50,6 @@ strength_calc <- function(return_data){
   return(result_table)
 }
 
-length((nested_ten_return[1,] %>% unnest(cols = c(data)))$Ticker %>% unique())
-
 ten_result <- strength_calc(nested_ten_return)
 fifty_result <- strength_calc(nested_fifty_return)
 twenty_result <- strength_calc(nested_twenty_return)
@@ -82,7 +79,8 @@ three_combine <- ten_result %>%
   select(-pi.x, -pi, -pi.y) %>% 
   mutate(mean = (ten_strength+twenty_strength+thirty_strength)/3,
          var = ((ten_strength-mean)^2 +(twenty_strength - mean)^2 +(thirty_strength - mean)^2)/3,
-         std = sqrt(var)) 
+         std = sqrt(var)) %>% 
+  inner_join(factor_ancillary, by = "Factor") %>% select(-Name)
 
   view(three_combine %>% arrange(desc(std), mean) %>% 
   select(-Market_strength.x, -Market_strength.y,-Market_strength))
@@ -108,3 +106,7 @@ ten_result %>% filter(strength >= 0.5)  %>% arrange(desc(strength))
 fifty_result %>% filter(strength >= 0.7) %>% arrange(desc(strength))
 twenty_result %>% filter(strength >= 0.7)  %>% arrange(desc(strength))
 thirty_result %>% filter(strength >= 0.7)  %>% arrange(desc(strength))
+
+three_combine %>% filter(ten_strength >= 0.5) %>% 
+  arrange(desc(std)) %>% select(-c(Market_strength, Market_strength.x, Market_strength.y)) %>% 
+  view()
