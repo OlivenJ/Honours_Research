@@ -42,6 +42,8 @@ group_price <- price %>%
 
 return <- tibble(Ticker = character(), Date =ymd(), Adj.Close = double(),Close = double(), Return = double(), Adj.Return = double())
 
+view(return)
+
 for (i in 1:(nrow(group_price)-1)) {
   temp <-group_price[i,] %>% 
     unnest(col = c("data"))

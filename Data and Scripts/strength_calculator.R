@@ -99,8 +99,8 @@ three_combine <- ten_result %>%
          std = sqrt(var)) %>% 
   inner_join(factor_ancillary, by = "Factor") %>% select(-Name)
 
-  three_combine %>% arrange(desc(std), mean) %>% 
-  select(-Market_strength.x, -Market_strength.y,-Market_strength)
+  xtable(three_combine %>% arrange(desc(std), mean) %>% 
+  select(-Market_strength.x, -Market_strength.y,-Market_strength, -var, -Year), digits = c(0,0,3,3,3,3,3))
 
   
   ten_result %>% inner_join(thirty_result, by = "Factor") %>% 
@@ -128,8 +128,17 @@ three_combine %>% filter(ten_strength >= 0.5) %>%
   arrange(desc(std)) %>% select(-c(Market_strength, Market_strength.x, Market_strength.y)) %>% 
   view()
 
+xtable(ten_result %>% arrange(desc(strength)) %>% 
+  rename(Market_ten = Market_strength, ten_strength = strength) %>% 
+  select(-pi)%>% 
+  bind_cols(twenty_result %>% arrange(desc(strength))) %>% 
+  rename(Market_twenty = Market_strength) %>% 
+  select(-pi) %>% 
+  bind_cols(thirty_result %>% arrange(desc(strength))) %>% 
+  rename(Market_thirty = Market_strength) %>% 
+  select(-pi), digits = c(0,0,3,3,0,3,3,0,3,3))
  
-
+twenty_result %>% arrange(desc(strength)) %>% view()
 
 control_group <- semi_join(return, first_boom_name, by = "Ticker") %>% 
   filter(Date < ymd("2018-01-01") & Date > ymd("2009-04-01")) %>% 

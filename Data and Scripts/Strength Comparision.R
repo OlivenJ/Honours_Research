@@ -46,6 +46,9 @@ thirty_combine <- one_thirty_result %>%
                                            var = ((Strength.one-mean)^2 +(Strength.two - mean)^2 +(Strength.three - mean)^2)/3,
                                            std = sqrt(var)) 
 
+xtable(thirty_combine %>% arrange(desc(std)) %>% 
+  select(-mean, - var), digits = c(0,0,3,3,3,3,3))
+
 half_thirty_result %>% inner_join(fifty_result, by = "Factor") %>% 
   select(-c(Market_strength.x, pi.x, Market_strength.y, pi.y)) %>% 
   rename(half_thirty = strength.x, fifty = strength.y) %>% 
@@ -72,8 +75,11 @@ half_thirty_result %>% inner_join(fifty_result, by = "Factor") %>%
            Market_two = Market_strength.y,
            strength_two = strength.y) %>% 
     select(-pi.x,-pi.y,-Market_one, -Market_two) %>% 
-    mutate(diff = abs(strength_one - strength_two)) %>% 
-    select(Factor,diff, everything()) 
+    mutate(diff = abs(strength_one - strength_two)) %>%
+    inner_join(twenty_result,by = "Factor") %>% 
+    select(Factor,strength, everything(),-Market_strength, -pi,diff) 
+  
+  xtable(twenty_combine %>% arrange(desc(diff)), digits = c(0,0,3,3,3,3))
   
   ten_plot <- ten_result %>% inner_join(factor_ancillary, by = "Factor") %>% 
     filter(strength >= 0.5) %>% 
@@ -117,6 +123,7 @@ half_thirty_result %>% inner_join(fifty_result, by = "Factor") %>%
     select(Factor, ten_strength, twenty_strength) %>% 
     mutate(diff = abs(ten_strength - twenty_strength)) 
 
+  xtable(twenty_thirty_combine %>% arrange(desc(diff)), digits = c(0,0,3,3,3))
   
   ten_thirty_combine <- ten_result %>% inner_join  (thirty_result, by = "Factor") %>% 
     rename(ten_strength = strength.x, thirty_strength = strength.y) %>% 
