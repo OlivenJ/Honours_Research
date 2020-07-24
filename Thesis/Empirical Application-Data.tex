@@ -1,35 +1,35 @@
-\documentclass[12pt]{article}
-\usepackage{amsmath}
-\usepackage{mathptmx}
-\usepackage{setspace}
-\usepackage{amssymb}
-\usepackage{float}
-\usepackage{graphicx}
-\usepackage{booktabs}
-\usepackage{subfigure}
-\usepackage[margin=2.5cm]{geometry}
-\usepackage[title]{appendix}
-\usepackage{bm}
-\usepackage{tcolorbox}
-\usepackage{apacite}
-\onehalfspacing
-\usepackage{lineno}
-\linenumbers
-\usepackage{diagbox}
+%\documentclass[12pt]{article}
+%\usepackage{amsmath}
+%\usepackage{mathptmx}
+%\usepackage{setspace}
+%\usepackage{amssymb}
+%\usepackage{float}
+%\usepackage{graphicx}
+%\usepackage{booktabs}
+%\usepackage{subfigure}
+%\usepackage[margin=2.5cm]{geometry}
+%\usepackage[title]{appendix}
+%\usepackage{bm}
+%\usepackage{tcolorbox}
+%\usepackage{apacite}
+%\onehalfspacing
+%\usepackage{lineno}
+%\linenumbers
+%\usepackage{diagbox}
 
-\DeclareMathOperator*{\argmin}{arg\,min}
-\newtheorem{experiment}{Experiment}
+%\DeclareMathOperator*{\argmin}{arg\,min}
+%\newtheorem{experiment}{Experiment}
 
 
 
-\usepackage{fontspec}
-\setmainfont{Times New Roman}
-\addtolength{\jot}{0.5em}
-\linespread{1.5}
+%\usepackage{fontspec}
+%\setmainfont{Times New Roman}
+%\addtolength{\jot}{0.5em}
+%\linespread{1.5}
 
-\begin{document}
+%\begin{document}
 	\section{Empirical Application}
-	\subsection{Data}
+	\subsection{Data}\label{data}
 	
 In the empirical section, for the return of assets,  we use the monthly excess returns from Standard Poor (S\&P) 500 index component companies.\footnote{The data was obtained from the Global Finance Data, Osiris, and Yahoo Finance}
 We prepared three data sets for different time spams: 10 years (January 2008 to December 2017), 20 years (January 1998 to December 2017), and 30 years (January 1989 to December 2017).
@@ -50,15 +50,17 @@ Because of the components companies of the index are constantly changing, for ea
 The one-month U.S. treasury bill return rate was set as the risk free return $r_{ft}$.
 For company i, we calculates the companies return at month t ($r_{it}$) use the following formula:
 \begin{align*}
-r_{it} = \frac{p_{i t} - p_{i t-1}}{p_{i t-1}}
+r_{it} = \frac{p_{i t} - p_{i t-1}}{p_{i t-1}}\times 100
 \end{align*}
-and calculate the access return $x_{it} = r_{it} - r_{ft}$.
+and calculate the excess return $x_{it} = r_{it} - r_{ft}$.
 Here the $p_{it}$ and $p_{i t-1}$ are the company's close stock price at the first day of month t and t-1.
 The price is adjusted for the dividends and splits.\footnote{The data is adjusted base on the Central for Research in Security Price (CRSP) method.}
 
-	With regard of the factors, we use 146 different risk factors, including the market factors as market return minus risk free rate form \citeA{Feng2020}.
+With regard of the factors, we use 146 different risk factors, including the market factors as market return minus risk free rate from \citeA{Feng2020}.
 
-\newpage
-\bibliographystyle{apacite}
-\bibliography{thesis.bib}
-\end{document}
+
+
+%\newpage
+%\bibliographystyle{apacite}
+%\bibliography{thesis.bib}
+%\end{document}
