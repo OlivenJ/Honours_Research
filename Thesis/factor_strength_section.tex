@@ -1,37 +1,44 @@
-\documentclass[12pt]{article}
-\usepackage{amsmath}
-\usepackage{mathptmx}
-\usepackage{setspace}
-\usepackage{amssymb}
-\usepackage{float}
-\usepackage{graphicx}
-\usepackage{booktabs}
-\usepackage{subfigure}
-\usepackage[margin=2.5cm]{geometry}
-\usepackage[title]{appendix}
-\usepackage{bm}
-\usepackage{tcolorbox}
-\usepackage{apacite}
-\onehalfspacing
-\usepackage{lineno}
-\linenumbers
-\usepackage{diagbox}
+%\documentclass[12pt]{article}
+%\usepackage{amsmath}
+%\usepackage{mathptmx}
+%\usepackage{setspace}
+%\usepackage{amssymb}
+%\usepackage{float}
+%\usepackage{graphicx}
+%\usepackage{booktabs}
+%\usepackage{subfigure}
+%\usepackage[margin=2.5cm]{geometry}
+%\usepackage[title]{appendix}
+%\usepackage{bm}
+%\usepackage{tcolorbox}
+%\usepackage{apacite}
+%\onehalfspacing
+%\usepackage{lineno}
+%\linenumbers
+%\usepackage{diagbox}
 
-\DeclareMathOperator*{\argmin}{arg\,min}
-\newtheorem{experiment}{Experiment}
+%\usepackage{longtable}
+%\usepackage{pdflscape}
+%\usepackage{rotating}
+%\usepackage{subcaption}
+%\usepackage{floatrow}
+%\usepackage{fontspec}
+
+%\DeclareMathOperator*{\argmin}{arg\,min}
+%\newtheorem{experiment}{Experiment}
 
 
 
-\usepackage{fontspec}
-\setmainfont{Times New Roman}
-\addtolength{\jot}{0.5em}
-\linespread{1.5}
+%\usepackage{fontspec}
+%\setmainfont{Times New Roman}
+%\addtolength{\jot}{0.5em}
+%\linespread{1.5}
 
 
 
 
 		
-		\begin{document}
+%		\begin{document}
 \section{Factor Strength}\label{strength}
 The concept of factor strength employed by this project comes from \citeA{Bailey2020}, and it was first introduced by \citeA{Bailey2016}.
 They defined the strength of factor from prospect of the cross-section dependences of large panel and connect it to the pervasiveness of the factor, which is captured by the factor loadings.
@@ -39,7 +46,7 @@ They defined the strength of factor from prospect of the cross-section dependenc
 In a latter paper, \citeA{BKP2019} extended the method by loosen some restrictions, and proved that their estimation can also be applied on the residuals or regression result.
 Thereafter, they focusing on the case of observed factors, and proposed the method we employed in this project \cite{Bailey2020}.
 
-		\subsection{Definition}\label{definiton}
+		\subsection{Definition}\label{strength_definiton}
 
 Consider the following multi-factor model for n different cross-section units and T observations with k  factors.
 
@@ -64,7 +71,7 @@ And if we have factor strength $\alpha = 0$, it means that the factor has all fa
 For any factor with strength in [0.5, 1], we will refer such factor as semi-strong factor.
 In general term, the more non-zero loading a factor has, the stronger the factor's strength is. 
 
-	\subsection{Estimation}\label{estimation}
+	\subsection{Estimation}\label{strength_one_factor_estimation}
 To estimate the strength $\alpha_j$, \citeA{Bailey2020} provides following estimation.
 
 To begin with, we consider a single-factor model with only factor named $f_t$. 
@@ -112,7 +119,7 @@ After obtain the $\hat{\pi}_{nT}$, we can use the following formula provided by 
 Whenever we have $\hat{\pi}_{nT}$, the estimated $\hat{\alpha}$ will be equal to zero. 
 From the estimation, we can find out that $\hat{\alpha} \in [0,1]$
 
-\subsection{Estimation Under Multi-Factor Setting}
+	\subsection{Estimation Under Multi-Factor Setting}\label{strength_multi_estimation}
 
 This estimation can also be extended into a multi-factor set up.
 Consider the following multi-factor model:
@@ -205,7 +212,7 @@ Here we set $\mu_{beta}=0.71$ to make sure every generated loading value is suff
 Then we randomly assign $n - [n^{\alpha_{1}}]$ and $n - [n^{\alpha_{2}}]$ factor loadings as zero.
 $\alpha_1$ and $\alpha_2$ are the true factor strength of $f_1$ and $f_2$. 
 In this simulation, we will start the factor strength from 0.7 and increase it gradually till unity with pace 0.05, say $(\alpha_{1}, \alpha_{2}) = \{0.7, 0.75,0.8,\cdots,1\}$.
- $[\cdot]$ is the integer operator defined at section (\ref{estimation}).
+ $[\cdot]$ is the integer operator defined at section (\ref{strength_one_factor_estimation}).
 This step reflects the fact that only $[n^\alpha]$ factor loadings are non-zero.
 In terms of the factors, they comes from a multinomial distribution $MVN(\mathbf{0}, \Sigma) $, as we discuss before.
 
@@ -225,7 +232,7 @@ Both $\beta_{i1}$ and $\beta_{i2}$ are non-zero. Error term  and both factors ar
 The factor strength for the first factor $\alpha_1 = 1$ all the time, and $\alpha_2$ various.
 \end{experiment}
 
-The factor strength in each experiment is estimated using the method discussed in section (\ref{estimation}), the size of significant test is $p = 0.05$, and the critical value exponent $\sigma$ has been set as 0.5.
+The factor strength in each experiment is estimated using the method discussed in section (\ref{strength_one_factor_estimation}), the size of significant test is $p = 0.05$, and the critical value exponent $\sigma$ has been set as 0.5.
 For each of the experiment, we calculate the bias, the RMSE and the size of the test to justify the estimation performances.
 The bias is calculated as the difference between the true factor strength $\alpha$ and the estimate factor strength $\hat{\alpha}$.
 The Root Square Mean Error (RMSE) comes from:
@@ -316,13 +323,14 @@ The size will shrink with the observation amount t increasing, and when we have 
 %Table (\ref{exp2_table}) and Table (\ref{exp3_table}) shows the result of experiment 2 and 3.
 %With regard of the correlation $\rho_{12}$ between factors, we found that for either cases the  $\rho{12} = 0$ or $\rho_{12} = 0.3$, the bias and RMSE will decrease gradually till converge to zero when the true strength is approaching unity.
 
-\newpage
-\bibliographystyle{apacite}
-\bibliography{thesis.bib}
+%\newpage
+%\bibliographystyle{apacite}
+%\bibliography{thesis.bib}
 
-\newpage
-\appendix
-\input{appendix.tex}
+%\newpage
+%\appendix
+%\input{appendix.tex}
+%\input{Comparison_table.tex}
 
 
-		\end{document}
+%		\end{document}
