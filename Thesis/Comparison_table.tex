@@ -1,35 +1,37 @@
-\documentclass[12pt]{article}
+%\documentclass[12pt]{article}
 %\usepackage{amsmath}
 %\usepackage{mathptmx}
-\usepackage{setspace}
+%\usepackage{setspace}
 %\usepackage{amssymb}
-\usepackage{float}
-\usepackage{graphicx}
-\usepackage{booktabs}
-\usepackage{subfigure}
-\usepackage[margin=2.5cm]{geometry}
-\usepackage[title]{appendix}
-\usepackage{bm}
-\usepackage{tcolorbox}
-\usepackage{apacite}
+%\usepackage{float}
+%\usepackage{graphicx}
+%\usepackage{booktabs}
+%\usepackage{subfigure}
+%\usepackage[margin=2.5cm]{geometry}
+%\usepackage[title]{appendix}
+%\usepackage{bm}
+%\usepackage{tcolorbox}
+%\usepackage{apacite}
 \onehalfspacing
-\usepackage{longtable}
-\usepackage{diagbox}
-\usepackage{pdflscape}
-\usepackage{rotating}
-	\usepackage{subcaption}
-	\usepackage{floatrow}
+%\usepackage{longtable}
+%\usepackage{diagbox}
+%\usepackage{pdflscape}
+%\usepackage{rotating}
+	%\usepackage{subcaption}
+%	\usepackage{floatrow}
 
 
 
-\usepackage{fontspec}
+%\usepackage{fontspec}
 %\setmainfont{Times New Roman}
 \addtolength{\jot}{0.1em}
 \linespread{1}
 \graphicspath{{./plot/}}
 
 
-\begin{document}
+%\begin{document}
+%	\section{Strength Comparison Tables}\label{strength_table}
+
 \begin{landscape}
 \begin{footnotesize}
 \setlength{\tabcolsep}{2pt}
@@ -41,19 +43,21 @@
 		\begin{longtable}{l|lcc|lcc|lcc}
 
 			
-					\caption{Ranked Three Data Set Comparison }\\
+					\caption{Ranked Three Data Set Comparison }\label{table:three_ranked_compare}\\
+
 			\hline
 			\hline
 \multicolumn{1}{l|}{} & \multicolumn{3}{c|}{Ten Year Data}                                                                                                                                                                         & \multicolumn{3}{c|}{Twenty Year Data}                                                                                                                                                                     & \multicolumn{3}{c}{Thirty Year Data}                                                                                                                                                                    \\ \hline
 \multicolumn{1}{r|}{} & \multicolumn{1}{c|}{Factor} & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}Market Factor\\ Strength\end{tabular}} & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}Risk Factor\\  Strength\end{tabular}} & \multicolumn{1}{c|}{Factor} & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}Market Factor\\ Strength\end{tabular}} & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}Risk Factor\\ Strength\end{tabular}} & \multicolumn{1}{c|}{Factor} & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}Market Factor\\ Strength\end{tabular}} & \multicolumn{1}{c}{\begin{tabular}[c]{@{}c@{}}Risk Factor\\ Strength\end{tabular}} \\ \hline
-			\endfirsthead
+	\endfirsthead
 			
-					\caption{Three Data Set Comparison (Cont.)}\\
+					\caption[]{Ranked Three Data Set Comparison (Cont.)}\\
+
 						\hline
 			\hline
 \multicolumn{1}{l|}{} & \multicolumn{3}{c|}{Ten Year Data}                                                                                                                                                                         & \multicolumn{3}{c|}{Twenty Year Data}                                                                                                                                                                     & \multicolumn{3}{c}{Thirty Year Data}                                                                                                                                                                    \\ \hline
 \multicolumn{1}{r|}{} & \multicolumn{1}{c|}{Factor} & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}Market Factor\\ Strength\end{tabular}} & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}Risk Factor\\  Strength\end{tabular}} & \multicolumn{1}{c|}{Factor} & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}Market Factor\\ Strength\end{tabular}} & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}Risk Factor\\ Strength\end{tabular}} & \multicolumn{1}{c|}{Factor} & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}Market Factor\\ Strength\end{tabular}} & \multicolumn{1}{c}{\begin{tabular}[c]{@{}c@{}}Risk Factor\\ Strength\end{tabular}} \\ \hline
-			\endhead
+	\endhead
 			
 			\hline
 			\hline
@@ -209,7 +213,10 @@
 \end{longtable}
 
 			\begin{minipage}{1.4\textwidth}
-	{\footnotesize {\bf Notes:} This table compares the factors' strength and the market factor strength from the two factor CAPM model. Using data from three data set. Ten year data: January 2007 to December 2017, twenty year data: January 1997 to December 2017, and thirty year data: January 1987 to December 2017. The sequence is arranged by the factors strength in decreasing order.}
+	{\footnotesize {\bf Notes:} 
+		This table presents the estimation results of factors' strength, ordered decreasingly by risk factor strength.
+For the estimation, we use the method from Section \ref{strength_multi_estimation},  with one market factor and one risk factor.
+The three data set is describe in the section \ref{data}}
 \end{minipage}
 \end{footnotesize}
 \end{landscape}
@@ -222,14 +229,14 @@
 	\centering
 	
 	\begin{longtable}{rl|c|c|c|c|c}
-		\caption{Three Data Set Comparison}\\
+		\caption{Three Data Set Comparison}\label{table:three_compare}\\
 
 		\hline
 		\hline
 		& Factor & 10 Year Strength & 20 Year Strength& 30 Year Strength& Mean & Standard Deviation \\ \hline
 		\endfirsthead
 		
-		\caption{Three Data Set Comparison (Cont.)}\\
+		\caption[]{Three Data Set Comparison (Cont.)}\\
 		\hline
 		\hline
 		& Factor& 10 Year Strength & 20 Year Strength & 30 Year Strength& Mean & Standard Deviation \\ \hline
@@ -388,7 +395,9 @@
 	\end{longtable}
 
 			\begin{minipage}{0.97\textwidth}
-	{\footnotesize {\bf Notes:} 	This table shows the factor strength for three data sets, ranked by the standard deviation among the three data sets in decreasing sequence.}
+	{\footnotesize {\bf Notes:} This table presents the estimated factor strength, using data from three different data set. For the data description see Section \ref{data}. 
+	The table also presents the calculated mean and standard deviation of each factors. 
+The table is ordered decreasingly by the standard deviation. }
 \end{minipage}
 \end{footnotesize}
 
@@ -402,7 +411,7 @@
 	\singlespacing
 	\centering					
 	\begin{longtable}{rl|c|c|c}
-		\caption{Ten and Twenty Comparison}\\
+		\caption{Ten and Twenty Comparison}\label{table:ten_twenty_compare}\\
 		
 		\hline
 		\hline
@@ -410,7 +419,7 @@
 		\hline
 		\endfirsthead
 		
-		\caption{Ten and Twenty Comparison (Cont.)}\\
+		\caption[]{Ten and Twenty Comparison (Cont.)}\\
 		\hline
 		\hline
 		& Factor & 10 Year Strength & 20 Year Strength & Difference \\
@@ -569,7 +578,10 @@
 	\end{longtable}
 
 			\begin{minipage}{0.7\textwidth}
-	{\footnotesize {\bf Notes:} 	This table compare the factor strength between the ten year data set and twenty year data set, ranked by the difference between the strength in decreasing sequence.}
+				
+					{\footnotesize {\bf Notes:} This table presents the estimated factor strength, using data from the ten year data and twenty year data. For the data description see Section \ref{data}. 
+					The table also presents the difference between the two estimated strengths. 
+					The table is ordered decreasingly by the difference. }
 \end{minipage}
 
 \end{footnotesize}
@@ -581,7 +593,7 @@
 	\singlespacing
 	\centering					
 	\begin{longtable}{rl|c|c|c}
-		\caption{Ten and Thirty Comparison}\\
+			\caption{Ten and Thirty Comparison}\label{table:ten_thirty_compare}\\
 		
 		\hline
 		\hline
@@ -589,7 +601,7 @@
 		\hline
 		\endfirsthead
 		
-		\caption{Ten and Thirty Comparison (Cont.)}\\
+		\caption[]{Ten and Thirty Comparison (Cont.)}\\
 		\hline
 		\hline
 		& Factor & 10 Year Strength & 30 Year Strength & Difference \\
@@ -747,7 +759,10 @@
 	\end{longtable}
 
 			\begin{minipage}{0.7\textwidth}
-	{\footnotesize {\bf Notes:} 	This table compare the factor strength between the ten year data set and thirty year data set, ranked by the difference between the strength in decreasing sequence.}
+				
+{\footnotesize {\bf Notes:} This table presents the estimated factor strength, using data from the ten year data and thirty year data. For the data description see Section \ref{data}. 
+	The table also presents the difference between the two estimated strengths. 
+	The table is ordered decreasingly by the difference. }
 \end{minipage}
 
 \end{footnotesize}
@@ -761,7 +776,7 @@
 	\singlespacing
 	\centering					
 	\begin{longtable}{rl|c|c|c}
-		\caption{Twenty and Thirty Comparison}\\
+		\caption{Twenty and Thirty Comparison}\label{twenty_thirty_compare}\\
 		
 		\hline
 		\hline
@@ -769,7 +784,7 @@
 		\hline
 		\endfirsthead
 		
-		\caption{Twenty and Thirty Comparison (Cont.)}\\
+		\caption[]{Twenty and Thirty Comparison (Cont.)}\\
 		\hline
 		\hline
 		& Factor & 20 Year Strength & 30 Year Strength & Difference \\
@@ -928,9 +943,194 @@
 	\end{longtable}
 
 			\begin{minipage}{0.7\textwidth}
-	{\footnotesize {\bf Notes:} 	This table compare the factor strength between the twenty year data set and thirty year data set, ranked by the difference between the strength in decreasing sequence.}
+				
+{\footnotesize {\bf Notes:} This table presents the estimated factor strength, using data from the twenty year data and thirty year data. For the data description see Section \ref{data}. 
+	The table also presents the difference between the two estimated strengths. 
+	The table is ordered decreasingly by the difference. }
 \end{minipage}
 
+\end{footnotesize}
+
+
+\newpage
+
+\begin{footnotesize}
+	\setlength{\tabcolsep}{2pt}
+	\singlespacing
+	\centering					
+	\begin{longtable}{rl|c|c|c|c}
+		\caption{Twenty Year Decompose}\label{table:twenty_decompose}\\
+		
+		\hline
+		\hline
+		\multicolumn{1}{l}{} & \multicolumn{1}{l|}{}       & \multicolumn{3}{c|}{Factor Strength $\hat{\alpha}$}                                                                                                                                              &                                                                                              \\ \hline
+		& \multicolumn{1}{l|}{Factor} & \multicolumn{1}{c|}{Full Sample} & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}January 1998 to \\ December 2007\end{tabular}} & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}January 2008 to \\ December 2017\end{tabular}} & \multicolumn{1}{c}{\begin{tabular}[c]{@{}c@{}}Difference between\\ Sub samples\end{tabular}} \\ \hline
+		\endfirsthead
+		
+		\caption[]{Thirty Year Decompose (Cont.)}\\
+		\hline
+		\hline
+		\multicolumn{1}{l}{} & \multicolumn{1}{l|}{}       & \multicolumn{3}{c|}{Factor Strength $\hat{\alpha}$}                                                                                                                                              &                                                                                              \\ \hline
+		& \multicolumn{1}{l|}{Factor} & \multicolumn{1}{c|}{Full Sample} & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}January 1998 to \\ December 2007\end{tabular}} & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}January 2008 to \\ December 2017\end{tabular}} & \multicolumn{1}{c}{\begin{tabular}[c]{@{}c@{}}Difference between\\ Sub samples\end{tabular}} \\ \hline
+		\endhead
+		
+		
+		\hline\hline
+		\endfoot
+		1 & ndf & 0.589 & 0.721 & 0.000 & 0.721 \\ 
+		2 & invest & 0.644 & 0.000 & 0.648 & 0.648 \\ 
+		3 & dpia & 0.634 & 0.000 & 0.644 & 0.644 \\ 
+		4 & ps & 0.807 & 0.752 & 0.115 & 0.637 \\ 
+		5 & dfin & 0.838 & 0.810 & 0.182 & 0.628 \\ 
+		6 & rsup & 0.651 & 0.663 & 0.115 & 0.549 \\ 
+		7 & pchsale\_pchxsga & 0.425 & 0.512 & 0.000 & 0.512 \\ 
+		8 & rd & 0.787 & 0.756 & 0.266 & 0.489 \\ 
+		9 & pchquick & 0.626 & 0.602 & 0.115 & 0.487 \\ 
+		10 & pchsale\_pchrect & 0.574 & 0.584 & 0.115 & 0.469 \\ 
+		11 & pchsaleinv & 0.557 & 0.574 & 0.115 & 0.459 \\ 
+		12 & pchcurrat & 0.710 & 0.634 & 0.182 & 0.452 \\ 
+		13 & pchdepr & 0.761 & 0.696 & 0.266 & 0.430 \\ 
+		14 & pchsale\_pchinvt & 0.448 & 0.539 & 0.115 & 0.425 \\ 
+		15 & dcol & 0.838 & 0.786 & 0.364 & 0.422 \\ 
+		16 & nincr & 0.834 & 0.777 & 0.364 & 0.413 \\ 
+		17 & ta & 0.634 & 0.593 & 0.182 & 0.411 \\ 
+		18 & IPO & 0.850 & 0.802 & 0.397 & 0.405 \\ 
+		19 & grltnoa & 0.533 & 0.230 & 0.634 & 0.404 \\ 
+		20 & dwc & 0.546 & 0.519 & 0.115 & 0.404 \\ 
+		21 & dfnl & 0.519 & 0.648 & 0.266 & 0.381 \\ 
+		22 & lfe & 0.425 & 0.364 & 0.000 & 0.364 \\ 
+		23 & RMW & 0.847 & 0.808 & 0.448 & 0.360 \\ 
+		24 & gad & 0.788 & 0.626 & 0.266 & 0.360 \\ 
+		25 & lgr & 0.850 & 0.787 & 0.437 & 0.350 \\ 
+		26 & sgr & 0.819 & 0.741 & 0.397 & 0.344 \\ 
+		27 & ep & 0.891 & 0.862 & 0.519 & 0.342 \\ 
+		28 & dsti & 0.723 & 0.626 & 0.297 & 0.330 \\ 
+		29 & bm\_ia & 0.843 & 0.793 & 0.469 & 0.324 \\ 
+		30 & roaq & 0.607 & 0.584 & 0.266 & 0.317 \\ 
+		31 & dolvol & 0.774 & 0.752 & 0.437 & 0.315 \\ 
+		32 & cinvest\_a & 0.784 & 0.737 & 0.425 & 0.313 \\ 
+		33 & ww & 0.863 & 0.822 & 0.512 & 0.310 \\ 
+		34 & etr & 0.344 & 0.115 & 0.411 & 0.297 \\ 
+		35 & cfp & 0.893 & 0.853 & 0.557 & 0.296 \\ 
+		36 & herf & 0.824 & 0.778 & 0.487 & 0.291 \\ 
+		37 & mom6m & 0.569 & 0.519 & 0.230 & 0.290 \\ 
+		38 & hire & 0.851 & 0.783 & 0.496 & 0.287 \\ 
+		39 & cp & 0.894 & 0.858 & 0.574 & 0.284 \\ 
+		40 & salecash & 0.902 & 0.861 & 0.584 & 0.277 \\ 
+		41 & quick & 0.901 & 0.852 & 0.579 & 0.273 \\ 
+		42 & chcsho & 0.884 & 0.843 & 0.574 & 0.270 \\ 
+		43 & roic & 0.703 & 0.694 & 0.425 & 0.269 \\ 
+		44 & stdacc & 0.883 & 0.842 & 0.574 & 0.269 \\ 
+		45 & STR & 0.526 & 0.297 & 0.563 & 0.266 \\ 
+		46 & ear & 0.266 & 0.266 & 0.000 & 0.266 \\ 
+		47 & depr & 0.889 & 0.854 & 0.589 & 0.266 \\ 
+		48 & SMB & 0.745 & 0.736 & 0.487 & 0.248 \\ 
+		49 & cdi & 0.654 & 0.569 & 0.322 & 0.246 \\ 
+		50 & stdcf & 0.878 & 0.839 & 0.593 & 0.246 \\ 
+		51 & rds & 0.890 & 0.852 & 0.607 & 0.246 \\ 
+		52 & indmom & 0.725 & 0.669 & 0.425 & 0.245 \\ 
+		53 & cash & 0.897 & 0.856 & 0.615 & 0.241 \\ 
+		54 & cei & 0.730 & 0.719 & 0.479 & 0.241 \\ 
+		55 & lev & 0.897 & 0.861 & 0.626 & 0.234 \\ 
+		56 & dnco & 0.816 & 0.770 & 0.539 & 0.231 \\ 
+		57 & sin & 0.844 & 0.810 & 0.579 & 0.231 \\ 
+		58 & nop & 0.893 & 0.857 & 0.626 & 0.230 \\ 
+		59 & currat & 0.887 & 0.844 & 0.615 & 0.230 \\ 
+		60 & convind & 0.669 & 0.611 & 0.381 & 0.230 \\ 
+		61 & HML & 0.874 & 0.853 & 0.626 & 0.227 \\ 
+		62 & kz & 0.887 & 0.860 & 0.634 & 0.226 \\ 
+		63 & cashpr & 0.878 & 0.832 & 0.607 & 0.225 \\ 
+		64 & zs & 0.896 & 0.858 & 0.641 & 0.217 \\ 
+		65 & mom36m & 0.496 & 0.626 & 0.411 & 0.215 \\ 
+		66 & moms12m & 0.725 & 0.683 & 0.469 & 0.214 \\ 
+		67 & nef & 0.873 & 0.833 & 0.619 & 0.214 \\ 
+		68 & ato & 0.884 & 0.827 & 0.619 & 0.209 \\ 
+		69 & ndp & 0.904 & 0.862 & 0.654 & 0.208 \\ 
+		70 & op & 0.893 & 0.852 & 0.644 & 0.208 \\ 
+		71 & dy & 0.897 & 0.853 & 0.648 & 0.205 \\ 
+		72 & ebp & 0.893 & 0.859 & 0.654 & 0.205 \\ 
+		73 & noa & 0.825 & 0.787 & 0.584 & 0.203 \\ 
+		74 & CMA & 0.805 & 0.699 & 0.496 & 0.203 \\ 
+		75 & acc & 0.843 & 0.799 & 0.602 & 0.197 \\ 
+		76 & adm & 0.881 & 0.833 & 0.637 & 0.195 \\ 
+		77 & salerec & 0.847 & 0.801 & 0.615 & 0.186 \\ 
+		78 & sue & 0.487 & 0.230 & 0.411 & 0.182 \\ 
+		79 & absacc & 0.859 & 0.788 & 0.607 & 0.182 \\ 
+		80 & ivg & 0.397 & 0.182 & 0.364 & 0.182 \\ 
+		81 & HXZ\_IA & 0.838 & 0.739 & 0.557 & 0.182 \\ 
+		82 & pchgm\_pchsale & 0.381 & 0.448 & 0.266 & 0.182 \\ 
+		83 & rdm & 0.823 & 0.764 & 0.584 & 0.180 \\ 
+		84 & aeavol & 0.737 & 0.657 & 0.479 & 0.179 \\ 
+		85 & age & 0.894 & 0.847 & 0.669 & 0.178 \\ 
+		86 & LIQ\_PS & 0.557 & 0.425 & 0.598 & 0.173 \\ 
+		87 & cinvest & 0.701 & 0.626 & 0.459 & 0.167 \\ 
+		88 & nxf & 0.849 & 0.790 & 0.623 & 0.167 \\ 
+		89 & roavol & 0.894 & 0.858 & 0.691 & 0.167 \\ 
+		90 & sp & 0.888 & 0.847 & 0.681 & 0.167 \\ 
+		91 & tang & 0.884 & 0.830 & 0.669 & 0.160 \\ 
+		92 & pchcapx\_ia & 0.681 & 0.651 & 0.496 & 0.155 \\ 
+		93 & egr\_hxz & 0.803 & 0.686 & 0.533 & 0.153 \\ 
+		94 & maxret & 0.863 & 0.838 & 0.686 & 0.152 \\ 
+		95 & grcapx & 0.593 & 0.344 & 0.496 & 0.152 \\ 
+		96 & tb & 0.732 & 0.703 & 0.552 & 0.152 \\ 
+		97 & zerotrade & 0.865 & 0.835 & 0.691 & 0.144 \\ 
+		98 & rna & 0.826 & 0.730 & 0.589 & 0.141 \\ 
+		99 & retvol & 0.848 & 0.834 & 0.694 & 0.140 \\ 
+		100 & std\_turn & 0.870 & 0.832 & 0.694 & 0.138 \\ 
+		101 & idiovol & 0.870 & 0.832 & 0.694 & 0.138 \\ 
+		102 & chtx & 0.644 & 0.519 & 0.381 & 0.138 \\ 
+		103 & baspread & 0.854 & 0.840 & 0.703 & 0.137 \\ 
+		104 & pchcapx & 0.563 & 0.459 & 0.322 & 0.137 \\ 
+		105 & turn & 0.864 & 0.830 & 0.696 & 0.133 \\ 
+		106 & HML\_Devil & 0.838 & 0.818 & 0.686 & 0.132 \\ 
+		107 & cfp\_ia & 0.584 & 0.589 & 0.459 & 0.130 \\ 
+		108 & poa & 0.739 & 0.696 & 0.574 & 0.122 \\ 
+		109 & pm & 0.641 & 0.512 & 0.634 & 0.122 \\ 
+		110 & pctacc & 0.694 & 0.641 & 0.519 & 0.122 \\ 
+		111 & chinv & 0.397 & 0.297 & 0.411 & 0.115 \\ 
+		112 & dcoa & 0.706 & 0.563 & 0.448 & 0.115 \\ 
+		113 & chmom & 0.479 & 0.322 & 0.437 & 0.115 \\ 
+		114 & chpmia & 0.344 & 0.344 & 0.230 & 0.115 \\ 
+		115 & BAB & 0.757 & 0.749 & 0.637 & 0.111 \\ 
+		116 & beta & 0.846 & 0.838 & 0.728 & 0.111 \\ 
+		117 & HXZ\_ROE & 0.699 & 0.672 & 0.563 & 0.109 \\ 
+		118 & realestate\_hxz & 0.798 & 0.752 & 0.648 & 0.105 \\ 
+		119 & grltnoa\_hxz & 0.730 & 0.623 & 0.519 & 0.104 \\ 
+		120 & std\_dolvol & 0.496 & 0.411 & 0.512 & 0.100 \\ 
+		121 & ala & 0.762 & 0.766 & 0.666 & 0.099 \\ 
+		122 & pps & 0.589 & 0.448 & 0.546 & 0.097 \\ 
+		123 & QMJ & 0.703 & 0.701 & 0.607 & 0.094 \\ 
+		124 & cashdebt & 0.557 & 0.563 & 0.469 & 0.094 \\ 
+		125 & dnca & 0.747 & 0.611 & 0.519 & 0.092 \\ 
+		126 & pricedelay & 0.691 & 0.598 & 0.512 & 0.086 \\ 
+		127 & dnoa & 0.266 & 0.266 & 0.182 & 0.085 \\ 
+		128 & saleinv & 0.637 & 0.469 & 0.552 & 0.083 \\ 
+		129 & gma & 0.756 & 0.660 & 0.579 & 0.082 \\ 
+		130 & chempia & 0.557 & 0.487 & 0.411 & 0.076 \\ 
+		131 & egr & 0.725 & 0.593 & 0.533 & 0.060 \\ 
+		132 & ol & 0.787 & 0.703 & 0.644 & 0.059 \\ 
+		133 & cto & 0.694 & 0.602 & 0.552 & 0.051 \\ 
+		134 & LTR & 0.487 & 0.411 & 0.364 & 0.048 \\ 
+		135 & ill & 0.266 & 0.381 & 0.425 & 0.043 \\ 
+		136 & ob\_a & 0.764 & 0.694 & 0.651 & 0.043 \\ 
+		137 & rs & 0.563 & 0.364 & 0.397 & 0.033 \\ 
+		138 & dncl & 0.584 & 0.615 & 0.584 & 0.031 \\ 
+		139 & pchcapx3 & 0.752 & 0.637 & 0.607 & 0.031 \\ 
+		140 & em & 0.644 & 0.546 & 0.519 & 0.027 \\ 
+		141 & chatoia & 0.437 & 0.344 & 0.322 & 0.022 \\ 
+		142 & ms & 0.619 & 0.563 & 0.584 & 0.021 \\ 
+		143 & os & 0.626 & 0.533 & 0.546 & 0.013 \\ 
+		144 & orgcap & 0.715 & 0.657 & 0.666 & 0.009 \\ 
+		145 & UMD & 0.706 & 0.641 & 0.637 & 0.003 \\ 
+		\hline
+		
+	\end{longtable}
+	\begin{minipage}{\textwidth}
+		{\footnotesize {\bf Notes:}	This table presents the estimated factor strength, using the decomposed twenty years data.
+			The thirty year data set is decomposed into two subsets: January 1998 to December 2007, and January 2008 to December 2017. For each data set, it contains 120 observations (t = 120), and 342 units (n = 342)
+			The table also contains the full sample estimation results of factor strength, and the difference between the two sub samples results.
+			The table is ordered decreasingly by the difference.}
+	\end{minipage}
 \end{footnotesize}
 
 \newpage
@@ -940,7 +1140,7 @@
 	\singlespacing
 	\centering					
 	\begin{longtable}{rl|c|c|c|c|c}
-		\caption{Thirty Year Decompose}\\
+		\caption{Thirty Year Decompose}\label{table:thirty_decompose}\\
 		
 		\hline
 		\hline
@@ -948,7 +1148,7 @@
 		& \multicolumn{1}{l|}{Factor} & \multicolumn{1}{r|}{Full Sample} & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}January 1988 to \\ December 1997\end{tabular}} & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}January 1998 to \\ December 2007\end{tabular}} & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}January 2008 to \\ December 2017\end{tabular}} & \multicolumn{1}{c}{\begin{tabular}[c]{@{}c@{}}Standard Deviation of \\ Three sub-samples\end{tabular}} \\ \hline
 		\endfirsthead
 		
-		\caption{Thirty Year Decompose (Cont.)}\\
+		\caption[]{Thirty Year Decompose (Cont.)}\\
 		\hline
 		\hline
 		\multicolumn{1}{l}{} & \multicolumn{1}{l|}{}       & \multicolumn{4}{c|}{Factor Strength $\hat{\alpha}$}                                                                                                                                                                                                                                                                              & \multicolumn{1}{l}{}                                                                                   \\ \hline
@@ -1105,197 +1305,17 @@
 		\hline
 	\end{longtable}
 			\begin{minipage}{\textwidth}
-	{\footnotesize {\bf Notes:}	This table decompose the thirty year data set into three sub sample set, each contain ten years data. The table is ranked by the standard deviation among three sub samples, in decreasing sequence}
+	{\footnotesize {\bf Notes:}	This table presents the estimated factor strength, using the decomposed thirty years data.
+	The thirty year data set is decomposed into three subsets: January 1988 to December 1997, January 1998 to December 2007, and January 2008 to December 2017. For each data set, it contains 120 observations (t = 120), and 242 units (n = 242)
+The table also contains the full sample estimation results of factor strength, and the standard deviation among the three sub samples results.
+The table is ordered decreasingly by the standard deviation.}
 \end{minipage}
-
 \end{footnotesize}
 
-
-\newpage
-
-\begin{footnotesize}
-	\setlength{\tabcolsep}{2pt}
-	\singlespacing
-	\centering					
-	\begin{longtable}{rl|c|c|c|c}
-		\caption{Twenty Year Decompose}\\
-		
-		\hline
-		\hline
-		\multicolumn{1}{l}{} & \multicolumn{1}{l|}{}       & \multicolumn{3}{c|}{Factor Strength $\hat{\alpha}$}                                                                                                                                              &                                                                                              \\ \hline
-		& \multicolumn{1}{l|}{Factor} & \multicolumn{1}{c|}{Full Sample} & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}January 1998 to \\ December 2007\end{tabular}} & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}January 2008 to \\ December 2017\end{tabular}} & \multicolumn{1}{c}{\begin{tabular}[c]{@{}c@{}}Difference between\\ Sub samples\end{tabular}} \\ \hline
-		\endfirsthead
-		
-		\caption{Thirty Year Decompose (Cont.)}\\
-		\hline
-		\hline
-		\multicolumn{1}{l}{} & \multicolumn{1}{l|}{}       & \multicolumn{3}{c|}{Factor Strength $\hat{\alpha}$}                                                                                                                                              &                                                                                              \\ \hline
-		& \multicolumn{1}{l|}{Factor} & \multicolumn{1}{c|}{Full Sample} & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}January 1998 to \\ December 2007\end{tabular}} & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}January 2008 to \\ December 2017\end{tabular}} & \multicolumn{1}{c}{\begin{tabular}[c]{@{}c@{}}Difference between\\ Sub samples\end{tabular}} \\ \hline
-		\endhead
-		
-	
-		\hline\hline
-		\endfoot
-		1 & ndf & 0.589 & 0.721 & 0.000 & 0.721 \\ 
-		2 & invest & 0.644 & 0.000 & 0.648 & 0.648 \\ 
-		3 & dpia & 0.634 & 0.000 & 0.644 & 0.644 \\ 
-		4 & ps & 0.807 & 0.752 & 0.115 & 0.637 \\ 
-		5 & dfin & 0.838 & 0.810 & 0.182 & 0.628 \\ 
-		6 & rsup & 0.651 & 0.663 & 0.115 & 0.549 \\ 
-		7 & pchsale\_pchxsga & 0.425 & 0.512 & 0.000 & 0.512 \\ 
-		8 & rd & 0.787 & 0.756 & 0.266 & 0.489 \\ 
-		9 & pchquick & 0.626 & 0.602 & 0.115 & 0.487 \\ 
-		10 & pchsale\_pchrect & 0.574 & 0.584 & 0.115 & 0.469 \\ 
-		11 & pchsaleinv & 0.557 & 0.574 & 0.115 & 0.459 \\ 
-		12 & pchcurrat & 0.710 & 0.634 & 0.182 & 0.452 \\ 
-		13 & pchdepr & 0.761 & 0.696 & 0.266 & 0.430 \\ 
-		14 & pchsale\_pchinvt & 0.448 & 0.539 & 0.115 & 0.425 \\ 
-		15 & dcol & 0.838 & 0.786 & 0.364 & 0.422 \\ 
-		16 & nincr & 0.834 & 0.777 & 0.364 & 0.413 \\ 
-		17 & ta & 0.634 & 0.593 & 0.182 & 0.411 \\ 
-		18 & IPO & 0.850 & 0.802 & 0.397 & 0.405 \\ 
-		19 & grltnoa & 0.533 & 0.230 & 0.634 & 0.404 \\ 
-		20 & dwc & 0.546 & 0.519 & 0.115 & 0.404 \\ 
-		21 & dfnl & 0.519 & 0.648 & 0.266 & 0.381 \\ 
-		22 & lfe & 0.425 & 0.364 & 0.000 & 0.364 \\ 
-		23 & RMW & 0.847 & 0.808 & 0.448 & 0.360 \\ 
-		24 & gad & 0.788 & 0.626 & 0.266 & 0.360 \\ 
-		25 & lgr & 0.850 & 0.787 & 0.437 & 0.350 \\ 
-		26 & sgr & 0.819 & 0.741 & 0.397 & 0.344 \\ 
-		27 & ep & 0.891 & 0.862 & 0.519 & 0.342 \\ 
-		28 & dsti & 0.723 & 0.626 & 0.297 & 0.330 \\ 
-		29 & bm\_ia & 0.843 & 0.793 & 0.469 & 0.324 \\ 
-		30 & roaq & 0.607 & 0.584 & 0.266 & 0.317 \\ 
-		31 & dolvol & 0.774 & 0.752 & 0.437 & 0.315 \\ 
-		32 & cinvest\_a & 0.784 & 0.737 & 0.425 & 0.313 \\ 
-		33 & ww & 0.863 & 0.822 & 0.512 & 0.310 \\ 
-		34 & etr & 0.344 & 0.115 & 0.411 & 0.297 \\ 
-		35 & cfp & 0.893 & 0.853 & 0.557 & 0.296 \\ 
-		36 & herf & 0.824 & 0.778 & 0.487 & 0.291 \\ 
-		37 & mom6m & 0.569 & 0.519 & 0.230 & 0.290 \\ 
-		38 & hire & 0.851 & 0.783 & 0.496 & 0.287 \\ 
-		39 & cp & 0.894 & 0.858 & 0.574 & 0.284 \\ 
-		40 & salecash & 0.902 & 0.861 & 0.584 & 0.277 \\ 
-		41 & quick & 0.901 & 0.852 & 0.579 & 0.273 \\ 
-		42 & chcsho & 0.884 & 0.843 & 0.574 & 0.270 \\ 
-		43 & roic & 0.703 & 0.694 & 0.425 & 0.269 \\ 
-		44 & stdacc & 0.883 & 0.842 & 0.574 & 0.269 \\ 
-		45 & STR & 0.526 & 0.297 & 0.563 & 0.266 \\ 
-		46 & ear & 0.266 & 0.266 & 0.000 & 0.266 \\ 
-		47 & depr & 0.889 & 0.854 & 0.589 & 0.266 \\ 
-		48 & SMB & 0.745 & 0.736 & 0.487 & 0.248 \\ 
-		49 & cdi & 0.654 & 0.569 & 0.322 & 0.246 \\ 
-		50 & stdcf & 0.878 & 0.839 & 0.593 & 0.246 \\ 
-		51 & rds & 0.890 & 0.852 & 0.607 & 0.246 \\ 
-		52 & indmom & 0.725 & 0.669 & 0.425 & 0.245 \\ 
-		53 & cash & 0.897 & 0.856 & 0.615 & 0.241 \\ 
-		54 & cei & 0.730 & 0.719 & 0.479 & 0.241 \\ 
-		55 & lev & 0.897 & 0.861 & 0.626 & 0.234 \\ 
-		56 & dnco & 0.816 & 0.770 & 0.539 & 0.231 \\ 
-		57 & sin & 0.844 & 0.810 & 0.579 & 0.231 \\ 
-		58 & nop & 0.893 & 0.857 & 0.626 & 0.230 \\ 
-		59 & currat & 0.887 & 0.844 & 0.615 & 0.230 \\ 
-		60 & convind & 0.669 & 0.611 & 0.381 & 0.230 \\ 
-		61 & HML & 0.874 & 0.853 & 0.626 & 0.227 \\ 
-		62 & kz & 0.887 & 0.860 & 0.634 & 0.226 \\ 
-		63 & cashpr & 0.878 & 0.832 & 0.607 & 0.225 \\ 
-		64 & zs & 0.896 & 0.858 & 0.641 & 0.217 \\ 
-		65 & mom36m & 0.496 & 0.626 & 0.411 & 0.215 \\ 
-		66 & moms12m & 0.725 & 0.683 & 0.469 & 0.214 \\ 
-		67 & nef & 0.873 & 0.833 & 0.619 & 0.214 \\ 
-		68 & ato & 0.884 & 0.827 & 0.619 & 0.209 \\ 
-		69 & ndp & 0.904 & 0.862 & 0.654 & 0.208 \\ 
-		70 & op & 0.893 & 0.852 & 0.644 & 0.208 \\ 
-		71 & dy & 0.897 & 0.853 & 0.648 & 0.205 \\ 
-		72 & ebp & 0.893 & 0.859 & 0.654 & 0.205 \\ 
-		73 & noa & 0.825 & 0.787 & 0.584 & 0.203 \\ 
-		74 & CMA & 0.805 & 0.699 & 0.496 & 0.203 \\ 
-		75 & acc & 0.843 & 0.799 & 0.602 & 0.197 \\ 
-		76 & adm & 0.881 & 0.833 & 0.637 & 0.195 \\ 
-		77 & salerec & 0.847 & 0.801 & 0.615 & 0.186 \\ 
-		78 & sue & 0.487 & 0.230 & 0.411 & 0.182 \\ 
-		79 & absacc & 0.859 & 0.788 & 0.607 & 0.182 \\ 
-		80 & ivg & 0.397 & 0.182 & 0.364 & 0.182 \\ 
-		81 & HXZ\_IA & 0.838 & 0.739 & 0.557 & 0.182 \\ 
-		82 & pchgm\_pchsale & 0.381 & 0.448 & 0.266 & 0.182 \\ 
-		83 & rdm & 0.823 & 0.764 & 0.584 & 0.180 \\ 
-		84 & aeavol & 0.737 & 0.657 & 0.479 & 0.179 \\ 
-		85 & age & 0.894 & 0.847 & 0.669 & 0.178 \\ 
-		86 & LIQ\_PS & 0.557 & 0.425 & 0.598 & 0.173 \\ 
-		87 & cinvest & 0.701 & 0.626 & 0.459 & 0.167 \\ 
-		88 & nxf & 0.849 & 0.790 & 0.623 & 0.167 \\ 
-		89 & roavol & 0.894 & 0.858 & 0.691 & 0.167 \\ 
-		90 & sp & 0.888 & 0.847 & 0.681 & 0.167 \\ 
-		91 & tang & 0.884 & 0.830 & 0.669 & 0.160 \\ 
-		92 & pchcapx\_ia & 0.681 & 0.651 & 0.496 & 0.155 \\ 
-		93 & egr\_hxz & 0.803 & 0.686 & 0.533 & 0.153 \\ 
-		94 & maxret & 0.863 & 0.838 & 0.686 & 0.152 \\ 
-		95 & grcapx & 0.593 & 0.344 & 0.496 & 0.152 \\ 
-		96 & tb & 0.732 & 0.703 & 0.552 & 0.152 \\ 
-		97 & zerotrade & 0.865 & 0.835 & 0.691 & 0.144 \\ 
-		98 & rna & 0.826 & 0.730 & 0.589 & 0.141 \\ 
-		99 & retvol & 0.848 & 0.834 & 0.694 & 0.140 \\ 
-		100 & std\_turn & 0.870 & 0.832 & 0.694 & 0.138 \\ 
-		101 & idiovol & 0.870 & 0.832 & 0.694 & 0.138 \\ 
-		102 & chtx & 0.644 & 0.519 & 0.381 & 0.138 \\ 
-		103 & baspread & 0.854 & 0.840 & 0.703 & 0.137 \\ 
-		104 & pchcapx & 0.563 & 0.459 & 0.322 & 0.137 \\ 
-		105 & turn & 0.864 & 0.830 & 0.696 & 0.133 \\ 
-		106 & HML\_Devil & 0.838 & 0.818 & 0.686 & 0.132 \\ 
-		107 & cfp\_ia & 0.584 & 0.589 & 0.459 & 0.130 \\ 
-		108 & poa & 0.739 & 0.696 & 0.574 & 0.122 \\ 
-		109 & pm & 0.641 & 0.512 & 0.634 & 0.122 \\ 
-		110 & pctacc & 0.694 & 0.641 & 0.519 & 0.122 \\ 
-		111 & chinv & 0.397 & 0.297 & 0.411 & 0.115 \\ 
-		112 & dcoa & 0.706 & 0.563 & 0.448 & 0.115 \\ 
-		113 & chmom & 0.479 & 0.322 & 0.437 & 0.115 \\ 
-		114 & chpmia & 0.344 & 0.344 & 0.230 & 0.115 \\ 
-		115 & BAB & 0.757 & 0.749 & 0.637 & 0.111 \\ 
-		116 & beta & 0.846 & 0.838 & 0.728 & 0.111 \\ 
-		117 & HXZ\_ROE & 0.699 & 0.672 & 0.563 & 0.109 \\ 
-		118 & realestate\_hxz & 0.798 & 0.752 & 0.648 & 0.105 \\ 
-		119 & grltnoa\_hxz & 0.730 & 0.623 & 0.519 & 0.104 \\ 
-		120 & std\_dolvol & 0.496 & 0.411 & 0.512 & 0.100 \\ 
-		121 & ala & 0.762 & 0.766 & 0.666 & 0.099 \\ 
-		122 & pps & 0.589 & 0.448 & 0.546 & 0.097 \\ 
-		123 & QMJ & 0.703 & 0.701 & 0.607 & 0.094 \\ 
-		124 & cashdebt & 0.557 & 0.563 & 0.469 & 0.094 \\ 
-		125 & dnca & 0.747 & 0.611 & 0.519 & 0.092 \\ 
-		126 & pricedelay & 0.691 & 0.598 & 0.512 & 0.086 \\ 
-		127 & dnoa & 0.266 & 0.266 & 0.182 & 0.085 \\ 
-		128 & saleinv & 0.637 & 0.469 & 0.552 & 0.083 \\ 
-		129 & gma & 0.756 & 0.660 & 0.579 & 0.082 \\ 
-		130 & chempia & 0.557 & 0.487 & 0.411 & 0.076 \\ 
-		131 & egr & 0.725 & 0.593 & 0.533 & 0.060 \\ 
-		132 & ol & 0.787 & 0.703 & 0.644 & 0.059 \\ 
-		133 & cto & 0.694 & 0.602 & 0.552 & 0.051 \\ 
-		134 & LTR & 0.487 & 0.411 & 0.364 & 0.048 \\ 
-		135 & ill & 0.266 & 0.381 & 0.425 & 0.043 \\ 
-		136 & ob\_a & 0.764 & 0.694 & 0.651 & 0.043 \\ 
-		137 & rs & 0.563 & 0.364 & 0.397 & 0.033 \\ 
-		138 & dncl & 0.584 & 0.615 & 0.584 & 0.031 \\ 
-		139 & pchcapx3 & 0.752 & 0.637 & 0.607 & 0.031 \\ 
-		140 & em & 0.644 & 0.546 & 0.519 & 0.027 \\ 
-		141 & chatoia & 0.437 & 0.344 & 0.322 & 0.022 \\ 
-		142 & ms & 0.619 & 0.563 & 0.584 & 0.021 \\ 
-		143 & os & 0.626 & 0.533 & 0.546 & 0.013 \\ 
-		144 & orgcap & 0.715 & 0.657 & 0.666 & 0.009 \\ 
-		145 & UMD & 0.706 & 0.641 & 0.637 & 0.003 \\ 
-		\hline
-
-	\end{longtable}
-				\begin{minipage}{\textwidth}
-		{\footnotesize {\bf Notes:} This table decompose the twenty year data set into two sub sample set, each contain ten years data. The table is ranked by the difference between  sub samples, in decreasing sequence}
-	\end{minipage}
-	
-	
-%	\bigskip
-%	{\bf Notes:}
-%	This table decompose the twenty year data set into two sub sample set, each contain ten years data. The table is ranked by the difference between  sub samples, in decreasing sequence
-\end{footnotesize}
+%	\section{Strength Comparison Figures}\label{strength_figures}
 
 \begin{landscape}
-\begin{figure}[ht]\caption{Strength Comparison}
+\begin{figure}[ht]\caption{Strength Comparison}\label{figure:strength_compare}
 			\centering
 				\includegraphics[scale = 0.7]{strength_comparison_I}
 			\begin{minipage}{\textwidth}
@@ -1303,6 +1323,7 @@
 			\end{minipage}
 \end{figure}
 \end{landscape}
+
 
 
 \begin{landscape}
@@ -1342,7 +1363,7 @@
 
 \begin{landscape}
 	\begin{figure}[ht]
-			\caption{The scatter Plot for three period}
+			\caption{The scatter Plot for three period}\label{figure:scatter}
 		\includegraphics[width=\columnwidth]{scatter}
 		\centering
 					\begin{minipage}{\textwidth}
@@ -1352,4 +1373,4 @@
 \end{landscape}
 
 
-\end{document}
+%\end{document}
