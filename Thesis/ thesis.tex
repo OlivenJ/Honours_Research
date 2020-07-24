@@ -8,153 +8,55 @@
 \usepackage{booktabs}
 \usepackage{subfigure}
 \usepackage[margin=2.5cm]{geometry}
-\usepackage{appendix}
+\usepackage[title]{appendix}
 \usepackage{bm}
 \usepackage{tcolorbox}
 \usepackage{apacite}
 \onehalfspacing
-\usepackage{lineno}
-\linenumbers
- 
+%\usepackage{lineno}
+%\linenumbers
+\usepackage{diagbox}
+\usepackage{longtable}
+\usepackage{pdflscape}
+\usepackage{rotating}
+\usepackage{subcaption}
+\usepackage{floatrow}
+\usepackage{fontspec}
+
+\DeclareMathOperator*{\argmin}{arg\,min}
+\newtheorem{experiment}{Experiment}
+
+
 
 \usepackage{fontspec}
 \setmainfont{Times New Roman}
 \addtolength{\jot}{0.5em}
+\linespread{1.5}
 
-\title{Understanding of Factor Strength}
-\author{Zhiyuan Jiang\\I.D:28710967}
-\date{\today}
+
 
 \begin{document}
-	\maketitle	
-	\newpage
 	\tableofcontents
 	\newpage
-	\section{Introduction and Motivation} \label{Intro}
-Capital Asset Pricing Model (CAPM), created by \citeA{Sharpe1964} and \citeA{Lintner1965} is one of the most famous, and wildly used model to explain the relationship between financial asset's risk and return, especially for the securities.  
-The original model only contains one explanatory variable nowadays called market factor. 
-Since then, many scholars are trying to find and add new variable to the CAPM model to enhance it's ability of capturing the dynamics  between stock return and return volatility. 
-Two examples of new factors are the size factor (SMB) and book-to-market factor(HML) found by \citeA{Fama1992} 
-
-A recent study by \citeA{Harvey2019}, after examining top economics and financial economics journals, revealed the fact that, after 2004, new factors and paper illustrate how those new factors are helping explain the relationship between risk and return were in abundance.
-In their 2015 papers, \citeauthor{Harvey2015}  coined the term "factor zoo" which precisely described the fact that the field of financial economics has too many factors. And some, if not most,of them, can provide seemly significant results purely because of luck. In one of his paper, \citeA{Harvey2017b} provides some insight and explanation about this phenomena from the prospect of critical value and journal's preference. %this part needs some more justification.
-
-Among all those factors, the ability of each factor to explain the risk and return is different. 
-In their recent paper, \cite{Bailey2020} introduce a new framework to measure a factor's ability or strength of pricing the risk of  assets.
-The idea is that for a factor, the more different asset's relationship between risk and return it can capture, the stronger it is.
-We will review this concept in the following section \ref{strength}
-
-Some researches (see \citeNP{Kleibergen2009}, and \citeNP{Gospodinov2017}) argues that for a factor with small coefficient or even no coefficient, the statistic inference for model containing such factors will be unreliable.
-\citeA{Kan1999} warned that when including a factor has no correlation with the asset return in a two-pass method of testing the pricing model, the model will falsely identified that useless model as significant more usually than it should. 
-Therefore, appropriately identified the  strength of factors and eliminate the factors that has limited explaining power before contains it into the CAPM becomes crucial.
-
-In this project, I adopt the framework provided by \citeA{Bailey2020} to exam the strength of factors from \citeauthor{Harvey2019}'s factor zoo, base on the securities return of Standard \& Poors (S\&P) 500 index companies. 
-And then, by applying some machine learning technicises and algorithms,  I want to select factors which can most accurately pricing the asset's risk among all those to include into the Capital Asset Pricing Model.
-
-	\section{Methodology}\label{Method}
-	\subsection{Factor Strength: Definition and Estimation}\label{strength}
-Factor strength has been elaborated by \citeA{Bailey2020}, the following section will re-iterate their definition of factor strength as well as the method to estimate it.\\
-To start with, we define a single factor CAPM model:
-\[  y_{it} = \beta_i + \theta_{i}x_t + \epsilon_{it}  \tag{1}\label{simpleCAPM} \]
-
-Assume we have $n$ different assets (for instance, $n$ = 500 if using data from S\&P 500 index). 
-Collecting and calculating those assets returns from $T$ different observations. 
-$y_{it}$ on the left hand side of equation (\ref{simpleCAPM}) is the excess return of asset $i$ at time $t$, The excess return equals to the asset return minus the risk free return. 
-$x_t$  in the right hand side is the factor with interest at time $t$. 
-Therefore, $\theta_{i}$ is the loading of factor $x_{t}$. 
-$\beta_{i}$ is the constant term, represent the asset's ability to generate abnormal return from the market. 
-$\epsilon_{it}$ as the idiosyncratic error term has been assumed to follow independent, identical distribution, with zero mean and time invariant variance  $\sigma_i^2$.
-
-
-After settle down, we run OLS for this model and obtain the results:
-
-\[ y_{it} =\hat{\beta_i} + \hat{\theta_{i}}x_t + \hat{\epsilon}_{it}, \quad t = 1, 2, 3, \dots  T     \]
-
-Both $\hat{\beta_i}$ and $\hat{\theta_{i}}$ are the OLS estimation results of equation  (\ref{simpleCAPM}). 
-Because we want to investigate the differences between estimated factor loading $\hat{\theta_{i}}$ and zero, we can construct a t-test with $t_{i} = \frac{\hat{\theta_{i}} - 0}{\hat{\varsigma_{i}}}$ where $\varsigma_{i}$ is the standard error of $\hat{\theta_{i}}$.  
-Then we defined $\pi_{nT}$ as the proportion of significant factor's amount to the total observations amount:
-
-\[  \hat{\pi}_{nT} = \frac{\sum_{i=1}^n \hat{\ell}_{i,nT}}{n} \tag{2} \label{pi_function} \]
-
-$\ell_{i,nT}$ is an indicator function as: $\ell_{i,nT} := {\bf1}[|t_{i}|>c(n)]$. 
-If the t-statistic $t_i$ is greater than the critical value $c_p(n)$,  $\hat{\ell}_{i,nT} = 1$. 
-In other word, we will count one if the factor loading $\hat{\theta}_{i}$ is significant. 
-$c_p(n)$ represent the critical value of a test with test size $p$. 
-The critical value is calculated by:
-
-\[   c_p(n) = \Phi^{-1}(1 - \frac{p}{2n^\delta})   \tag{3} \label{critical_value_function} \]
-
-Here, $\Phi^{-1}(\cdot)$ is the inverse cumulative distribution function of a standard normal distribution, and $\delta$ is a non-negative value represent the critical value exponent. 
-The traditional method to calculate critical value has not fixed the multiple testing problem. 
-One of the most commonly used adjustment for multiple testing problem is Bonferroni correction. 
-When $n$ as sample size goes to infinity, however, the Bonferroni correction can not yield satisfying results since the $\frac{p}{2n^{\delta}} \to 0$ when $n \to \infty$. 
-Therefore, \citeA{Bailey2016} provides another adjustment with additional exponent $\delta$ to constrain the behaviour of $n$.
-
- After obtain the $\hat{\pi}_{nT}$, we can use the following formula to estimate our strength indicator $\alpha$:
-\[ \hat{\alpha} = \begin{cases}
-1+\frac{\ln(\hat{\pi}_{nT})}{\ln n} & \text{if}\; \hat{\pi}_{nT} > 0,\\
-	0, & \text{if}\; \hat{\pi}_{nT} = 0.
-\end{cases} \]
-From the estimation, we can find out that $\hat{\alpha} \in [0,1]$
-
-$\hat{\alpha}$ represent the pervasiveness of a factor. 
-Here we denote $[n^{\alpha}]$ , $[\cdot]$ will take the integer part of number inside. 
-For factor $\theta_{i}$:
-
-\begin{align*}
-&|\theta_{i}| > c_p(n)\quad i = 1, 2,  \dots, [n^{\alpha}]\\
-&|\theta_{i}| = 0 \quad i = [n^{\alpha}] + 1, [n^{\alpha}] +2 ,\dots, n
-\end{align*}
-For a factor has strength $\alpha = 1$,  factor will be significant  for every assets at every time. 
-The more observation the factor can significantly influence, the stronger the factor is, and vice versa.\textsl{}
-
-	\section{Monte Carlo Simulation}\label{MC}
-	\subsection{General Design}
-In this Monte Carlo simulation, we consider a dataset has $i = 1, 2,\dots, n$ different assets, with $t= 1, 2,\dots, T$ different observations. 
-$j = 1, 2, \dots, k$ different factors and one market factors are included in the simulation. 
-All returns of this study are generated from the following model with stochastic error.
-
-\[  r_{it} = f_1(\bar{r_{t}} - r_f) + f_2( \beta_{ij}\theta{jt}) +\epsilon_{it}  \]
-
-$f_1(\cdot)$ and $f_2(\cdot)$ are two different functions represent the unknown mechanism of market factor and other factors pricing asset risk.
-$(\bar{r_{t}}- r_f) $ is the market return, calculated from market or index return$\bar{r_{t}}$ minus risk free return$r_f$. 
-We obtain the market factor from the existing data. 
-$r_{it}$ is the stock return, $\theta_{jt}$denotes factors other than market factors and $\beta_{ij}$is the corresponding factor loading. 
-$\epsilon_{it}$ is error. 
-Notice that the $\beta_{ij}$ will be influenced by each factor's strength $\alpha_j$, where we have $\alpha$ as defined in section $\ref{strength}$. 
-And for each factors, we assume they follow a multinomial distributions  with mean zero and a $k\times k$ variance-covariance matrix $\Sigma$. 
-The matrix $\Sigma$ indicates the correlation among  all $k$ factors. 
-
-In this model, we can control several parts to investigates different scenarios of the simulation:
-\begin{enumerate}
-	\item The function $f_1(\cdot)$and $f_2(\cdot)$.
-	\item The strength $\alpha$ of each factor.
-	\item The correlation among each factors.
-	\item The stochastic error term $\epsilon_{it}$
-\end{enumerate}
-\subsection{Baseline Design}\label{base}
-As beginning point, we consider a baseline design with $k = 30$, $n = 500$, and $T = 120$.
-Both $f_1(a)$ and $f_2(a)$ are linear function:
-\begin{align*}
-f_1(a ) &= c_{i} +\beta_i a\\
-f_2(a) &=a
-\end{align*}
-Here the $c_i$ as constant are generated from a uniform distribution $\mathnormal{U}[-0.5, 0.5]$.
-To generate the factors loading, we employed a two steps strategy.
-First we generate a whole factor loadings matrix with $t$ columns represent t different time observations, and $k+1$ rows denote k factors plus one extra market factors. 
-All element of the matrix follow a independent identical uniform distributions $\mathnormal{IIDU}(\mu_{\beta} -0.2, \mu_{\beta} + 0.2)$. 
-The $\mu_{\beta}$ has been equals to 0.71 in this case to set all values apart from zero. 
-After generate the matrix, we randomly selected $[n^{\alpha_{q}}],\; \{q = 1, 2, 3\dots k+1\}$ elements from each column to keep their value  and set the other elements to zero. 
-This step ensures the loading reflects the true strength of each factors. 
-
-
+	\listoffigures
+	\listoftables
+	\newpage
 	
-	 
-	
+\input{Introduction and literature review.tex}
+\input{factor_strength_section.tex}
+\input{elastic_net.tex}
+\input{Empirical Application-Data.tex}
 
 
 \newpage
 \bibliographystyle{apacite}
-\bibliography{proposal.bib}
+\bibliography{thesis.bib}
+
+
+\newpage
+\appendix
+
+\input{appendix.tex}
+\input{Comparison_table.tex}
 
 \end{document}
