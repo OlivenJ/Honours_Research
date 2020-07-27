@@ -10,7 +10,8 @@ long_three_combine <- long_three_combine %>% arrange(Factor)
 long_three_combine$num <- c(1:nrow(long_three_combine))
 
 long_three_combine %>% ggplot(aes(x  = Year, y = strength, color = period))+
-  geom_jitter()
+  geom_jitter()+
+  geom_smooth(method = "lm")
 
 long_three_combine %>% ggplot(aes(x = period, y = strength))+
   geom_col()+
@@ -121,5 +122,5 @@ long_twenty_combine <-twenty_combine %>%
 
 long_twenty_combine %>% ggplot(aes(x = period, y = strength))+
   geom_col()+
-  geom_hline(yintercept = 0.7,linetype = "dashed", color = "red")+
+  geom_hline(yintercept = 0.5,linetype = "dashed", color = "red")+
   facet_wrap(vars(Factor))

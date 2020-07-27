@@ -9,10 +9,18 @@ nested_ten_return<- ten_return %>%
   group_by(Factor) %>% 
   nest()
 
-nested_fifty_return <- fifty_return %>% 
+#nested_fifty_return <- fifty_return %>% 
+#  group_by(Factor) %>% 
+#  nest()
+  
+nested_two_ten_return <-two_ten_return %>% 
   group_by(Factor) %>% 
   nest()
-  
+
+nested_three_ten_return <-three_ten_return %>% 
+  group_by(Factor) %>% 
+  nest()
+
 nested_twenty_return<- twenty_return %>% 
   group_by(Factor) %>% 
   nest()
@@ -21,17 +29,17 @@ nested_thirty_return<- thirty_return %>%
   group_by(Factor) %>% 
   nest()
 
-nested_post_GFC_return<- post_GFC_return %>% 
-  group_by(Factor) %>% 
-  nest()
+#nested_post_GFC_return<- post_GFC_return %>% 
+#  group_by(Factor) %>% 
+#  nest()
 
-nested_first_boom_return <- first_boom_return %>% 
-  group_by(Factor) %>% 
-  nest()
+#nested_first_boom_return <- first_boom_return %>% 
+#  group_by(Factor) %>% 
+#  nest()
 
-nested_pre_GFC_thrity_return<- pre_GFC_thirty_return %>% 
-  group_by(Factor) %>% 
-  nest()
+#nested_pre_GFC_thrity_return<- pre_GFC_thirty_return %>% 
+#  group_by(Factor) %>% 
+#  nest()
 
 model <- function(data){
   lm(Excess ~ Market + Value + 1, data = data)
@@ -62,21 +70,22 @@ strength_calc <- function(return_data){
 }
 
 ten_result <- strength_calc(nested_ten_return)
-fifty_result <- strength_calc(nested_fifty_return)
+two_ten_result <- strength_calc(nested_two_ten_return)
+three_ten_result <- strength_calc(nested_three_ten_return)
+#fifty_result <- strength_calc(nested_fifty_return)
 twenty_result <- strength_calc(nested_twenty_return)
 thirty_result <- strength_calc(nested_thirty_return)
-post_GFC_result <- strength_calc(nested_post_GFC_return)
-first_boom_result <- strength_calc(nested_first_boom_return)
-pre_GFC_thirty_result <- strength_calc(nested_pre_GFC_thrity_return) 
+#post_GFC_result <- strength_calc(nested_post_GFC_return)
+#first_boom_result <- strength_calc(nested_first_boom_return)
+#pre_GFC_thirty_result <- strength_calc(nested_pre_GFC_thrity_return) 
 
 ten_result %>% arrange(desc(strength)) 
-fifty_result %>% arrange(strength,pi,Market_strength)
+#fifty_result %>% arrange(strength,pi,Market_strength)
 twenty_result %>% arrange(desc(strength),pi,Market_strength)
-thirty_result %>% arrange(desc(strength), pi, Market_strength) %>% view()
-post_GFC_result %>% arrange(desc(strength), pi, Market_strength) %>% 
-  view()
-first_boom_result %>% arrange(desc(strength), pi, Market_strength)
-pre_GFC_thirty_result %>% arrange(desc(strength))
+thirty_result %>% arrange(desc(strength), pi, Market_strength) 
+#post_GFC_result %>% arrange(desc(strength), pi, Market_strength) 
+#first_boom_result %>% arrange(desc(strength), pi, Market_strength)
+#pre_GFC_thirty_result %>% arrange(desc(strength))
 
 
 ten_result %>% 

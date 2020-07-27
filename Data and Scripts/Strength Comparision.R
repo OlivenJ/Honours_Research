@@ -28,6 +28,12 @@ two_thirty_result <- strength_calc(two_thirty)
 three_thirty_result <- strength_calc(three_thirty)
 half_thirty_result <- strength_calc(half_thirty)
 
+one_thirty_result
+three_ten_result
+
+two_thirty_result
+two_ten_result
+
 thirty_combine <- one_thirty_result %>% 
   inner_join(two_thirty_result, by = "Factor") %>% 
   rename(Market_strength.one = Market_strength.x,
@@ -233,4 +239,63 @@ half_thirty_result %>% inner_join(fifty_result, by = "Factor") %>%
       mutate(mean = (one+two+three)/3,
              var = ((one-mean)^2 +(two - mean)^2 +(three - mean)^2)/3,
              std = sqrt(var)) 
+
+  label_strength<- function(result){
+    result <- result %>% add_column(level = rep("", nrow(result)))
+    for(i in 1:nrow(result)){
+    if(result[i,]$strength >= 0.9){
+      result[i,]$level = "above09"
+    }else if(result[i,]$strength < 0.9 & result[i,]$strength >= 0.85){
+      result[i,]$level = "085to09"
+    }else if(result[i,]$strength < 0.85 & result[i,]$strength >= 0.8){
+      result[i,]$level = "08to085"
+    }else if(result[i,]$strength < 0.8 & result[i,]$strength >= 0.75){
+      result[i,]$level = "075to08"
+    }else if(result[i,]$strength < 0.75 & result[i,]$strength >= 0.7){
+      result[i,]$level = "07to075"
+    }else if(result[i,]$strength < 0.7 & result[i,]$strength >= 0.65){
+      result[i,]$level = "065to07"
+    }else if(result[i,]$strength < 0.65 & result[i,]$strength >= 0.6){
+      result[i,]$level = "06to065"
+    }else if(result[i,]$strength < 0.6 & result[i,]$strength >= 0.55){
+      result[i,]$level = "055to06"
+    }else if(result[i,]$strength < 0.55 & result[i,]$strength >= 0.5){
+      result[i,]$level = "05to055"
+    }else{
+      result[i,]$level = "below05"
+    }
+    }
+    return(result)
+  }
+
+  
+  
+ten_result<- label_strength(ten_result) 
+twenty_result<- label_strength(twenty_result)
+thirty_result<- label_strength(thirty_result)
+
+ten_result$level <- ten_result$level %>% factor(levels= c("above09","085to09","08to085","075to08","07to075","065to07","06to065", "055to06", "05to055", "below05"))
+twenty_result$level <- twenty_result$level %>% factor(levels= c("above09","085to09","08to085","075to08","07to075","065to07","06to065", "055to06", "05to055", "below05"))
+thirty_result$level <- thirty_result$level %>% factor(levels= c("above09","085to09","08to085","075to08","07to075","065to07","06to065", "055to06", "05to055", "below05"))
+
+ten_result %>% ggplot(aes(x = level))+
+  geom_bar()+
+  geom_text(stat='count', aes(label=..count..), vjust=-1)
+
+twenty_result  %>% ggplot(aes(x = level))+
+  geom_bar()+
+  geom_text(stat='count', aes(label=..count..), vjust=-1)
+ 
+thirty_result %>% ggplot(aes(x = level))+
+  geom_bar()+
+  geom_text(stat='count', aes(label=..count..), vjust=-1)
       
+ten_result %>% group_by(level) %>% 
+  summarise(proportion = n()/145*100)
+
+twenty_result %>% group_by(level) %>% 
+  summarise( proportion = n()/145*100)
+
+thirty_result %>% group_by(level) %>% 
+  summarise(proportion = n()/145*100)
+
