@@ -1,4 +1,4 @@
-This is BibTeX, Version 0.99d (TeX Live 2019)
+This is BibTeX, Version 0.99d (TeX Live 2020)
 Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file:  thesis.aux
 The style file: apacite.bst
@@ -11,50 +11,58 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
-Database file #1: proposal.bib
-Warning--entry type for "Bailey2020" isn't style-file defined
---line 46 of file proposal.bib
-Warning--I didn't find a database entry for "Harvey2017b"
+Database file #1: library.bib
+Warning--entry type for "Feng2019" isn't style-file defined
+--line 21 of file library.bib
+Repeated entry---line 271 of file library.bib
+ : @article{Harvey2017
+ :                    ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 666 of file library.bib
+ : @article{Bailey2019
+ :                    ,
+I'm skipping whatever remains of this entry
+Warning--I didn't find a database entry for "BKP2019"
 apacite.bst [2013/07/21 v6.03 APA bibliography style]
-You've used 10 entries,
+You've used 33 entries,
             6951 wiz_defined-function locations,
-            1362 strings with 12581 characters,
-and the built_in function-call counts, 18435 in all, are:
-= -- 2267
-> -- 148
-< -- 840
-+ -- 844
-- -- 20
-* -- 1192
-:= -- 3339
-add.period$ -- 40
-call.type$ -- 10
-change.case$ -- 186
+            1549 strings with 16763 characters,
+and the built_in function-call counts, 60424 in all, are:
+= -- 7302
+> -- 509
+< -- 2797
++ -- 2732
+- -- 66
+* -- 3956
+:= -- 10848
+add.period$ -- 132
+call.type$ -- 33
+change.case$ -- 619
 chr.to.int$ -- 0
-cite$ -- 20
-duplicate$ -- 468
-empty$ -- 770
-format.name$ -- 242
-if$ -- 3518
+cite$ -- 66
+duplicate$ -- 1657
+empty$ -- 2581
+format.name$ -- 842
+if$ -- 11575
 int.to.chr$ -- 0
-int.to.str$ -- 30
+int.to.str$ -- 99
 missing$ -- 0
-newline$ -- 274
-num.names$ -- 80
-pop$ -- 238
+newline$ -- 914
+num.names$ -- 264
+pop$ -- 803
 preamble$ -- 1
-purify$ -- 56
+purify$ -- 190
 quote$ -- 0
-skip$ -- 1304
+skip$ -- 4160
 stack$ -- 0
-substring$ -- 918
-swap$ -- 288
-text.length$ -- 36
+substring$ -- 2979
+swap$ -- 984
+text.length$ -- 124
 text.prefix$ -- 0
 top$ -- 1
-type$ -- 872
+type$ -- 2712
 warning$ -- 0
-while$ -- 100
+while$ -- 350
 width$ -- 0
-write$ -- 333
-(There were 2 warnings)
+write$ -- 1128
+(There were 2 error messages)
