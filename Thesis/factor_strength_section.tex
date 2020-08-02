@@ -43,7 +43,7 @@
 The concept of factor strength employed by this project comes from \citeA{Bailey2020}, and it was first introduced by \citeA{Bailey2016}.
 They defined the strength of factor from prospect of the cross-section dependences of large panel and connect it to the pervasiveness of the factor, which is captured by the factor loadings.
 %The method present in the initial paper focusing the estimation from unobserved factor.
-In a latter paper, \citeA{BKP2019} extended the method by loosen some restrictions, and proved that their estimation can also be applied on the residuals or regression result.
+In a latter paper, \citeA{Bailey2016} extended the method by loosen some restrictions, and proved that their estimation can also be applied on the residuals or regression result.
 Thereafter, they focusing on the case of observed factors, and proposed the method we employed in this project \cite{Bailey2020}.
 
 		\subsection{Definition}\label{strength_definiton}
@@ -293,29 +293,30 @@ The market factor, if included in the experiment, will have strength $\alpha_m =
 
  
 \subsection{Monte Carlo Discoveries}
-We report the results in Table (\ref{exp1_table}) , (\ref{exp2_table}) and (\ref{exp3_table}) in Appendix \ref{simulationtable}.
+We report the results in Table (\ref{table:exp1}) , (\ref{table:exp2}) and (\ref{table:exp3}) in Appendix \ref{simulationtable}.
 
-Table (\ref{exp1_table}) provides the results under the experiment 1.
-The estimation method we applied tends to under-estimate the strength slightly most of the time when the true strength is relatively weak under the single factor set up.
-The bias is about 0.01 lower when the true underlying factor strength is 0.7.
-Such bias, however, vanish quickly while time t, unit amount n, and  $\alpha$ increase.
+Table (\ref{table:exp1}) provides the results under the experiment 1.
+The estimation method we applied tends to over-estimate the strength slightly most of the time when the true strength is relatively weak under the single factor set up.
+With the strength increase, the bias will turn to negative, represents a under-estimated results.
+Such bias, however, vanish quickly while observation t, unit amount n, and  $\alpha$ increase.
 When we increase the time spam by including more data from the time dimensions, the bias, as well as the RMSE decrease significantly.
 Also, when including more cross-section unit n into the simulation, the performance of the estimation improves, showing by the decrease bias and RMSE values.
-An impressing result is that, the gap between estimation and true strength will goes to zero when we have $\alpha = 1$, the strongest we can have.
+An impressive result is that, the gap between estimation and true strength will goes to zero when we have $\alpha = 1$, the strongest strength we can have.
 With the strength approaching unity, the both bias and RMSE will converge to zero.
-Then we turn our attention to the size of the test.
+We also presents the size of the test in the table.
 The size of the test will not variate too much when the strength increases, so as the unit increases,
-But we can observe that when observations for each unit increase, in other word, when t increases, the size will shrinkage dramatically.
-The size will smaller than the 0.05 threshold after we extend the t to 240, or empirically  speaking, when we included 20 years monthly return data into estimation.
+But we can observe that when observations for each unit increase, in other word, when t increases, the size will shrink dramatically.
+The size will become smaller than the 0.05 threshold after we extend the t to 240, or empirically  speaking, when we included 20 years monthly return data into estimation.
 Notice that, from the equation (\ref{z_indicator}), when $\hat{\alpha} = \alpha = 1$, the nominator will becomes zero.
 Therefore, the size will collapse into zero in all settings, so we do not report the size for $\hat{\alpha} = \alpha = 1$
 
 For the two factors scenarios, we obtain similar conclusions in both the no correlation setting and weak correlation setting.
-The result of no correlation settings is shown in the table (\ref{exp2_table}), and the table (\ref{exp3_table}) shows the result when the correlation between two factors is 0.3.
-Same as the single factor results, in most of the time, our estimation method will slightly under estimates the factor strength. 
-But we can improve the estimation result by increasing either the observations amount t, or the cross-section units amount n.
+The result of no correlation settings is shown in the table (\ref{table:exp2}), and the table (\ref{table:exp3}) shows the result when the correlation between two factors is 0.3.
+%Same as the single factor results, in most of the time, our estimation method will slightly under estimates the factor strength. 
+The estimation results will be improved by increasing either the observations amount t, or the cross-section units amount n.
 We also have the same unbiased estimation when true factor strength is unity under all unit-time combination.
-In some cases, even when the factor strength is relatively weak,we can have unbiased estimation if the n and t are big enough. (see table (\ref{exp3_table})).
+In some cases, even when the factor strength is relatively weak,we can have unbiased estimation if the n and t are big enough. (see table (\ref{table:exp3})).
+However, we should also notice that when we have a imbalanced panel data, like the scenario when t > n
 The results of size of the test in two factors setting are performing similar to the single factor result. 
 The size will shrink with the observation amount t increasing, and when we have t grater than 240, the size will be smaller than 0.05 threshold in all situations.
 

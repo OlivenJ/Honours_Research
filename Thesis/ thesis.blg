@@ -22,47 +22,46 @@ Repeated entry---line 666 of file library.bib
  : @article{Bailey2019
  :                    ,
 I'm skipping whatever remains of this entry
-Warning--I didn't find a database entry for "BKP2019"
 apacite.bst [2013/07/21 v6.03 APA bibliography style]
 You've used 33 entries,
             6951 wiz_defined-function locations,
-            1549 strings with 16763 characters,
-and the built_in function-call counts, 60424 in all, are:
-= -- 7302
-> -- 509
-< -- 2797
-+ -- 2732
+            1546 strings with 16771 characters,
+and the built_in function-call counts, 60758 in all, are:
+= -- 7342
+> -- 513
+< -- 2821
++ -- 2760
 - -- 66
-* -- 3956
-:= -- 10848
+* -- 3986
+:= -- 10930
 add.period$ -- 132
 call.type$ -- 33
 change.case$ -- 619
 chr.to.int$ -- 0
 cite$ -- 66
-duplicate$ -- 1657
-empty$ -- 2581
-format.name$ -- 842
-if$ -- 11575
+duplicate$ -- 1666
+empty$ -- 2585
+format.name$ -- 852
+if$ -- 11626
 int.to.chr$ -- 0
 int.to.str$ -- 99
 missing$ -- 0
-newline$ -- 914
+newline$ -- 917
 num.names$ -- 264
-pop$ -- 803
+pop$ -- 805
 preamble$ -- 1
 purify$ -- 190
 quote$ -- 0
-skip$ -- 4160
+skip$ -- 4164
 stack$ -- 0
-substring$ -- 2979
-swap$ -- 984
+substring$ -- 3009
+swap$ -- 988
 text.length$ -- 124
 text.prefix$ -- 0
 top$ -- 1
 type$ -- 2712
 warning$ -- 0
-while$ -- 350
+while$ -- 352
 width$ -- 0
-write$ -- 1128
+write$ -- 1135
 (There were 2 error messages)

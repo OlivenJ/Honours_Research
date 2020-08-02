@@ -682,27 +682,31 @@ Kelly, B\BPBI T.%
 
 \bibitem [\protect \citeauthoryear {%
 Kleibergen%
+\ \BBA {} Zhan%
 }{%
 Kleibergen%
+\ \BBA {} Zhan%
 }{%
-{\protect \APACyear {2009}}%
+{\protect \APACyear {2015}}%
 }]{%
-Kleibergen2009}
+Kleibergen2015}
 \APACinsertmetastar {%
-Kleibergen2009}%
+Kleibergen2015}%
 \begin{APACrefauthors}%
 Kleibergen, F.%
+\BCBT {}\ \BBA {} Zhan, Z.%
 \end{APACrefauthors}%
 \unskip\
 \newblock
-\APACrefYearMonthDay{2009}{4}{}.
+\APACrefYearMonthDay{2015}{11}{}.
 \newblock
-{\BBOQ}\APACrefatitle {Tests of risk premia in linear factor models} {Tests of
-  risk premia in linear factor models}.{\BBCQ}
+{\BBOQ}\APACrefatitle {Unexplained factors and their effects on second pass
+  R-squared's} {Unexplained factors and their effects on second pass
+  r-squared's}.{\BBCQ}
 \newblock
-\APACjournalVolNumPages{Journal of Econometrics}{149}{}{149-173}.
+\APACjournalVolNumPages{Journal of Econometrics}{189}{}{101-116}.
 \newblock
-\begin{APACrefDOI} \doi{10.1016/j.jeconom.2009.01.013} \end{APACrefDOI}
+\begin{APACrefDOI} \doi{10.1016/j.jeconom.2014.11.006} \end{APACrefDOI}
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
