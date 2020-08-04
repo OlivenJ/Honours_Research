@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2020.5.27)  2 AUG 2020 22:53
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2020.5.27)  4 AUG 2020 22:38
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -811,8 +811,12 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
 \tf@lot=\write8
 \openout8 = `" thesis.lot"'.
 
- [2] (./Introduction and literature review.tex
-[3] [4]) (./factor_strength_section.tex [5] [6] [7] [8] [9] [10] [11]
+ [2] [3]
+(./Introduction and literature review.tex
+
+LaTeX Warning: Citation `Pesaran2019 introduced' undefined on input line 18.
+
+[4] [5]) (./factor_strength_section.tex [6] [7] [8] [9] [10] [11] [12]
 Overfull \hbox (5.63179pt too wide) in paragraph at lines 289--292
 \TU/TimesNewRoman(0)/m/n/12 have strength $\OML/ztmcm/m/it/12 ^^K[] \OT1/ztmcm/
 m/n/12 = 1$ \TU/TimesNewRoman(0)/m/n/12 all the time, and the strength of the o
@@ -824,20 +828,17 @@ t/12 ; \OT1/ztmcm/m/n/12 0\OML/ztmcm/m/it/12 :\OT1/ztmcm/m/n/12 85\OML/ztmcm/m/
 it/12 ; [] 
  []
 
-[12]) (./Empirical_Application.tex
+[13]) (./Empirical_Application.tex
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 37.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.4> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 37.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 37.
-
+ [14]
 Overfull \hbox (6.06609pt too wide) in paragraph at lines 46--53
 [][] 
  []
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
 
 
 Overfull \hbox (2.34743pt too wide) in paragraph at lines 54--54
@@ -845,12 +846,12 @@ Overfull \hbox (2.34743pt too wide) in paragraph at lines 54--54
  website: http://mba.tuck.dartmouth.edu/pages/faculty/ken.french/| 
  []
 
-[13] [14]
+[15] [16]
 
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `tbp') on input line 115.
 
-[15] [16]) [17] (./ thesis.bbl
+[17]) [18] (./ thesis.bbl
 Underfull \hbox (badness 10000) in paragraph at lines 218--235
 []\TU/TimesNewRoman(0)/m/n/12 Carhart, M. M.  (1997, 3).  On persistence in mut
 ual fund perfor-
@@ -876,7 +877,7 @@ urnal of Finance\TU/TimesNewRoman(0)/m/n/12 , \TU/TimesNewRoman(0)/m/it/12 47\T
 U/TimesNewRoman(0)/m/n/12 , 427-465.  Retrieved from
  []
 
-[18]
+[19]
 Underfull \hbox (badness 6110) in paragraph at lines 394--413
 []\TU/TimesNewRoman(0)/m/n/12 Feng, G., Giglio, S., & Xiu, D.  (2020, 6).  Tami
 ng the factor zoo: A test
@@ -947,7 +948,7 @@ Journal of Finance\TU/TimesNewRoman(0)/m/n/12 , \TU/TimesNewRoman(0)/m/it/12 54
 \TU/TimesNewRoman(0)/m/n/12 , 203-235.  Retrieved from
  []
 
-[19]
+[20]
 Underfull \hbox (badness 1137) in paragraph at lines 666--682
 []\TU/TimesNewRoman(0)/m/n/12 Kelly, B. T., Pruitt, S., & Su, Y.  (2019, 12).  
 Characteristics are covariances: A uni-
@@ -979,90 +980,95 @@ Underfull \hbox (badness 2653) in paragraph at lines 899--917
 t/12 19\TU/TimesNewRoman(0)/m/n/12 , 425-442.  Retrieved from
  []
 
-[20]) [21] (./appendix.tex
+[21]) [22] (./appendix.tex
 
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `tbp') on input line 126.
 
-) (./Comparison_table.tex [22] [23] [24] [25
+) (./Comparison_table.tex [23] [24] [25] [26
 
-] [26] [27] [28]
-Overfull \hbox (8.13461pt too wide) in paragraph at lines 216--223
+] [27] [28] [29]
+Overfull \hbox (8.13461pt too wide) in paragraph at lines 217--224
 $[]$
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 216--223
+Underfull \hbox (badness 10000) in paragraph at lines 217--224
 
  []
 
-[29] [30
+[30] [31
 
-] [31] [32] [33] [34] [35] [36] [37] [38] [39] [40] [41] [42] [43]
-Underfull \hbox (badness 10000) in paragraph at lines 1308--1315
+] [32] [33] [34] [35] [36] [37] [38] [39] [40] [41] [42] [43] [44]
+[45] [46] [47] [48]
+Underfull \hbox (badness 10000) in paragraph at lines 1493--1500
 
  []
 
-[44] [45]
+[49]
 File: ./plot/strength_comparison_I.png Graphic file (type bmp)
 <./plot/strength_comparison_I.png>
 
 
-LaTeX Warning: Float too large for page by 45.35136pt on input line 1326.
+LaTeX Warning: Float too large for page by 39.10573pt on input line 1511.
 
-[46]
+[50]
 File: ./plot/strength_comparison_II.png Graphic file (type bmp)
 <./plot/strength_comparison_II.png>
- [47]
+ [51]
 File: ./plot/strength_comparison_III.png Graphic file (type bmp)
 <./plot/strength_comparison_III.png>
- [48]
+ [52]
 File: ./plot/strength_comparison_IV.png Graphic file (type bmp)
 <./plot/strength_comparison_IV.png>
- [49]
+ [53]
 File: ./plot/strength_comparison_V.png Graphic file (type bmp)
 <./plot/strength_comparison_V.png>
- [50]
+ [54]
 File: ./plot/strength_comparison_IV.png Graphic file (type bmp)
 <./plot/strength_comparison_IV.png>
 
 
-LaTeX Warning: Float too large for page by 46.8073pt on input line 1366.
+LaTeX Warning: Float too large for page by 46.8073pt on input line 1551.
 
-[51]
+[55]
 File: ./plot/thirty_decompose_I.png Graphic file (type bmp)
 <./plot/thirty_decompose_I.png>
 
 
-LaTeX Warning: Float too large for page by 15.12761pt on input line 1374.
+LaTeX Warning: Float too large for page by 15.12761pt on input line 1559.
 
-[52]
+[56]
 File: ./plot/thirty_decompose_II.png Graphic file (type bmp)
 <./plot/thirty_decompose_II.png>
- [53]
+ [57]
 File: ./plot/thirty_decompose_III.png Graphic file (type bmp)
 <./plot/thirty_decompose_III.png>
- [54]
+ [58]
 File: ./plot/thirty_decompose_IV.png Graphic file (type bmp)
 <./plot/thirty_decompose_IV.png>
- [55]
+ [59]
 File: ./plot/thirty_decompose_V.png Graphic file (type bmp)
 <./plot/thirty_decompose_V.png>
- [56]
+ [60]
 File: ./plot/thirty_decompose_VI.png Graphic file (type bmp)
 <./plot/thirty_decompose_VI.png>
 
 
-LaTeX Warning: Float too large for page by 46.8073pt on input line 1413.
+LaTeX Warning: Float too large for page by 46.8073pt on input line 1598.
 
-[57]) (./ thesis.aux) ) 
+[61]) (./ thesis.aux)
+
+LaTeX Warning: There were undefined references.
+
+ ) 
 Here is how much of TeX's memory you used:
- 17201 strings out of 479282
- 371392 string characters out of 5880512
- 696405 words of memory out of 5000000
- 34488 multiletter control sequences out of 15000+600000
+ 17202 strings out of 479282
+ 371424 string characters out of 5880512
+ 697410 words of memory out of 5000000
+ 34489 multiletter control sequences out of 15000+600000
  551246 words of font info for 97 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  59i,16n,75p,832b,320s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on  thesis.pdf (57 pages).
+Output written on  thesis.pdf (61 pages).

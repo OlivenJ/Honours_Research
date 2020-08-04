@@ -3,33 +3,35 @@
 
 \section{Introduction and Motivation}
 Capital Asset Pricing Model (CAPM) (\citeA{Sharpe1964}, \citeA{Lintner1965}, and \citeA{Black1972}) introduces a risk pricing paradigm.
-By incorporating factors, the model divided asset's risk into two parts: systematic risk and asset specified idiosyncratic risk.
-In general, the market factor capture the systematic risk, and different risk factors price the idiosyncratic risk.
-Researches (see \citeA{Fama1992}, \citeA{Carhart1997}, \citeA{Kelly2019}) has shown that, adding different risk factors into the CAPM model can enhance the ability of risk pricing,
-Because of this, identify risk factors has becomes an important topic in finance.
+By incorporating factors, the model divides asset's risk into two parts: systematic risk and asset specified idiosyncratic risk.
+In general, the market factor captures the systematic risk, and different risk factors price the idiosyncratic risk.
+Researches (see \citeA{Fama1992}, \citeA{Carhart1997}, \citeA{Kelly2019}) have shown that, adding different risk factors into the CAPM model can enhance the ability of pricing risk.
+Because of this, identifying risk factors has becomes an important topic in finance.
 %Some famous examples of multi-factor CAPM include the Fama-French (FF) three-factor model \cite{Fama1992}, and the Momentum model \cite{Carhart1997}.
 % Researchers after them are trying to find new risk factors to include in the multi-factor CAPM model.
-Numerous of researchers are devoted into this field, \citeA{Harvey2019} had collected over 500 factors from papers published in the top financial and economic journals, and they found the growth of new factors speed up since 2008. 
+Numerous of researchers have contributed to this field, and the direct result is a explosive growth of factors.
+ \citeA{Harvey2019} have collected over 500 factors from papers published in the top financial and economic journals, and they find the growth of new factors has speed up since 2008. 
 %In his 2011 presidential address, \citeauthor{Cochrane2011} coined the term "factor zoo" to describe the situation factor modelling is facing: researchers and practitioners have too many options when pricing the risk
 
 %In those famous multi-factor model like FF three-factor model \cite{Fama1992}, the loadings of risk factors pass the significant test comfortably, but this is not always the case. 
-But we should notice that not all factors can pass the significant test comfortably every time like factors in three-factor model \cite{Fama1992}.
-\citeA{Pesaran2019} provide a criteria called factor strength to measure such discrepancy.
-In general, if a factor can generate loading significantly different from zero for all assets, then we call such factor strong factor.
+But we should notice that not all factors can pass the significance test comfortably every time like the market factor.
+Therefore, \citeA{Pesaran2019 introduced} a new criteria for assessing the significance of each factor, which they call it factor strength.
+In general, if a factor can generate loadings significantly different from zero for all assets, then we call such a factor strong factor.
 And the less significant loading a factor can generate, the weaker the strength it has.
 
-In his 2011 president address \citeauthor{Cochrane2011} emphasis the importance of finding factor which can provides independent information about average return and risk.
-With regard of this, a number of scholars had applied various methods to find such factor. 
+In his 2011 president address \citeauthor{Cochrane2011} gave emphasis to the importance of finding factors which can provide independent information about average return and risk.
+With regard to this, a number of scholars applied various methods to find such factors. 
 %Since in their 2015 research \citeA{Harvey2015} argues that the current threshold for a test of parameter significant is too low for newly proposed factors, 
-For instance, \citeA{Harvey2017} provided a bootstrap methods to adjust the threshold of factor loading's significant test, trying to exclude some falsely significant factor caused by multiple-test problem.
-Some other scholars use machine learning methods to reduce the potential candidates, more precisely, a stream of them have used a shrinkage and subset selection method called Lasso \cite{Tibshirani1996} and it's variations to find suitable factors.
-One example is \citeA{Rapach2013}.
+For instance, \citeA{Harvey2017} provided a bootstrap method to adjust the threshold of factor loading's significant test, trying to exclude some falsely significant factor caused by multiple-test problem.
+Some other scholars are using machine learning methods to reduce the potential candidates. 
+One stream of them have used a shrinkage and subset selection method called Lasso \cite{Tibshirani1996} and it's variations to find suitable factors.
+One example of such application is made by \citeA{Rapach2013}.
 They applied the Lasso regression, trying to find some characteristics from a large group to predict the global stock market's return.
 
 But an additional challenge is that factors, especially in the high-dimension, are commonly correlated.
 %\citeA{Cochrane2005} argues that the correlation between factors will reduce the ability of using risk premium to infer factors.
 \citeA{Kozak2020} point out that when facing a group of correlated factors, Lasso will only pick several highly correlated factors seemly randomly, and then ignore the other and shrink them to zero. 
-In other word, Lasso fails to handle the correlated factor appropriately.
+In other words, Lasso fails to handle the issue of correlated factors appropriately.
 
 
 %\citeA{Kan1999} found that the test-statistic of FM two-stage regression  \cite{Fama1973} will inflate when incorporating factors which are independent with the cross-section return.
@@ -39,15 +41,16 @@ In other word, Lasso fails to handle the correlated factor appropriately.
 
 %These discoveries cast doubt on the risk pricing ability of some factors, indicates that some factors may fail to pass the significant test in certain scenarios.
 
-Therefore, the main empirical question in this project is: how to select useful factors from a large group of  highly correlated candidates.
+Therefore, the main empirical question in this project is: how to select useful factors from a large group of possibly highly correlated candidates.
 We address this question from two different prospects.
 
-From one side, we employs the idea of factor strength discuss above, trying to use this criteria to select those strong factors.
-From the other hand, we will use another variable selection method called Elastic Net \cite{Zou2005} to select factors.
-With regard of the first solution, \citeA{Bailey2020} provides a consistent estimates method for the factor strength, and we will use such method to exam the strength of each candidate factors, and filter out those spurious factors.
-For the second solution, elastic net fixes the problem of Lasso can not handle correlated variables by adding extra penalty term, which makes it suitable for our purpose. 
-And we will compare two method to use will we have a consistent selection of the risk factors.
-What's more, we can also use the factor strength as a standard to reduce the dimension of our candidates factor and then applied elastic net to conduct further selection.
+From one side, we employ the idea of factor strength discuss above, trying to use this criteria to select those strong factors.
+On the other hand, we use another variable selection method called Elastic Net \cite{Zou2005} to select factors.
+With regard of the first approach, \citeA{Bailey2020} provide a consistent estimator for the factor strength, and we will use this method to examine the strength of each candidate factor, and filter out any spurious factors.
+Under the second approach, unlike Lasso, elastic net adds an extra penalty term into the loss function, which makes it suitable to handle the potential correlation variables.
+This trait makes it suitable for out purpose.
+We will assess and compare the methods in their selection of risk factors.
+Additionally, we can also use the factor strength as a standard to reduce the dimension of our candidates factor and then applied elastic net to conduct further selection.
 
 %First, we consider the selection of factor base on their strength.
 %And then we will use another variable selection method called Elastic Net \cite{Zou2005} to select factors.
@@ -57,8 +60,9 @@ What's more, we can also use the factor strength as a standard to reduce the dim
 In the rest of this thesis, we will first go through some literatures relates with CAPM model and methods about factor selection.
 Then in the section \ref{strength}, we will provides a detailed description of the concept of factor strength and the estimation method.
 Also, we will introduce the elastic net.
-In the section \ref{MC}, we set up a simple Monte Carlo simulation experiment to exam the estimation of factor strength.
-Section \ref{Empirical} includes the empirical application, we estimates the factors' strength and applied the elastic net method to select factors.
+In the section \ref{MC}, we set up a simple Monte Carlo simulation experiment to examine the finite sample properties of the factor strength estimator.
+Section \ref{Empirical} includes the empirical application, where we estimate the strength of potential risk factors to be included in a CAPM model, as well as apply elastic net as a method to select factors.
+
 
 %For this project, we are trying to deal with the classical problem: what factors can have significant contributions to explain the asset risk and return relationship under the CAPM framework.
 %And we go a step forward, take the correlation among all factors into the account. 
@@ -71,34 +75,34 @@ Section \ref{Empirical} includes the empirical application, we estimates the fac
 	\section{Related Literature}
 %This project combines three  kinds of literatures: CAPM, factor strength, and factor selection under high dimensioned setting for the number of potential factors.
 
-This project is builds on papers devoted on  risk pricing.
-Formularisedd by \citeA{Sharpe1964}, \citeA{Lintner1965}, and \citeA{Black1972}, the CAPM model only contains the market factor, which is denotes by the difference between market return and risk free return.
-\citeA{Fama1992} develop the model into three-factors, and then it been extend it into four \cite{Carhart1997}, and five \cite{Fama2015}.
+This project is builds on contributions to the filed of asset pricing.
+First formularised by \citeA{Sharpe1964}, \citeA{Lintner1965}, and \citeA{Black1972}, the original CAPM model only contains the market factor, which is denoted by the difference between average market return and risk free return.
+\citeA{Fama1992} develop the model into three-factors, which it is then extend into four \cite{Carhart1997}, and five \cite{Fama2015}.
 Recent research created a six-factors model and claim it outperform all other sparse factor model. \cite{Kelly2019}.
-\citeA{Harvey2019} 
 
-This thesis also connects with papers about involving factors has no or weak correlation with assets' return into CAPM model.
-\citeA{Kan1999} found that the test-statistic of FM two-stage regression  \cite{Fama1973} will inflate when incorporating factors which are independent with the cross-section return.
-Therefore, when factors with no pricing power was involved in the model, those factors may have the chance to pass the significant test.
+In terms of assessing the strength of risk factors, this thesis also relates with papers discussing factors that has no or weak correlation with assets' return under the paradigm of CAPM model.
+\citeA{Kan1999} found that the test-statistic of FM two-stage regression  \cite{Fama1973} will inflate when incorporating factors which are independent of the cross-section return.
+Therefore, when factors with no pricing power was added into the model, those factors may have the chance to pass the significant test falsely.
 %\citeA{Kleibergen2009} pointed out how a factor with small loading would deliver a spurious FM two-pass risk premia estimation. 
 \citeA{Kleibergen2015} found out that even when some factor-return relationship does not exist, the r-square and the t-statistic of the FM two stage regression would become in favour of the conclusion of such structure presence. 
-\citeA{Gospodinov2017} show how the involving of a spurious factor will distort the statistical inference of parameters.
-And, \citeA{Anatolyev2018} studied the behaviours of the model with the presence of weak factors under asymptotic settings, find the regression will lead to an inconsistent risk premia estimation result.
+\citeA{Gospodinov2017} show how the addition of a spurious factor will distort the statistical inference of parameters.
+Besides, \citeA{Anatolyev2018} studied the behaviours of the model with the presence of weak factors under asymptotic settings, and they find the regression will lead to an inconsistent risk premia estimation result.
 	
 	
-This project also relates to some researches effort to identify useful factors from a group of potential factors.
-\citeA{Harvey2015} exam over 300 factors published on journals, presents that the traditional threshold for a significant test is too low for newly proposed factor, and they suggest to adjust the p-value threshold to around 3. 
+	Finally, of interest in this thesis is the large dimension of potential factors.
+	For this reasons, it borrows from researchers that identify useful factors from a group of potential factors.
+\citeA{Harvey2015} examine over 300 factors published in journals, presents that the traditional threshold for a significant test is too low for newly proposed factor, and they suggest to adjust the p-value threshold to around 3. 
 Methods like a Bayesian procedure introduced by \citeA{Barillas2018} were used to compare different factor models.
-\citeA{Pukthuanthong2019} defined several criteria for "genuine risk factor", and base on those criteria introduced a protocol to exam does a factor associated with the risk premium.
+\citeA{Pukthuanthong2019} defined several criteria for "genuine risk factor", and based on those criteria introduced a protocol to examine whether a factor is associated with the risk premium.
 
-{\bf More details about the previous effort of identifying useful factors }
+%{\bf More details about the previous effort of identifying useful factors }
+Once the factor strength are identified, the thesis will attempt to reconcile empirically the factor selection under machine learning techniques and the factor strength implied by the selection.
 
-
-This thesis will attempt to address the factor selection problem by using machine learning techniques.
+%This thesis will attempt to address the factor selection problem by using machine learning techniques.
 \citeA{Gu2020} elaborate the advantages of using emerging machine learning algorithms in asset pricing.
-Those advantages including more accurate predict result, and superior efficiency.
-Various machine learning algorithms have been adopted on selecting factors for the factor model, especially in recent years.
-\citeA{Lettau2020} applying Principle Components Analysis on investigating the latent factor of model. 
+Those advantages including more accurate prediction result, and superior efficiency.
+Various machine learning algorithms have been adopted when selecting factors for the factor model, especially in recent years.
+\citeA{Lettau2020} apply Principle Components Analysis when investigating the latent factor of model. 
 Lasso method, since it's ability to select features, is popular in the field of the factor selection.
-\citeA{Feng2019} used the double-selected Lasso method \cite{Belloni2014},and a grouped lasso method \cite{Huang2010} is used by \citeA{Freyberger2020} on picking factors from a group of candidates. 
-\citeA{Kozak2020} used a Bayesian-based method, combing with both Ridge and Lasso regression, argues that the sparse factor model is ultimately futile. 
+\citeA{Feng2019} used the double-selected Lasso method \cite{Belloni2014},and a grouped lasso method \cite{Huang2010} is used by \citeA{Freyberger2020} when picking factors from a group of candidates. 
+\citeA{Kozak2020} used a Bayesian-based method, combing with both Ridge and Lasso regression, arguing that the sparse factor model is ultimately futile. 
