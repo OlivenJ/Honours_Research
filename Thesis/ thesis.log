@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2020.5.27)  4 AUG 2020 22:38
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2020.5.27)  5 AUG 2020 09:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -816,19 +816,8 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
 
 LaTeX Warning: Citation `Pesaran2019 introduced' undefined on input line 18.
 
-[4] [5]) (./factor_strength_section.tex [6] [7] [8] [9] [10] [11] [12]
-Overfull \hbox (5.63179pt too wide) in paragraph at lines 289--292
-\TU/TimesNewRoman(0)/m/n/12 have strength $\OML/ztmcm/m/it/12 ^^K[] \OT1/ztmcm/
-m/n/12 = 1$ \TU/TimesNewRoman(0)/m/n/12 all the time, and the strength of the o
-ther factor will be $\OML/ztmcm/m/it/12 ^^K[] \OT1/ztmcm/m/n/12 = \OMS/ztmcm/m/
-n/12 f\OT1/ztmcm/m/n/12 0\OML/ztmcm/m/it/12 :\OT1/ztmcm/m/n/12 7\OML/ztmcm/m/it
-/12 ; \OT1/ztmcm/m/n/12 0\OML/ztmcm/m/it/12 :\OT1/ztmcm/m/n/12 75\OML/ztmcm/m/i
-t/12 ; \OT1/ztmcm/m/n/12 0\OML/ztmcm/m/it/12 :\OT1/ztmcm/m/n/12 8\OML/ztmcm/m/i
-t/12 ; \OT1/ztmcm/m/n/12 0\OML/ztmcm/m/it/12 :\OT1/ztmcm/m/n/12 85\OML/ztmcm/m/
-it/12 ; [] 
- []
-
-[13]) (./Empirical_Application.tex
+[4] [5]) (./factor_strength_section.tex [6] [7] [8] [9] [10] [11] [12] [13])
+(./Empirical_Application.tex
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 37.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.4> not available
