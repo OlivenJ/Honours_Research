@@ -4,6 +4,7 @@ long_three_combine <- three_combine %>%
   pivot_longer(c(ten, twenty, thirty), names_to = "period", values_to = "strength") %>% 
   inner_join(factor_ancillary, by = "Factor")
 
+long_three_combine %>% filter(Factor == "etr")
 
 long_three_combine$period <- factor(long_three_combine$period, levels = c("thirty", "twenty", "ten"))
 long_three_combine <- long_three_combine %>% arrange(Factor)
@@ -16,50 +17,51 @@ long_three_combine %>% ggplot(aes(x  = Year, y = strength, color = period))+
 long_three_combine %>% ggplot(aes(x = period, y = strength))+
   geom_col()+
   geom_hline(yintercept = 0.5,linetype = "dashed", color = "red")+
+  geom_hline(yintercept = 0.75,linetype = "dashed", color = "blue")+
   facet_wrap(vars(Factor))
 
 long_three_combine %>% filter(num <=75)%>% 
   ggplot(aes(x = period, y = strength))+
   geom_col()+
   geom_hline(yintercept = 0.5,linetype = "dashed", color = "red")+
+  geom_hline(yintercept = 0.75,linetype = "dashed", color = "blue")+
   facet_wrap(vars(Factor))
 
 long_three_combine %>% filter(num >75 & num <= 150)%>% 
   ggplot(aes(x = period, y = strength))+
   geom_col()+
   geom_hline(yintercept = 0.5,linetype = "dashed", color = "red")+
+  geom_hline(yintercept = 0.75,linetype = "dashed", color = "blue")+
   facet_wrap(vars(Factor))
 
 long_three_combine %>% filter(num >150 & num <= 225)%>% 
   ggplot(aes(x = period, y = strength))+
   geom_col()+
   geom_hline(yintercept = 0.5,linetype = "dashed", color = "red")+
+  geom_hline(yintercept = 0.75,linetype = "dashed", color = "blue")+
   facet_wrap(vars(Factor))
 
 long_three_combine %>% filter(num >225 & num <= 300)%>% 
   ggplot(aes(x = period, y = strength))+
   geom_col()+
   geom_hline(yintercept = 0.5,linetype = "dashed", color = "red")+
+  geom_hline(yintercept = 0.75,linetype = "dashed", color = "blue")+
   facet_wrap(vars(Factor))
 
 long_three_combine %>% filter(num >300 & num <= 375)%>% 
   ggplot(aes(x = period, y = strength))+
   geom_col()+
   geom_hline(yintercept = 0.5,linetype = "dashed", color = "red")+
+  geom_hline(yintercept = 0.75,linetype = "dashed", color = "blue")+
   facet_wrap(vars(Factor))
 
 long_three_combine %>% filter(num >375 )%>% 
   ggplot(aes(x = period, y = strength))+
   geom_col()+
   geom_hline(yintercept = 0.5,linetype = "dashed", color = "red")+
+  geom_hline(yintercept = 0.75,linetype = "dashed", color = "blue")+
   facet_wrap(vars(Factor))
 
-
-long_three_combine %>% filter(num >=216)%>% 
-  ggplot(aes(x = period, y = strength))+
-  geom_col()+
-  geom_hline(yintercept = 0.5,linetype = "dashed", color = "red")+
-  facet_wrap(vars(Factor))
 
 long_thirty_combine<- thirty_combine %>% 
   inner_join(factor_ancillary, by = "Factor") %>% 
@@ -80,17 +82,48 @@ long_thirty_combine %>%
 
 long_thirty_combine$num <- c(1:nrow(long_thirty_combine))
 
-long_thirty_combine %>% filter(num <=216)%>% 
+long_thirty_combine<- long_thirty_combine %>% arrange(Factor)
+
+long_thirty_combine %>% filter(num <=75)%>% 
   ggplot(aes(x = period, y = strength))+
   geom_col()+
   geom_hline(yintercept = 0.5,linetype = "dashed", color = "red")+
+  geom_hline(yintercept = 0.75,linetype = "dashed", color = "blue")+
   facet_wrap(vars(Factor))
 
-
-long_thirty_combine %>% filter(num >=216)%>% 
+long_thirty_combine %>% filter(num >75 & num <= 150)%>% 
   ggplot(aes(x = period, y = strength))+
   geom_col()+
   geom_hline(yintercept = 0.5,linetype = "dashed", color = "red")+
+  geom_hline(yintercept = 0.75,linetype = "dashed", color = "blue")+
+  facet_wrap(vars(Factor))
+
+long_thirty_combine %>% filter(num >150 & num <= 225)%>% 
+  ggplot(aes(x = period, y = strength))+
+  geom_col()+
+  geom_hline(yintercept = 0.5,linetype = "dashed", color = "red")+
+  geom_hline(yintercept = 0.75,linetype = "dashed", color = "blue")+
+  facet_wrap(vars(Factor))
+
+long_thirty_combine %>% filter(num >225 & num <= 300)%>% 
+  ggplot(aes(x = period, y = strength))+
+  geom_col()+
+  geom_hline(yintercept = 0.5,linetype = "dashed", color = "red")+
+  geom_hline(yintercept = 0.75,linetype = "dashed", color = "blue")+
+  facet_wrap(vars(Factor))
+
+long_thirty_combine %>% filter(num >300 & num <= 375)%>% 
+  ggplot(aes(x = period, y = strength))+
+  geom_col()+
+  geom_hline(yintercept = 0.5,linetype = "dashed", color = "red")+
+  geom_hline(yintercept = 0.75,linetype = "dashed", color = "blue")+
+  facet_wrap(vars(Factor))
+
+long_thirty_combine %>% filter(num >375 )%>% 
+  ggplot(aes(x = period, y = strength))+
+  geom_col()+
+  geom_hline(yintercept = 0.5,linetype = "dashed", color = "red")+
+  geom_hline(yintercept = 0.75,linetype = "dashed", color = "blue")+
   facet_wrap(vars(Factor))
 
 
@@ -124,3 +157,12 @@ long_twenty_combine %>% ggplot(aes(x = period, y = strength))+
   geom_col()+
   geom_hline(yintercept = 0.5,linetype = "dashed", color = "red")+
   facet_wrap(vars(Factor))
+
+ adj_result %>% inner_join(ten_result, by = "Factor") %>% 
+  rename(adj = strength.x, usual = strength.y) %>% 
+  select(Factor, adj, usual) %>% 
+  pivot_longer(c(adj, usual), names_to="type", values_to = "value") %>% 
+   ggplot(aes(x = type, y =value))+
+   geom_col()+
+   geom_hline(yintercept = 0.7, linetype = "dashed", color = "red")+
+   facet_wrap(vars(Factor))

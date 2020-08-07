@@ -66,9 +66,9 @@ factor_result_table <- tibble()
 market_result_table <- tibble()
 cont = 0
 
-times <- c(120,240,360)
-unit <- c(100,300,500)
-strength_seq <- seq(0.7, 1 ,0.05)
+times <- c(120, 240, 360)
+unit <- c(300, 500)
+strength_seq <-seq(0.7, 0.95, 0.05)
 
 for(var1 in times){
   for(var2 in unit){
@@ -80,6 +80,8 @@ for(var1 in times){
       n <- var2
       alpha <- var3
       k <- 1
+      rho <- 0.7
+      #the correlation between factors.
       repeat{
         
         constant <- matrix(runif(n*t, -0.5, 0.5), nrow = n, ncol = t)
@@ -87,7 +89,7 @@ for(var1 in times){
         strength <- c( rep(alpha, k),1)
         sig_count <- as.integer((n)^strength)
         
-        Sigma <- cbind(c(1, 0), c(0, 1))
+        Sigma <- cbind(c(1, rho), c(rho, 1))
         factor <- t(rmvnorm(t,mean = rep(0, k+1), Sigma))
       
         p = 0.05
@@ -172,6 +174,11 @@ market_summary_result <-  market_result_table %>% group_by(time, unit, alpha) %>
             bias = mean(bias),
             RMSE = sqrt(sum(sqr)/rep),
             size = sum(size_count)/rep)
+
+factor_summary_result %>% mutate(bias = bias *100, RMSE = RMSE * 100, size = size * 100) %>% 
+  filter(unit == 100 ) %>% 
+  arrange(alpha, unit, time) %>% 
+  view()
 
 view(factor_summary_result)
 view(market_summary_result)

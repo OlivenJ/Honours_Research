@@ -24,6 +24,45 @@ factor_ancillary <- read_excel("/Users/olivenjiang/Desktop/Ancillary Materials f
 
 Market_factor <- risk_factors %>% filter(Factor == "MktRf")
 risk_factor<- risk_factors %>% filter(Factor !="MktRf") 
+
+
+
+
+#adju_price<- read_excel("Documents/Honours/Data and Scripts/Data/Osiris_Export_4.xlsx", 
+ #          col_types = c("skip", "skip", "text", 
+#                         rep("numeric", 179))) %>% 
+#  pivot_longer(-"Ticker symbol", names_to = "times", values_to = "adj_close")
+
+#adj_price<- adju_price %>% separate(times, into = c("one", "two","three","four","five","six")) %>% 
+#  select(-c("one" ,"two", "three", "five")) %>% 
+#  unite(time, four,six) %>% rename(ticker = "Ticker symbol")
+
+
+#adj_price$time<-as.Date(paste(adj_price$time,'_01'), format = "%B_%Y _%d")
+#adj_price <- adj_price %>% na.omit()
+#nest_adj<- adj_price %>% arrange(ticker, time) %>% filter(time > as.Date("2007-12-01") & time < as.Date("2018-01-01")) %>% group_by(ticker) %>% nest()
+
+#raw_adj_return <- tibble(ticker = character(), time =ymd(), adj_close = double(), Adj.Return = double())
+
+#for (i in 1:(nrow(nest_adj)-1)) {
+#  temp <-nest_adj[i,] %>% 
+#    unnest(col = c("data"))
+#  temp$Adj.Return <- c(NA, diff(temp$adj_close)/temp$adj_close[-length(temp$adj_close)]*100)
+#  raw_adj_return <-raw_adj_return %>% bind_rows(temp)
+#  print(i)
+#}
+
+
+
+#adj_return<- raw_adj_return %>% rename("Date" = "time") %>% 
+#  inner_join( risk_free, by = "Date") %>% mutate(Excess = Adj.Return - Rf) %>% 
+#  select(-adj_close) %>% arrange(ticker, Date)
+
+#adj_return_name<- adj_return %>% group_by(ticker) %>% 
+#  summarise(n()) %>% 
+#  filter(`n()`==120)
+
+#adj_return <- adj_return%>% semi_join(adj_return_name, by  = "ticker")
 #=============================================================================================#
 #=============================================================================================#
 #Return#
@@ -53,7 +92,7 @@ for (i in 1:(nrow(group_price)-1)) {
   print(i)
 }
 #notice the changes 
-raw_return
+
 
 #return %>% mutate(diff = Return-Adj.Return) %>% view()
 
@@ -174,6 +213,10 @@ two_ten_return <- inner_join(two_ten_return, risk_factor, by = "Date") %>% inner
 
 
 three_ten_return <- inner_join(three_ten_return, risk_factor, by = "Date") %>% inner_join(Market_factor, by = "Date")%>% 
+  rename(Factor = Factor.x, Value = Value.x, Market = Value.y) %>% 
+  select(-Factor.y) 
+
+adj_return <- inner_join(adj_return, risk_factor, by = "Date") %>% inner_join(Market_factor, by = "Date")%>% 
   rename(Factor = Factor.x, Value = Value.x, Market = Value.y) %>% 
   select(-Factor.y) 
 

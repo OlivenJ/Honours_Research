@@ -8,6 +8,11 @@ library(xtable)
 nested_ten_return<- ten_return %>% 
   group_by(Factor) %>% 
   nest()
+#adj_return<- adj_return %>% rename("Ticker" = "ticker")
+#nested_adj_return<- adj_return %>% 
+#  group_by(Factor) %>% 
+#  nest()
+
 
 #nested_fifty_return <- fifty_return %>% 
 #  group_by(Factor) %>% 
@@ -70,6 +75,7 @@ strength_calc <- function(return_data){
 }
 
 ten_result <- strength_calc(nested_ten_return)
+#adj_result <- strength_calc(nested_adj_return)
 two_ten_result <- strength_calc(nested_two_ten_return)
 three_ten_result <- strength_calc(nested_three_ten_return)
 #fifty_result <- strength_calc(nested_fifty_return)

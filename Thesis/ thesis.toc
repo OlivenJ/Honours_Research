@@ -1,21 +1,23 @@
-\contentsline {section}{\numberline {1}Introduction and Motivation}{4}%
-\contentsline {section}{\numberline {2}Related Literature}{5}%
-\contentsline {section}{\numberline {3}Factor Strength}{7}%
-\contentsline {subsection}{\numberline {3.1}Definition}{7}%
-\contentsline {subsection}{\numberline {3.2}Estimation Under single factor setting}{8}%
-\contentsline {subsection}{\numberline {3.3}Estimation Under Multi-Factor Setting}{9}%
-\contentsline {section}{\numberline {4}Monte Carlo Design}{10}%
-\contentsline {subsection}{\numberline {4.1}Design}{10}%
-\contentsline {subsection}{\numberline {4.2}Experiment Setting}{11}%
-\contentsline {subsection}{\numberline {4.3}Monte Carlo Results}{13}%
-\contentsline {section}{\numberline {5}Empirical Application}{14}%
-\contentsline {subsection}{\numberline {5.1}Data}{14}%
-\contentsline {subsection}{\numberline {5.2}Factor Strength Analysis}{15}%
-\contentsline {subsubsection}{\numberline {5.2.1}Regression model setting}{15}%
-\contentsline {subsubsection}{\numberline {5.2.2}Factor Strength Finding}{16}%
-\contentsline {subsubsection}{\numberline {5.2.3}Conclusion and Explanation}{18}%
-\contentsline {section}{References}{19}%
-\contentsline {section}{\numberline {A}Simulation Result}{23}%
-\contentsline {section}{\numberline {B}Empirical Application Result}{26}%
-\contentsline {subsection}{\numberline {B.1}Factor Strength Estimation Table}{26}%
-\contentsline {subsection}{\numberline {B.2}Strength Comparison Figures}{50}%
+\contentsline {section}{\numberline {1}Introduction and Motivation}{3}%
+\contentsline {section}{\numberline {2}Related Literature}{4}%
+\contentsline {section}{\numberline {3}Factor Strength}{6}%
+\contentsline {subsection}{\numberline {3.1}Definition}{6}%
+\contentsline {subsection}{\numberline {3.2}Estimation Under single factor setting}{7}%
+\contentsline {subsection}{\numberline {3.3}Estimation Under Multi-Factor Setting}{8}%
+\contentsline {section}{\numberline {4}Monte Carlo Design}{9}%
+\contentsline {subsection}{\numberline {4.1}Design}{9}%
+\contentsline {subsection}{\numberline {4.2}Experiment Setting}{10}%
+\contentsline {subsection}{\numberline {4.3}Monte Carlo Results}{12}%
+\contentsline {section}{\numberline {5}Elastic Net}{13}%
+\contentsline {section}{\numberline {6}Empirical Application}{14}%
+\contentsline {subsection}{\numberline {6.1}Data}{14}%
+\contentsline {subsection}{\numberline {6.2}Factor Strength Analysis}{15}%
+\contentsline {subsubsection}{\numberline {6.2.1}Regression model setting}{15}%
+\contentsline {subsubsection}{\numberline {6.2.2}Factor Strength Findings}{16}%
+\contentsline {subsection}{\numberline {6.3}Elastic Net Application}{20}%
+\contentsline {section}{\numberline {7}Conclusion}{20}%
+\contentsline {section}{References}{21}%
+\contentsline {section}{\numberline {A}Simulation Result}{25}%
+\contentsline {section}{\numberline {B}Empirical Application Result}{28}%
+\contentsline {subsection}{\numberline {B.1}Factor Strength Estimation Table}{28}%
+\contentsline {subsection}{\numberline {B.2}Strength Comparison Figures}{37}%

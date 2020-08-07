@@ -52,7 +52,7 @@ thirty_combine <- one_thirty_result %>%
                                            var = ((Strength.one-mean)^2 +(Strength.two - mean)^2 +(Strength.three - mean)^2)/3,
                                            std = sqrt(var)) 
 
-xtable(thirty_combine %>% arrange(desc(std)) %>% 
+xtable(thirty_combine %>% arrange(desc(strength)) %>% 
   select(-mean, - var), digits = c(0,0,3,3,3,3,3))
 
 half_thirty_result %>% inner_join(fifty_result, by = "Factor") %>% 
