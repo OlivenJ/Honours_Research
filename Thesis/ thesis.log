@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2020.5.27)  6 AUG 2020 18:32
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2020.5.27)  13 AUG 2020 14:48
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -814,19 +814,16 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
 \openout8 = `" thesis.lot"'.
 
  [2] (./introduction_and_literature_review.tex
-
-LaTeX Warning: Citation `Pesaran2019 introduced' undefined on input line 18.
-
 [3] [4]) (./factor_strength.tex [5] [6] [7] [8]) (./monte_carlo.tex [9]
 [10] [11] [12]) (./elastic_net.tex [13])
-(./empirical_application_factor_strength.tex
+(./empirical_application_factor_strength.tex [14]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 45.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.4> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 45.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 45.
- [14]
+
 Overfull \hbox (19.05046pt too wide) in paragraph at lines 54--61
 [][] 
  []
@@ -1063,10 +1060,10 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 17222 strings out of 479282
- 371983 string characters out of 5880512
- 697030 words of memory out of 5000000
- 34492 multiletter control sequences out of 15000+600000
+ 17223 strings out of 479282
+ 371976 string characters out of 5880512
+ 697048 words of memory out of 5000000
+ 34493 multiletter control sequences out of 15000+600000
  551270 words of font info for 100 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  59i,16n,75p,832b,320s stack positions out of 5000i,500n,10000p,200000b,80000s

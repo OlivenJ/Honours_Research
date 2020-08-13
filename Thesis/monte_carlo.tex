@@ -4,30 +4,38 @@
 
 	\section{Monte Carlo Design}\label{MC}
 	\subsection{Design}
-In order to study the finite sample properties of factor strength $\hat{\alpha}_j$, we designed a Monte Carlo simulation.
+In order to study the finite sample properties of factor strength $\hat{\alpha}_j$, we conduct a Monte Carlo study.
 Through the simulation, we compare the property of the factor strength in different settings.
-We set up the experiments to reflect the CAPM model and it's extension.
-Consider the following data generating process (DGP):
+We set up the experiments to reflect the CAPM model and its extension.
+For simplicity, we first define $x_{it} := r_{it}- r_{ft}$.
+$r_{it}$ is the unit's return, and $r_{ft}$ represent the risk-free rate at time t, therefore, the $x_{it}$ is the excess return of unit i at time t.
+We use $f_{mt}:=r_{mt} - r_{ft}$ to denote the market factor.
+Here $r_{mt}$ is the average market return of hypothetically all assets in the universe.
+Additionally, we set $q_1(\cdot)$ and $q_2(\cdot)$ as two different functions that represent the unknown mechanism of market factor and other risk factors in pricing asset risk.
+In the classical CAPM model and it's multi-factor extensions, for example, the three-factor model introduced by \citeA{Fama1992}, both $q_1$ and $q_2$ are linear.
+Now consider the following data generating process (DGP):
 
-	\[ r_{it} - r_{ft} = q_1({r_{mt}} - r_f) + q_2( \sum_{j=1}^k\beta_{ij}f_{jt}) +\epsilon_{it} \]
+%	\[ r_{it} - r_{ft} = q_1({r_{mt}} - r_f) + q_2( \sum_{j=1}^k\beta_{ij}f_{jt}) +\epsilon_{it} \]
+	
+	\[ x_{it} = q_1(f_{mt}) + q_2( \sum_{j=1}^k\beta_{ij}f_{jt}) +\epsilon_{it}  \]
 
 
 In the simulation, we consider a dataset has $i = 1, 2,\dots, n$ different cross-section units, with $t= 1, 2,\dots, T$ different observations. 
-$r_{it}$ is the unit's return, and $r_{ft}$ represent the risk free rate at time t, therefore, the left hand side term $r_{it} - r_{ft}$ is the excess return of the unit i.
-For simplicity, we define $x_{it} := r_{it}- r_{ft}$.
+%$r_{it}$ is the unit's return, and $r_{ft}$ represent the risk-free rate at time t, therefore, the left-hand side term $r_{it} - r_{ft}$ is the excess return of unit i.
+%For simplicity, we define $x_{it} := r_{it}- r_{ft}$.
 $f_{jt}$ represents different risk factors, and the corresponding  $\beta_{ij}$ are the factor loadings.
-We use $f_{mt}:=r_{mt} - r_{ft}$ to denote the market factor, and here $r_{mt}$ is the average market return.
+%We use $f_{mt}:=r_{mt} - r_{ft}$ to denote the market factor, and here $r_{mt}$ is the average market return.
 %Also, we use the term $f_{mt} := r_{mt} - r_{ft}$ to denotes the market factor.
 We expect the market factor will have strength equal to one all the time, so we consider the market factor has strength $\alpha_m = 1$.
 $\varepsilon_{it}$ is the stochastic error term.
-Therefore, the simulation model can be simplified as:
+%Therefore, the simulation model can be simplified as:
 
-\[ x_{it} = q_1(f_{mt}) + q_2( \sum_{j=1}^k\beta_{ij}f_{jt}) +\epsilon_{it}  \]
+%\[ x_{it} = q_1(f_{mt}) + q_2( \sum_{j=1}^k\beta_{ij}f_{jt}) +\epsilon_{it}  \]
 
-$q_1(\cdot)$ and $q_2(\cdot)$ are two different functions represent the unknown mechanism of market factor and other risk factors in pricing asset risk.
-In the classical CAPM model and it's multi-factor extensions, for example the three factor model introduced by \citeA{Fama1992}, both $q_1$ and $q_2$ are linear.
+%$q_1(\cdot)$ and $q_2(\cdot)$ are two different functions that represent the unknown mechanism of market factor and other risk factors in pricing asset risk.
+%In the classical CAPM model and it's multi-factor extensions, for example, the three-factor model introduced by \citeA{Fama1992}, both $q_1$ and $q_2$ are linear.
 
- For each factor, we assume they follow a multinomial distribution with mean zero and a $k\times k$ variance-covariance matrix $\Sigma$. 
+ For each factor, we assume they follow a multivariate normal distribution with mean zero and a $k\times k$ variance-covariance matrix $\Sigma$. 
 \begin{align*}
 \mathbf{f_t} = \begin{pmatrix}
 f_{i,t}\\f_{2,t}\\\vdots\\f_{k,t}
@@ -53,14 +61,14 @@ Follow the general model above, we assume both $q_1(\cdot)$ and $q_2(\cdot)$ are
 q_1({f_{mt}}) &= a_{i} +\beta_{im} f_{mt}\\
 q_2(\sum_{j = 1}^{k}\beta_{ij}f_{jt}) &=\sum_{j = 1}^{k}\beta_{ij}f_{jt}
 \end{align*}
-To start the simulation, we consider a two factor model:
+To start the simulation, we consider a two-factor model:
 \[    x_{it} = a_{i} + \beta_{i1}f_{1t} + \beta_{i2}f_{2t}+\epsilon_{it} \tag{7} \label{two_factor}   \]
 %Therefore, if we include the market factor with other risk factors together, the model can be simplified as:
 %	\[   x_{it} = a_{it} + \sum_{j = 1}^{k+1}  \beta_{ij}f_{jt} +\epsilon_{it}  \tag{6} \label{simplified_multi}  \x]
 %And in this first baseline experiment, we will  use the single factor model as:
 %\[  x_{it} = a_{it} +  \beta_{i1}f_{1t} +\epsilon_{it} \tag{7} \label{singlefactor}  \]
 %Through the simulations, we will control the underlying true strength of factor 
-The constant term $a_{i}$ is generate from a uniform distribution, $a_{it} \sim \mathnormal{U}[-0.5,0.5]$.
+The constant term $a_{i}$ is generated from a uniform distribution, $a_{it} \sim \mathnormal{U}[-0.5,0.5]$.
 For the factor loading $\beta_{i1}$ and $\beta_{i2}$, we first use a uniform distribution $IIDU(\mu_{\beta} - 0.2, \mu_{\beta}+0.2)$ to produce the values.
 Here we set $\mu_{\beta}=0.71$ to make sure every generated loading value is sufficiently larger than 0.
 Then we randomly assign $n - [n^{\alpha_{1}}]$ and $n - [n^{\alpha_{2}}]$ factor loadings as zero.
@@ -68,7 +76,7 @@ $\alpha_1$ and $\alpha_2$ are the true factor strength of $f_1$ and $f_2$.
 In this simulation, we will start the factor strength from 0.7 and increase it gradually till unity with pace 0.05, say $(\alpha_{1}, \alpha_{2}) = \{0.7, 0.75,0.8,\cdots,1\}$.
  $[\cdot]$ is the integer operator defined at section (\ref{strength_one_factor_estimation}).
 This step reflects the fact that only $[n^\alpha_1]$ or $[n^\alpha_2]$ factor loadings are non-zero.
-In terms of the factors, they comes from a multinomial distribution $MVN(\mathbf{0}, \Sigma) $, as we discuss before.
+In terms of the factors, they come from a multinomial distribution $MVN(\mathbf{0}, \Sigma) $, as we discuss before.
 
 Currently, we consider three different experiments set up:
 
@@ -86,12 +94,13 @@ Both $\beta_{i1}$ and $\beta_{i2}$ are non-zero. Error term  and both factors ar
 The factor strength for the first factor $\alpha_1 = 1$ all the time, and $\alpha_2$ varies.
 \end{experiment}
 
-The factor strength in each experiment is estimated using the method discussed in section (\ref{strength_one_factor_estimation}), the size of significant test is $p = 0.05$, and the critical value exponent $\sigma$ has been set as 0.5.
-For each experiment, we calculate the bias, the RMSE and the size of the test to asses the estimation performances.
-The bias is calculated as the difference between the true factor strength $\alpha$ and the estimate factor strength $\hat{\alpha}$.
+The factor strength in each experiment is estimated using the method discussed in section (\ref{strength_one_factor_estimation}), the size of the significance test is $p = 0.05$, and the critical value exponent $\sigma$ has been set as 0.5.
+For each experiment, we calculate the bias, the RMSE and the size of the test to assess the estimation performances.
+The bias is calculated as the difference between the true factor strength $\alpha$ and the estimated factor strength $\hat{\alpha}$.
+\[bias = \alpha - \hat{\alpha}\]
 The Root Square Mean Error (RMSE) comes from:
 \[ RMSE =[\frac{1}{R}\sum_{r=1}^{R}(bias_r)^2 ]^{1/2}\]
-Where the R represent the total number of replication.
+Where the R represents the total number of replication.
 The size of the test is under the hypothesis that $H_0: \hat{\alpha_j} = \alpha_j,\;j =1, 2$ against the alternative hypothesis $H_1:\hat{\alpha_j} \neq \alpha_j,\; j=1,2$.
 Here we employed the following test statistic from \citeA{Bailey2020}.
 
@@ -141,26 +150,25 @@ Therefore, we calculate the size of the test base on:
 %For the rest of the variables, we follow the same procedure as the baseline experiment.
 
 In purpose of Monte Carlo Simulation, we consider the different combinations of T and n with $T = \{120, 240, 360\}$, $n =\{100, 300, 500\} $.
-The market factor will have strength $\alpha_m = 1$ all the time, and the strength of the other factor will be $\alpha_{x} = \{0.7, 0.75, 0.8,0.85, \\
-0.9,0.95, 1\}$. For every setting, we will replicate 2000 times independently, all the constant and variables will be re-generated for each replication.
+The market factor will have strength $\alpha_m = 1$ all the time, and the strength of the other factor will be $\alpha_{x} = \{0.7, 0.75, 0.8,0.85, 0.9,0.95, 1\}$. For every setting, we will replicate 2000 times independently, all the constant and variables will be re-generated for each replication.
 
 
  
 \subsection{Monte Carlo Results}
-We report the results in Table (\ref{table:exp1}) , (\ref{table:exp2}) and (\ref{table:exp3}) in Appendix \ref{simulationtable}.
+We report the results in Table (\ref{table:exp1}), (\ref{table:exp2}) and (\ref{table:exp3}) in Appendix \ref{simulationtable}.
 
 Table (\ref{table:exp1}) provides the results under the experiment 1.
 The estimation method we applied tends to over-estimate the strength slightly most of the time when the true strength is relatively weak under the single factor set up.
-With the strength increasing, the bias will turn to negative, represents a under-estimated results.
+With the strength increasing, the bias will turn to negative, represents an under-estimated results.
 Such bias, however, vanishes quickly while observation t, unit amount n, and true strength $\alpha$ increase.
 When we increase the time spam by including more data from the time dimensions, the bias, as well as the RMSE decrease significantly.
 Also, when including more cross-section unit n into the simulation, the performance of the estimation improves, as shown by the decreased bias and RMSE values.
-An impressive result is that, the gap between estimation and true strength will goes to zero when we have $\alpha = 1$, the strongest strength we can have.
-With the strength approaching unity, the both bias and RMSE will converge to zero.
+An impressive result is that the gap between estimation and true strength will go to zero when we have $\alpha = 1$, the strongest strength we can have.
+With the strength approaching unity, both bias and RMSE will converge to zero.
 We also present the size of the test in the table.
 The size of the test will not vary too much when the strength increases, so as the unit increases,
-But we can observe that when observations for each unit increase, in other word, when t increases, the size will shrink dramatically.
-The size will become smaller than the 0.05 threshold after we extend the t to 240, or empirically  speaking, when we included 20 years monthly return data into estimation.
+But we can observe that when observations for each unit increase, in other words, when t increases, the size will shrink dramatically.
+The size will become smaller than the 0.05 threshold after we extend the t to 240, or empirically speaking, when we included 20 years monthly return data into the estimation.
 Notice that, from the equation (\ref{z_indicator}), when $\hat{\alpha} = \alpha = 1$, the nominator becomes zero.
 Therefore, the size will collapse to zero in all settings, so we do not report the size for $\hat{\alpha} = \alpha = 1$
 
@@ -169,9 +177,9 @@ The result of no correlation settings is shown in the table (\ref{table:exp2}), 
 %Same as the single factor results, in most of the time, our estimation method will slightly under estimates the factor strength. 
 The estimation results improve when increasing either the observations amount t, or the cross-section units amount n.
 We also have the same unbiased estimation when true factor strength is unity under all unit-time combinations.
-In some cases, even when the factor strength is relatively weak,we can have unbiased estimation if the n and t are big enough. (see table (\ref{table:exp3})).
-However, we should also notice that when t > n, the results of size of the test in two factors setting are performing similar to the single factor result. 
-The size will shrink with the observation amount t increasing, and when we have t grater than 240, the size will be smaller than 0.05 threshold in all situations.
+In some cases, even when the factor strength is relatively weak, we can have unbiased estimation if the n and t are big enough. (see table (\ref{table:exp3})).
+However, we should also notice that when t > n, the results of the size of the test in two factors setting are performing similar to the single factor result. 
+The size will shrink with the observation amount t increasing, and when we have t greater than 240, the size will be smaller than 0.05 threshold in all situations.
 
 %Same results are found in the two factors experiments.
 %Table (\ref{exp2_table}) and Table (\ref{exp3_table}) shows the result of experiment 2 and 3.

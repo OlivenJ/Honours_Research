@@ -1,9 +1,9 @@
 \contentsline {table}{\numberline {1}{\ignorespaces Data Set Dimensions}}{15}%
-\contentsline {table}{\numberline {2}{\ignorespaces Market factor strength estimation}}{16}%
+\contentsline {table}{\numberline {2}{\ignorespaces Market factor strength estimation}}{17}%
 \contentsline {table}{\numberline {3}{\ignorespaces Proportion of Strength (Excluded Market Factor) }}{17}%
 \contentsline {table}{\numberline {4}{\ignorespaces Selected Risk Factor with Strength: top 15 factors from each data set and three well know factors.}}{18}%
 \contentsline {table}{\numberline {5}{\ignorespaces Simulation result for single factor setting}}{25}%
 \contentsline {table}{\numberline {6}{\ignorespaces Simulation result for double factors setting (no correlation)}}{26}%
 \contentsline {table}{\numberline {7}{\ignorespaces Simulation result for double factors setting (weak correlation)}}{27}%
-\contentsline {table}{\numberline {8}{Comparison table of estimated factor strength base on three different data sets, rank from strong to weak}}{28}%
+\contentsline {table}{\numberline {8}{Comparison table of estimated factor strength on three different data sets, from strong to weak}}{28}%
 \contentsline {table}{\numberline {9}{Decompose the thirty year data into three ten year subset, estimated the factor strength base on those three data set separately. Rank the result base on the factor strength, from strong to weak.}}{33}%
