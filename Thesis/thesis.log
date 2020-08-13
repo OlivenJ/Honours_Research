@@ -1,9 +1,9 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2020.5.27)  13 AUG 2020 14:48
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2020.5.27)  13 AUG 2020 14:56
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**" thesis.tex"
-(./ thesis.tex
+**thesis.tex
+(./thesis.tex
 LaTeX2e <2020-02-02> patch level 5
 L3 programming layer <2020-05-15>
 (/usr/local/texlive/2020/texmf-dist/tex/latex/base/article.cls
@@ -692,8 +692,8 @@ Package fontspec Info: Font family 'TimesNewRoman(0)' created for font 'Times
 (fontspec)             - 'bold italic small caps'  (b/scit) with NFSS spec.: 
 
 
-(./ thesis.aux)
-\openout1 = `" thesis.aux"'.
+(./thesis.aux)
+\openout1 = `thesis.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 39.
 LaTeX Font Info:    ... okay on input line 39.
@@ -763,7 +763,7 @@ LaTeX Info: Redefining \BHBI on input line 130.
 
 (./titlepage.tex [1
 
-]) (./ thesis.toc
+]) (./thesis.toc
 LaTeX Font Info:    Trying to load font information for OT1+ztmcm on input line
  4.
 
@@ -802,16 +802,16 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 4.
 )
 \tf@toc=\write6
-\openout6 = `" thesis.toc"'.
+\openout6 = `thesis.toc'.
 
  [1]
-(./ thesis.lof)
+(./thesis.lof)
 \tf@lof=\write7
-\openout7 = `" thesis.lof"'.
+\openout7 = `thesis.lof'.
 
- (./ thesis.lot)
+ (./thesis.lot)
 \tf@lot=\write8
-\openout8 = `" thesis.lot"'.
+\openout8 = `thesis.lot'.
 
  [2] (./introduction_and_literature_review.tex
 [3] [4]) (./factor_strength.tex [5] [6] [7] [8]) (./monte_carlo.tex [9]
@@ -849,7 +849,7 @@ LaTeX Warning: No positions in optional float specifier.
                Default added (so using `tbp') on input line 162.
 
 [18] [19]) (./elastic_net_application.tex) (./conclusion.tex) [20]
-(./ thesis.bbl
+(./thesis.bbl
 Underfull \hbox (badness 10000) in paragraph at lines 218--235
 []\TU/TimesNewRoman(0)/m/n/12 Carhart, M. M.  (1997, 3).  On persistence in mut
 ual fund perfor-
@@ -1054,18 +1054,18 @@ File: ./plot/thirty_decompose_VI.png Graphic file (type bmp)
 
 LaTeX Warning: Float too large for page by 46.8073pt on input line 1598.
 
-[48]) (./ thesis.aux)
+[48]) (./thesis.aux)
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
  17223 strings out of 479282
- 371976 string characters out of 5880512
- 697048 words of memory out of 5000000
+ 371944 string characters out of 5880512
+ 697042 words of memory out of 5000000
  34493 multiletter control sequences out of 15000+600000
  551270 words of font info for 100 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 59i,16n,75p,832b,320s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 59i,16n,75p,829b,320s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on  thesis.pdf (49 pages).
+Output written on thesis.pdf (49 pages).
