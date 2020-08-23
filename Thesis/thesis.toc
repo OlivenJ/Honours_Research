@@ -15,9 +15,9 @@
 \contentsline {subsubsection}{\numberline {6.2.1}Regression model setting}{16}%
 \contentsline {subsubsection}{\numberline {6.2.2}Factor Strength Findings}{16}%
 \contentsline {subsection}{\numberline {6.3}Elastic Net Application}{20}%
-\contentsline {section}{\numberline {7}Conclusion}{20}%
-\contentsline {section}{References}{21}%
-\contentsline {section}{\numberline {A}Simulation Result}{25}%
-\contentsline {section}{\numberline {B}Empirical Application Result}{28}%
-\contentsline {subsection}{\numberline {B.1}Factor Strength Estimation Table}{28}%
-\contentsline {subsection}{\numberline {B.2}Strength Comparison Figures}{37}%
+\contentsline {section}{\numberline {7}Conclusion}{21}%
+\contentsline {section}{References}{22}%
+\contentsline {section}{\numberline {A}Simulation Result}{26}%
+\contentsline {section}{\numberline {B}Empirical Application Result}{29}%
+\contentsline {subsection}{\numberline {B.1}Factor Strength Estimation Table}{29}%
+\contentsline {subsection}{\numberline {B.2}Strength Comparison Figures}{38}%

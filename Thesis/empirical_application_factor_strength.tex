@@ -30,10 +30,10 @@
 %\begin{document}
 	\section{Empirical Application}\label{Empirical}
 	
-Researchers and practitioners have been using the CAPM model (\citeA{Sharpe1964}, \citeA{Lintner1965}, and \citeA{Black1972}) and its multi-factor extension (For example, the three-factor model by \citeA{Fama1992}) when they are trying to capture the uncertainty of asset's return.
+Researchers and practitioners have been using the CAPM model \cite{Sharpe1964, Lintner1965, Black1972} and its multi-factor extension (For example, the three-factor model by \citeA{Fama1992}) when they are trying to capture the uncertainty of asset's return.
 The surging of new factors \cite{Harvey2019} provides numerous option to construct the CAPM model, but it also requires users to pick the factors wisely.
 In this section, we will use two different methods to identify appropriate factors from a group of 146 candidates.
-First, we utilise the method introduced in section\ref{strength} to estimates the strength of each factor from the factor group.
+First, we utilise the method introduced in section \ref{strength} to estimates the strength of each factor from the factor group.
 Then, we use the strength as a criterion to select factors including in the CAPM model.
 In the second part of this section, we apply the elastic net method, ask the algorithm to pick factors for us.
 We will compare the factors selected by those two approaches, expected a consistent selection outcome.
@@ -95,7 +95,7 @@ However, due to the potential correlations among factors, we will only focus the
 
 	\subsubsection{Factor Strength Findings}
 The complete set of results of factor strength estimation is presented in the appendix \ref{strength_table} and \ref{strength_figures}.
-We estimated the factors' strength using three different data sets discussed in the \ref{data}, and rank those strength from strong to weak, alongside the market factor strength, in the table (\ref{table:three_compare}).
+We estimated the factors' strength using three different data sets discussed in the \ref{data}, and rank those strength from strong to weak, alongside the market factor strength, in the table (\ref{table:three_ranked_compare}).
 
 We first look at the market factor strength under the single-factor CAPM setting. (see table \ref{table:market})
 
@@ -107,27 +107,30 @@ We first look at the market factor strength under the single-factor CAPM setting
 \hline
                                                                                                   & Ten Year Data & Twenty Year Data & Thirty Year Data \\ \hline
 \begin{tabular}[c]{@{}l@{}}Market Factor Strength\\ (Single Factor Setting)\end{tabular}          & 0.988         & 0.990            & 0.995            \\
-\begin{tabular}[c]{@{}l@{}}Average Market Factor Strength\\ (Double Factors Setting)\end{tabular} & 0.987         & 0.957            & 0.903            \\    \hline \hline
+\begin{tabular}[c]{@{}l@{}}Average Market Factor Strength\\ (Double Factors Setting)\end{tabular} & 0.987         & 0.991            & 0.996            \\    \hline \hline
 	\end{tabular}
 \end{table}
 As we expected, the estimated strength of market factor under all three scenarios shows consistently strong results.
-All three strengths are close to unity, which indicates that the market factor can generate significant factor loading almost all time for every asset.
+All three market factor strengths are close to unity, which indicates that the market factor can generate significant factor loading almost all time for every asset.
 Although the value is close to one, we still notice that the strength will increase slightly with the time span extended.
 This might indicate that for the security returns, from the long run, it will more closely mimic the behaviours of the market than the short run. 
-
+%=============================%Newly Added%=================================%
 Then, we turn to the double factor CAPM setting.
-We found that for different data sets, the factor strength estimation results are varying.
-The strongest factor is the market factor for all three data sets.
-In the ten year data, on average, the market factor has strength 0.987.
-However, with the observation T increase, the strength of market factor decrease.
-In twenty-year data set result, the market factor has 0.957, while in the thirty-year, the strength is only 0.903.
-But, comparing with other factors, the market factor is always the strongest factor.
-
+Under the double factor setting, we estimates every companies' stock return using market facto plus another risk factors.
+Therefore we will obtain the market factor strength for each single risk factors.
+So, we calculate the average market factor here:
+\[ \bar{\alpha}_{m} = \frac{1}{145}\sum_{i = 1}^{145}\alpha_{im}   \]
+$\alpha_{im}$ is the estimated market factor strength for the $i^{th}$ risk factor setting.
+Table\ref{table:market} shows that the estimated strength is consistent with the single factor settings.
+All three data sets provides extremely strong results, strengths are close to one.
+Overall, the market factor results indicates that the market factor can generate significant loadings for almost every companies' return at any time.
+Such conclusion fits with the financial theory states that individual stocks will in general move with the market.
+%=============================================================================%
 When looking at other factors,  the ten-year data set in general provides a significantly weaker result, compares with the other two data sets results.
 Except for the market factor, no other factors from the ten-years result show strength above 0.8.
 The strongest factor besides the market factor is the beta factor which has strength around 0.75.
-In contrast, the strongest risk factor (factor other than market factor) in the twenty-year data set is the ndp (net debt-to-price), which has strength 0.904.
-In the thirty-year scenario, the salecash (sales to cash) is the strongest with strength 0.857.
+In contrast, the strongest risk factor (factor other than market factor) in the twenty-year data set is the ndp (net debt-to-price), which has strength 0.937.
+In the thirty-year scenario, the salecash (sales to cash) is the strongest with strength 0.948.
 
 \begin{table}[hbt!]
 	\caption{Proportion of Strength (Excluded Market Factor) }\label{table:proportion}
@@ -135,28 +138,27 @@ In the thirty-year scenario, the salecash (sales to cash) is the strongest with 
 		\hline
 		\hline
 		Strength Level & \multicolumn{1}{l}{10 Year Data Proportion} & \multicolumn{1}{l}{20 Year Data Proportion} & \multicolumn{1}{l}{30 Year Data Proportion} \\ \hline
-		{[}0.9, 1{]}   & 0\%                                         & 2.07\%                                      & 0\%                                         \\
-		{[}0.85, 0.9)  & 0\%                                         & 24.1\%                                      & 4.14\%                                      \\
-		{[}0.8, 0.85)  & 0\%                                         & 16.6\%                                      & 27.6\%                                      \\
-		{[}0.75, 0.8)  & 0\%                                         & 8.28\%                                      & 12.4\%                                      \\
-		{[}0.7, 0.75)  & 7.59\%                                      & 11.7\%                                      & 9.66\%                                      \\
-		{[}0.65, 07)   & 15.9\%                                      & 5.52\%                                      & 15.9\%                                      \\
-		{[}0.6, 0.65)  & 17.9\%                                      & 8.28\%                                      & 5.52\%                                      \\
-		{[}0.55, 0.6)  & 13.1\%                                      & 8.97\%                                      & 5.52\%                                      \\
-		{[}0.5, 0.55)  & 8.97\%                                      & 2.76\%                                      & 4.83\%                                      \\
-		{[}0, 0.5)     & 36.6\%                                      & 11.7\%                                      & 14.5\%                                      \\ \hline\hline
+		{[}0.9, 1{]}   & 0\%                                         & 21.4\%                                      & 23.4\%                                         \\
+		{[}0.85, 0.9)  & 0\%                                         & 17.9\%                                      & 17.9\%                                      \\
+		{[}0.8, 0.85)  & 0\%                                         & 7.59\%                                      & 6.21\%                                      \\
+		{[}0.75, 0.8)  & 0\%                                         & 11.7\%                                      & 17.9\%                                      \\
+		{[}0.7, 0.75)  & 7.59\%                                      & 8.28\%                                      & 7.59\%                                      \\
+		{[}0.65, 07)   & 15.9\%                                      & 8.28\%                                      & 2.76\%                                      \\
+		{[}0.6, 0.65)  & 17.9\%                                      & 5.52\%                                      & 8.97\%                                      \\
+		{[}0.55, 0.6)  & 13.1\%                                      & 6.21\%                                      & 2.76\%                                      \\
+		{[}0.5, 0.55)  & 8.97\%                                      & 4.83\%                                      & 4.14\%                                      \\
+		{[}0, 0.5)     & 36.6\%                                      & 8.28\%                                      & 8.28\%                                      \\ \hline\hline
 	\end{tabular}
 \end{table}
 
-When comparing the proportion of factors with strengths falling in different intervals between 0 and 1 (see table (\ref{table:proportion})), we can find that when using 0.8 as a threshold, there are over forty per cent factors in the twenty-year result exceeds this threshold, and such percentage for the thirty-year results is 31\%.
+When comparing the proportion of factors with strengths falling in different intervals between 0 and 1 (see table (\ref{table:proportion})), we can find that when using 0.8 as a threshold, there are over forty-five per cent factors in the twenty-year and thirty-year result exceeds this threshold.
 In ten year results, the number is zero.
-We also find that nearly 40\% of factors from the ten-year dataset show strength less than 0.5, which is almost three times higher than the twenty and thirty years proportion.
+We also find that nearly 40\% of factors from the ten-year dataset show strength less than 0.5, which is almost four times higher than the twenty and thirty years proportion.
 
-Another important finding is that from the twenty-year data set, we obtained three factors: ndq (Net debt-to-price, $\hat{\alpha}$ = 0.904 ), salecash (sales to cash, $\hat{\alpha}$ = 0.902), and quick (quick ratio, $\hat{\alpha}$ = 0.901) has strength greater than 0.9.
-We would expect when applying the elastic net method with the twenty-year data set, those three factors with the market factors would be selected.
+When look at the ranking, we found that there are three factors: ndq (Net debt-to-price ), salecash (sales to cash), and quick (quick ratio) who are ranking top three in both twenty year data set result and thirty year data set result.
+We would expect when applying the elastic net method with the twenty-year and thirty-year data set, those three factors with the market factors would be selected.
 
-When looking at the ranking, we found that there are three factors entering the top 15 factor list in all three data sets results.
-The roavol (Earnings volatility, 10th of ten-year result, 9th of twenty-year result, 5th of thirty-year result ), age (Years since first Compustat coverage, 11th of ten-year result, 10th of twenty-year result, 4th of thirty-year result), and ndp (net debt-to-price, 14th of ten-year result, 1st of twenty-year result, 2nd of thirty-year result).
+Another interesting finding is that the roavol (Earnings volatility, 10th of ten-year result, 7th of twenty-year result, 5th of thirty-year result ), age (Years since first Compustat coverage, 11th of ten-year result, 9th of twenty-year result, 4th of thirty-year result), and ndp (net debt-to-price, 14th of ten-year result, 1st of twenty-year result, 2nd of thirty-year result).
 This might indicates a persistent risk pricing ability of these three factors exist, even with the changes of the data set's dimensions.
 
 \begin{table}[]
@@ -167,24 +169,25 @@ This might indicates a persistent risk pricing ability of these three factors ex
 		\multicolumn{3}{c|}{Ten Year} & \multicolumn{3}{c|}{Twenty Yera} & \multicolumn{3}{c}{Thirty Year} \\ \hline
 		Rank & Factor     & Strength & Rank   & Factor     & Strength   & Rank   & Factor     & Strength   \\ \hline
 %	 	 & Market & 0.988 & &Market & 0.990 & &Market & 0.995 \\
-		1    & beta       & 0.749    & 1      & ndp        & 0.904      & 1      & salecash   & 0.857      \\
-		2    & baspread   & 0.730    & 2      & salecash   & 0.902      & 2      & ndp        & 0.852      \\
-		3    & turn       & 0.728    & 3      & quick      & 0.901      & 3      & quick      & 0.851      \\
-		4    & zerotrade  & 0.725    & 4      & dy         & 0.897      & 4      & age        & 0.851      \\
-		5    & idiovol    & 0.723    & 5      & lev        & 0.897      & 5      & roavol     & 0.850      \\
-		6    & retvol     & 0.721    & 6      & cash       & 0.897      & 6      & ep         & 0.849      \\
-		7    & std\_turn  & 0.719    & 7      & zs         & 0.896      & 7      & depr       & 0.848      \\
-		8    & HML\_Devil & 0.719    & 8      & cp         & 0.894      & 8      & cash       & 0.847      \\
-		9    & maret      & 0.715    & 9      & roavol     & 0.894      & 9      & rds        & 0.843      \\
-		10   & roavol     & 0.713    & 10     & age        & 0.894      & 10     & currat     & 0.840      \\
-		11 & age  & 0.703 &11 & cfp  & 0.893 & 11 & chcsho  & 0.840 \\ 
-		12 & sp  & 0.699&12 & op& 0.893&12 & zs & 0.839 \\ 
-		13 & ala & 0.699&13 & nop  & 0.893&13 & nop & 0.839 \\ 
-		14 & ndp & 0.686&14 & ebp  & 0.893&14 & dy  & 0.838 \\ 
-		15 & orgcap & 0.686&15 & ep  & 0.891 &15& lev & 0.838 \\ 
-		20   & UMD        & 0.678    & 28     & HML        & 0.874      & 38     & HML        & 0.811      \\
-		24   & HML        & 0.672    & 76     & SMB        & 0.745      & 69     & SMB        & 0.721      \\
-		87   & SMB        & 0.512    & 88     & UMD        & 0.703      & 95     & UMD        & 0.672      \\ \hline
+		1   & beta               & 0.749    & 1      & ndp           & 0.937      & 1      & salecash  & 0.948\\
+		2   & baspread       & 0.730    & 2      & quick        & 0.934      & 2      & ndp          & 0.941\\
+		3   & turn               & 0.728    & 3      & salecash   & 0.933      & 3      & quick      & 0.940\\
+		4   & zerotrade      & 0.725    & 4      & lev            & 0.931      & 4      & age         & 0.940\\
+		5   & idiovol           & 0.723    & 5      & cash         & 0.931      & 5      & roavol    & 0.938\\
+		6   & retvol            & 0.721    & 6      & dy             & 0.929      & 6      & ep           & 0.937\\
+		7   & std\_turn      & 0.719    & 7      & roavol      & 0.929      & 7      & depr       & 0.935\\
+		8   & HML\_Devil & 0.719    & 8      & zs              & 0.927      & 8      & cash       & 0.934\\
+		9   & maret           & 0.715    & 9        & age          & 0.927      & 9      & rds         & 0.931\\
+		10 & roavol          & 0.713    & 10     & cp             & 0.926      & 10    & dy          & 0.927 \\
+		11 & age               & 0.703    &11      & ebp           & 0.926      & 11     & currat   & 0.927 \\ 
+		12 & sp                 & 0.699    &12      & op            & 0.925      &12       & chcsho  & 0.927 \\ 
+		13 & ala                & 0.699    &13      & cfp          & 0.924       &13      & lev         & 0.926 \\ 
+		14 & ndp              & 0.686    &14      & nop          & 0.924       &14     & stdacc     & 0.926 \\ 
+		15 & orgcap         & 0.686    &15      & ep            & 0.923       &15     & cfp          & 0.925 \\ 
+		20 & UMD            & 0.678    & 29     & HML        & 0.905      & 39     & HML       & 0.894 \\
+		24 & HML            & 0.672    & 76     & SMB        & 0.770      & 68     & SMB        & 0.804 \\
+		87 & SMB            & 0.512    & 89     & UMD        & 0.733      & 96     & UMD       & 0.745 \\ 
+		\hline
 	\end{tabular}
 \end{table}
 %But it worth notice that the market factor is consistently strong.
@@ -208,19 +211,20 @@ This might indicates a persistent risk pricing ability of these three factors ex
 
 We also focus on some well-known factors, namely the Fama-French size factor (Small Minus Big SMB), Fama-French Value factor (High Minus Low: HML) \cite{Fama1992} and the Momentum factor (UMD) \cite{Carhart1997}.
 It is surprising that none of these three factors enters the top fifteen list for each data sets.
-Except for the HML factor from the twenty and thirty-year data set has strength above 0.8, none of the other factors in any data set shows strength higher than 0.75
+Except for the HML factor from the twenty and thirty-year data set has strength closely around 0.9, none of the other factors in any data set shows strength higher than 0.85.
 %The value factor SMB from the ten year data set only has strength 0.512, ranked no.87.
 When using the ten-year data, both UMD and HML has strength around 0.67, and the SMB only has strength 0.512.
-Results from the twenty-year data set show that HML has strength 0.874, for SMB and UMD the strength are 0.745 and 0.703 respectively.
-Comparing with the twenty-year results, the thirty-year estimated strength drop slightly, HML decreases to 0.811, SMB is 0.721 and UMD has strength 0.672.
-Therefore, when using the strength as a criterion, we only select the value factor to incorporate in the CAPM model when having twenty and thirty-year data.
+Results from the twenty-year data set show that HML has strength 0.905, for SMB and UMD the strength are 0.770 and 0.733 respectively.
+Comparing with the twenty-year results, the thirty-year estimated strength change slightly, HML decreases to 0.894, SMB is 0.804 and UMD has strength 0.745.
+Therefore, when using the strength as a criterion, we may only select the value factor to incorporate in the CAPM model when having twenty and thirty-year data.
 
-As a second step, in order to see how factor strengths evolve through the time, we decompose the thirty yea-data set into three small subsample.
+In general, we found that the twenty-year and thirty-year data sets provides similar estimated strength, while, in contrast, the estimated strengths from ten-year data set are significantly weaker.
+Therefore, as a second step, in order to see how factor strengths evolve through the time, we decompose the thirty yea-data set into three small subsample.
 For each subsamples, it contains 242 companies (n = 242). 
 And for each company, we obtained 120 observations (t = 120). 
 The results are present in the table (\ref{table:thirty_decompose}) and figure (\ref{figure:thirty_decompose}).
 
-In general, we can conclude that for most of the factors, their strength gradually increased from the first decade (January 1988 to December 1997) to the second decade (January 1998 to December 2007), and then decreased in the third decade (January 2008 to December 2017).
+In general, we can conclude that about 80\% factors, their strength gradually increased from the first decade (January 1988 to December 1997) to the second decade (January 1998 to December 2007), and then decreased in the third decade (January 2008 to December 2017).
 This pattern can also be seen in the figure (\ref{figure:thirty_decompose}).
 The drop of factor strength in the third decades can be reconciled with the ten-year data results shows a significantly weaker strength than the results from twenty and thirty years data set.
 
@@ -257,7 +261,7 @@ But we should also notice that the financial market has been disturbed by those 
 Which means that those crises will also have negative influences on factor when they are capturing the risk-return relationship.
 
 We also need to notice that for some factors, their strength will decrease with time.
-For instance, the gma (gross profitability) factor and convind (convertible debt indicator) factor (see figure \ref{figure:thirty_decompose}) has consecutive strength decrease from the 1987-1997 period to 2007-2017 period.
+For instance, the gma (gross profitability) factor and dwc (change in net non-cash working capital) factor (see figure \ref{figure:thirty_decompose}) has consecutive strength decrease from the 1987-1997 period to 2007-2017 period.
 And for most of the factors, their strength will decrease significantly from the 1997-2007 period to 2007-2017 period.
 Therefore, disqualify some factors as the candidate of the CAPM model when using recent year data is inevitable.
 
