@@ -1,11 +1,9 @@
 library(tidyverse)
 library(lubridate)
 library(readxl)
+library(dplyr)
 #=============================================================================================#
-#=============================================================================================#
-#Risk Free rate and Factors#
-
-
+#===========================#Risk Free rate and Factors#======================================#
 risk_free <- read.table("~/Documents/Honours/Data and Scripts/Data/F-F_Research_Data_Factors.txt", header=TRUE, quote="\"") %>% 
   as_tibble() %>% 
   select(Rf = RF)
@@ -23,49 +21,11 @@ factor_ancillary <- read_excel("/Users/olivenjiang/Desktop/Ancillary Materials f
                                           "numeric"))
 
 Market_factor <- risk_factors %>% filter(Factor == "MktRf")
-risk_factor<- risk_factors %>% filter(Factor !="MktRf") 
+risk_factors<- risk_factors %>% filter(Factor !="MktRf") 
 
-
-
-
-#adju_price<- read_excel("Documents/Honours/Data and Scripts/Data/Osiris_Export_4.xlsx", 
- #          col_types = c("skip", "skip", "text", 
-#                         rep("numeric", 179))) %>% 
-#  pivot_longer(-"Ticker symbol", names_to = "times", values_to = "adj_close")
-
-#adj_price<- adju_price %>% separate(times, into = c("one", "two","three","four","five","six")) %>% 
-#  select(-c("one" ,"two", "three", "five")) %>% 
-#  unite(time, four,six) %>% rename(ticker = "Ticker symbol")
-
-
-#adj_price$time<-as.Date(paste(adj_price$time,'_01'), format = "%B_%Y _%d")
-#adj_price <- adj_price %>% na.omit()
-#nest_adj<- adj_price %>% arrange(ticker, time) %>% filter(time > as.Date("2007-12-01") & time < as.Date("2018-01-01")) %>% group_by(ticker) %>% nest()
-
-#raw_adj_return <- tibble(ticker = character(), time =ymd(), adj_close = double(), Adj.Return = double())
-
-#for (i in 1:(nrow(nest_adj)-1)) {
-#  temp <-nest_adj[i,] %>% 
-#    unnest(col = c("data"))
-#  temp$Adj.Return <- c(NA, diff(temp$adj_close)/temp$adj_close[-length(temp$adj_close)]*100)
-#  raw_adj_return <-raw_adj_return %>% bind_rows(temp)
-#  print(i)
-#}
-
-
-
-#adj_return<- raw_adj_return %>% rename("Date" = "time") %>% 
-#  inner_join( risk_free, by = "Date") %>% mutate(Excess = Adj.Return - Rf) %>% 
-#  select(-adj_close) %>% arrange(ticker, Date)
-
-#adj_return_name<- adj_return %>% group_by(ticker) %>% 
-#  summarise(n()) %>% 
-#  filter(`n()`==120)
-
-#adj_return <- adj_return%>% semi_join(adj_return_name, by  = "ticker")
 #=============================================================================================#
-#=============================================================================================#
-#Return#
+#==================================#Return#===================================================#
+
 price <- read_excel("/Users/olivenjiang/Documents/Honours/Data and Scripts/Data/price.xlsx", 
                     col_types = c("text", "date", "numeric", 
                                   "numeric", "numeric", "numeric", 
@@ -81,8 +41,6 @@ group_price <- price %>%
 
 raw_return <- tibble(Ticker = character(), Date =ymd(), Adj.Close = double(),Close = double(), Return = double(), Adj.Return = double())
 
-
-
 for (i in 1:(nrow(group_price)-1)) {
   temp <-group_price[i,] %>% 
     unnest(col = c("data"))
@@ -91,40 +49,21 @@ for (i in 1:(nrow(group_price)-1)) {
   raw_return <-raw_return %>%  bind_rows(temp)
   print(i)
 }
-#notice the changes 
 
-
-#return %>% mutate(diff = Return-Adj.Return) %>% view()
 
 return <- raw_return %>% filter(Date >= ymd("1976-07-01") & Date <= ymd("2017-12-01")) %>% 
   inner_join( risk_free, by = "Date") %>% mutate(Excess = Return - Rf) %>% 
-  select(-Adj.Return) %>% 
+  select(-Adj.Return, -Close, -Rf,-Adj.Close) %>% 
   filter(Excess < 300) 
 
+#=============================================================================================#
+#==================================#Prepare Return Set#=======================================#
   
 ten_name <- price %>% 
   filter(Date < ymd("2018-01-01") & Date > ymd("2007-11-01")) %>% 
   group_by(Ticker) %>% 
   summarise(length = n()) %>% 
   filter(length == 121)
-
-two_ten_name <- price %>% 
-  filter(Date < ymd("2008-01-01") & Date > ymd("1997-11-01")) %>% 
-  group_by(Ticker) %>% 
-  summarise(length =n()) %>% 
-  filter(length == 121)
-
-three_ten_name <- price %>% 
-  filter(Date < ymd("1998-01-01") & Date > ymd("1987-11-01")) %>% 
-  group_by(Ticker) %>% 
-  summarise(length =n()) %>% 
-  filter(length == 121)
-
-#fifty_name <-price %>% 
-# filter(Date < ymd("2018-01-01") & Date > ymd("2002-11-01")) %>% 
-#  group_by(Ticker) %>% 
-#  summarise(length = n()) %>% 
-#  filter(length == 181)
 
 twenty_name <- price %>% 
   filter(Date < ymd("2018-01-01") & Date > ymd("1997-11-01")) %>% 
@@ -138,113 +77,42 @@ thirty_name <- price %>%
   summarise(length = n()) %>% 
   filter(length == 361)
 
-#post_GFC_name <- price %>% 
-#  filter(Date < ymd("2018-01-01") & Date > ymd("2009-03-01")) %>% 
-#  group_by(Ticker) %>% 
-#  summarise(length = n()) %>% 
-#  filter(length == 105)
-
-#pre_GFC_thirty_name <- price %>% 
-#  filter(Date < ymd("2016-01-01") & Date > ymd("1985-12-01")) %>% 
-#  group_by(Ticker) %>% 
-#  summarise(length = n()) %>% 
-#  filter(length == 360)
-
-#first_boom_name <- price %>% 
-#  filter(Date < ymd("2000-07-01") & Date > ymd("1990-05-01")) %>% 
-#  group_by(Ticker) %>% 
-#  summarise(length = n()) %>% 
-#  filter(length == 121)
 
 ten_return <- semi_join(return, ten_name, by = "Ticker") %>% 
-  filter(Date < ymd("2018-01-01") & Date > ymd("2007-12-01")) %>% 
-  select(-Rf, -Adj.Close)
-
-
-two_ten_return <- semi_join(return, two_ten_name, by = "Ticker") %>% 
-  filter(Date < ymd("2008-01-01") & Date > ymd("1997-12-01")) %>% 
-  select(-Rf, -Adj.Close)
-
-three_ten_return<- semi_join(return, three_ten_name, by = "Ticker") %>% 
-  filter(Date < ymd("1998-01-01") & Date > ymd("1987-12-01")) %>% 
-  select(-Rf, -Adj.Close)
-
-#fifty_return <- semi_join(return, fifty_name, by = "Ticker") %>% 
-#  filter(Date < ymd("2018-01-01") & Date > ymd("2002-12-01")) %>% 
-#  select(-Rf, -Adj.Close)
+  filter(Date < ymd("2018-01-01") & Date > ymd("2007-12-01")) 
 
 twenty_return <- semi_join(return, twenty_name, by = "Ticker") %>% 
-  filter(Date < ymd("2018-01-01") & Date > ymd("1997-12-01")) %>% 
-  select(-Rf, -Adj.Close)
+  filter(Date < ymd("2018-01-01") & Date > ymd("1997-12-01")) 
 
 thirty_return <- semi_join(return, thirty_name, by = "Ticker") %>% 
-  filter(Date < ymd("2018-01-01") & Date > ymd("1987-12-01")) %>% 
-  select(-Rf, -Adj.Close)
-
-#post_GFC_return <- semi_join(return, post_GFC_name, by = "Ticker") %>% 
-#  filter(Date < ymd("2018-01-01") & Date > ymd("2009-04-01")) %>% 
-#  select(-Rf, -Adj.Close)
-
-#pre_GFC_thirty_return <- semi_join(return, pre_GFC_thirty_name, by = "Ticker") %>% 
-#  filter(Date < ymd("2016-01-01") & Date > ymd("1985-12-01")) %>% 
-#  select(-Rf, -Adj.Close)
-
-#first_boom_return <- semi_join(return, first_boom_name, by = "Ticker") %>% 
-#  filter(Date < ymd("2000-07-01") & Date > ymd("1990-06-01")) %>% 
-#  select(-Rf, -Adj.Close)
+  filter(Date < ymd("2018-01-01") & Date > ymd("1987-12-01")) 
 
 ten_return$Date <- as.Date(ten_return$Date)
-two_ten_return$Date <- as.Date(two_ten_return$Date)
-three_ten_return$Date <- as.Date(three_ten_return$Date)
-#fifty_return$Date <- as.Date(fifty_return$Date)
 twenty_return$Date <- as.Date(twenty_return$Date)
 thirty_return$Date <- as.Date(thirty_return$Date)
-#post_GFC_return$Date<- as.Date(post_GFC_return$Date)
-#first_boom_return$Date <- as.Date(first_boom_return$Date)
-#pre_GFC_thirty_return$Date<- as.Date(pre_GFC_thirty_return$Date)
 
-ten_return <- inner_join(ten_return, risk_factor, by = "Date") %>% inner_join(Market_factor, by = "Date")%>% 
+ten_factor_return <- inner_join(ten_return, risk_factors, by = "Date") %>% 
+  inner_join(Market_factor, by = "Date")%>% 
   rename(Factor = Factor.x, Value = Value.x, Market = Value.y) %>% 
   select(-Factor.y) 
-
-two_ten_return <- inner_join(two_ten_return, risk_factor, by = "Date") %>% inner_join(Market_factor, by = "Date")%>% 
-  rename(Factor = Factor.x, Value = Value.x, Market = Value.y) %>% 
-  select(-Factor.y) 
-
-
-three_ten_return <- inner_join(three_ten_return, risk_factor, by = "Date") %>% inner_join(Market_factor, by = "Date")%>% 
-  rename(Factor = Factor.x, Value = Value.x, Market = Value.y) %>% 
-  select(-Factor.y) 
-
-adj_return <- inner_join(adj_return, risk_factor, by = "Date") %>% inner_join(Market_factor, by = "Date")%>% 
-  rename(Factor = Factor.x, Value = Value.x, Market = Value.y) %>% 
-  select(-Factor.y) 
-
-#fifty_return <- inner_join(fifty_return, risk_factor, by = "Date") %>% inner_join(Market_factor, by = "Date")%>% 
-#  rename(Factor = Factor.x, Value = Value.x, Market = Value.y) %>% 
-#  select(-Factor.y) 
-
-twenty_return<- inner_join(twenty_return, risk_factor, by = "Date") %>% 
+ 
+twenty_factor_return<- inner_join(twenty_return, risk_factors, by = "Date") %>% 
   inner_join(Market_factor, by = "Date")%>% 
   rename(Factor = Factor.x, Value = Value.x, Market = Value.y) %>% 
   select(-Factor.y) 
 
-thirty_return<- inner_join(thirty_return, risk_factor, by = "Date") %>%
+thirty_factor_return<- inner_join(thirty_return, risk_factors, by = "Date") %>%
   inner_join(Market_factor, by = "Date")%>% 
   rename(Factor = Factor.x, Value = Value.x, Market = Value.y) %>% 
   select(-Factor.y) 
 
-#post_GFC_return<- inner_join(post_GFC_return, risk_factor, by = "Date") %>%
-#  inner_join(Market_factor, by = "Date")%>% 
-#  rename(Factor = Factor.x, Value = Value.x, Market = Value.y) %>% 
-#  select(-Factor.y) 
+#=============================================================================================#
+#==============================#Prepare Thirty Subsets#=======================================#
 
-#first_boom_return <- inner_join(first_boom_return, risk_factor, by = "Date") %>%
-#  inner_join(Market_factor, by = "Date")%>% 
-#  rename(Factor = Factor.x, Value = Value.x, Market = Value.y) %>% 
-#  select(-Factor.y) 
+one_thirty_return <- thirty_return %>% filter(Date >= ymd("1988-01-01") & Date < ymd("1998-01-01")) 
+two_thirty_return <- thirty_return %>% filter(Date >= ymd("1998-01-01") & Date < ymd("2008-01-01")) 
+three_thirty_return <- thirty_return %>% filter(Date >= ymd("2008-01-01") & Date < ymd("2018-01-01")) 
 
-#pre_GFC_thirty_return<- inner_join(pre_GFC_thirty_return, risk_factor, by = "Date") %>%
-#  inner_join(Market_factor, by = "Date")%>% 
-#  rename(Factor = Factor.x, Value = Value.x, Market = Value.y) %>% 
-#  select(-Factor.y) 
+one_thirty_factor_return <- thirty_factor_return %>% filter(Date >= ymd("1988-01-01") & Date < ymd("1998-01-01")) 
+two_thirty_factor_return <- thirty_factor_return %>% filter(Date >= ymd("1998-01-01") & Date < ymd("2008-01-01")) 
+three_thirty_factor_return <- thirty_factor_return %>% filter(Date >= ymd("2008-01-01") & Date < ymd("2018-01-01"))
