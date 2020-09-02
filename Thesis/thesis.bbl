@@ -323,6 +323,33 @@ Fama, E\BPBI F.%
 
 \bibitem [\protect \citeauthoryear {%
 Fama%
+\ \BBA {} French%
+}{%
+Fama%
+\ \BBA {} French%
+}{%
+{\protect \APACyear {2018}}%
+}]{%
+Fama2018}
+\APACinsertmetastar {%
+Fama2018}%
+\begin{APACrefauthors}%
+Fama, E\BPBI F.%
+\BCBT {}\ \BBA {} French, K\BPBI R.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2018}{5}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Choosing factors} {Choosing factors}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Journal of Financial Economics}{128}{}{234-252}.
+\newblock
+\begin{APACrefDOI} \doi{10.1016/j.jfineco.2018.02.012} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Fama%
 \ \BBA {} MacBeth%
 }{%
 Fama%
@@ -440,6 +467,40 @@ Freyberger, J.%
 \begin{APACrefURL} \url{https://doi.org/10.1093/rfs/hhz123} \end{APACrefURL}
 \newblock
 \begin{APACrefDOI} \doi{10.1093/rfs/hhz123} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Gospodinov%
+, Kan%
+\BCBL {}\ \BBA {} Robotti%
+}{%
+Gospodinov%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2014}}%
+}]{%
+Gospodinov2014}
+\APACinsertmetastar {%
+Gospodinov2014}%
+\begin{APACrefauthors}%
+Gospodinov, N.%
+, Kan, R.%
+\BCBL {}\ \BBA {} Robotti, C.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2014}{7}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Misspecification-robust inference in linear
+  asset-pricing models with irrelevant risk factors} {Misspecification-robust
+  inference in linear asset-pricing models with irrelevant risk
+  factors}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Review of Financial Studies}{27}{}{2139-2170}.
+\newblock
+\begin{APACrefURL} \url{https://academic.oup.com/rfs/article/27/7/2139/1578148}
+  \end{APACrefURL}
+\newblock
+\begin{APACrefDOI} \doi{10.1093/rfs/hht135} \end{APACrefDOI}
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
@@ -587,6 +648,36 @@ Harvey, C\BPBI R.%
 \begin{APACrefURL} \url{https://doi.org/10.1093/rfs/hhv059} \end{APACrefURL}
 \newblock
 \begin{APACrefDOI} \doi{10.1093/rfs/hhv059} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Hou%
+, Xue%
+\BCBL {}\ \BBA {} Zhang%
+}{%
+Hou%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2018}}%
+}]{%
+Hou2018}
+\APACinsertmetastar {%
+Hou2018}%
+\begin{APACrefauthors}%
+Hou, K.%
+, Xue, C.%
+\BCBL {}\ \BBA {} Zhang, L.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2018}{12}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Replicating Anomalies} {Replicating anomalies}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{The Review of Financial Studies}{33}{}{2019-2133}.
+\newblock
+\begin{APACrefURL} \url{https://doi.org/10.1093/rfs/hhy131} \end{APACrefURL}
+\newblock
+\begin{APACrefDOI} \doi{10.1093/rfs/hhy131} \end{APACrefDOI}
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%

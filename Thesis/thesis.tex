@@ -21,7 +21,7 @@
 \usepackage{rotating}
 %\usepackage{subcaption}
 %\usepackage{floatrow}
-\usepackage{fontspec}
+%\usepackage{fontspec}
 
 
 \DeclareMathOperator*{\argmin}{arg\,min}
@@ -32,18 +32,20 @@
 \usepackage{fontspec}
 \setmainfont{Times New Roman}
 \addtolength{\jot}{0.5em}
-\linespread{1.5}
 
 
+\doublespacing
 
 \begin{document}
 	\input{titlepage.tex}
-	
+	\pagenumbering{Roman}
 	\tableofcontents
 	\newpage
 	\listoffigures
 	\listoftables
 	\newpage
+\setcounter{page}{1}
+\pagenumbering{arabic}
 
 \input{introduction_and_literature_review.tex}
 \input{factor_strength.tex}

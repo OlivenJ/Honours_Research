@@ -77,42 +77,52 @@ Section \ref{Empirical} includes the empirical application, where we estimate th
 
 	\section{Related Literature}\label{Literature}
 %This project combines three  kinds of literatures: CAPM, factor strength, and factor selection under high dimensioned setting for the number of potential factors.
-
+%\subsection{Capital Asset Pricing Model and its multi-factor extension}
 This project is built on contributions to the field of asset pricing.
-First formulated by \citeA{Sharpe1964}, \citeA{Lintner1965}, and \citeA{Black1972}, the original CAPM model only contains the market factor, which is denoted by the difference between average market return and risk-free return.
-\citeA{Fama1992} extend the model into three-factors, which it then extend into four \cite{Carhart1997}, and five \cite{Fama2015}.
-Recent research created a six-factors model and claim it outperforms all other sparse factor models. \cite{Kelly2019}.
-
+First formulated by \citeA{Sharpe1964}, \citeA{Lintner1965}, and \citeA{Black1972}, the Capital Asset Pricing Model (CAPM) builds up the connection between expected asset return and the risk.
+The original CAPM model only contains the market factor, which is denoted by the difference between average market return and risk-free return, then\citeA{Fama1992} extend the model to contain size factor (SMB) and the value factor (HML).
+\citeA{Carhart1997}, base on the Fama-French three factors model, added the momentum factor and makes it a new standard of factor pricing model.
+Some recent researches are attempting to extend the factor model even further.
+For instance \citeA{Fama2015} create a five factors model base on their 1995 works by adding a investment factor and a profitability factor.
+They also added created a six-factor model \cite{Fama2018}, by adding an momentum factor of their on version base on the five-factor models.
+\citeA{Kelly2019} proposed an new method named Instrumented Principle Component Analysis (IPCA) which can identify latent factor structure.
+They applied the IPCA and constructed a six-factor model, claimed their six-factor model outperforms most of sparse factor models, such as the five-factor models published by Fama and French in 2015.
+%\subsection{Misspecification of risk-return relation}
 In terms of assessing the strength of risk factors, this thesis also relates to papers discussing factors that have no or weak correlation with assets' return under the paradigm of the CAPM model.
-\citeA{Kan1999} found that the test-statistic of FM two-stage regression  \cite{Fama1973} will inflate when incorporating factors which are independent of the cross-section return.
+The Fama-MacBeth two stage regression (FM two-stage regression) introduced by \citeA{Fama1973} is a standard method when trying to estimates the CAPM and its multi factor extension. 
+\citeA{Kan1999} found that the test-statistic of FM two-stage regression will inflate when incorporating factors which are independent of the cross-section return.
 Therefore, when factors with no pricing power were added into the model, those factors may have the chance to pass the significant test falsely.
 %\citeA{Kleibergen2009} pointed out how a factor with small loading would deliver a spurious FM two-pass risk premia estimation. 
 \citeA{Kleibergen2015} found out that even when some factor-return relationship does not exist, the r-square and the t-statistic of the FM two-stage regression would become in favour of the conclusion of such structure presence. 
-\citeA{Gospodinov2017} show how the addition of a spurious factor will distort the statistical inference of parameters.
+\citeA{Gospodinov2017} show how the addition of a spurious factor will distort the statistical inference of parameters, and misleads the researchers to believe that they correctly specified the factor structure exist, even when the degree of misspecification is arbitrarily large
 Besides, \citeA{Anatolyev2018} studied the behaviours of the model with the presence of weak factors under asymptotic settings, and they find the regression will lead to an inconsistent risk premia estimation result.
+To address the problem of misspecified factor-return relationship, \citeA{Gospodinov2014} proposed a factor selection procedure, which base on their statement, can eliminates the falsely presented factor robustly, and restores the inference. 
 	
-	
+%\subsection{Factors identification}
 Finally, of interest in this thesis is the large dimension of potential factors.
+\citeA{Harvey2019} documented over 500 published risk factors, and they indicated that more factors are discovered every years.
+Among all those risk factors, \citeA{Hou2018} tried to replicates 452 of them, and they find only 35\% to 18\% factors are reproducible.
 For these reasons, it borrows from researchers that identify useful factors from a group of potential factors.
 \citeA{Harvey2015} examine over 300 factors published in journals, presents a new multi testing framework to exam the significance of factors.
 And they claim that a higher hurdle for the t-statistic is necessary when examining the significance of newly proposed factors.
 %and they suggest to adjust the p-value threshold to around 3. 
-Methods like a Bayesian procedure introduced by \citeA{Barillas2018} were used to compare different factor models.
-\citeA{Pukthuanthong2019} defined several criteria for "genuine risk factor", and based on those criteria introduced a protocol to examine whether a factor is associated with the risk premium.
-
+Methods like a Bayesian test procedure introduced by \citeA{Barillas2018}.
+The method enables researchers to compare the probabilities of a collection of potential models can be constructed after giving a group of factors.
+In order to identify factors risk-pricing ability, \citeA{Pukthuanthong2019} defined several criteria for "genuine risk factor", and based on those criteria introduced a protocol to examine whether a factor is associated with the risk premium.
+%\subsection{Factor selection and Machine Learning}
 %{\bf More details about the previous effort of identifying useful factors }
 Once the factor strength is identified, the thesis will attempt to reconcile empirically the factor selection under machine learning techniques and the factor strength implied by the selection.
-
 %This thesis will attempt to address the factor selection problem by using machine learning techniques.
 \citeA{Gu2020} elaborate on the advantages of using emerging machine learning algorithms in measuring the equity risk premiums.
 They obtained a higher predictive accuracy in measuring risk premium, and demonstrated large economics gains using investment strategy base on the machine learning forecast.
 %They found the machine learning method improved the predictive accuracy and provides extra economics gain 
 %Those advantages including more accurate prediction result, and superior efficiency.
-Various machine learning algorithms have been adopted when selecting factors for the factor model, especially in recent years.
+In recent years, machine learning algorithms have became popular in the finance studies, and various methods are adopted when selecting factors for the factor model.
 \citeA{Lettau2020} apply Principle Components Analysis when investigating the latent factor of the model. 
-Lasso is a popular algorithms for factor selections, because of its ability of selecting features.
+Lasso, been innovated by \citeA{Tibshirani1996}, is a popular algorithms which can eliminate redundant features. 
+The derivation of Lasso has become increasingly popular in the factor selection.
 %Lasso method, since it's ability to select features, is popular in the field of the factor selection.
-\citeA{Feng2019} used the double-selected Lasso method \cite{Belloni2014}, and a grouped lasso method \cite{Huang2010} is used by \citeA{Freyberger2020} when picking factors from a group of candidates. 
+For example, \citeA{Feng2019} used the double-selected Lasso method \cite{Belloni2014}, and \citeA{Freyberger2020} used a grouped lasso method \cite{Huang2010} when picking factors from a group of candidates. 
 \citeA{Kozak2020} arguing that the sparse factor model is ultimately futile by using a Bayesian-based method. 
 They constructed their estimator similar to the ridge regressor, but instead of putting the penalty on the sum of squared of factor coefficients, they impose the penalty base on the maximum squared Sharpe ration implied by the factor model.
-They also augmented their Bayesian based estimator with extra $L^1$, created a method,  similar but different to the elastic net algorithm which will be employed by our project. (\textbf{Still not very good})
+They also augmented their Bayesian based estimator with extra $L^1$, created a method,  similar but different to the elastic net algorithm which will be employed by our project. 
