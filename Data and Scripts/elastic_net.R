@@ -1,94 +1,98 @@
 library(glmnet)
 library(tidyverse)
 library(broom)
+library(caret)
+library(glmnetUtils)
+set.seed(2020)
 
 #================#================#================#================#================#================#
 #================#================#================#================#================#================#
 #================#================#=Fit the model with learning set==#================#================#\
-#learning_return_matrix<- two_thirty_factor_return%>% pivot_wider(names_from = Factor, values_from = Value) %>% 
-#  dplyr::select(Excess) %>% 
-#  as.matrix()
+alpha_1 <- rep(0,10)
+alpha_2 <- rep(0,10)
 
-learning_feature_matrix <- semi_join(three_thirty_factor_return, thirty_strength %>% filter(strength > 0.9), by = "Factor") %>% 
-  pivot_wider(names_from = Factor, values_from = Value) %>% 
-  dplyr::select(-c(Ticker, Date, Return, Excess,Market)) %>% 
-  as.matrix() # we only use the factor has strength above 0.7
+mean(alpha_1)
+mean(alpha_2)
 
-#learning_feature_matrix<- one_thirty_return %>% pivot_wider(names_from = Factor, values_from = Value) %>% 
-#  dplyr::select(-c(Ticker, Date, Close, Return, Excess,Market)) %>% 
-#  as.matrix()
 
-resid_matrix<- (lm(Excess ~ Market, three_thirty_factor_return %>% pivot_wider(names_from = Factor, values_from = Value)) %>% 
+  
+learning_data <- sample_n_groups(semi_join(ten_factor_return, thirty_strength %>% filter(strength >0.9), by = "Factor") %>% 
+                  group_by(Factor),
+                size = 34) %>% 
+  pivot_wider(names_from = Factor, values_from = Value)%>% 
+  select(-unique_id) %>% 
+  group_by(Ticker, Date, Return, Excess, Market) %>% 
+  summarise_each(funs(first(.[!is.na(.)]))) %>% 
+  ungroup() %>% select(-c(Date, Return)) 
+
+learning_feature_matrix<- learning_data %>% 
+  dplyr::select(-c(Ticker,Excess,Market)) %>% 
+  as.matrix() 
+
+learning_resid_matrix<- (lm(Excess ~ Market, learning_data) %>% 
   augment())$.resid %>% as.matrix()
 #Because the theory indicaes that we must have market factor, and other factors are almost all correlated with 
 #the market factor, so we use the resudals to remove the influence of market factor
 
 #================#================#Using MSE to decide the alpha#================#==================#
- MSE_table %>% arrange(mse) %>% view()
-
-three_thirty_alpha <- alpha_determin(resid_matrix, learning_feature_matrix, grid=100)
+fold_id <- sample(x = 1:10, size = length(learning_resid_matrix), replace = TRUE)
+# search across a range of alphas
+tuning_grid <- tibble::tibble(
+  alpha      = seq(0, 1, by = .01),
+  mse_min    = NA,
+  mse_1se    = NA,
+  lambda_min = NA,
+  lambda_1se = NA
+)
+for(i in seq_along(tuning_grid$alpha)){
+  # fit CV model for each alpha value
+  fit <- cv.glmnet(x = learning_feature_matrix, y = learning_resid_matrix, alpha = tuning_grid$alpha[i],foldid = fold_id)
   
- 
- 
-best.mse<- glmnet(learning_feature_matrix, resid_matrix, alpha= 0.09)
-plot(best.mse,label= TRUE)
+  # extract MSE and lambda values
+  tuning_grid$mse_min[i]    <- fit$cvm[fit$lambda == fit$lambda.min]
+  tuning_grid$mse_1se[i]    <- fit$cvm[fit$lambda == fit$lambda.1se]
+  tuning_grid$lambda_min[i] <- fit$lambda.min
+  tuning_grid$lambda_1se[i] <- fit$lambda.1se
+  print(i)
+}
 
 
-cv.best.mse <-cv.glmnet(learning_feature_matrix, resid_matrix, alpha= 0.09)
-cv.best.mse$lambda.min
-plot(cv.best.mse,label = TRUE)
-coef(cv.best.mse, s = "lambda.min")
+mse_alpha <- alpha_determin(learning_feature_matrix, learning_resid_matrix)
+mse_alpha %>% arrange(rmse)
 
-learning_lambda<- cv.best.mse$lambda.min
+#=============#=============#=============#=============#=============#=============#
+cv_10 = trainControl(method = "cv", number = 10)
+train_elnet<- train(
+  resid ~., data = learning_data,
+  method = "glmnet",
+  trControl = cv_10
+)
 
-coef(cv.best.mse,s = "lambda.min")
-coef(cv.best.mse,s = "lambda.1se")
-
-length(best.mse$lambda)
-aic = deviance(best.mse)+2*best.mse$df
-bic = deviance(best.mse)+log(29160)*best.mse$df
-
-which.min(aic)
-which.min(bic)
-
+best_learning <- cva.glmnet(resid ~ .,learning_data)
+predict(best_learning, learning_data, whihc = 6)
+best_learning$modlist
+plot(best_learning$modlist[[10]])
+plot(best_learning)
 
 #=============#=============#=============#=============#=============#=============#
 #=============#=============#=============#=============#=============#=============#
-#=============#=============#=============#=============#=============#=============#
+
+mod_result <-  auto_count_select(learning_data, alpha = 0.05)
+
+two_thirty_count <- given_count_select(two_thirty_factor_return,alpha = 0.54, lambda = learning_lambda, strength_threshold = 0.7 )
+auto_two_thirty_count <- auto_count_select(two_thirty_factor_return,alpha = 0.54,  strength_threshold = 0.7 )
+two_thirty_count %>% arrange(desc(count))
+auto_two_thirty_count %>% arrange(desc(count))
+
+three_thirty_count <- given_count_select(three_thirty_factor_return,alpha = 0.54, lambda = learning_lambda, strength_threshold = 0 )
+auto_three_thirty_count <- auto_count_select(three_thirty_factor_return,alpha = 0.54,  strength_threshold = 0 )
+three_thirty_count %>% arrange(desc(count))
+auto_three_thirty_count %>% arrange(desc(count))
 
 
-two_thirty_a1_s0<- count_select(data = two_thirty_factor_return, alpha = 1,strength_threshold = 0 ,folds = 20)
-two_thirty_a05_s0<- count_select(data = two_thirty_factor_return, alpha = 0.5,strength_threshold = 0 ,folds = 20)
-two_thirty_a05_s07<- count_select(data = two_thirty_factor_return, alpha = 0.5,strength_threshold = 0.7 ,folds = 20)
+ten_count <- given_count_select(ten_factor_return,alpha = 0.54, lambda = learning_lambda, strength_threshold = 0 )
+auto_ten_count <- auto_count_select(ten_factor_return,alpha = 0.54,  strength_threshold = 0 )
 
-three_thirty_a1_s0<- count_select(data = three_thirty_factor_return, alpha = 1,strength_threshold = 0 ,folds = 20)
-three_thirty_a05_s0<- count_select(data = three_thirty_factor_return, alpha = 0.5,strength_threshold = 0 ,folds = 20)
-three_thirty_a066_s09<- count_select(data = three_thirty_factor_return, alpha = 0.66,strength_threshold = 0.9 ,folds = 10)
-three_thirty_a066_s07<- count_select(data = three_thirty_factor_return, alpha = 0.66,strength_threshold = 0.7 ,folds = 10)
+two_thirty_count %>% view()
 
 
-one_thirty_a1_s0<- count_select(data = one_thirty_factor_return, alpha = 1,strength_threshold = 0 ,folds = 20)
-one_thirty_a05_s0<- count_select(data = one_thirty_factor_return, alpha = 0.5,strength_threshold = 0 ,folds = 20)
-
-thirty_a1_s0<- count_select(data = thirty_factor_return, alpha = 1,strength_threshold = 0 ,folds = 20)
-thirty_a05_s0<- count_select(data = thirty_factor_return, alpha = 0.5,strength_threshold = 0 ,folds = 20)
-
-twenty_a1_s0<- count_select(data = twenty_factor_return, alpha = 1,strength_threshold = 0 ,folds = 20)
-twenty_a05_s0<- count_select(data = twenty_factor_return, alpha = 0.5,strength_threshold = 0 ,folds = 20)
-
-ten_a1_s0<- count_select(data = ten_factor_return, alpha = 1,strength_threshold = 0 ,folds = 20)
-ten_a05_s0<- count_select(data = ten_factor_return, alpha = 0.5,strength_threshold = 0 ,folds = 20)
-
-ten_a05_s0 %>% arrange(desc(count))
-twenty_a05_s0 %>% arrange(desc(count))
-thirty_a05_s0 %>% arrange(desc(count))
-
-three_thirty_a05_s0 %>% arrange(desc(count))
-three_thirty_a1_s0%>% arrange(desc(count))
-
-two_thirty_a05_s0 %>% arrange(desc(count))
-two_thirty_a1_s0 %>% arrange(desc(count))
-two_thirty_a05_s07%>% arrange(desc(count))
-two_thirty_a1_s0 %>% summary()
-two_thirty_strength %>% arrange(desc(strength))
- 
