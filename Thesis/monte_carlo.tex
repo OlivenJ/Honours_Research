@@ -62,7 +62,7 @@ q_1({f_{mt}}) &= a_{i} +\beta_{im} f_{mt}\\
 q_2(\sum_{j = 1}^{k}\beta_{ij}f_{jt}) &=\sum_{j = 1}^{k}\beta_{ij}f_{jt}
 \end{align*}
 To start the simulation, we consider a two-factor model:
-\[    x_{it} = a_{i} + \beta_{i1}f_{1t} + \beta_{i2}f_{2t}+\epsilon_{it} \tag{7} \label{two_factor}   \]
+\[    x_{it} = a_{i} + \beta_{i1}f_{1t} + \beta_{i2}f_{2t}+\epsilon_{it} \tag{8} \label{two_factor}   \]
 %Therefore, if we include the market factor with other risk factors together, the model can be simplified as:
 %	\[   x_{it} = a_{it} + \sum_{j = 1}^{k+1}  \beta_{ij}f_{jt} +\epsilon_{it}  \tag{6} \label{simplified_multi}  \x]
 %And in this first baseline experiment, we will  use the single factor model as:
@@ -104,12 +104,12 @@ Where the R represents the total number of replication.
 The size of the test is under the hypothesis that $H_0: \hat{\alpha_j} = \alpha_j,\;j =1, 2$ against the alternative hypothesis $H_1:\hat{\alpha_j} \neq \alpha_j,\; j=1,2$.
 Here we employed the following test statistic from \citeA{Bailey2020}.
 
-	\[  z_{\hat{\alpha_j}:\alpha_j} =\frac{(\ln n)\left(\hat{\alpha_j}-\alpha_{j}\right)-p\left(n-n^{\hat{\alpha_j}}\right) n^{-\delta-\hat{\alpha_j}}}{\left[p\left(n-n^{\hat{\alpha}_j}\right) n^{-\delta-2 \hat{\alpha}_j}\left(1-\frac{p}{n^{\delta}}\right)\right]^{1 / 2}}\quad j=1,2 \tag{8}  \label{z_indicator}\]
+	\[  z_{\hat{\alpha_j}:\alpha_j} =\frac{(\ln n)\left(\hat{\alpha_j}-\alpha_{j}\right)-p\left(n-n^{\hat{\alpha_j}}\right) n^{-\delta-\hat{\alpha_j}}}{\left[p\left(n-n^{\hat{\alpha}_j}\right) n^{-\delta-2 \hat{\alpha}_j}\left(1-\frac{p}{n^{\delta}}\right)\right]^{1 / 2}}\quad j=1,2 \tag{9}  \label{z_indicator}\]
 
 Define a indicator function $\mathbf{1}(|z_{\hat{\alpha_j}:\alpha_j} |>c|H_0)$.
 For each replication, if this test statistic is greater than the critical value of standard normal distribution: $c = 1.96$, the indicator function will return value 1, and 0 otherwise.
 Therefore, we calculate the size of the test base on:
-	\[ size = \frac{\sum_{r=1}^{R} \mathbf{1}(|z_{\hat{\alpha_j}:\alpha_j} |>1.96|H_0)}{R} \quad j =1,2 \tag{9}, \label{size_calculator}\]
+	\[ size = \frac{\sum_{r=1}^{R} \mathbf{1}(|z_{\hat{\alpha_j}:\alpha_j} |>1.96|H_0)}{R} \quad j =1,2 \tag{10}, \label{size_calculator}\]
 
 %Next, we set up the true factor strength $\alpha$.
 %Through the whole simulation, we will assign the strength with different value $\alpha = \{0.5, 0.7, 0.9, 1\}$, and since in this baseline design we only contain one factor, the only factor's strength will be selected from the above set. 

@@ -1,14 +1,11 @@
 	\section{Elastic Net}\label{Elastic_Net}
 
-Elastic net  is variable selection model that can be used for factor selection, introduced by \citeA{Zou2005}. Applying the elastic net method to estimate the factor loading $\beta_{ij}$ requires:
-	\[   \hat{\beta}_{ij}  = \argmin_{\beta_{ij}}\{\sum_{i = 1}^{n}[(r_{it} - r_{ft}) - \beta_{ij }f_{jt}]^2 + \lambda_2\sum_{i = 1}^{n}\beta_{ij}^2  + \lambda_1\sum_{i = 1}^{n}|\beta_{ij}|  \label{ENcriterion} \tag{4}   \}    \]
-	
-	
-	
-Because the Lasso regression only contains $L_1$ penalty term $\sum_{i = 1}^{n} |\beta_{ij}|$, it will shows no preference when selecting variables when they are highly correlated.
-So when Lasso regression will either randomly choose factors from highly correlated candidates, or eliminate them together as a whole.  
-Elastic Net, however, by containing $L_2$ penalty term $\sum_{i=1}^{n}\beta_{ij}^2$, solves this problem. 
-The $L_2$ penalty term tend to shrink the potential parameters when they does not provide enough explanatory power, but it will not remove redundant factors.
-Therefore, the elastic net method will shrink those parameters associated with the correlated factors and keep them, or drop them if they are redundant at pricing risk. 
-	
+Elastic net,introduced by \citeA{Zou2005},  is a penalised linear regression method which developed from the Lasso regression \cite{Tibshirani1996} and ridge regression.
+To illustrate the application of elastic net method, first recall the multi-factor model (\ref{multi_factor_model}) we discussed in section \ref{strength_multi_estimation}.
+When applying the OLS on estimating the factor loading $\bm{\beta_{i}}$, we targeting minimise the Residual Sum of Squares (RSS):
+\[  \bm{\hat{\beta}}_i =   \argmin\{  (x_{it} - \hat{a}_{iT} - \bm{\hat{\beta}}_i^{\prime}\bm{f}_t )^2 \}    \]
+In the method of elastic net, base on the RSS minimisation, we impose two extra penalty terms on the estimated loadings:
+	\[   \bm{\hat{\beta}_{i}}  = \argmin_{\beta_{ij}}\{ (x_{it} - \hat{a}_{iT} - \bm{\hat{\beta}}_{i} ^{\prime}\bm{f}_{t})^2 + \lambda_2\sum_{j = 1}^k\hat{\beta}_{ij}^2  + \lambda_1\sum_{j=1}^k|\hat{\beta}_{ij}|  \label{ENcriterion} \tag{11}   \}    \]
+Here, the estimated $\bm{\beta}_i$ value is subject to two penalty terms: the $L^1$ norm $\lambda_1\sum_{j=1}^k|\hat{\beta}_{ij}|$ and the $L^2$ norm: $\lambda_2\sum_{j = 1}^k\hat{\beta}_{ij}^2$.
+Both term 
 {\bf To be complete}

@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2020.5.27)  2 SEP 2020 22:23
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2020.5.27)  6 SEP 2020 12:13
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -816,8 +816,11 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
 
  [3] (./introduction_and_literature_review.tex
 [1] [2] [3]) (./factor_strength.tex [4] [5] [6] [7] [8]) (./monte_carlo.tex
-[9] [10] [11] [12]) (./elastic_net.tex [13])
-(./empirical_application_factor_strength.tex
+[9] [10] [11] [12]) (./elastic_net.tex
+
+Package mathptmx Warning: There are no bold math fonts on input line 5.
+
+[13]) (./empirical_application_factor_strength.tex
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 45.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.4> not available
@@ -1053,10 +1056,10 @@ LaTeX Warning: Float too large for page by 46.8073pt on input line 1598.
 
 [49]) (./thesis.aux) ) 
 Here is how much of TeX's memory you used:
- 17231 strings out of 479282
- 372037 string characters out of 5880512
- 697382 words of memory out of 5000000
- 34501 multiletter control sequences out of 15000+600000
+ 17232 strings out of 479282
+ 372057 string characters out of 5880512
+ 697394 words of memory out of 5000000
+ 34502 multiletter control sequences out of 15000+600000
  551270 words of font info for 100 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  59i,16n,75p,829b,320s stack positions out of 5000i,500n,10000p,200000b,80000s
