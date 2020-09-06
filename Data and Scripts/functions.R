@@ -1,4 +1,10 @@
-
+library(glmnet)
+library(tidyverse)
+library(broom)
+library(caret)
+library(glmnetUtils)
+library(xtable)
+library(imputeTS)
 #=============================================================================================#
 #===========================#Cakculate the Factor Strength#===================================#
 strength_calc <- function(return_data){
@@ -90,7 +96,7 @@ get_best_result = function(caret_fit) {
 }
 
 
-alpha_determin<- function(learning_feature_matrix, reid_matrix,strength_threshold = 0){
+alpha_determin<- function(learning_feature_matrix, reid_matrix, test_feature_data, test_resid_data , strength_threshold = 0){
   
   RMSE_table <- tibble(
     alpha = seq(0,1,0.01),
@@ -102,8 +108,8 @@ alpha_determin<- function(learning_feature_matrix, reid_matrix,strength_threshol
                           family = "gaussian",
                           type.measure = "mse",
                           foldid = fold_id)
-    temp_pred<-predict(temp_fit, s=temp_fit$lambda.min, newx=learning_feature_matrix)
-    RMSE_table$rmse[i] <- sqrt(mean((reid_matrix - temp_pred)^2))
+    temp_pred<-predict(temp_fit, s="lambda.min", newx=test_feature_data)
+    RMSE_table$rmse[i] <- sqrt(mean((test_resid_matrix - temp_pred)^2))
     print(i / 101 * 100)
   }
   return(RMSE_table)
@@ -133,19 +139,15 @@ auto_count_select<- function(input_data, alpha, folds = 10){
         count_table[j,] <-count_table[j,] %>% mutate(count = count + 1)
       }else{}
     }
+    
+    
+    
     print(paste0("processing ", round((i/len)*100,2),"%"))
     
   }
   count_table <- count_table %>% mutate(prop = count/len, quasi_strength = 1 + (log(prop)/log(len)))
   return(count_table)
 }
-
-
-
-
-
-
-
 
 given_count_select<- function(data, alpha, strength_threshold = 0.8, lambda){
   data <- data %>% semi_join(thirty_strength %>% filter(strength >= strength_threshold), by = "Factor") %>% 
@@ -175,5 +177,39 @@ given_count_select<- function(data, alpha, strength_threshold = 0.8, lambda){
   return(count_table)
 }
 
-
+coef_determine<- function(input_data, alpha, folds = 10){
+  len = length(unique(input_data$Ticker))
+  temp_nest <- input_data %>% group_by(Ticker) %>% nest()
+  start_matrix <- as(matrix(nrow = ncol(input_data) -2 , ncol = 1, data = 0), "dgTMatrix")
+  
+  
+  for (i in 1:len) {
+    residuals_matrix<-(lm(Excess ~ Market,  temp_nest[i,] %>% 
+                            unnest(cols = c(data)) %>% 
+                            ungroup()) %>% 
+                         augment())$.resid %>% as.matrix()
+    
+    charac_matrix <- temp_nest[i,] %>% unnest(cols = c(data)) %>% ungroup() %>% 
+      select(-c(Ticker,Excess,Market)) %>% 
+      as.matrix() 
+    
+    temp.fit<- cv.glmnet(charac_matrix, residuals_matrix, alpha = alpha, nfolds = folds)
+    
+    add_matrix <-  coef(temp.fit, s = "lambda.min") 
+    colnames(add_matrix) <- temp_nest$Ticker[i]
+    
+    start_matrix <-  (cbind(start_matrix,add_matrix))
+  
+    print(paste0("processing ", round((i/len)*100,2),"%"))
+    
+  }
+  summ<-summary(start_matrix)
+  
+  
+  return(data.frame(Origin      = rownames(start_matrix)[summ$i],
+                    Destination = colnames(start_matrix)[summ$j],
+                    Weight      = summ$x) %>% as.tibble() %>% 
+           pivot_wider(names_from = Destination, values_from = Weight) %>% na_replace(0)
+         )
+}
 
