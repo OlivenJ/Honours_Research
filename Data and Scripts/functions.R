@@ -96,23 +96,57 @@ get_best_result = function(caret_fit) {
 }
 
 
+
+learning_feature_generate <- function(learning_data){
+  smp_size <- floor(0.75 * nrow(learning_data))
+  train_ind <- sample(seq_len(nrow(learning_data)), size = smp_size)
+  train <- learning_data[train_ind, ]
+  test <- learning_data[-train_ind, ]
+  
+  return( train %>% 
+            dplyr::select(-c(Ticker,Excess,Market)) %>% 
+            as.matrix() )
+} #Prepare the learning set's feature (RHS)
+learning_resid_generate <- function(learning_data){
+  smp_size <- floor(0.75 * nrow(learning_data))
+  train_ind <- sample(seq_len(nrow(learning_data)), size = smp_size)
+  train <- learning_data[train_ind, ]
+  test <- learning_data[-train_ind, ]
+  
+  learning_resid_matrix<- (lm(Excess ~ Market, train) %>% 
+                             augment())$.resid %>% as.matrix()
+}  #Prepare the learning set's resid (LHS)
+
+error_calculation <- function(predict_value, true_value){
+  return(sqrt(mean((true_value - predict_value)^2)))
+} #Been used in the below function
 alpha_determin<- function(learning_feature_matrix, reid_matrix, test_feature_data, test_resid_data , strength_threshold = 0){
   
-  RMSE_table <- tibble(
-    alpha = seq(0,1,0.01),
-    rmse = NA)
+#  RMSE_table <- tibble(
+#    alpha = seq(0,1,0.01),
+#    rmse = NA)
   fold_id <- sample(x = 1:10, size = length(reid_matrix), replace = TRUE)
   
-  for(i in seq_along(RMSE_table$alpha)){
-    temp_fit <- cv.glmnet(learning_feature_matrix, reid_matrix, alpha= RMSE_table$alpha[i],
-                          family = "gaussian",
-                          type.measure = "mse",
-                          foldid = fold_id)
-    temp_pred<-predict(temp_fit, s="lambda.min", newx=test_feature_data)
-    RMSE_table$rmse[i] <- sqrt(mean((test_resid_matrix - temp_pred)^2))
-    print(i / 101 * 100)
-  }
-  return(RMSE_table)
+  seq_model <- seq(0,1,0.01) %>% 
+    map(function(x) cv.glmnet(learning_feature_matrix, reid_matrix, alpha = x, 
+                              family = "gaussian",
+                              type.measure = "mse",
+                              folidid = fold_id)) %>% 
+    map(function(x) predict(x, s="lambda.min", newx=test_feature_data))%>% 
+    map(function(x) error_calculation(x, test_resid_data) )
+  
+#  for(i in seq_along(RMSE_table$alpha)){
+#    temp_fit <- cv.glmnet(learning_feature_matrix, reid_matrix, alpha= RMSE_table$alpha[i],
+#                          family = "gaussian",
+#                          type.measure = "mse",
+#                          foldid = fold_id)
+#    temp_pred<-predict(temp_fit, s="lambda.min", newx=test_feature_data)
+#    RMSE_table$rmse[i] <- sqrt(mean((test_resid_matrix - temp_pred)^2))
+#    print(i / 101 * 100)
+#  }
+
+#   return(RMSE_table)
+  return(seq(0, 1, 0.01)[which.min(seq_model)])
 }
 
 
