@@ -1,2 +1,111 @@
-\subsection{Elastic Net Application}
-to be added
+\section{Elastic Net and Application}
+%\subsection{Introduction of empirical method and data}
+
+
+\subsection{Brief introduction of Elastic Net} \label{Elastic_Net}
+
+Elastic net,introduced by \citeA{Zou2005},  is a penalised linear regression method which developed from the Lasso regression \cite{Tibshirani1996} and ridge regression.
+To illustrate the application of elastic net method in our research, first recall the multi-factor model (\ref{multi_factor_model}) we discussed in section \ref{strength_multi_estimation}.
+When applying the OLS on estimating the factor loading $\bm{\beta_{i}}$, we targeting minimise the Residual Sum of Squares (RSS):
+\[  \bm{\hat{\beta}}_i =   \argmin\{  (x_{it} - \hat{a}_{iT} - \bm{\hat{\beta}}_i^{\prime}\bm{f}_t )^2 \}    \]
+In the method of elastic net, base on the RSS minimisation, we impose two extra penalty terms on the estimated loadings:
+\[   \bm{\hat{\beta}_{i}}  = \argmin_{\beta_{ij}}\{ (x_{it} - \hat{a}_{iT} - \bm{\hat{\beta}}_{i} ^{\prime}\bm{f}_{t})^2 + \lambda_2\sum_{j = 1}^k\hat{\beta}_{ij}^2  + \lambda_1\sum_{j=1}^k|\hat{\beta}_{ij}|  \label{ENcriterion} \tag{11}   \}    \]
+Here, the estimated $\bm{\beta}_i$ value is subject to two penalty terms: the $L^1$ norm $\lambda_1\sum_{j=1}^k|\hat{\beta}_{ij}|$ and the $L^2$ norm: $\lambda_2\sum_{j = 1}^k\hat{\beta}_{ij}^2$.
+The adoption of combing $L^1$ and $L^2$ norm allowing as to fix the problem from both ridge regression (only contains the $L^1$ norm), and the Lasso regression (only contains the $L^2$ norm).
+In the empirical application, the estimation of the of Elastic net usually use the following form:
+\begin{align*}
+	\bm{\hat{\beta}}_{i} &= \argmin\{ \frac{1}{2N} (x_{it}-\hat{a}_{iT} - \bm{\hat{\beta}_{i}^{\prime}}\bm{f}_t ^2 ) +\phi P_{\theta}(\bm{\beta}_i)  \}\\
+	P_{\theta}(\bm{\beta}_i) &=\sum_{j=1}^k [ (1-\theta)\beta_{ij}^2 + \theta |\beta_{ij}|]
+\end{align*}
+Here we call the $P_{\theta}(\cdot)$ as the elastic net penalty \cite{Friedman2010}.
+$\theta$ here act as turning parameter to determine in what extent the Elastic net will behave like a ridge regression or like a Lasso regression.
+When set $\theta = 1$, we have $P_{\theta}(\bm{\beta}_i) =\sum_{j=1}^k  |\beta_{ij}|$ which is identical to the $L^2$ norm, therefore we have the Elastic net collapse to the Lasso regression.
+Similarly, when setting $\theta = 0$, we have the Elastic net collapse to the ridge regression, and when $\theta = 0.5$, the Elastic net is behave like the combination of ridge and Lasso.
+The other tuning parameter $\phi$ decides how strong the penalty terms is.
+If $\phi = 0$ the elastic net will become the OLS estimation.
+
+In this study, we use the data introduced in section \ref{data}, and the estimated factor strength from the section \ref{Empirical}.
+More specifically, we allocates the 145 risk factors into six subgroups base on there thirty-year data set estimated strength.
+For each subgroups, we randomly selected ten factors, and we want to investigates how will the elastic net algorithm, alongside with ridge and Lasso regression, will select the factors for risk pricing.
+Noticed here, in order to simplify the application of the elastic net, instead of using the excess return of stock directly, we first run a OLS regression between the market factor and the excess return of each companies.
+And then, we collect the residuals of the OLS estimation, and use those residuals as the $x_{it}$ in the elastic net model.
+This is because, both the theory and the findings from the previous section suggest that the market factor will be included into the CAPM model for every assets.
+
+Now, the main challenge of applying the elastic net algorithm is to select the appropriate tuning parameters $\theta$ and $\phi$, and we will discuss the choices of tuning parameter in the next section.
+
+%\subsection{Empirical procedure of Elastic Net}
+%In this subsection we will brief introduce the empirical investigation stpes
+
+\subsection{Tuning Parameter} \label{EN:parameter_tuning }
+In this empirical application, we use the R package \textit{glmnet} \cite{Friedman2010, Simon2011}.
+
+As discussed before, the estimation of Elastic net in our application is up on two tuning parameters $\theta$ and $\phi$.
+The \textit{glmnet} package provides function to select the $\phi$ automatically. 
+This selection is base on the minimisation of Mean Squared Error (MSE), using cross validation.
+However, the package does not provides aid on determining which value of $\theta$ parameter is optimal.
+Therefore, we adopt the following strategy to select our tuning parameters $\phi$  and $\theta$:
+\begin{enumerate}
+\item Prepare a sequence of $\theta$ values, from 0: ridge regression, to 1: Lasso regression with step of 0.01
+\item Randomly assign 90\% of the data set as training set and the rest 10\% as test set. 
+\item For each of the $\theta$ value, we fit the corresponding Elastic net model using the training set, with function picked $\phi$ values.
+\item Base on the $\theta$ and $\phi$ values select, we produce the predicted values using the test data, and calculates the MSE between the true values and predicted values.
+\item We select the $\theta$ which produces the minimal MSE.
+\item And the $\phi$ value will be picked up by the package function, base on the principle of minimising MSE.
+\end{enumerate}
+We repeat the above procedures for 2000 times, and average each $\theta$ values to generate $\bar{\theta}$, as our selected tuning parameter.
+Due to the computational burden, when implying the step 2, we will further randomly select 50 companies instead of using all 242 companies returns to estimated the $\theta$.
+
+\begin{table}[]
+	\centering
+	\caption{Estimated Optimal $\theta$ values for different factor groups}
+	\label{table:optimal_theta}
+	\begin{tabular}{l|cccc}
+		\hline
+		\hline
+		Factor Group            & (0, 0.5{]}   & (0.5, 0.6{]} & (0.6, 0.7{]} & (0.7, 0.8{]} \\ 
+		Selected $\theta$ value & 0.377        & 0.401        & 0.429        & 0.411        \\ \hline
+		Factor Group            & (0.8, 0.9{]} & (0.9, 1{]}   & Mix          & Random       \\ 
+		Selected $\theta$ value & 0.396        & 0.413        & 0.448        & 0.431        \\ \hline
+		\hline
+	\end{tabular}
+\end{table}
+The selected tuning parameter $\theta$ values is shown in the table \ref{table:optimal_theta}.\\
+In order to fully investigate the behaviours of parameter tuning, on the basis of the six subgroups, we create tow addition groups.
+The Mix group contain five highly strong factor: factor with strength higher than 0.9, and five weak factor: factor with strength lower than 0.5.
+The Random group is consist by ten randomly selected factors.
+From the table \ref{table:optimal_theta} we can see that the selected $\theta$ value in general increase with the factor strength increase.
+For weak factor group, the selected parameter value is 0.377, close to the ridge regression.
+While for the strong factor group, the value is 0.413.
+The mix factor group has the highest $\theta$ value 0.448, which is close to 0.5 where ridge and Lasso regression each plays half role on the elastic net.
+
+Such pattern of the $\theta$ value, however, does not follow what we expected.
+Because the definition of factor strength indicates that factor with strong strength is able to produce more significant loadings, in other words, can explain more assets' risk-return relationship.
+Therefore, when using the above procedure to decide tuning parameter, we would expect that for factor groups with lower strength, like groups with strength smaller than 0.5, the selected $\theta$ parameter will be close to one, or larger than other groups' selected $\theta$.
+This is because factor with weak strength will only provides limited pricing power, and therefore may be recognised by the algorithm as redundant variables.
+When $\theta$ is closer to unity, the elastic net is behave more like a Lasso, which will eliminate variables provides limited explaining power.
+In contrast, when the group has stronger strength, the $\theta$ will approach closer to zero, leads the Elastic nets more like Ridge, which will not eliminate any variables, but only reduce the coefficient.
+So we would expect the $\theta$ value to increase with the group strength decrease.
+
+We prepared several potential explanation to this phenomena.
+First, the MSE is not a ideal criteria for selecting the tuning parameter.
+The MSE for all $\theta - \phi$ combinations are very close to each other.
+They all shows similar values around 64.
+Second, because of the estimation method we used, the market risk has already been absorbed by the market factors.
+Then for the strong factor, we would expect that for any single of them, those strong factor can individually explained most of the idiosyncratic risk.
+Therefore, when we ask any ten strong factors to determine the risk simultaneously, it is possible that very few of the ten factors explained most of the risk and therefore the risk factors has been recognised by the algorithm as redundant.
+But if all factors are weak, it is possible that some linear combination of those weak factors can jointly explain the risk very well.
+And so, those factors are reserved by the algorithm. 
+
+
+%However, the empirical findings are not completely accord with what we expect.
+%First, MSE does not provides very good indication of selecting $\theta$.
+%The MSE values only present very slightly difference among different $\theta-\phi$ combinations.
+%And from the prospect of error's value, they are all fairly big: around 64.
+%Second, although the $\theta$ values show numerical difference, and it also shows a decreasing pattern with the increasing of factor strength.
+%The decreasing magnitude is not as big as we expected.
+%Our estimated $\theta$ values for the 0.9 strength group is 0.41, while for the group below 0.5, the corresponding $\theta$ is 0.54. 
+%Also, where exist an damp, when the factor has strength in the group of 0.7 to 0.8, the estimated optimal value of $\theta$ decrease to 0.39.
+
+
+
+\subsection{Elastic Net Findings}

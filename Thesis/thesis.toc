@@ -8,16 +8,18 @@
 \contentsline {subsection}{\numberline {4.1}Design}{9}%
 \contentsline {subsection}{\numberline {4.2}Experiment Setting}{10}%
 \contentsline {subsection}{\numberline {4.3}Monte Carlo Results}{12}%
-\contentsline {section}{\numberline {5}Elastic Net}{13}%
-\contentsline {section}{\numberline {6}Empirical Application}{14}%
-\contentsline {subsection}{\numberline {6.1}Data}{15}%
-\contentsline {subsection}{\numberline {6.2}Factor Strength Analysis}{16}%
-\contentsline {subsubsection}{\numberline {6.2.1}Regression model setting}{16}%
-\contentsline {subsubsection}{\numberline {6.2.2}Factor Strength Findings}{16}%
-\contentsline {subsection}{\numberline {6.3}Elastic Net Application}{21}%
-\contentsline {section}{\numberline {7}Conclusion}{21}%
-\contentsline {section}{References}{22}%
-\contentsline {section}{\numberline {A}Simulation Result}{26}%
-\contentsline {section}{\numberline {B}Empirical Application Result}{29}%
-\contentsline {subsection}{\numberline {B.1}Factor Strength Estimation Table}{29}%
-\contentsline {subsection}{\numberline {B.2}Strength Comparison Figures}{38}%
+\contentsline {section}{\numberline {5}Empirical Application of Factor Strength}{13}%
+\contentsline {subsection}{\numberline {5.1}Data}{14}%
+\contentsline {subsection}{\numberline {5.2}Factor Strength Analysis}{15}%
+\contentsline {subsubsection}{\numberline {5.2.1}Regression model setting}{15}%
+\contentsline {subsubsection}{\numberline {5.2.2}Factor Strength Findings}{15}%
+\contentsline {section}{\numberline {6}Elastic Net and Application}{20}%
+\contentsline {subsection}{\numberline {6.1}Brief introduction of Elastic Net}{20}%
+\contentsline {subsection}{\numberline {6.2}Tuning Parameter}{22}%
+\contentsline {subsection}{\numberline {6.3}Elastic Net Findings}{24}%
+\contentsline {section}{\numberline {7}Conclusion}{24}%
+\contentsline {section}{References}{25}%
+\contentsline {section}{\numberline {A}Simulation Result}{30}%
+\contentsline {section}{\numberline {B}Empirical Application Result}{33}%
+\contentsline {subsection}{\numberline {B.1}Factor Strength Estimation Table}{33}%
+\contentsline {subsection}{\numberline {B.2}Strength Comparison Figures}{42}%

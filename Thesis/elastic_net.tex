@@ -7,5 +7,15 @@ When applying the OLS on estimating the factor loading $\bm{\beta_{i}}$, we targ
 In the method of elastic net, base on the RSS minimisation, we impose two extra penalty terms on the estimated loadings:
 	\[   \bm{\hat{\beta}_{i}}  = \argmin_{\beta_{ij}}\{ (x_{it} - \hat{a}_{iT} - \bm{\hat{\beta}}_{i} ^{\prime}\bm{f}_{t})^2 + \lambda_2\sum_{j = 1}^k\hat{\beta}_{ij}^2  + \lambda_1\sum_{j=1}^k|\hat{\beta}_{ij}|  \label{ENcriterion} \tag{11}   \}    \]
 Here, the estimated $\bm{\beta}_i$ value is subject to two penalty terms: the $L^1$ norm $\lambda_1\sum_{j=1}^k|\hat{\beta}_{ij}|$ and the $L^2$ norm: $\lambda_2\sum_{j = 1}^k\hat{\beta}_{ij}^2$.
-Both term 
-{\bf To be complete}
+The adoption of combing $L^1$ and $L^2$ norm allowing as to fix the problem from both ridge regression (only contains the $L^1$ norm), and the Lasso regression (only contains the $L^2$ norm).
+In the empirical application, the estimation of the of Elastic net usually use the following form:
+\begin{align*}
+\bm{\hat{\beta}}_{i} &= \argmin\{ \frac{1}{2N} (x_{it}-\hat{a}_{iT} - \bm{\hat{\beta}_{i}^{\prime}}\bm{f}_t ^2 ) +\phi P_{\theta}(\bm{\beta}_i)  \}\\
+P_{\theta}(\bm{\beta}_i) &=\sum_{j=1}^k [ (1-\theta)\frac{1}{2}\beta_{ij}^2 + \theta |\beta_{ij}|]
+\end{align*}
+Here we call the $P_{\theta}(\cdot)$ as the elastic net penalty \cite{Friedman2010}.
+$\theta$ here act as turning parameter to determine in what extent the Elastic net will behave like a ridge regression or like a Lasso regression.
+When set $\theta = 1$, we have $P_{\theta}(\bm{\beta}_i) =\sum_{j=1}^k  |\beta_{ij}|$ which is identical to the $L^2$ norm, therefore we have the Elastic net collapse to the Lasso regression.
+Similarly, when setting $\theta = 0$, we have the Elastic net collapse to the ridge regression, and when $\theta = 0.5$, the Elastic net is behave like the combination of ridge and Lasso.
+The other tuning parameter $\phi$ decides how strong the penalty terms is, if $\phi = 0$ the elastic net becomes the OLS estimation.
+We will discuss the choices of tuning parameter in the section ()
