@@ -163,7 +163,7 @@ auto_count_select<- function(input_data, alpha, folds = 10){
                          augment())$.resid %>% as.matrix()
     
     charac_matrix <- temp_nest[i,] %>% unnest(cols = c(data)) %>% ungroup() %>% 
-      select(-c(Ticker,Excess,Market)) %>% 
+      dplyr::select(-c(Ticker,Excess,Market)) %>% 
       as.matrix() 
     
     temp.fit<- cv.glmnet(charac_matrix, residuals_matrix, alpha = alpha, nfolds = folds)
@@ -185,7 +185,7 @@ auto_count_select<- function(input_data, alpha, folds = 10){
 
 given_count_select<- function(data, alpha, strength_threshold = 0.8, lambda){
   data <- data %>% semi_join(thirty_strength %>% filter(strength >= strength_threshold), by = "Factor") %>% 
-    pivot_wider(names_from = Factor, values_from = Value) %>% select(- Return)
+    pivot_wider(names_from = Factor, values_from = Value) %>% dplyr::select(- Return)
   len = length(unique(data$Ticker))
   temp_nest <- data %>% group_by(Ticker) %>% nest()
   count_table<- tibble(Factor= (thirty_strength %>% filter(strength > strength_threshold))$Factor,count = 0)
@@ -194,7 +194,7 @@ given_count_select<- function(data, alpha, strength_threshold = 0.8, lambda){
                             unnest(cols = c(data)) %>% 
                             ungroup()) %>% augment())$.resid %>% as.matrix()
     charac_matrix <- temp_nest[i,] %>% unnest(cols = c(data)) %>% ungroup() %>% 
-      select(-c(Ticker, Date, Excess, Market)) %>% 
+      dplyr::select(-c(Ticker, Date, Excess, Market)) %>% 
       as.matrix()
     
     temp.fit<- glmnet(charac_matrix, residuals_matrix, alpha = alpha, lambda = lambda)
@@ -224,7 +224,7 @@ coef_determine<- function(input_data, alpha, folds = 10){
                          augment())$.resid %>% as.matrix()
     
     charac_matrix <- temp_nest[i,] %>% unnest(cols = c(data)) %>% ungroup() %>% 
-      select(-c(Ticker,Excess,Market)) %>% 
+      dplyr::select(-c(Ticker,Excess,Market)) %>% 
       as.matrix() 
     
     temp.fit<- cv.glmnet(charac_matrix, residuals_matrix, alpha = alpha, nfolds = folds)
@@ -242,8 +242,79 @@ coef_determine<- function(input_data, alpha, folds = 10){
   
   return(data.frame(Origin      = rownames(start_matrix)[summ$i],
                     Destination = colnames(start_matrix)[summ$j],
-                    Weight      = summ$x) %>% as.tibble() %>% 
+                    Weight      = summ$x) %>% as_tibble() %>% 
            pivot_wider(names_from = Destination, values_from = Weight) %>% na_replace(0)
          )
 }
 
+matrix_compare <- function(matrix_one, matrix_two){
+  #comp_one <- matrix_one %>% dplyr::filter(Origin != "(Intercept)") %>% arrange(Origin)
+  #comp_two <- matrix_two %>% dplyr::filter(Origin != "(Intercept)") %>% arrange(Origin)
+  
+  #row_num <-  dim(comp_one)[1]
+  #col_num <- dim(comp_one)[2]
+  #cell_num <- row_num * (col_num -1)
+  
+  #equals <- 0
+  #for(i in 1:row_num){
+  #  for(j in 2:col_num) {
+  #    if(as.numeric(comp_one[i, j]) == 0 & as.numeric(comp_two[i, j]) == 0){
+  #      equals <- equals + 1
+  #    }
+  #    else if(as.numeric(comp_one[i, j]) != 0 & as.numeric(comp_two[i, j]) != 0){
+  #      equals <- equals + 1
+  #    }
+  #  }
+  #}
+  
+  #return(equals)
+  
+  comp_one <- matrix_one %>% dplyr::filter(Origin != "(Intercept)") %>% arrange(Origin)%>%
+    pivot_longer(-Origin) %>% 
+    pivot_wider(names_from=Origin  , values_from=value) 
+  
+  comp_two <- matrix_two %>% dplyr::filter(Origin != "(Intercept)") %>% arrange(Origin)%>%
+    pivot_longer(-Origin) %>% 
+    pivot_wider(names_from=Origin  , values_from=value) 
+  
+  row_num <-  dim(comp_one)[1]
+  col_num <- dim(comp_one)[2]
+  cell_num <- row_num * (col_num -1)
+  
+  call_table <-tibble(companies = comp_one$name, same_call = NULL) 
+  
+  for(i in 1:row_num){
+    col_equals <-0
+    for(j in 2:col_num) {
+      if(as.numeric(comp_one[i, j]) == 0 & as.numeric(comp_two[i, j]) == 0){
+        col_equals <- col_equals + 1
+      }
+      else if(as.numeric(comp_one[i, j]) != 0 & as.numeric(comp_two[i, j]) != 0){
+        col_equals <- col_equals + 1
+      }
+      
+    }
+    call_table[i,2] <- col_equals
+  }
+  
+  return(call_table %>% dplyr::select(companies, same_call = ...2) )
+  
+}
+
+zero_counter<- function(matrix){
+  pos_matrix <- matrix %>% dplyr::filter(Origin != "(Intercept)") %>% arrange(Origin)
+  row_num <- dim(pos_matrix)[1]
+  col_num <- dim(pos_matrix)[2]
+  cell_num <- row_num * col_num
+  
+  count <- 0
+  for(i in 1:row_num){
+    for(j in 2:col_num){
+      if(as.numeric(pos_matrix[i,j]) == 0){
+        count <- count + 1
+      }
+    }
+  }
+  
+  return(count)
+}
