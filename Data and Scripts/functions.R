@@ -318,3 +318,20 @@ zero_counter<- function(matrix){
   
   return(count)
 }
+
+
+model_factor_count<- function(input_matrix){
+  temp_matrix<- input_matrix %>% dplyr::filter(Origin != "(Intercept)") %>% arrange(Origin)%>%
+    pivot_longer(-Origin) %>% 
+    pivot_wider(names_from=Origin  , values_from=value) 
+  
+  result_table<- tibble(name = temp_matrix$name, count = 0, total = length(variable.names(temp_matrix))-1)
+  
+  for (i in 1:length(temp_matrix$name)) {
+    result_table$count[i] <- sum(temp_matrix[i,]  != 0) - 1  
+  }
+  
+  
+  
+  return(result_table %>% mutate(prop = count/total * 100))
+}

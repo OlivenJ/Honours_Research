@@ -67,8 +67,8 @@ market_result_table <- tibble()
 cont = 0
 
 times <- c(120, 240, 360)
-unit <- c(300, 500)
-strength_seq <-seq(0.7, 0.95, 0.05)
+unit <- c(100, 300, 500)
+strength_seq <-seq(0.7, 1, 0.05)
 
 for(var1 in times){
   for(var2 in unit){
@@ -176,7 +176,7 @@ market_summary_result <-  market_result_table %>% group_by(time, unit, alpha) %>
             size = sum(size_count)/rep)
 
 factor_summary_result %>% mutate(bias = bias *100, RMSE = RMSE * 100, size = size * 100) %>% 
-  filter(unit == 100 ) %>% 
+  #filter(unit == 100 ) %>% 
   arrange(alpha, unit, time) %>% 
   view()
 

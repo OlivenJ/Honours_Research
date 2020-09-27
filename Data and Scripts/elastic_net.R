@@ -85,18 +85,18 @@ between_07_08 <-   alpha_table %>%  ggplot(aes(x = alpha)) + geom_density()
 above_09 <- alpha_table %>%  ggplot(aes(x = alpha)) + geom_density()
 random_plot <-alpha_table %>%  ggplot(aes(x = alpha)) + geom_density()
 #=============#=============#=============#=============#=============#=============#
-learning_data <- semi_join(thirty_factor_return, thirty_strength %>% dplyr::filter(strength >=0.9& strength <1), by = "Factor") %>% 
+learning_data <- semi_join(thirty_factor_return, thirty_strength %>% dplyr::filter(strength >=0.8& strength <0.9), by = "Factor") %>% 
   #dplyr::filter(Factor %in% sample(unique(Factor),10)) %>% 
   #dplyr::filter(Ticker %in% sample(unique(Ticker),30)) %>%   
   tidyr::pivot_wider(names_from = Factor, values_from = Value)%>% 
   dplyr::select(-c(Date, Return))
 
-learning_data <-semi_join(thirty_factor_return, thirty_strength %>% dplyr::filter(strength >=0.9& strength <1), by = "Factor")  %>% 
-  dplyr::filter(Factor %in% sample(unique(Factor),10)) %>% 
-  bind_rows(semi_join(thirty_factor_return, thirty_strength %>% dplyr::filter(strength >=0& strength <0.5), by = "Factor") %>% 
-               dplyr::filter(Factor %in% sample(unique(Factor),10))) %>% 
-  tidyr::pivot_wider(names_from = Factor, values_from = Value)%>% 
-  dplyr::select(-c(Date, Return))
+#learning_data <-semi_join(thirty_factor_return, thirty_strength %>% dplyr::filter(strength >=0.9& strength <1), by = "Factor")  %>% 
+#  dplyr::filter(Factor %in% sample(unique(Factor),10)) %>% 
+#  bind_rows(semi_join(thirty_factor_return, thirty_strength %>% dplyr::filter(strength >=0& strength <0.5), by = "Factor") %>% 
+#               dplyr::filter(Factor %in% sample(unique(Factor),10))) %>% 
+#  tidyr::pivot_wider(names_from = Factor, values_from = Value)%>% 
+#  dplyr::select(-c(Date, Return))
 
 learning_feature_matrix <- learning_data %>% 
   dplyr::select(-c(Ticker,Excess,Market)) %>% 
@@ -105,57 +105,57 @@ learning_resid_matrix <- (lm(Excess ~ Market, learning_data) %>%
                            augment())$.resid %>% as.matrix()
 
 # Apply the elastic net model
-en_alpha <- 0.448
-mix_en_result <-  auto_count_select(learning_data, alpha = en_alpha) 
-mix_en_model <- cv.glmnet(learning_feature_matrix, learning_resid_matrix, alpha = en_alpha)
-mix_en_coef <- coef(mix_en_model, s = "lambda.min") 
-mix_en_matrix <-  coef_determine(learning_data, alpha = en_alpha) 
+en_alpha <- 0.396
+en_result_0809 <-  auto_count_select(learning_data, alpha = en_alpha) 
+en_model_0809 <- cv.glmnet(learning_feature_matrix, learning_resid_matrix, alpha = en_alpha)
+en_coef_0809 <- coef(en_model_0809, s = "lambda.min") 
+en_matrix_0809 <-  coef_determine(learning_data, alpha = en_alpha) 
 
-mix_en_company_count <-mix_en_matrix %>% dplyr::filter(Origin != "(Intercept)") %>% 
+en_company_count_0809 <-en_matrix_0809 %>% dplyr::filter(Origin != "(Intercept)") %>% 
   pivot_longer(!Origin, names_to = "Ticker", values_to = "Coeff") %>% 
   mutate(none_zero = ifelse(Coeff == 0, 0,1), deno = length(unique(Origin))) %>% 
   group_by(Ticker) %>% 
   summarise(prop = (sum(none_zero)/mean(deno))) %>% 
   arrange(desc(prop))
 
-mix_en_company_count %>% 
+en_company_count_0809 %>% 
   ggplot(aes(x = prop)) +
   geom_bar()+
   ggtitle("Elastic Net Result")
 
 
 # Apply the lasso model
-mix_lasso_result <-  auto_count_select(learning_data, alpha = 1) 
-mix_lasso_model <- cv.glmnet(learning_feature_matrix, learning_resid_matrix, alpha = 1)
-mix_lasso_coef <- coef(mix_lasso_model, s = "lambda.min") 
-mix_lasso_matrix   <- coef_determine(learning_data, alpha = 1) 
+lasso_result_0809 <-  auto_count_select(learning_data, alpha = 1) 
+lasso_model_0809 <- cv.glmnet(learning_feature_matrix, learning_resid_matrix, alpha = 1)
+lasso_coef_0809 <- coef(mix_lasso_model_0809, s = "lambda.min") 
+lasso_matrix_0809   <- coef_determine(learning_data, alpha = 1) 
 
-mix_lasso_company_count <-mix_lasso_matrix %>% dplyr::filter(Origin != "(Intercept)") %>% 
+lasso_company_count_0809 <-lasso_matrix_0809 %>% dplyr::filter(Origin != "(Intercept)") %>% 
   pivot_longer(!Origin, names_to = "Ticker", values_to = "Coeff") %>% 
   mutate(none_zero = ifelse(Coeff == 0, 0,1), deno = length(unique(Origin))) %>% 
   group_by(Ticker) %>% 
   summarise(prop = (sum(none_zero)/mean(deno))) %>% 
   arrange(desc(prop))
 
-mix_lasso_company_count %>% 
+lasso_company_count_0809 %>% 
   ggplot(aes(x = prop)) +
   geom_bar()+
   ggtitle("Lasso Result")
 
 
-mix_quasi_ridge_result  <-  auto_count_select(learning_data, alpha = 0.1) 
-mix_quasi_ridge_model <- cv.glmnet(learning_feature_matrix, learning_resid_matrix, alpha = 0.1)
-mix_quasi_ridge_coef <- coef(mix_quasi_ridge_model, s = "lambda.min") 
-mix_quasi_ridge_matrix   <- coef_determine(learning_data, alpha = 0.1) 
+quasi_ridge_result_0809  <-  auto_count_select(learning_data, alpha = 0.1) 
+quasi_ridge_model_0809 <- cv.glmnet(learning_feature_matrix, learning_resid_matrix, alpha = 0.1)
+quasi_ridge_coef_0809 <- coef(quasi_ridge_model_0809, s = "lambda.min") 
+quasi_ridge_matrix_0809   <- coef_determine(learning_data, alpha = 0.1) 
 
-mix_quasi_ridge_company_count <-mix_quasi_ridge_matrix %>% dplyr::filter(Origin != "(Intercept)") %>% 
+quasi_ridge_company_count_0809 <-quasi_ridge_matrix_0809 %>% dplyr::filter(Origin != "(Intercept)") %>% 
   pivot_longer(!Origin, names_to = "Ticker", values_to = "Coeff") %>% 
   mutate(none_zero = ifelse(Coeff == 0, 0,1), deno = length(unique(Origin))) %>% 
   group_by(Ticker) %>% 
   summarise(prop = (sum(none_zero)/mean(deno))) %>% 
   arrange(desc(prop))
 
-mix_quasi_ridge_company_count %>% 
+quasi_ridge_company_count_0809 %>% 
   ggplot(aes(x = prop)) +
   geom_bar()+
   ggtitle("Small alpha Elastic Net")
@@ -208,5 +208,24 @@ en_company_count %>%
   comp_0708
   comp_0607
   comp_0506
-  sum(comp_0005$toler)/243
-  sum(comp_0005$exact)/243
+  
+  sum(comp_mix$toler)/nrow(comp_mix)
+  sum(comp_mix$exact)/nrow(comp_mix)
+  
+  sum(comp_0910$toler)/nrow(comp_0910)
+  sum(comp_0910$exact)/nrow(comp_0910)
+  
+  sum(comp_0809$toler)/nrow(comp_0809)
+  sum(comp_0809$exact)/nrow(comp_0809)
+  
+  sum(comp_0708$toler)/nrow(comp_0708)
+  sum(comp_0708$exact)/nrow(comp_0708)
+  
+  sum(comp_0607$toler)/nrow(comp_0607)
+  sum(comp_0607$exact)/nrow(comp_0607)
+  
+  sum(comp_0506$toler)/nrow(comp_0506)
+  sum(comp_0506$exact)/nrow(comp_0506)
+  
+  sum(comp_0005$toler)/nrow(comp_0005)
+  sum(comp_0005$exact)/nrow(comp_0005)
