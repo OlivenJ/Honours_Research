@@ -17,9 +17,9 @@
 \contentsline {subsection}{\numberline {6.1}Brief introduction of Elastic Net}{20}%
 \contentsline {subsection}{\numberline {6.2}Tuning Parameter}{22}%
 \contentsline {subsection}{\numberline {6.3}Elastic Net Findings}{24}%
-\contentsline {section}{\numberline {7}Conclusion}{24}%
-\contentsline {section}{References}{25}%
-\contentsline {section}{\numberline {A}Simulation Result}{30}%
-\contentsline {section}{\numberline {B}Empirical Application Result}{33}%
-\contentsline {subsection}{\numberline {B.1}Factor Strength Estimation Table}{33}%
-\contentsline {subsection}{\numberline {B.2}Strength Comparison Figures}{42}%
+\contentsline {section}{\numberline {7}Conclusion}{25}%
+\contentsline {section}{References}{26}%
+\contentsline {section}{\numberline {A}Simulation Result}{31}%
+\contentsline {section}{\numberline {B}Empirical Application Result}{35}%
+\contentsline {subsection}{\numberline {B.1}Factor Strength Estimation Table}{35}%
+\contentsline {subsection}{\numberline {B.2}Strength Comparison Figures}{44}%

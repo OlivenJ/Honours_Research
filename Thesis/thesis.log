@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2020.5.27)  18 SEP 2020 11:45
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2020.5.27)  27 SEP 2020 22:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -815,7 +815,11 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
 \openout8 = `thesis.lot'.
 
  [3] (./introduction_and_literature_review.tex
-[1] [2] [3]) (./factor_strength.tex [4] [5] [6] [7] [8]) (./monte_carlo.tex
+[1]
+
+LaTeX Warning: Reference `Empirical' on page 2 undefined on input line 67.
+
+[2] [3]) (./factor_strength.tex [4] [5] [6] [7] [8]) (./monte_carlo.tex
 [9] [10] [11] [12]) (./empirical_application_factor_strength.tex [13]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 45.
@@ -848,12 +852,21 @@ LaTeX Warning: No positions in optional float specifier.
 
 Package mathptmx Warning: There are no bold math fonts on input line 9.
 
-[20] [21] [22]
+[20]
+
+LaTeX Warning: Reference `Empirical' on page 21 undefined on input line 27.
+
+[21] [22]
 
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `tbp') on input line 58.
 
-[23]) (./conclusion.tex) [24] (./thesis.bbl
+[23] [24]
+Overfull \hbox (12.95679pt too wide) in paragraph at lines 127--134
+ [][] 
+ []
+
+) (./conclusion.tex) [25] (./thesis.bbl
 Underfull \hbox (badness 10000) in paragraph at lines 218--235
 []\TU/TimesNewRoman(0)/m/n/12 Carhart, M. M.  (1997, 3).  On persistence in mut
 ual fund perfor-
@@ -879,7 +892,7 @@ urnal of Finance\TU/TimesNewRoman(0)/m/n/12 , \TU/TimesNewRoman(0)/m/it/12 47\T
 U/TimesNewRoman(0)/m/n/12 , 427-465.  Retrieved from
  []
 
-[25]
+[26]
 Underfull \hbox (badness 6110) in paragraph at lines 421--440
 []\TU/TimesNewRoman(0)/m/n/12 Feng, G., Giglio, S., & Xiu, D.  (2020, 6).  Tami
 ng the factor zoo: A test
@@ -923,7 +936,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 485--506
 \TU/TimesNewRoman(0)/m/n/12 doi:
  []
 
-[26]
+[27]
 Underfull \hbox (badness 5460) in paragraph at lines 583--600
 []\TU/TimesNewRoman(0)/m/n/12 Gu, S., Kelly, B., & Xiu, D.  (2020, 2).  Empiric
 al asset pricing via machine
@@ -968,7 +981,7 @@ Underfull \hbox (badness 1137) in paragraph at lines 792--808
 Characteristics are covariances: A uni-
  []
 
-[27]
+[28]
 Underfull \hbox (badness 2452) in paragraph at lines 963--980
 []\TU/TimesNewRoman(0)/m/n/12 Pukthuanthong, K., Roll, R., & Subrahmanyam, A.  
 (2019, 8).  A protocol for fac-
@@ -1025,14 +1038,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 1058--1080
 \TU/TimesNewRoman(0)/m/n/12 doi:
  []
 
-[28]) [29] (./appendix.tex
+[29]) [30] (./appendix.tex
 
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `tbp') on input line 126.
 
-) (./comparison_table.tex [30] [31] [32] [33
 
-] [34] [35] [36]
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `tbp') on input line 177.
+
+) (./comparison_table.tex [31] [32] [33] [34] [35
+
+] [36] [37] [38]
 Overfull \hbox (8.13461pt too wide) in paragraph at lines 217--224
 $[]$
  []
@@ -1042,73 +1059,93 @@ Underfull \hbox (badness 10000) in paragraph at lines 217--224
 
  []
 
-[37] [38
+[39] [40
 
-] [39] [40]
+] [41] [42]
 Underfull \hbox (badness 10000) in paragraph at lines 1493--1500
 
  []
 
-[41]
+[43]
 File: ./plot/strength_comparison_I.png Graphic file (type bmp)
 <./plot/strength_comparison_I.png>
 
 
 LaTeX Warning: Float too large for page by 39.10573pt on input line 1511.
 
-[42]
+[44]
 File: ./plot/strength_comparison_II.png Graphic file (type bmp)
 <./plot/strength_comparison_II.png>
- [43]
+ [45]
 File: ./plot/strength_comparison_III.png Graphic file (type bmp)
 <./plot/strength_comparison_III.png>
- [44]
+ [46]
 File: ./plot/strength_comparison_IV.png Graphic file (type bmp)
 <./plot/strength_comparison_IV.png>
- [45]
+ [47]
 File: ./plot/strength_comparison_V.png Graphic file (type bmp)
 <./plot/strength_comparison_V.png>
- [46]
+ [48]
 File: ./plot/strength_comparison_IV.png Graphic file (type bmp)
 <./plot/strength_comparison_IV.png>
 
 
 LaTeX Warning: Float too large for page by 46.8073pt on input line 1551.
 
-[47]
+[49]
 File: ./plot/thirty_decompose_I.png Graphic file (type bmp)
 <./plot/thirty_decompose_I.png>
 
 
 LaTeX Warning: Float too large for page by 15.12761pt on input line 1559.
 
-[48]
+[50]
 File: ./plot/thirty_decompose_II.png Graphic file (type bmp)
 <./plot/thirty_decompose_II.png>
- [49]
+ [51]
 File: ./plot/thirty_decompose_III.png Graphic file (type bmp)
 <./plot/thirty_decompose_III.png>
- [50]
+ [52]
 File: ./plot/thirty_decompose_IV.png Graphic file (type bmp)
 <./plot/thirty_decompose_IV.png>
- [51]
+ [53]
 File: ./plot/thirty_decompose_V.png Graphic file (type bmp)
 <./plot/thirty_decompose_V.png>
- [52]
+ [54]
 File: ./plot/thirty_decompose_VI.png Graphic file (type bmp)
 <./plot/thirty_decompose_VI.png>
 
 
 LaTeX Warning: Float too large for page by 46.8073pt on input line 1598.
 
-[53]) (./thesis.aux) ) 
+[55]
+File: ./plot/en_plot.png Graphic file (type bmp)
+<./plot/en_plot.png>
+
+Overfull \hbox (38.86932pt too wide) in paragraph at lines 1605--1607
+ [][] 
+ []
+
+[56]
+File: ./plot/lasso_plot.png Graphic file (type bmp)
+<./plot/lasso_plot.png>
+
+Overfull \hbox (38.86932pt too wide) in paragraph at lines 1612--1614
+ [][] 
+ []
+
+[57]) (./thesis.aux)
+
+LaTeX Warning: There were undefined references.
+
+ ) 
 Here is how much of TeX's memory you used:
- 17236 strings out of 479282
- 372123 string characters out of 5880512
- 697687 words of memory out of 5000000
- 34509 multiletter control sequences out of 15000+600000
+ 17260 strings out of 479282
+ 372535 string characters out of 5880512
+ 712717 words of memory out of 5000000
+ 34533 multiletter control sequences out of 15000+600000
  551270 words of font info for 100 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  59i,16n,75p,829b,320s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on thesis.pdf (57 pages).
+Output written on thesis.pdf (61 pages).

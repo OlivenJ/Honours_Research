@@ -86,15 +86,15 @@ When $\theta$ is closer to unity, the elastic net is behave more like a Lasso, w
 In contrast, when the group has stronger strength, the $\theta$ will approach closer to zero, leads the Elastic nets more like Ridge, which will not eliminate any variables, but only reduce the coefficient.
 So we would expect the $\theta$ value to increase with the group strength decrease.
 
-We prepared several potential explanation to this phenomena.
+We prepared several potential explanation for this result.
 First, the MSE is not a ideal criteria for selecting the tuning parameter.
 The MSE for all $\theta - \phi$ combinations are very close to each other.
-They all shows similar values around 64.
+All MSE results shows similar values around 64.
 Second, because of the estimation method we used, the market risk has already been absorbed by the market factors.
 Then for the strong factor, we would expect that for any single of them, those strong factor can individually explained most of the idiosyncratic risk.
-Therefore, when we ask any ten strong factors to determine the risk simultaneously, it is possible that very few of the ten factors explained most of the risk and therefore the risk factors has been recognised by the algorithm as redundant.
-But if all factors are weak, it is possible that some linear combination of those weak factors can jointly explain the risk very well.
-And so, those factors are reserved by the algorithm. 
+Therefore, when we ask any ten strong factors to determine the risk simultaneously, it is possible that very few of the ten factors can explain most of the risk and therefore the other risk factors will be recognised by the algorithm as redundant.
+But if all factors are weak, it is possible that there exist some linear combinations among weak factors provides enough explaining power for the idiosyncratic risk.
+Therefore, those weak factors will be reserved by the algorithm, and hence, the parameter $\theta$ will close to zero, indicates a more Ridge like regression.
 
 
 %However, the empirical findings are not completely accord with what we expect.
@@ -109,3 +109,49 @@ And so, those factors are reserved by the algorithm.
 
 
 \subsection{Elastic Net Findings}
+We applied the elastic net algorithm with tuning parameters determined in the previous section to the thirty-year data set.
+The reasons why we use the thirty-year data instead of ten or twenty year dataset is because from the Monte Carlo simulation result (see Appendix \ref{simulationtable}), we found that the estimation accuracy will improve significantly with the increase of time-spam when the CAPM model contains two factors.
+We divided the 145 factor into six groups base on their factor strength calculated from the section \ref{Empirical:factor_strength}.
+We also randomly selected ten factors from  weak factor group (factor with strength less than 0.5), and ten factors from strong factor group (factor with strength above 0.9) to form a mixed factor group.
+For each factor groups, we run two regression: the elastic net regression with $\theta$ values present in the table \ref{table:optimal_theta}, and the Lasso regression with $\theta = 1$.
+Instead of running a pooled regression, we run the elastic net and Lasso to each individual companies.
+And then we compare for each single stock, how similar the factors selection made by Elastic net and Lasso are agreed with each other.
+For every single company, if both Elastic net and Lasso select the same factor (generates factor loading not equals to zero), and disregard the same factor (generate factor loadings equal to zero), then we call that company's stock has exact agreement of factor selection.
+We also extend our standard of agreement to 90\% interval, if the Elastic net and Lasso select same factors about 90\% of the total factor amount, we call the stock has a 90\% agreement.
+The proportion of agreement is presented in the table\ref{table:proportion_agreement}.
+
+\begin{table}[h]
+	\centering
+	\caption{Proportion of Lasso Regression and Elastic Net produces same or largely similar results for 145 companies}
+	\label{table:proportion_agreement}
+	\begin{tabular}{c|ccccccc}
+		\hline
+		\hline
+		\multicolumn{1}{l|}{Factor Group}                                         & \multicolumn{1}{l}{(0,0.5{]}} & \multicolumn{1}{l}{(0.5, 0.6{]}} & \multicolumn{1}{l}{(0.6, 0.7{]}} & \multicolumn{1}{l}{(0.7, 0.8{]}} & \multicolumn{1}{l}{(0.8,0.9{]}} & \multicolumn{1}{l}{(0.9,1{]}} & Mix    \\ \hline
+		\begin{tabular}[c]{@{}c@{}}Proportion of Agreement\\ (Exact)\end{tabular} & 68.7\%                        & 55.9\%                           & 42.8\%                           & 20.9\%                           & 17.7\%                          & 13.9\%                        & 34.6\% \\
+		\begin{tabular}[c]{@{}c@{}}Proportion of Agreement\\ (90\%)\end{tabular}  & 86.8\%                        & 72.0\%                           & 74.5\%                           & 72.0\%                           & 79.8\%                          & 74.4\%                        & 76.1\% \\ \hline\hline
+	\end{tabular}
+\end{table}
+
+It is clear that the proportion of agreement, both exact agreed and 90\% agreed, shows a decreasing trend accompany with the factor strength increase.
+Nearly 70\% factors selection are identical in the 0 to 0.5 strength group, but this number will decrease to 55\% if the factor strength increase 0.1.
+Only 14\% companies has identical factor selection results for for group with strength between 0.9 and 1.
+For the mixed strength group, the exact agreed proportion is 34.6\%, ranked between the 0.6 to 0.7 group and 0.7 to 0.8 group.
+
+% expect to see the factor with strong strength will be picked by more companies than factor with weak strength.
+%The result in general coincide with our inference: factor with strength less than 0.5 is significantly less selected by the algorithm, for both Lasso and elastic net.
+%But we are surprised to see that, when comparing the result within the group, factor selection proportion is not strictly agree with the factor strength.
+
+
+\begin{table}[h]
+	\centering
+		\caption{Correlation Coefficient among different factor groups. }
+			\label{table:Correlation}
+	\begin{tabular}{l|cccccc}
+		\hline
+		\hline
+		Factor Group                                 & (0,0.5{]} & (0.5, 0.6{]} & (0.6, 0.7{]} & (0.7, 0.8{]} & (0.8,0.9{]} & (0.9,1{]} \\ \hline
+		\multicolumn{1}{c|}{Correlation Coefficient} & 0.0952    & 0.157        & 0.213        & 0.229        & 0.371       & 0.724   \\
+		Factor Amount &12 & 10 &  17 & 37& 35 &34  \\ \hline \hline
+	\end{tabular}
+\end{table}
