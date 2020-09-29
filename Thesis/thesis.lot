@@ -5,9 +5,9 @@
 \contentsline {table}{\numberline {5}{\ignorespaces Estimated Optimal $\theta $ values for different factor groups}}{23}%
 \contentsline {table}{\numberline {6}{\ignorespaces Proportion of Lasso Regression and Elastic Net produces same or largely similar results for 145 companies}}{25}%
 \contentsline {table}{\numberline {7}{\ignorespaces Correlation Coefficient among different factor groups. }}{25}%
-\contentsline {table}{\numberline {8}{\ignorespaces Simulation result for single factor setting}}{31}%
-\contentsline {table}{\numberline {9}{\ignorespaces Simulation result for double factors setting (no correlation)}}{32}%
-\contentsline {table}{\numberline {10}{\ignorespaces Simulation result for double factors setting (weak correlation)}}{33}%
-\contentsline {table}{\numberline {11}{\ignorespaces Simulation result for double factors setting (strong correlation)}}{34}%
-\contentsline {table}{\numberline {12}{Comparison table of estimated factor strength on three different data sets, from strong to weak}}{35}%
-\contentsline {table}{\numberline {13}{Decompose the thirty year data into three ten year subset, estimated the factor strength base on those three data set separately. Rank the result base on the factor strength, from strong to weak.}}{40}%
+\contentsline {table}{\numberline {8}{\ignorespaces Simulation result for single factor setting}}{32}%
+\contentsline {table}{\numberline {9}{\ignorespaces Simulation result for double factors setting (no correlation)}}{33}%
+\contentsline {table}{\numberline {10}{\ignorespaces Simulation result for double factors setting (weak correlation)}}{34}%
+\contentsline {table}{\numberline {11}{\ignorespaces Simulation result for double factors setting (strong correlation)}}{35}%
+\contentsline {table}{\numberline {12}{Comparison table of estimated factor strength on three different data sets, from strong to weak}}{36}%
+\contentsline {table}{\numberline {13}{Decompose the thirty year data into three ten year subset, estimated the factor strength base on those three data set separately. Rank the result base on the factor strength, from strong to weak.}}{41}%

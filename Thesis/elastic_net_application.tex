@@ -141,12 +141,10 @@ For the mixed strength group, the exact agreed proportion is 34.6\%, ranked betw
 % expect to see the factor with strong strength will be picked by more companies than factor with weak strength.
 %The result in general coincide with our inference: factor with strength less than 0.5 is significantly less selected by the algorithm, for both Lasso and elastic net.
 %But we are surprised to see that, when comparing the result within the group, factor selection proportion is not strictly agree with the factor strength.
-
-
 \begin{table}[h]
 	\centering
-		\caption{Correlation Coefficient among different factor groups. }
-			\label{table:Correlation}
+	\caption{Correlation Coefficient among different factor groups. }
+	\label{table:Correlation}
 	\begin{tabular}{l|cccccc}
 		\hline
 		\hline
@@ -155,3 +153,10 @@ For the mixed strength group, the exact agreed proportion is 34.6\%, ranked betw
 		Factor Amount &12 & 10 &  17 & 37& 35 &34  \\ \hline \hline
 	\end{tabular}
 \end{table}
+
+We calculate the correlation among factors for each factor groups.
+The result is presented in the table \ref{table:Correlation}.
+We can clearly see a increasing trend of the correlation coefficient with the increase of factor's strength.
+Focusing on the strong factor group, it is clear that a leap exist.
+The correlation coefficient doubled from 0.8-0.9 group to 0.9-1 group.
+
