@@ -360,8 +360,8 @@ en_result_0506 %>% ggplot(aes(y = prop,x = Factor))+
   geom_col()
 en_result_0607 %>% ggplot(aes(y = prop,x = Factor))+
   geom_col()
-en_result_0809 %>% ggplot(aes(y = prop,x = Factor))+
-  geom_col()
+en_result_0809 %>% ggplot(aes(y = prop,x = reorder(Factor, -prop)))+
+  geom_col() 
 
 
 long_en_result <- weak_en_result %>% mutate(group = "0005") %>% 
@@ -375,8 +375,16 @@ long_en_result$group<- as_factor(long_en_result$group  )
 
 long_en_result %>% 
   #filter(prop >= 0.2)%>% 
-  ggplot(aes(x  = Factor, y = prop))+
-  geom_col(aes(colour = group,fill = group))
+  ggplot(aes(x  = reorder(Factor, -prop), y = prop))+
+  geom_col(aes( fill = group))+
+  theme_bw()+
+  #theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank())
+  theme(panel.background = element_blank())+
+  theme(axis.ticks = element_blank(), axis.text.x = element_blank())+
+  #scale_fill_brewer()+
+  facet_wrap(.~group)+
+  xlab("Factor")+
+  ylab("Select Proportion")
 
 long_lasso_result <- weak_lasso_result %>% mutate(group = "0005") %>% 
   bind_rows(lasso_result_0506 %>% mutate(group = "0506"), 
@@ -387,7 +395,19 @@ long_lasso_result <- weak_lasso_result %>% mutate(group = "0005") %>%
 
 long_lasso_result$group<- as_factor(long_lasso_result$group)
 
-
+long_lasso_result %>% 
+  #filter(prop >= 0.2)%>% 
+  ggplot(aes(x  = reorder(Factor, -prop), y = prop))+
+  geom_col(aes( fill = group))+
+  theme_bw()+
+  #theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank())
+  theme(panel.background = element_blank())+
+  theme(axis.ticks = element_blank(), axis.text.x = element_blank())+
+  #scale_fill_brewer()+
+  facet_wrap(.~group)+
+  xlab("Factor")+
+  ylab("Select Proportion")
+ 
 head(strong_en_result, 10)
 head(weak_en_result, 10)
 head(semi_en_result, 10)
