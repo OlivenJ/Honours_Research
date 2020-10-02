@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2020.5.27)  29 SEP 2020 20:15
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2020.5.27)  2 OCT 2020 22:17
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -762,9 +762,14 @@ LaTeX Info: Redefining \BHBI on input line 130.
 )
 \AtBeginShipoutBox=\box75
 
-(./titlepage.tex [1
+(./titlepage.tex
 
-]) (./thesis.toc
+LaTeX Font Warning: Font shape `TU/TimesNewRoman(0)/m/sc' undefined
+(Font)              using `TU/TimesNewRoman(0)/m/n' instead on input line 4.
+
+[1
+
+]) [1] (./thesis.toc
 LaTeX Font Info:    Trying to load font information for OT1+ztmcm on input line
  4.
 
@@ -801,11 +806,11 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 4.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 4.
- [1])
+ [2])
 \tf@toc=\write6
 \openout6 = `thesis.toc'.
 
- [2]
+ [3]
 (./thesis.lof)
 \tf@lof=\write7
 \openout7 = `thesis.lof'.
@@ -814,10 +819,10 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
 \tf@lot=\write8
 \openout8 = `thesis.lot'.
 
- [3] (./introduction_and_literature_review.tex
+ [4] (./introduction_and_literature_review.tex
 [1]
 
-LaTeX Warning: Reference `Empirical' on page 2 undefined on input line 67.
+LaTeX Warning: Reference `Empirical' on page 2 undefined on input line 50.
 
 [2] [3]) (./factor_strength.tex [4] [5] [6] [7] [8]) (./monte_carlo.tex
 [9] [10] [11] [12]) (./empirical_application_factor_strength.tex [13]
@@ -833,6 +838,9 @@ Overfull \hbox (19.05046pt too wide) in paragraph at lines 55--62
  []
 
 
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
 Overfull \hbox (3.45746pt too wide) in paragraph at lines 63--63
 [][]\TU/TimesNewRoman(0)/m/n/10 The risk free rate was from the Kenneth R. Fren
 ch website: http://mba.tuck.dartmouth.edu/pages/faculty/ken.french/| 
@@ -843,20 +851,20 @@ ch website: http://mba.tuck.dartmouth.edu/pages/faculty/ken.french/|
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `tbp') on input line 103.
 
-[16]
+[16] [17]
 
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `tbp') on input line 166.
 
-[17] [18] [19]) (./elastic_net_application.tex
+[18] [19]) (./elastic_net_application.tex
 
 Package mathptmx Warning: There are no bold math fonts on input line 9.
 
-[20]
+[20] [21]
 
-LaTeX Warning: Reference `Empirical' on page 21 undefined on input line 27.
+LaTeX Warning: Reference `Empirical' on page 22 undefined on input line 27.
 
-[21] [22]
+[22]
 
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `tbp') on input line 58.
@@ -866,7 +874,7 @@ Overfull \hbox (12.95679pt too wide) in paragraph at lines 127--134
  [][] 
  []
 
-) (./conclusion.tex) [25] [26] (./thesis.bbl
+[25]) (./conclusion.tex) [26] (./thesis.bbl
 Underfull \hbox (badness 10000) in paragraph at lines 218--235
 []\TU/TimesNewRoman(0)/m/n/12 Carhart, M. M.  (1997, 3).  On persistence in mut
 ual fund perfor-
@@ -1136,16 +1144,19 @@ Overfull \hbox (38.86932pt too wide) in paragraph at lines 1612--1614
 
 [58]) (./thesis.aux)
 
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 17260 strings out of 479282
- 372535 string characters out of 5880512
- 712717 words of memory out of 5000000
- 34533 multiletter control sequences out of 15000+600000
- 551270 words of font info for 100 fonts, out of 8000000 for 9000
+ 17265 strings out of 479282
+ 372696 string characters out of 5880512
+ 713717 words of memory out of 5000000
+ 34537 multiletter control sequences out of 15000+600000
+ 551278 words of font info for 101 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  59i,16n,75p,829b,320s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on thesis.pdf (62 pages).
+Output written on thesis.pdf (63 pages).

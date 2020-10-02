@@ -1,10 +1,10 @@
-\contentsline {table}{\numberline {1}{\ignorespaces Data Set Dimensions}}{14}%
+\contentsline {table}{\numberline {1}{\ignorespaces Data Set Dimensions}}{15}%
 \contentsline {table}{\numberline {2}{\ignorespaces Market factor strength estimation}}{16}%
 \contentsline {table}{\numberline {3}{\ignorespaces Proportion of Strength (Excluded Market Factor) }}{17}%
 \contentsline {table}{\numberline {4}{\ignorespaces Selected Risk Factor with Strength: top 15 factors from each data set and three well know factors.}}{18}%
 \contentsline {table}{\numberline {5}{\ignorespaces Estimated Optimal $\theta $ values for different factor groups}}{23}%
 \contentsline {table}{\numberline {6}{\ignorespaces Proportion of Lasso Regression and Elastic Net produces same or largely similar results for 145 companies}}{25}%
-\contentsline {table}{\numberline {7}{\ignorespaces Correlation Coefficient among different factor groups. }}{25}%
+\contentsline {table}{\numberline {7}{\ignorespaces Correlation Coefficient among different factor groups. }}{26}%
 \contentsline {table}{\numberline {8}{\ignorespaces Simulation result for single factor setting}}{32}%
 \contentsline {table}{\numberline {9}{\ignorespaces Simulation result for double factors setting (no correlation)}}{33}%
 \contentsline {table}{\numberline {10}{\ignorespaces Simulation result for double factors setting (weak correlation)}}{34}%

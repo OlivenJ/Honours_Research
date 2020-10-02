@@ -1,22 +1,22 @@
 \contentsline {section}{\numberline {1}Introduction and Motivation}{1}%
 \contentsline {section}{\numberline {2}Related Literature}{3}%
 \contentsline {section}{\numberline {3}Factor Strength}{5}%
-\contentsline {subsection}{\numberline {3.1}Definition}{5}%
+\contentsline {subsection}{\numberline {3.1}Definition}{6}%
 \contentsline {subsection}{\numberline {3.2}Estimation Under single factor setting}{6}%
 \contentsline {subsection}{\numberline {3.3}Estimation Under Multi-Factor Setting}{8}%
 \contentsline {section}{\numberline {4}Monte Carlo Design}{9}%
 \contentsline {subsection}{\numberline {4.1}Design}{9}%
 \contentsline {subsection}{\numberline {4.2}Experiment Setting}{10}%
 \contentsline {subsection}{\numberline {4.3}Monte Carlo Results}{12}%
-\contentsline {section}{\numberline {5}Empirical Application of Factor Strength}{13}%
+\contentsline {section}{\numberline {5}Empirical Application of Factor Strength}{14}%
 \contentsline {subsection}{\numberline {5.1}Data}{14}%
 \contentsline {subsection}{\numberline {5.2}Factor Strength Analysis}{15}%
 \contentsline {subsubsection}{\numberline {5.2.1}Regression model setting}{15}%
-\contentsline {subsubsection}{\numberline {5.2.2}Factor Strength Findings}{15}%
-\contentsline {section}{\numberline {6}Elastic Net and Application}{20}%
-\contentsline {subsection}{\numberline {6.1}Brief introduction of Elastic Net}{20}%
+\contentsline {subsubsection}{\numberline {5.2.2}Factor Strength Findings}{16}%
+\contentsline {section}{\numberline {6}Elastic Net and Application}{21}%
+\contentsline {subsection}{\numberline {6.1}Brief introduction of Elastic Net}{21}%
 \contentsline {subsection}{\numberline {6.2}Tuning Parameter}{22}%
-\contentsline {subsection}{\numberline {6.3}Elastic Net Findings}{24}%
+\contentsline {subsection}{\numberline {6.3}Elastic Net Findings}{25}%
 \contentsline {section}{\numberline {7}Conclusion}{26}%
 \contentsline {section}{References}{27}%
 \contentsline {section}{\numberline {A}Simulation Result}{32}%
