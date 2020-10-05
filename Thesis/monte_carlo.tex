@@ -78,7 +78,7 @@ In this simulation, we will start the factor strength from 0.7 and increase it g
 This step reflects the fact that only $[n^\alpha_1]$ or $[n^\alpha_2]$ factor loadings are non-zero.
 In terms of the factors, they come from a multinomial distribution $MVN(\mathbf{0}, \Sigma) $, as we discuss before.
 
-Currently, we consider three different experiments set up:
+Currently, we consider four different experiments set up:
 
 \begin{experiment}[single factor, normal error, no correlation]
 Set $\beta_{i2}$ from (\ref{two_factor}) as 0, the error term $\varepsilon_{it}$ and the factor $f_{1t}$ are both standard normal.
@@ -94,7 +94,13 @@ Both $\beta_{i1}$ and $\beta_{i2}$ are non-zero. Error term  and both factors ar
 The factor strength for the first factor $\alpha_1 = 1$ all the time, and $\alpha_2$ varies.
 \end{experiment}
 
-The factor strength in each experiment is estimated using the method discussed in section (\ref{strength_one_factor_estimation}), the size of the significance test is $p = 0.05$, and the critical value exponent $\sigma$ has been set as 0.5.
+\begin{experiment}[two factors, normal error, strong correlation]
+	Both $\beta_{i1}$ and $\beta_{i2}$ are non-zero. Error term and both factors are standard normal. The correlation $\rho_{12}$ between $f_{1t}$ and$f_{2t}$ is 0.7.
+	The factor strength for the first factor $\alpha_1 = 1$ all the time, and $\alpha_2$ varies.
+\end{experiment}
+
+The factor strength in experiment one is estimated using the method discussed in section (\ref{strength_one_factor_estimation}), and for the rest of experiments, we use the method from section \ref{strength_multi_estimation}.
+The size of the significance test is $p = 0.05$, and the critical value exponent $\sigma$ has been set as 0.5.
 For each experiment, we calculate the bias, the RMSE and the size of the test to assess the estimation performances.
 The bias is calculated as the difference between the true factor strength $\alpha$ and the estimated factor strength $\hat{\alpha}$.
 \[bias = \alpha - \hat{\alpha}\]
@@ -154,8 +160,8 @@ The market factor will have strength $\alpha_m = 1$ all the time, and the streng
 
 
  
-\subsection{Monte Carlo Results}
-We report the results in Table (\ref{table:exp1}), (\ref{table:exp2}) and (\ref{table:exp3}) in Appendix \ref{simulationtable}.
+	\subsection{Monte Carlo Results}\label{MC_findings}
+We report the results in Table (\ref{table:exp1}), (\ref{table:exp2}), (\ref{table:exp3}), and (\ref{table:exp4}) in Appendix \ref{simulationtable}.
 
 Table (\ref{table:exp1}) provides the results under the experiment 1.
 The estimation method we applied tends to over-estimate the strength slightly most of the time when the true strength is relatively weak under the single factor set up.
@@ -172,14 +178,16 @@ The size will become smaller than the 0.05 threshold after we extend the t to 24
 Notice that, from the equation (\ref{z_indicator}), when $\hat{\alpha} = \alpha = 1$, the nominator becomes zero.
 Therefore, the size will collapse to zero in all settings, so we do not report the size for $\hat{\alpha} = \alpha = 1$
 
-For the two factors scenarios, we obtain similar conclusions in both the no correlation setting and weak correlation setting.
-The result of no correlation settings is shown in the table (\ref{table:exp2}), and the table (\ref{table:exp3}) shows the result when the correlation between two factors is 0.3.
+For the two factors scenarios, we obtain similar conclusions in no correlation setting, weak correlation setting, and the strong correlation setting.
+The result of no correlation settings is shown in the table (\ref{table:exp2}), table (\ref{table:exp3}) shows the result when the correlation between two factors is 0.3, and the table (\ref{table:exp4}) presents the result of 0.7 correlation setting.
 %Same as the single factor results, in most of the time, our estimation method will slightly under estimates the factor strength. 
-The estimation results improve when increasing either the observations amount t, or the cross-section units amount n.
+Same as the single factor scenario, the estimation results improve when increasing either the observations amount t, or the cross-section units amount n.
 We also have the same unbiased estimation when true factor strength is unity under all unit-time combinations.
 In some cases, even when the factor strength is relatively weak, we can have unbiased estimation if the n and t are big enough. (see table (\ref{table:exp3})).
 However, we should also notice that when t > n, the results of the size of the test in two factors setting are performing similar to the single factor result. 
 The size will shrink with the observation amount t increasing, and when we have t greater than 240, the size will be smaller than 0.05 threshold in all situations.
+However, it is worth notice that in the strong correlation setting, the size of the test is extremely big when the time spam is relatively short, and the test size will not improve even we increase the sample size.
+Once we increase the t, the size of the test will reduce dramatically, and when we have the thirty year time period, the size of the test are almost all below the 0.05 threshold.
 
 %Same results are found in the two factors experiments.
 %Table (\ref{exp2_table}) and Table (\ref{exp3_table}) shows the result of experiment 2 and 3.

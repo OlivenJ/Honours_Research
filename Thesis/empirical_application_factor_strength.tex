@@ -32,13 +32,17 @@
 	
 Researchers and practitioners have been using the CAPM model \cite{Sharpe1964, Lintner1965, Black1972} and its multi-factor extension (For example, the three-factor model by \citeA{Fama1992}) when they are trying to capture the uncertainty of asset's return.
 The surging of new factors \cite{Harvey2019} provides numerous option to construct the CAPM model, but it also requires users to pick the factors wisely.
-In this section, we will use two different methods to identify appropriate factors from a group of 146 candidates.
-First, we utilise the method introduced in section \ref{strength} to estimates the strength of each factor from the factor group.
-Then, we use the strength as a criterion to select factors including in the CAPM model.
-In the second part of this section, we apply the elastic net method, ask the algorithm to pick factors for us.
-We will compare the factors selected by those two approaches, expected a consistent selection outcome.
-Through the empirical application, we also found that under certain conditions, we will obtain a generous CAPM model with too many factors, when using factor strength as the criterion.
-Therefore, additionally, we apply the elastic net method to further shrinkage down factor selection.
+In this section, we will use the method introduced in the section \ref{strength} to estimates the factor strength of 146 candidate factors.
+%In this section, we will use two different methods to identify appropriate factors from a group of 146 candidates.
+First, we introduce the data set used in this empirical section, and the setting for the estimation process.
+Then, we discuss the findings from the estimation results.
+The estimated factors strength provides us a starting point when applied the elastic net method in the section \ref{Empirical:Elastic_net}.
+%First, we utilise the method introduced in section \ref{strength} to estimates the strength of each factor from the factor group.
+%Then, we use the strength as a criterion to select factors including in the CAPM model.
+%In the second part of this section, we apply the elastic net method, ask the algorithm to pick factors for us.
+%We will compare the factors selected by those two approaches, expected a consistent selection outcome.
+%Through the empirical application, we also found that under certain conditions, we will obtain a generous CAPM model with too many factors, when using factor strength as the criterion.
+%Therefore, additionally, we apply the elastic net method to further shrinkage down factor selection.
 	\subsection{Data}\label{data}
 	
 In the empirical application part, we use the monthly returns on U.S. securities as the assets.
@@ -48,7 +52,7 @@ The initial data set contains 505 companies, but because of the components compa
 Also, some companies do not have enough observations.
 Therefore, for each of the datasets, the number of companies (n) is different, the dimensions of the data set are showing in the table (\ref{Data_set}) below.
 
-\begin{table}[h]
+\begin{table}[H]
 	\centering
 		\caption{Data Set Dimensions}
 			\label{Data_set}
@@ -74,9 +78,7 @@ The factor set also includes the market factor, represented by the difference be
 The average market return is a weighted average return of all stocks in the U.S. market, incorporated by CSRP.
 Each factor contains observations from January 1988 to December 2017.
 
-\subsection{Factor Strength Analysis}
-
-\subsubsection{Regression model setting}
+\subsection{Factor Strength Estimation Setting}
 For the first part of the empirical application, we estimate the factor strength using the method discussed in section \ref{strength}.
 More precisely, we set the regression models based on section \ref{strength_multi_estimation}.
 \begin{align*}
@@ -94,13 +96,13 @@ We use two different regressions in the purpose of estimating the strength under
 However, due to the potential correlations among factors, we will only focus the market factor strength when using the first single factor regression.
 
 
-	\subsubsection{Factor Strength Findings}
+	\subsection{Factor Strength Findings}
 The complete set of results of factor strength estimation is presented in the appendix \ref{strength_table} and \ref{strength_figures}.
 We estimated the factors' strength using three different data sets discussed in the \ref{data}, and rank those strength from strong to weak, alongside the market factor strength, in the table (\ref{table:three_ranked_compare}).
 
 We first look at the market factor strength under the single-factor CAPM setting. (see table \ref{table:market})
 
-\begin{table}[]
+\begin{table}[H]
 	\centering
 			\caption{Market factor strength estimation} \label{table:market}
 	\begin{tabular}{l|ccc}

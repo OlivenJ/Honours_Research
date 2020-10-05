@@ -11,31 +11,35 @@ Numerous researchers have contributed to this field, and the direct result is an
  \citeA{Harvey2019} have documented and categorised over 500 factors from papers published in the top financial and economic journals, and they find the growth of new factors has sped up since 2008. 
  
 But we should notice that for a factor, it may not able to capture the risk-return relationship for every asset.
-Therefore, \citeA{Pesaran2019} introduced a new criterion for assessing the significance of each factor, which they call it factor strength.
-In general, if a factor can generate coefficients, or refer it as loadings in financial literatures, significantly different from zero for all assets, then we call such a factor strong factor.
-And the less amounts of significant loadings a factor can generate, the weaker the strength the factor has.
-The idea of factor strength provides us a standard to evaluate the risk pricing performance of factor, enable us to compare the factor's pricing ability.
+Therefore, \citeA{Pesaran2019} introduced a new criterion named factor strength to assesses the significance of each factor.
+The idea of factor strength is to measure how many non-zero coefficient, or refer it as loadings in financial literature, a factor can generates for different assets.
+The more non-zero significant loadings a factor can produce, the stronger it strength is.
+%In general, if a factor can generate coefficients, or refer it as loadings in financial literatures, significantly different from zero for all assets, then we call such a factor strong factor.
+%And the less amounts of significant loadings a factor can generate, the weaker the strength the factor has.
+The idea of factor strength provides us a standard to evaluate the risk pricing performance of factor, enable the risk-pricing ability comparison among factors.
 
 In his 2011 president address of American Finance Association, \citeauthor{Cochrane2011} emphasised the importance of finding factors which can provide independent information about average return and risk.
-With regard to this, many scholars applied various methods to find factors that can provides such information of risk-return relationship.
+This address reflects one problem of the factor model in finance: due to the data mining/multiple test problem, some newly discovered factors are false-positive.
+Those newly proposed factors show significant results purely by chance, and \citeA{Hou2018} proved this by demonstrated that they can not replicate large proportion of those factor papers.
+%He pointed out because of the data mining, some newly discovered risk factors are falsely positive, and can not provide any fresh information about the risk-return relationship.
+With regard to this, many scholars applied various methods to filter factors that can provides fresh information of risk-return relationship from a large existed factor pool.
 For instance, \citeA{Harvey2017} provided a bootstrap method to adjust the threshold of factor loading's significant test, trying to exclude some falsely significant factor caused by multiple-test problem.
 Some other scholars are using machine learning methods to identify factors from a group of candidates.
 One stream of them has used a shrinkage and subset selection method called Lasso \cite{Tibshirani1996} and the variations of it to find suitable factors.
-One example of such an application is made by \citeA{Rapach2013}.
-They applied the Lasso regression, trying to find some characteristics from a large group, constructing a correspond CAPM model, and then predicting the global stock market's return.
+A example of such application is made by \citeA{Rapach2013}.
+They applied the Lasso regression, trying to find some characteristics from a large group, and then constructed a correspond CAPM model to predict the global stock market's return.
 
-An additional challenge is that factors, especially in the high-dimension, are commonly correlated.
+However, there is an additional challenge that factors, especially in high-dimensions, are usually highly correlated.
 \citeA{Kozak2020} point out that when facing a group of correlated factors, Lasso will only pick several highly correlated factors, seemly at random, and then ignore the other and shrink them to zero. 
 In other words, Lasso fails to handle the issue of correlated factors appropriately, because it can not distinct factors with strong correlation.
 
-
-Therefore, the main empirical question in this project is: how to select useful factors from a large group of possibly highly correlated candidates.
+Then, the main empirical question in this paper is: how to select useful factors from a large group of possibly highly correlated candidates.
 We address this question from two different prospects.
 
 %From one side, we employ the idea of factor strength discuss above, trying to use this criterion to select those strong factors, and therefore reduce the potential dimensions of factor groups.
-From one side, we employ the idea of factor strength discuss above, divided the high-dimension candidates factor group into smaller subgroups base on their estimated factors.
+From one prospect, we employ the idea of factor strength discuss above, divided the high-dimension candidates factor group into smaller subgroups base on their estimated factors.
 By this, we hope to eliminate the problem of dimensionality and correlativity.
-On the other hand, we use another variable selection method called Elastic Net \cite{Zou2005} to select factors from each subgroups.
+On the others, we use another variable selection method called Elastic Net \cite{Zou2005} to select factors from each subgroups.
 With regard of the first approach, \citeA{Bailey2020} provide a consistent estimator for the factor strength, and we will use this method to examine the strength of each candidate factor.
 Under the second approach, unlike Lasso, elastic net contains an extra penalty term, which enables it to avoid the problem of handling correlated features.
 This trait makes it suitable for our purpose.
@@ -47,9 +51,9 @@ The rest of the thesis is organized as follows.
 In section \ref{Literature}, we go through some literatures relate with the CAPM model and methods about factor selection.
 Then in section \ref{strength}, we will provide a detailed description of the concept of factor strength and the estimation method.
 In section \ref{MC}, we set up a simple Monte Carlo simulation experiment to examine the finite sample properties of the factor strength estimator.
-Section \ref{Empirical} includes the empirical application, where we estimate the strength of potential risk factors to be included in a CAPM model, 
-We introduce the elastic net approach 
-as well as apply elastic net as a method to select factors.
+Section \ref{Empirical:factor_strength} includes the empirical application regarding the factor strength, where we estimate the strength of each risk factors.
+We introduce apply the Elastic net approach, alongside Lasso to select factors in section \ref{Empirical:Elastic_net}.
+Finally, we provides the conclusion and further discussion in section \ref{Conclusion}.
 
 
 

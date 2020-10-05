@@ -262,6 +262,40 @@ Cochrane, J\BPBI H.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
+Dickey%
+\ \BBA {} Fuller%
+}{%
+Dickey%
+\ \BBA {} Fuller%
+}{%
+{\protect \APACyear {1979}}%
+}]{%
+Dickey1979}
+\APACinsertmetastar {%
+Dickey1979}%
+\begin{APACrefauthors}%
+Dickey, D\BPBI A.%
+\BCBT {}\ \BBA {} Fuller, W\BPBI A.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{1979}{6}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Distribution of the Estimators for Autoregressive Time
+  Series with a Unit Root} {Distribution of the estimators for autoregressive
+  time series with a unit root}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Journal of the American Statistical
+  Association}{74}{}{427-431}.
+\newblock
+\begin{APACrefURL}
+  \url{https://www.tandfonline.com/doi/abs/10.1080/01621459.1979.10482531}
+  \end{APACrefURL}
+\newblock
+\begin{APACrefDOI} \doi{10.1080/01621459.1979.10482531} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 Fama%
 \ \BBA {} French%
 }{%
@@ -865,6 +899,33 @@ Kozak, S.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
+Kwiatkowski%
+, Phillips%
+, Schmidt%
+\BCBL {}\ \BBA {} Shin%
+}{%
+Kwiatkowski%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {1992}}%
+}]{%
+Kwiatkowski1992}
+\APACinsertmetastar {%
+Kwiatkowski1992}%
+\begin{APACrefauthors}%
+Kwiatkowski, D.%
+, Phillips, P\BPBI C\BPBI B.%
+, Schmidt, P.%
+\BCBL {}\ \BBA {} Shin, Y.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{1992}{}{}.
+\newblock
+\APACrefbtitle {How sure are we that economic time series have a unit root?*}
+  {How sure are we that economic time series have a unit root?*}\ (\BVOL~54).
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 Lettau%
 \ \BBA {} Pelger%
 }{%
@@ -945,6 +1006,38 @@ Pesaran, M\BPBI H.%
   models}.{\BBCQ}
 \newblock
 \APACjournalVolNumPages{CESifo Working Paper Series}{}{}{}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Phillips%
+\ \BBA {} Perron%
+}{%
+Phillips%
+\ \BBA {} Perron%
+}{%
+{\protect \APACyear {1988}}%
+}]{%
+Phillips1988}
+\APACinsertmetastar {%
+Phillips1988}%
+\begin{APACrefauthors}%
+Phillips, P\BPBI C.%
+\BCBT {}\ \BBA {} Perron, P.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{1988}{6}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Testing for a unit root in time series regression}
+  {Testing for a unit root in time series regression}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Biometrika}{75}{}{335-346}.
+\newblock
+\begin{APACrefURL}
+  \url{https://academic.oup.com/biomet/article/75/2/335/292919}
+  \end{APACrefURL}
+\newblock
+\begin{APACrefDOI} \doi{10.1093/biomet/75.2.335} \end{APACrefDOI}
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%

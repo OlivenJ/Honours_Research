@@ -134,9 +134,9 @@ We employed the same strategy as above, after running OLS and obtain the:
 
 \[ x_{it} =\hat{a}_{iT} + \mathbf{\hat{\beta}^{\prime}_{i}}\mathbf{f}_{t} + \hat{v}_{it}    \]
 To conduct the significance test, we calculate the t-statistic: $t_{ijT} = \frac{\hat{\beta}_{ijT}-0}{\hat{\sigma}_{ijT}}$. Empirically, the test statistic can be calculated using:
-\[ t_{i j T}=\frac{\left(\mathbf{f}_{j \circ}^{\prime} \mathbf{M}_{F_{-j}} \mathbf{f}_{j \circ}\right)^{-1 / 2}\left(\mathbf{f}_{j \circ}^{\prime} \mathbf{M}_{F_{-j}} \mathbf{x}_{i}\right)}{\hat{\sigma}_{i T}} \]
+\[ t_{i j T}=\frac{\left(\mathbf{f}_{j t}^{\prime} \mathbf{M}_{F_{-j}} \mathbf{f}_{j t}\right)^{-1 / 2}\left(\mathbf{f}_{j t}^{\prime} \mathbf{M}_{F_{-j}} \mathbf{x}_{i}\right)}{\hat{\sigma}_{i T}} \]
 
-Here, $\mathbf{f}_{j \circ}=\left(f_{j 1}, f_{j 2}, \ldots, f_{j T}\right)^{\prime}, \mathbf{x}_{i}=\left(x_{i 1}, x_{i 2}, \ldots, x_{i T}\right)^{\prime}, \mathbf{M}_{F_{-j}}=\mathbf{I}-\mathbf{F}_{-j}\left(\mathbf{F}_{-j}^{\prime} \mathbf{F}_{-j}\right)^{-1} \mathbf{F}_{-j}^{\prime}$, and $\mathbf{F}_{-j}=\left(\mathbf{f}_{1 \circ}, \ldots, \mathbf{f}_{j-1 \circ}, \mathbf{f}_{j+1 \circ}, \ldots, \mathbf{f}_{m \circ}\right)^{\prime}$
+Here, $\mathbf{f}_{j t}=\left(f_{j 1}, f_{j 2}, \ldots, f_{j T}\right)^{\prime}, \mathbf{x}_{i}=\left(x_{i 1}, x_{i 2}, \ldots, x_{i T}\right)^{\prime}, \mathbf{M}_{F_{-j}}=\mathbf{I}-\mathbf{F}_{-j}\left(\mathbf{F}_{-j}^{\prime} \mathbf{F}_{-j}\right)^{-1} \mathbf{F}_{-j}^{\prime}$, and $\mathbf{F}_{-j}=\left(\mathbf{f}_{1 t}, \ldots, \mathbf{f}_{j-1 t}, \mathbf{f}_{j+1 t}, \ldots, \mathbf{f}_{m t}\right)^{\prime}$
 For the denominator's $\hat{\sigma}_{iT}$, it was from $\hat{\sigma}_{i T}^{2}=T^{-1} \sum_{t=1}^{T} \hat{u}_{i t}^{2}$, the $\hat{u}_{it}$ is the residuals of the model.
 Then, we can use the same critical value from (\ref{critical_value_function}).
 Obtaining the corresponding ratio $\hat{\pi}_{nTj}$  from (\ref{pi_function}), and use the function:

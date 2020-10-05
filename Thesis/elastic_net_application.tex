@@ -1,5 +1,11 @@
-\section{Elastic Net and Application}
+\section{Elastic Net and Application}\label{Empirical:Elastic_net}
 %\subsection{Introduction of empirical method and data}
+As we introduced before, the surging number of risk factors post question of which factors can independently provides unique information to explain the risk-return relationship. \cite{Cochrane2011}.
+In this section, we employed the Elastic net algorithm to discuss this problem.
+We also compare the Elastic net results with the Lasso regression.
+We first briefly introduce the core idea of elastic net method, explained what's the different between Elastic net and other factor selection methods.
+Then, we provides a full discussion of how to select the tuning parameter with regard of the Elastic net method when using r package \textit{glmnet} to imply the elastic net.
+Finally, we compare and discuss the findings from both Elastic net and Lasso.
 
 
 \subsection{Brief introduction of Elastic Net} \label{Elastic_Net}
@@ -35,6 +41,14 @@ Now, the main challenge of applying the elastic net algorithm is to select the a
 
 %\subsection{Empirical procedure of Elastic Net}
 %In this subsection we will brief introduce the empirical investigation stpes
+	\subsection{Brief Properties of Risk Factors}
+We start with a brief discussion about the risk factors before applying the elastic net method.
+The risk factors data set contains 145 risk factors at the monthly frequency fro the period from July 1976 to December 2007.\footnote{For how those factors are constructed, please view \citeA{Feng2020}}
+To exam the stationarity of the risk factor series, we employed Augmented Dick-fuller (ADF) test \cite{Dickey1979},  Phillips-Perron (PP) test \cite{Phillips1988}, and the Kwiatkowski-Phillips-Schmidt-Shin (KPSS) test \cite{Kwiatkowski1992}.
+In general, ADF test and PP test provides same conclusions that all 145 risk factor series does not contains unit root.
+The KPSS test, however, disagree with the ADF and PP test.
+If we take 0.05 as the threshold of p-value, the KPSS test concludes that there are six factors contain unit root in their process.
+
 
 \subsection{Tuning Parameter} \label{EN:parameter_tuning }
 In this empirical application, we use the R package \textit{glmnet} \cite{Friedman2010, Simon2011}.
@@ -110,10 +124,13 @@ Therefore, those weak factors will be reserved by the algorithm, and hence, the 
 
 \subsection{Elastic Net Findings}
 We applied the elastic net algorithm with tuning parameters determined in the previous section to the thirty-year data set.
-The reasons why we use the thirty-year data instead of ten or twenty year dataset is because from the Monte Carlo simulation result (see Appendix \ref{simulationtable}), we found that the estimation accuracy will improve significantly with the increase of time-spam when the CAPM model contains two factors.
-We divided the 145 factor into six groups base on their factor strength calculated from the section \ref{Empirical:factor_strength}.
+The reasons why we use the thirty-year data instead of ten or twenty year is that the Monte Carlo simulation result (see section \ref{MC_findings} and Appendix \ref{simulationtable}) indicates us that the estimation accuracy of factor strength will improve significantly with the increase of time-spam.
+Such improvement will not diminish even when the sample size n is small.
+Therefore, we use the factor strength result estimated base on the thirty year data set.
+
+We divided the 145 risk factors into six groups base on their factor strength.
 We also randomly selected ten factors from  weak factor group (factor with strength less than 0.5), and ten factors from strong factor group (factor with strength above 0.9) to form a mixed factor group.
-For each factor groups, we run two regression: the elastic net regression with $\theta$ values present in the table \ref{table:optimal_theta}, and the Lasso regression with $\theta = 1$.
+For each factor groups, we run two regression: the elastic net regression with $\theta$ values presented in the table \ref{table:optimal_theta}, and the Lasso regression with $\theta = 1$.
 Instead of running a pooled regression, we run the elastic net and Lasso to each individual companies.
 And then we compare for each single stock, how similar the factors selection made by Elastic net and Lasso are agreed with each other.
 For every single company, if both Elastic net and Lasso select the same factor (generates factor loading not equals to zero), and disregard the same factor (generate factor loadings equal to zero), then we call that company's stock has exact agreement of factor selection.
@@ -158,9 +175,12 @@ We calculate the correlation among factors for each factor groups.
 The result is presented in the table \ref{table:Correlation}.
 We can clearly see a increasing trend of the correlation coefficient with the increase of factor's strength.
 Focusing on the strong factor group, it is clear that a leap exist.
-The correlation coefficient doubled from 0.8-0.9 group to 0.9-1 group.
+The correlation coefficient doubled from (0.8, 0.9] group to (0.9, 1] group.
 This correlation pattern provides a possible explanation of the discord results of Elastic net and Lasso.
 When facing variables with high correlation, Lasso will randomly select several variables and discard others.
-While Elastic net address this problem. 
+While Elastic net address this problem with the help of the extra $L^2$ norm in it's loss function.
+Therefore, the Elastic net method will select all factors that can bring new information to explain the risk-return relationship even those factors are highly correlated.
+On average, Lasso will select about 2.4 less factors than the Elastic net when facing strong factor groups, which contains 34 factors.
+
 
 

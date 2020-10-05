@@ -22,46 +22,48 @@ Repeated entry---line 666 of file library.bib
  : @article{Bailey2019
  :                    ,
 I'm skipping whatever remains of this entry
+Warning--entry type for "Kwiatkowski1992" isn't style-file defined
+--line 803 of file library.bib
 apacite.bst [2013/07/21 v6.03 APA bibliography style]
-You've used 38 entries,
+You've used 41 entries,
             6951 wiz_defined-function locations,
-            1583 strings with 17920 characters,
-and the built_in function-call counts, 70529 in all, are:
-= -- 8487
-> -- 607
-< -- 3290
-+ -- 3215
-- -- 76
-* -- 4659
-:= -- 12688
-add.period$ -- 152
-call.type$ -- 38
-change.case$ -- 714
+            1608 strings with 18610 characters,
+and the built_in function-call counts, 76781 in all, are:
+= -- 9290
+> -- 660
+< -- 3571
++ -- 3521
+- -- 82
+* -- 5047
+:= -- 13778
+add.period$ -- 164
+call.type$ -- 41
+change.case$ -- 769
 chr.to.int$ -- 0
-cite$ -- 76
-duplicate$ -- 1955
-empty$ -- 3000
-format.name$ -- 1013
-if$ -- 13470
+cite$ -- 82
+duplicate$ -- 2128
+empty$ -- 3236
+format.name$ -- 1102
+if$ -- 14671
 int.to.chr$ -- 0
-int.to.str$ -- 114
+int.to.str$ -- 123
 missing$ -- 0
-newline$ -- 1066
-num.names$ -- 304
-pop$ -- 932
+newline$ -- 1150
+num.names$ -- 328
+pop$ -- 1000
 preamble$ -- 1
-purify$ -- 220
+purify$ -- 236
 quote$ -- 0
-skip$ -- 4789
+skip$ -- 5239
 stack$ -- 0
-substring$ -- 3498
-swap$ -- 1161
-text.length$ -- 144
+substring$ -- 3836
+swap$ -- 1257
+text.length$ -- 157
 text.prefix$ -- 0
 top$ -- 1
-type$ -- 3112
+type$ -- 3424
 warning$ -- 0
-while$ -- 419
+while$ -- 452
 width$ -- 0
-write$ -- 1328
+write$ -- 1435
 (There were 2 error messages)
