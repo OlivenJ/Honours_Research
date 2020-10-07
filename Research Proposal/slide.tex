@@ -4,6 +4,17 @@
 \usepackage{apacite}
 %\renewcommand\bibliographytypesize{\footnotesize}
 \usetheme{Singapore}
+\usepackage[style=british]{csquotes}
+
+\def\signed #1{{\leavevmode\unskip\nobreak\hfil\penalty50\hskip1em
+		\hbox{}\nobreak\hfill #1%
+		\parfillskip=0pt \finalhyphendemerits=0 \endgraf}}
+
+\newsavebox\mybox
+\newenvironment{aquote}[1]
+{\savebox\mybox{#1}\begin{quote}\openautoquote\hspace*{-.7ex}}
+	{\unskip\closeautoquote\vspace*{1mm}\signed{\usebox\mybox}\end{quote}}
+
 
 \DeclareMathOperator*{\argmin}{arg\,min}
 \usepackage{soul}
@@ -69,7 +80,12 @@ Capital Asset Pricing Model (CAPM) is the benchmark of risk pricing.
 	\end{figure}
 \end{frame}
 
-
+\begin{frame}
+\begin{aquote}{John Cohrane, 2011}
+We have a lot of questions to answer: \\
+Firstly, which characteristics really provide \textbf{independent} information about average returns? Which are subsumed by others ?
+\end{aquote}
+\end{frame}
 
 \begin{frame}
 	\frametitle{Factor Strength}
