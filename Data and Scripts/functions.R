@@ -5,6 +5,34 @@ library(caret)
 library(glmnetUtils)
 library(xtable)
 library(imputeTS)
+
+#=============================================================================================#
+#===========================#Exam the stationarity of the excess return/risk factor#===================================#
+
+stationarity_test <- function(wide_data, types){
+  
+if (types == "ADF") {
+  test_table <- adf.test(unlist(wide_data[2])) %>% tidy() %>% add_column(Factor = (wide_data %>% variable.names())[2])  
+  for (i in 3:ncol(wide_data)) {
+    test_table<- test_table %>% add_row(adf.test(unlist(wide_data[i])) %>% tidy() %>% add_column(Factor = (wide_data %>% variable.names())[i])  )
+  }
+}  else if (types == "KPSS") {
+  test_table <- kpss.test(unlist(wide_data[2])) %>% tidy() %>% add_column(Factor = (wide_data %>% variable.names())[2])  
+  for (i in 3:ncol(wide_data)) {
+    test_table<- test_table %>% add_row(kpss.test(unlist(wide_data[i])) %>% tidy() %>% add_column(Factor = (wide_data %>% variable.names())[i])  )
+  }
+} else if (types == "PP") {
+  test_table <- pp.test(unlist(wide_data[2])) %>% tidy() %>% add_column(Factor = (wide_data %>% variable.names())[2])  
+  for (i in 3:ncol(wide_data)) {
+    test_table<- test_table %>% add_row(pp.test(unlist(wide_data[i])) %>% tidy() %>% add_column(Factor = (wide_data %>% variable.names())[i])  )
+  }
+  
+} else {print("Please select from ADF, PP, KPSS")}
+  return(test_table) 
+}
+
+
+
 #=============================================================================================#
 #===========================#Cakculate the Factor Strength#===================================#
 strength_calc <- function(return_data){

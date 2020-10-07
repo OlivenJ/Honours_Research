@@ -53,7 +53,7 @@ for (i in 1:(nrow(group_price)-1)) {
 
 return <- raw_return %>% filter(Date >= ymd("1976-07-01") & Date <= ymd("2017-12-01")) %>% 
   inner_join( risk_free, by = "Date") %>% mutate(Excess = Return - Rf) %>% 
-  select(-Adj.Return, -Close, -Rf,-Adj.Close) %>% 
+  dplyr::select(-Adj.Return, -Close, -Rf,-Adj.Close) %>% 
   filter(Excess < 300) 
 
 #=============================================================================================#

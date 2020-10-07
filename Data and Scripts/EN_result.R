@@ -2,34 +2,38 @@ library(corrr)
 
 
 ### All Weak factors: Strength lower than 0.5, alpha = 0.377
-weak_en_result       ; weak_lasso_result       ; weak_quasi_ridge_result 
-weak_en_model        ; weak_lasso_model        ; weak_quasi_ridge_model
-weak_en_coef         ; weak_lasso_coef         ; weak_quasi_ridge_coef 
-weak_en_matrix       ; weak_lasso_matrix       ; weak_quasi_ridge_matrix
-weak_en_company_count; weak_lasso_company_count; weak_quasi_ridge_company_count 
+en_result_0005       ; lasso_result_0005       
+en_model_0005        ; lasso_model_0005        
+en_coef_0005         ; lasso_coef_0005         
+en_matrix_0005       ; lasso_matrix_0005       
+en_company_count_0005; lasso_company_count_0005
 
-mean(model_factor_count(weak_en_matrix)$prop)
+mean(model_factor_count(en_matrix_0005)$count)
+mean(model_factor_count(en_matrix_0005)$prop)
+mean(model_factor_count(lasso_matrix_0005)$count)
+mean(model_factor_count(lasso_matrix_0005)$prop)
 
-weak_en_result %>% ggplot(aes(y = prop,x = Factor))+
+
+
+en_result_0005 %>% ggplot(aes(y = prop,x = Factor))+
   geom_col()
 
 
-weak_en_company_count %>% 
+en_company_count_0005 %>% 
   ggplot(aes(x = prop)) +
   geom_bar()+
   ggtitle("weak Elastic Net Result")
-weak_lasso_company_count %>% 
+lasso_company_count_0005 %>% 
   ggplot(aes(x = prop)) +
   geom_bar()+
   ggtitle("weak Lasso Result")
-weak_quasi_ridge_company_count%>% 
+quasi_ridge_company_count_0005%>% 
   ggplot(aes(x = prop)) +
   geom_bar()+
   ggtitle("weak ridge-like EN Result")
 
-weak_en_company_count %>% 
-  left_join(weak_lasso_company_count, by = "Ticker") %>%
-  left_join(weak_quasi_ridge_company_count, by = "Ticker") %>% 
+en_company_count_0005 %>% 
+  left_join(lasso_company_count_0005, by = "Ticker") %>%
   dplyr::select(everything(),en = prop.x, lasso = prop.y, quasi_ridge = prop) %>% 
   pivot_longer(c("en", "lasso", "quasi_ridge")) %>% 
   ggplot(aes(x = value))+
@@ -38,35 +42,39 @@ weak_en_company_count %>%
   #facet_wrap(.~name)
   geom_density(aes(color = name))
 
-matrix_compare(weak_en_matrix, weak_lasso_matrix)
+matrix_compare(en_matrix_0005, lasso_matrix_0005)
 
 comp_0005
 sum(comp_0005$toler)/nrow(comp_0005)
 sum(comp_0005$exact)/nrow(comp_0005)
 
 ### All semi strong factors: Strength between 0.7 and 0.8 alpha = 0.411
-semi_en_result       ; semi_lasso_result       ; semi_quasi_ridge_result
-semi_en_model        ; semi_lasso_model        ; semi_quasi_ridge_model
-semi_en_coef         ; semi_lasso_coef         ; semi_quasi_ridge_coef
-semi_en_matrix       ; semi_lasso_matrix       ; semi_quasi_ridge_matrix
-semi_en_company_count; semi_lasso_company_count; semi_quasi_ridge_company_count
+en_result_0607    ; lasso_result_0607
+en_model_0607     ; lasso_model_0607
+en_coef_0607      ; lasso_coef_0607   
+en_matrix_0607       ; lasso_matrix_0607       
+en_company_count_0607; lasso_company_count_0607
 
-semi_en_company_count %>% 
+mean(model_factor_count(en_matrix_0607)$count)
+mean(model_factor_count(en_matrix_0607)$prop)
+mean(model_factor_count(lasso_matrix_0607)$count)
+mean(model_factor_count(lasso_matrix_0607)$prop)
+
+en_company_count_0607 %>% 
   ggplot(aes(x = prop)) +
   geom_bar()+
   ggtitle("semi strong Elastic Net Result")
-semi_lasso_company_count %>% 
+lasso_company_count_0607 %>% 
   ggplot(aes(x = prop)) +
   geom_bar()+
   ggtitle("semi strong Lasso Result")
-semi_quasi_ridge_company_count%>% 
+quasi_ridge_company_count_0607%>% 
   ggplot(aes(x = prop)) +
   geom_bar()+
   ggtitle("semi strong ridge-like EN Result")
 
 semi_en_company_count %>% 
   left_join(semi_lasso_company_count, by = "Ticker") %>%
-  left_join(semi_quasi_ridge_company_count, by = "Ticker") %>% 
   dplyr::select(everything(),en = prop.x, lasso = prop.y, quasi_ridge = prop) %>% 
   pivot_longer(c("en", "lasso", "quasi_ridge")) %>% 
   ggplot(aes(x = value))+
@@ -81,28 +89,46 @@ sum(comp_0708$exact)/nrow(comp_0708)
 
 
 ### All strong factors: Strength higher than 0.9,  alpha = 0.413
-strong_en_result       ; strong_lasso_result       ; strong_quasi_ridge_result
-strong_en_model        ; strong_lasso_model        ; strong_quasi_ridge_model
-strong_en_coef         ; strong_lasso_coef         ; strong_quasi_ridge_coef
-strong_en_matrix       ; strong_lasso_matrix       ; strong_quasi_ridge_matrix
-strong_en_company_count; strong_lasso_company_count; strong_quasi_ridge_company_count
+en_result_0910; lasso_result_0910
+en_model_0910; lasso_model_0910
+en_coef_0910; lasso_coef_0910
+en_company_count_0910; lasso_company_count_0910
 
-strong_en_company_count %>% 
+mean(model_factor_count(en_matrix_0910)$count)
+mean(model_factor_count(en_matrix_0910)$prop)
+mean(model_factor_count(lasso_matrix_0910)$count)
+mean(model_factor_count(lasso_matrix_0910)$prop)
+
+(en_matrix_0910 %>%
+  pivot_longer(cols = -Origin, names_to = "Ticker", values_to = "Loadings") %>% 
+  filter(Origin != "(Intercept)") %>% 
+  mutate(none_zero = ifelse(Loadings == 0, 0, 1)) %>% 
+  group_by(Ticker) %>% 
+  summarise(select_fact = mean(none_zero)))$select_fact %>% mean()
+
+(lasso_matrix_0910 %>%
+  pivot_longer(cols = -Origin, names_to = "Ticker", values_to = "Loadings") %>% 
+  filter(Origin != "(Intercept)") %>% 
+  mutate(none_zero = ifelse(Loadings == 0, 0, 1)) %>% 
+  group_by(Ticker) %>% 
+  summarise(select_fact = mean(none_zero)) )$select_fact %>% mean()
+
+
+en_company_count_0910 %>% 
   ggplot(aes(x = prop)) +
   geom_bar()+
   ggtitle("strong Elastic Net Result")
-strong_lasso_company_count %>% 
+lasso_company_count_0910 %>% 
   ggplot(aes(x = prop)) +
   geom_bar()+
   ggtitle("strong Lasso Result")
-strong_quasi_ridge_company_count%>% 
+quasi_ridge_company_count_0910%>% 
   ggplot(aes(x = prop)) +
   geom_bar()+
   ggtitle("strong ridge-like EN Result")
 
-strong_en_company_count %>% 
+en_company_count_0910 %>% 
   left_join(strong_lasso_company_count, by = "Ticker") %>%
-  left_join(strong_quasi_ridge_company_count, by = "Ticker") %>% 
   dplyr::select(everything(),en = prop.x, lasso = prop.y, quasi_ridge = prop) %>% 
   pivot_longer(c("en", "lasso", "quasi_ridge")) %>% 
   ggplot(aes(x = value))+
@@ -116,28 +142,32 @@ sum(comp_0910$toler)/nrow(comp_0910)
 sum(comp_0910$exact)/nrow(comp_0910)
 
 ### mix factors: half facotr Strength higher than 0.9, half lower than 0.5 alpha = 0.448
-mix_en_result       ; mix_lasso_result       ; mix_quasi_ridge_result
-mix_en_model        ; mix_lasso_model        ; mix_quasi_ridge_model
-mix_en_coef         ; mix_lasso_coef         ; mix_quasi_ridge_coef
-mix_en_matrix       ; mix_lasso_matrix       ; mix_quasi_ridge_matrix
-mix_en_company_count; mix_lasso_company_count; mix_quasi_ridge_company_count
-
+en_result_mix; lasso_result_mix
+en_model_mix; lasso_model_mix
+en_coef_mix; lasso_coef_mix
+en_matrix_mix; lasso_matrix_mix
+en_company_count_mix; lasso_company_count_mix
 mean(model_factor_count(mix_en_matrix)$count)
 
-mix_en_company_count %>% 
+mean(model_factor_count(en_matrix_mix)$count)
+mean(model_factor_count(en_matrix_mix)$prop)
+mean(model_factor_count(lasso_matrix_mix)$count)
+mean(model_factor_count(lasso_matrix_mix)$prop)
+
+en_company_count_mix %>% 
   ggplot(aes(x = prop)) +
   geom_bar()+
   ggtitle("mixed Elastic Net Result")
-mix_lasso_company_count %>% 
+lasso_company_count_mix %>% 
   ggplot(aes(x = prop)) +
   geom_bar()+
   ggtitle("mixed Lasso Result")
-mix_quasi_ridge_company_count%>% 
+quasi_ridge_company_count_mix%>% 
   ggplot(aes(x = prop)) +
   geom_bar()+
   ggtitle("mixed ridge-like EN Result")
 
-mix_en_company_count %>% 
+en_company_count_mix %>% 
   left_join(mix_lasso_company_count, by = "Ticker") %>%
   left_join(mix_quasi_ridge_company_count, by = "Ticker") %>% 
   dplyr::select(everything(),en = prop.x, lasso = prop.y, quasi_ridge = prop) %>% 
@@ -153,11 +183,16 @@ sum(comp_mix$exact)/nrow(comp_mix)
 
 
 
-en_result_0506       ; lasso_result_0506       ; quasi_ridge_result_0506
-en_model_0506        ; lasso_model_0506        ; quasi_ridge_model_0506
-en_coef_0506         ; lasso_coef_0506         ; quasi_ridge_coef_0506
-en_matrix_0506       ; lasso_matrix_0506       ; quasi_ridge_matrix_0506
-en_company_count_0506; lasso_company_count_0506; quasi_ridge_company_count_0506
+en_result_0506       ; lasso_result_0506       
+en_model_0506        ; lasso_model_0506        
+en_coef_0506         ; lasso_coef_0506         
+en_matrix_0506       ; lasso_matrix_0506       
+en_company_count_0506; lasso_company_count_0506
+
+mean(model_factor_count(en_matrix_0809)$count)
+mean(model_factor_count(en_matrix_0809)$prop)
+mean(model_factor_count(lasso_matrix_0809)$count)
+mean(model_factor_count(lasso_matrix_0809)$prop)
 
 en_company_count_0506 %>% 
   ggplot(aes(x = prop)) +
@@ -189,11 +224,16 @@ sum(comp_0506$exact)/nrow(comp_0506)
 
 
 
-en_result_0607       ; lasso_result_0607       ; quasi_ridge_result_0607
-en_model_0607        ; lasso_model_0607        ; quasi_ridge_model_0607
-en_coef_0607         ; lasso_coef_0607         ; quasi_ridge_coef_0607
-en_matrix_0607       ; lasso_matrix_0607       ; quasi_ridge_matrix_0607
-en_company_count_0607; lasso_company_count_0607; quasi_ridge_company_count_0607
+en_result_0607       ; lasso_result_0607       
+en_model_0607        ; lasso_model_0607        
+en_coef_0607         ; lasso_coef_0607         
+en_matrix_0607       ; lasso_matrix_0607       
+en_company_count_0607; lasso_company_count_0607
+
+mean(model_factor_count(en_matrix_0708)$count)
+mean(model_factor_count(en_matrix_0708)$prop)
+mean(model_factor_count(lasso_matrix_0708)$count)
+mean(model_factor_count(lasso_matrix_0708)$prop)
 
 en_company_count_0607 %>% 
   ggplot(aes(x = prop)) +
@@ -225,11 +265,11 @@ sum(comp_0607$exact)/nrow(comp_0607)
 
 
 
-en_result_0809       ; lasso_result_0809       ; quasi_ridge_result_0809
-en_model_0809        ; lasso_model_0809        ; quasi_ridge_model_0809
-en_coef_0809         ; lasso_coef_0809         ; quasi_ridge_coef_0809
-en_matrix_0809       ; lasso_matrix_0809       ; quasi_ridge_matrix_0809
-en_company_count_0809; lasso_company_count_0809; quasi_ridge_company_count_0809
+en_result_0809       ; lasso_result_0809       
+en_model_0809        ; lasso_model_0809        
+en_coef_0809         ; lasso_coef_0809         
+en_matrix_0809       ; lasso_matrix_0809       
+en_company_count_0809; lasso_company_count_0809
 
 en_company_count_0809 %>% 
   ggplot(aes(x = prop)) +
