@@ -1,40 +1,14 @@
-%\documentclass[12pt]{article}
-%\usepackage{amsmath}
-%\usepackage{mathptmx}
-%\usepackage{setspace}
-%\usepackage{amssymb}
-%\usepackage{float}
-%\usepackage{graphicx}
-%\usepackage{booktabs}
-%\usepackage{subfigure}
-%\usepackage[margin=2.5cm]{geometry}
-%\usepackage[title]{appendix}
-%\usepackage{bm}
-%\usepackage{tcolorbox}
-%\usepackage{apacite}
-\onehalfspacing
-%\usepackage{longtable}
-%\usepackage{diagbox}
-%\usepackage{pdflscape}
-%\usepackage{rotating}
-	%\usepackage{subcaption}
-%	\usepackage{floatrow}
 
-
-
-%\usepackage{fontspec}
-%\setmainfont{Times New Roman}
 \addtolength{\jot}{0.1em}
 \linespread{1}
 \graphicspath{{./plot/}}
 
 
-%\begin{document}
-%	\section{Strength Comparison Tables}\label{strength_table}
+
 
 \begin{landscape}
-			\section{Empirical Application Result}
-			\subsection{Factor Strength Estimation Table}\label{strength_table}
+			\chapter{Empirical Application Result}
+			\section{Factor Strength Estimation Table}\label{strength_table}
 \begin{footnotesize}
 \setlength{\tabcolsep}{2pt}
 \singlespacing
@@ -217,8 +191,8 @@
 			\begin{minipage}{1.4\textwidth}
 	{\footnotesize {\bf Notes:} 
 		This table presents the estimation results of factors' strength, ordered decreasingly by risk factor strength.
-For the estimation, we use the method from Section \ref{strength_multi_estimation},  with one market factor and one risk factor.
-The three data set is describe in the section \ref{data}}
+For the estimation, we use the method from chapter \ref{strength_multi_estimation},  with one market factor and one risk factor.
+The three data set is describe in the chapter \ref{data}}
 \end{minipage}
 \end{footnotesize}
 \end{landscape}
@@ -1504,9 +1478,10 @@ The table is ordered decreasingly base on the full sample factor strength.}
 
 \begin{landscape}
 \begin{figure}[ht]
-\subsection{Strength Comparison Figures}\label{strength_figures}
+\section{Strength Comparison Figures}\label{strength_figures}
 			\centering
-			\caption{Strength Comparison}\label{figure:strength_compare}
+			\caption{Strength Comparison}
+			\label{figure:strength_compare}
 				\includegraphics[scale = 0.75]{strength_comparison_I}
 \end{figure}
 \end{landscape}
@@ -1554,7 +1529,8 @@ The table is ordered decreasingly base on the full sample factor strength.}
 \begin{landscape}
 	\begin{figure}[ht]
 		\centering
-		\caption{Thirty Year Decompose Comparison}\label{figure:thirty_decompose}
+		\caption{Thirty Year Decompose Comparison}
+		\label{figure:thirty_decompose}
 		\includegraphics[scale = 0.75]{thirty_decompose_I}
 	\end{figure}
 \end{landscape}
@@ -1600,19 +1576,26 @@ The table is ordered decreasingly base on the full sample factor strength.}
 
 
 
-\begin{landscape}
-	\begin{figure}[ht]
-		\includegraphics[scale = 0.65]{en_plot}
-		\centering
-	\end{figure}
-\end{landscape}
+%\begin{landscape}
+%	\begin{figure}[ht]
+%		\includegraphics[scale = 0.65]{en_plot}
+%		\centering
+%	\end{figure}
+%\end{landscape}
 
-\begin{landscape}
+%	\subsection{Factor Correlation}\label{factor_correlation}
 	\begin{figure}[ht]
-		\includegraphics[scale = 0.65]{lasso_plot}
+			\section{Factor Correlation}\label{factor_correlation}
 		\centering
+				\caption{Risk Factors Correlation Coefficient}
+		\label{figure:correlation}
+		\includegraphics[scale = 0.7]{correlation_heat_map}
+		\centering
+				\begin{minipage}{\textwidth}
+			{\footnotesize {\bf Notes:} The figure visualize the correlation coefficient among 145 risk factors included in this paper. From the lower-left corner to the upper-right corner, the factor strength of each factors increases. We can see that the dark colours are clustering in the lower-left corner, this means that factor with strong strength present high correlation with other factor with strong strength. With the decrease of the factor strength, the correlation diminish. }
+		\end{minipage}
 	\end{figure}
-\end{landscape}
+
 
 %\begin{landscape}
 %	\begin{figure}[ht]

@@ -1,4 +1,4 @@
-\documentclass[12pt]{article}
+\documentclass[12pt]{report}
 \usepackage{amsmath}
 \usepackage{mathptmx}
 \usepackage{setspace}
@@ -12,16 +12,17 @@
 \usepackage{bm}
 \usepackage{tcolorbox}
 \usepackage{apacite}
-\linespread{1.5}
-%\usepackage{lineno}
-%\linenumbers
+\linespread{1.75}
 \usepackage{diagbox}
 \usepackage{longtable}
 \usepackage{pdflscape}
 \usepackage{rotating}
-%\usepackage{subcaption}
-%\usepackage{floatrow}
-%\usepackage{fontspec}
+\usepackage{fancyhdr}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[CE,CO]{\leftmark}
+\fancyfoot[CE,CO]{\thepage}
 
 
 \DeclareMathOperator*{\argmin}{arg\,min}
@@ -32,10 +33,6 @@
 \usepackage{fontspec}
 \setmainfont{Times New Roman}
 \addtolength{\jot}{0.5em}
-
-
-%\doublespacing
-\linespread{2}%1.23
 
 \begin{document}
 	\input{titlepage.tex}
@@ -50,11 +47,16 @@
 \pagenumbering{arabic}
 
 \input{introduction_and_literature_review.tex}
+
 \input{factor_strength.tex}
+
 \input{monte_carlo.tex}
+
 %\input{elastic_net.tex}
 \input{empirical_application_factor_strength.tex}
+
 \input{elastic_net_application.tex}
+
 \input{conclusion.tex}
 
 

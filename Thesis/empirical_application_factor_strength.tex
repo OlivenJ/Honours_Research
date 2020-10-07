@@ -1,49 +1,13 @@
-%\documentclass[12pt]{article}
-%\usepackage{amsmath}
-%\usepackage{mathptmx}
-%\usepackage{setspace}
-%\usepackage{amssymb}
-%\usepackage{float}
-%\usepackage{graphicx}
-%\usepackage{booktabs}
-%\usepackage{subfigure}
-%\usepackage[margin=2.5cm]{geometry}
-%\usepackage[title]{appendix}
-%\usepackage{bm}
-%\usepackage{tcolorbox}
-%\usepackage{apacite}
-%\onehalfspacing
-%\usepackage{lineno}
-%\linenumbers
-%\usepackage{diagbox}
-
-%\DeclareMathOperator*{\argmin}{arg\,min}
-%\newtheorem{experiment}{Experiment}
-
-
-
-%\usepackage{fontspec}
-%\setmainfont{Times New Roman}
-%\addtolength{\jot}{0.5em}
-%\linespread{1.5}
-
-%\begin{document}
-	\section{Empirical Application of Factor Strength}\label{Empirical:factor_strength}
+\chapter{Empirical Application of Factor Strength}\label{Empirical:factor_strength}
 	
 Researchers and practitioners have been using the CAPM model \cite{Sharpe1964, Lintner1965, Black1972} and its multi-factor extension (For example, the three-factor model by \citeA{Fama1992}) when they are trying to capture the uncertainty of asset's return.
 The surging of new factors \cite{Harvey2019} provides numerous option to construct the CAPM model, but it also requires users to pick the factors wisely.
-In this section, we will use the method introduced in the section \ref{strength} to estimates the factor strength of 146 candidate factors.
-%In this section, we will use two different methods to identify appropriate factors from a group of 146 candidates.
-First, we introduce the data set used in this empirical section, and the setting for the estimation process.
+In this chapter, we will use the method introduced in the chapter \ref{strength} to estimates the factor strength of 146 candidate factors.
+
+First, we introduce the data set used in this empirical chapter, and the setting for the estimation process.
 Then, we discuss the findings from the estimation results.
-The estimated factors strength provides us a starting point when applied the elastic net method in the section \ref{Empirical:Elastic_net}.
-%First, we utilise the method introduced in section \ref{strength} to estimates the strength of each factor from the factor group.
-%Then, we use the strength as a criterion to select factors including in the CAPM model.
-%In the second part of this section, we apply the elastic net method, ask the algorithm to pick factors for us.
-%We will compare the factors selected by those two approaches, expected a consistent selection outcome.
-%Through the empirical application, we also found that under certain conditions, we will obtain a generous CAPM model with too many factors, when using factor strength as the criterion.
-%Therefore, additionally, we apply the elastic net method to further shrinkage down factor selection.
-	\subsection{Data}\label{data}
+The estimated factors strength provides us a starting point when applied the Elastic net method in the chapter \ref{Empirical:Elastic_net}.
+	\section{Data for estimating factor strength}\label{data}
 	
 In the empirical application part, we use the monthly returns on U.S. securities as the assets.
 The companies are selected from Standard Poor (S\&P) 500 index component companies.\footnote{The companies return data was obtained from the Global Finance Data: http://www.globalfinancialdata.com/,\\ Osiris: https://www.bvdinfo.com/en-gb/our-products/data/international/osiris, \\and Yahoo Finance: https://finance.yahoo.com/.}
@@ -78,15 +42,15 @@ The factor set also includes the market factor, represented by the difference be
 The average market return is a weighted average return of all stocks in the U.S. market, incorporated by CSRP.
 Each factor contains observations from January 1988 to December 2017.
 
-\subsection{Factor Strength Estimation Setting}
-For the first part of the empirical application, we estimate the factor strength using the method discussed in section \ref{strength}.
-More precisely, we set the regression models based on section \ref{strength_multi_estimation}.
+\section{Factor Strength Estimation Setting}
+For the first part of the empirical application, we estimate the factor strength using the method discussed in chapter \ref{strength}.
+More precisely, we set the regression models based on chapter \ref{strength_multi_estimation}.
 \begin{align*}
   x_{it} &= a_i + \beta_{im}(r_{mt} - r_{ft}) + v_{it} \\
  x_{it} &= a_i + \beta_{im}(r_{mt} - r_{ft}) + \beta_{ij}f_{jt} + v_{it} 
 \end{align*}
 
-Here $x_{it}$ is the excess return of asset i at time t, which is pre-defined in section \ref{data}.
+Here $x_{it}$ is the excess return of asset i at time t, which is pre-defined in chapter \ref{data}.
 $r_{mt} - r_{ft}$ represents the market factor, calculated by the difference between average market return and risk-free return at the same time t.
 $f_{jt}$ is the value of $j^{th}$ risk factor  at time t. 
 Here $j = 1, 2, 3,\cdots 145$ . 
@@ -96,7 +60,7 @@ We use two different regressions in the purpose of estimating the strength under
 However, due to the potential correlations among factors, we will only focus the market factor strength when using the first single factor regression.
 
 
-	\subsection{Factor Strength Findings}
+	\section{Factor Strength Findings}
 The complete set of results of factor strength estimation is presented in the appendix \ref{strength_table} and \ref{strength_figures}.
 We estimated the factors' strength using three different data sets discussed in the \ref{data}, and rank those strength from strong to weak, alongside the market factor strength, in the table (\ref{table:three_ranked_compare}).
 
@@ -117,7 +81,6 @@ As we expected, the estimated strength of market factor under all three scenario
 All three market factor strengths are close to unity, which indicates that the market factor can generate significant factor loading almost all time for every asset.
 Although the value is close to one, we still notice that the strength will increase slightly with the time span extended.
 This might indicate that for the security returns, from the long run, it will more closely mimic the behaviours of the market than the short run. 
-%=============================%Newly Added%=================================%
 Then, we turn to the double factor CAPM setting.
 Under the double factor setting, we estimates every companies' stock return using market facto plus another risk factors.
 Therefore we will obtain the market factor strength for each single risk factors.
@@ -128,7 +91,6 @@ Table\ref{table:market} shows that the estimated strength is consistent with the
 All three data sets provides extremely strong results, strengths are close to one.
 Overall, the market factor results indicates that the market factor can generate significant loadings for almost every companies' return at any time.
 Such conclusion fits with the financial theory states that individual stocks will in general move with the market.
-%=============================================================================%
 When looking at other factors,  the ten-year data set in general provides a significantly weaker result, compares with the other two data sets results.
 Except for the market factor, no other factors from the ten-years result show strength above 0.8.
 The strongest factor besides the market factor is the beta factor which has strength around 0.75.
@@ -194,29 +156,11 @@ This might indicates a persistent risk pricing ability of these three factors ex
 		\hline
 	\end{tabular}
 \end{table}
-%But it worth notice that the market factor is consistently strong.
-%The strength of market factor is close to unity all the time in the twenty year result, but decrease gradually when the t is growing %and n is decreasing.
-%However, we also find that the market factor strength will decrease with the increase of observation and decrease of units.
-%For instance, the market factor in the twenty year results, in general, it decrease from 0.98 to around 0.96, and it decreased %further to 0.9 in the thirty year estimation result.
-%But not matter in which data set, the market factor is always the strongest factor.
-
-%\begin{table}[]
-%	\centering
-%		\caption{Fama and French value and size factor, with Momentum Factor strength}
-%	\begin{tabular}{l|ccc}
-%		\hline
-%		\hline
-%		Factor & Ten Year Estimation & Twenty Year Estimation & Thirty Year Estimation \\ \hline
-%				SMB (Size)    & 0.512               & 0.745                  & 0.721                  \\
-%		HML (Value)    & 0.672               & 0.873                  & 0.811                  \\
-%		UMD  (Momentum)  & 0.678               & 0.703                  & 0.672                  \\ \hline \hline
-%	\end{tabular}
-%\end{table}
 
 We also focus on some well-known factors, namely the Fama-French size factor (Small Minus Big SMB), Fama-French Value factor (High Minus Low: HML) \cite{Fama1992} and the Momentum factor (UMD) \cite{Carhart1997}.
 It is surprising that none of these three factors enters the top fifteen list for each data sets.
 Except for the HML factor from the twenty and thirty-year data set has strength closely around 0.9, none of the other factors in any data set shows strength higher than 0.85.
-%The value factor SMB from the ten year data set only has strength 0.512, ranked no.87.
+
 When using the ten-year data, both UMD and HML has strength around 0.67, and the SMB only has strength 0.512.
 Results from the twenty-year data set show that HML has strength 0.905, for SMB and UMD the strength are 0.770 and 0.733 respectively.
 Comparing with the twenty-year results, the thirty-year estimated strength change slightly, HML decreases to 0.894, SMB is 0.804 and UMD has strength 0.745.
@@ -232,18 +176,6 @@ In general, we can conclude that about 80\% factors, their strength gradually in
 This pattern can also be seen in the figure (\ref{figure:thirty_decompose}).
 The drop of factor strength in the third decades can be reconciled with the ten-year data results shows a significantly weaker strength than the results from twenty and thirty years data set.
 
-%has been regards as the main reasons why the ten-years data results shows a significantly weaker results than the twenty and thirty years data set.
-
-
-%The strength has been dragged down by the data from 2007 to 2017.
-%One possible explanation is that the Great Financial Crisis happened during the 2007 to 2008 has distorted the risk pricing mechanism of some factors.
-
-%Also, from the simulation results (see appendix \ref{simulationtable}), we find that when the n < t, in other words, when the units is less than the observation, the overall bias will be negative.
-%This indicates that the strength from the thirty-year data is underestimated.
-%After taking this correction into consideration, we may have a more close results between the twenty and thirty years dataset estimations.
-%For some factors does not follow this rule, we find that they usually have very weak strength in all three periods, for instance the std\_dolvol (volume of liquidity) factor, we can see that in all three periods, the strength has never excess the 0.5 threshold.
-
-%\subsubsection{Conclusion and Explanation}
 Overall from the factor strength prospect, we would expect that for different time periods, we will have different candidate factors for the CAPM model.
 For the ten-year data set, we would expect that only the market factor be useful, and therefore the elastic net method applied latter may only select the market factor.
 If we use the twenty and thirty-year data, we will have a longer list for potential factors, 62 factors from the twenty-year estimation and 45 from the thirty years has strength greater than 0.8.
@@ -255,7 +187,6 @@ This is because the S\&P index will adjust the component, remove companies with 
 Hence, those 242 companies in the thirty-year data set can be viewed as survivals after a series of financial and economic crisis.
 We would expect those companies will have above average performances, such as better profitability and administration, compared with other companies. 
 
-%{\bf Notes: (But for how will those merits influence the factor's risk pricing ability is unclear for now)}
 
 Another possible explanation the happening of a series of political and financial unease from the time of late 20 century to 2008.
 Crisis like the Russia financial crisis in 1998, the bankruptcy of Long Term Capital Management (LTCM) in 2000, the dot com bubble crisis in early 21st century and the Global Financial Crisis (GFC) in 2008 creates market disturbances.
@@ -268,46 +199,3 @@ We also need to notice that for some factors, their strength will decrease with 
 For instance, the gma (gross profitability) factor and dwc (change in net non-cash working capital) factor (see figure \ref{figure:thirty_decompose}) has consecutive strength decrease from the 1987-1997 period to 2007-2017 period.
 And for most of the factors, their strength will decrease significantly from the 1997-2007 period to 2007-2017 period.
 Therefore, disqualify some factors as the candidate of the CAPM model when using recent year data is inevitable.
-
-
-
-
-%Beside, from the simulation results (see appendix \ref{simulationtable}), we find that when we have a unbalanced panel (when n < t, the unit is smaller than the observation), we will have negative bias results.
-%This indicates that the strength is underestimated in that scenario.
-%Therefore, we could inference that the factor strength will be stronger than what we estimated if we use the thirty-year data.
-%After taking this correction into consideration, we may have a more closer results between the twenty and thirty years estimation.
-
-%From the estimation, we see the factor strength will change through time.
-%And from the factor selection prospect, we would expect to have selecting different factors when using different dataset, there is no unanimity factors with regard of risk pricing.
-%The decomposition of thirty years data shows that most factors' strength increases from the first decade (January 1988 - December 1997) to the second decade (January 1998 to December 2007), and then drops in the third decade (January 2008 to December 2017).
-%But from the simulation result (see section \ref{MC} and appendix \ref{simulationtable}), we can see that when the observation amount is larger than the unit amount, i.e. when the t > n, we have negative bias, which indicates that the estimated strength $\hat{\alpha}$ is smaller than the true strength $\alpha$.
-%In the thirty year data set, we have t = 360, and n = 242.
-%Therefore, we can reasonable assume that the factor strength is under estimates.
-%Consider such correction, the true strength of factor using data from the thirty year data to estimates may have similar strength as using twenty year data.
-
-%\begin{table}[]
-%	\centering
-%	\caption{RMSE between different data set estimation result}\label{table:RMSE_strength}
-%	\begin{tabular}{rl|r}
-	%	\hline
-%		\hline
-%		& Pair           & Difference \\ \hline
-%		1 & Ten : Twenty    & 0.254 \\
-%		2 & Ten : Thirty    & 0.220 \\
-%		3 & Twenty : Thirty & 0.06  \\ \hline \hline
-%	\end{tabular}
-%\end{table}
-
-%We also use the formula:
-%\[ Differnce  = \sqrt{\sum_{i = 1}^{145}(\widehat{\alpha_{xi}} - \widehat{\alpha_{yi}})^2}  \]
-%to calculates the Root Mean Square Difference between any two different strength results (see table(\ref{table:RMSE_strength})).
-%Here the $\widehat{\alpha_{xi}}$ and $\widehat{\alpha_{yi}}$ each represents the estimates factor strength of $i^{th}$ factor from different data sets. 
-%The difference between twenty and thirty year data sets results is significantly smaller than the differences between ten-twenty and ten-thirty.
-
-
-
-
-%\newpage
-%\bibliographystyle{apacite}
-%\bibliography{thesis.bib}
-%\end{document}

@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2020.5.27)  5 OCT 2020 22:30
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2020.5.27)  7 OCT 2020 22:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -6,19 +6,20 @@ entering extended mode
 (./thesis.tex
 LaTeX2e <2020-02-02> patch level 5
 L3 programming layer <2020-05-15>
-(/usr/local/texlive/2020/texmf-dist/tex/latex/base/article.cls
-Document Class: article 2019/12/20 v1.4l Standard LaTeX document class
+(/usr/local/texlive/2020/texmf-dist/tex/latex/base/report.cls
+Document Class: report 2019/12/20 v1.4l Standard LaTeX document class
 (/usr/local/texlive/2020/texmf-dist/tex/latex/base/size12.clo
 File: size12.clo 2019/12/20 v1.4l Standard LaTeX file (size option)
 )
 \c@part=\count163
-\c@section=\count164
-\c@subsection=\count165
-\c@subsubsection=\count166
-\c@paragraph=\count167
-\c@subparagraph=\count168
-\c@figure=\count169
-\c@table=\count170
+\c@chapter=\count164
+\c@section=\count165
+\c@subsection=\count166
+\c@subsubsection=\count167
+\c@paragraph=\count168
+\c@subparagraph=\count169
+\c@figure=\count170
+\c@table=\count171
 \abovecaptionskip=\skip47
 \belowcaptionskip=\skip48
 \bibindent=\dimen134
@@ -43,13 +44,13 @@ Package: amsbsy 1999/11/29 v1.2d Bold Symbols
 (/usr/local/texlive/2020/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 2016/03/08 v2.02 operator names
 )
-\inf@bad=\count171
+\inf@bad=\count172
 LaTeX Info: Redefining \frac on input line 227.
-\uproot@=\count172
-\leftroot@=\count173
+\uproot@=\count173
+\leftroot@=\count174
 LaTeX Info: Redefining \overline on input line 389.
-\classnum@=\count174
-\DOTSCASE@=\count175
+\classnum@=\count175
+\DOTSCASE@=\count176
 LaTeX Info: Redefining \ldots on input line 486.
 LaTeX Info: Redefining \dots on input line 489.
 LaTeX Info: Redefining \cdots on input line 610.
@@ -58,15 +59,15 @@ LaTeX Info: Redefining \cdots on input line 610.
 \big@size=\dimen137
 LaTeX Font Info:    Redeclaring font encoding OML on input line 733.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 734.
-\macc@depth=\count176
-\c@MaxMatrixCols=\count177
+\macc@depth=\count177
+\c@MaxMatrixCols=\count178
 \dotsspace@=\muskip16
-\c@parentequation=\count178
-\dspbrk@lvl=\count179
+\c@parentequation=\count179
+\dspbrk@lvl=\count180
 \tag@help=\toks16
-\row@=\count180
-\column@=\count181
-\maxfields@=\count182
+\row@=\count181
+\column@=\count182
+\maxfields@=\count183
 \andhelp@=\toks17
 \eqnshift@=\dimen138
 \alignsep@=\dimen139
@@ -132,7 +133,7 @@ LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 ))
 (/usr/local/texlive/2020/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count183
+\c@float@type=\count184
 \float@exts=\toks20
 \float@box=\box47
 \@float@everytoks=\toks21
@@ -174,12 +175,12 @@ Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
 \cmidrulesep=\dimen153
 \cmidrulekern=\dimen154
 \defaultaddspace=\dimen155
-\@cmidla=\count184
-\@cmidlb=\count185
+\@cmidla=\count185
+\@cmidlb=\count186
 \@aboverulesep=\dimen156
 \@belowrulesep=\dimen157
-\@thisruleclass=\count186
-\@lastruleclass=\count187
+\@thisruleclass=\count187
+\@lastruleclass=\count188
 \@thisrulewidth=\dimen158
 )
 (/usr/local/texlive/2020/texmf-dist/tex/latex/subfigure/subfigure.sty
@@ -190,10 +191,10 @@ Package: subfigure 2002/03/15 v2.1.5 subfigure package
 \subfigbottomskip=\skip54
 \subfigcapmargin=\dimen160
 \subfiglabelskip=\skip55
-\c@subfigure=\count188
-\c@lofdepth=\count189
-\c@subtable=\count190
-\c@lotdepth=\count191
+\c@subfigure=\count189
+\c@lofdepth=\count190
+\c@subtable=\count191
+\c@lotdepth=\count192
 
 ****************************************
 * Local config file subfigure.cfg used *
@@ -211,9 +212,9 @@ Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 (/usr/local/texlive/2020/texmf-dist/tex/generic/iftex/iftex.sty
 Package: iftex 2020/03/06 v1.0d TeX engine tests
 ))
-\Gm@cnth=\count192
-\Gm@cntv=\count193
-\c@Gm@tempcnt=\count194
+\Gm@cnth=\count193
+\Gm@cntv=\count194
+\c@Gm@tempcnt=\count195
 \Gm@bindingoffset=\dimen161
 \Gm@wd@mp=\dimen162
 \Gm@odd@mp=\dimen163
@@ -226,9 +227,9 @@ Package: iftex 2020/03/06 v1.0d TeX engine tests
 )
 (/usr/local/texlive/2020/texmf-dist/tex/latex/appendix/appendix.sty
 Package: appendix 2020/02/08 v1.2c extra appendix facilities
-\c@@pps=\count195
-\c@@ppsavesec=\count196
-\c@@ppsaveapp=\count197
+\c@@pps=\count196
+\c@@ppsavesec=\count197
+\c@@ppsaveapp=\count198
 )
 (/usr/local/texlive/2020/texmf-dist/tex/latex/tools/bm.sty
 Package: bm 2019/07/24 v1.2d Bold Symbol Support (DPC/FMi)
@@ -282,14 +283,14 @@ ode.tex
 \pgf@yd=\dimen180
 \w@pgf@writea=\write3
 \r@pgf@reada=\read2
-\c@pgf@counta=\count198
-\c@pgf@countb=\count199
-\c@pgf@countc=\count266
-\c@pgf@countd=\count267
+\c@pgf@counta=\count199
+\c@pgf@countb=\count266
+\c@pgf@countc=\count267
+\c@pgf@countd=\count268
 \t@pgf@toka=\toks28
 \t@pgf@tokb=\toks29
 \t@pgf@tokc=\toks30
-\pgf@sys@id@count=\count268
+\pgf@sys@id@count=\count269
 
 (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
 File: pgf.cfg 2020/01/08 v3.1.5b (3.1.5b)
@@ -308,13 +309,13 @@ File: pgfsys-dvipdfmx.def 2020/01/08 v3.1.5b (3.1.5b)
 df.def
 File: pgfsys-common-pdf.def 2020/01/08 v3.1.5b (3.1.5b)
 )
-\pgfsys@objnum=\count269
+\pgfsys@objnum=\count270
 )))
 (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.
 code.tex
 File: pgfsyssoftpath.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgfsyssoftpath@smallbuffer@items=\count270
-\pgfsyssoftpath@bigbuffer@items=\count271
+\pgfsyssoftpath@smallbuffer@items=\count271
+\pgfsyssoftpath@bigbuffer@items=\count272
 )
 (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.
 code.tex
@@ -342,7 +343,7 @@ Package: pgfcore 2020/01/08 v3.1.5b (3.1.5b)
 (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex)
 (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
 \pgfmath@dimen=\dimen181
-\pgfmath@count=\count272
+\pgfmath@count=\count273
 \pgfmath@box=\box50
 \pgfmath@toks=\toks31
 \pgfmath@stack@operand=\toks32
@@ -367,7 +368,7 @@ code.tex)
 (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integ
 erarithmetics.code.tex)))
 (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
-\c@pgfmathroundto@lastzeros=\count273
+\c@pgfmathroundto@lastzeros=\count274
 )) (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfint.code.tex)
 (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.co
 de.tex
@@ -405,7 +406,7 @@ File: pgfcorescopes.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 \pgfpic=\box51
 \pgf@hbox=\box52
 \pgf@layerbox@main=\box53
-\pgf@picture@serial@count=\count274
+\pgf@picture@serial@count=\count275
 )
 (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicst
 ate.code.tex
@@ -440,8 +441,8 @@ File: pgfcorearrows.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 e.tex
 File: pgfcoreshade.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 \pgf@max=\dimen261
-\pgf@sys@shading@range@num=\count275
-\pgf@shadingcount=\count276
+\pgf@sys@shading@range@num=\count276
+\pgf@shadingcount=\count277
 )
 (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.cod
 e.tex
@@ -500,15 +501,15 @@ Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
 ))
 (/usr/local/texlive/2020/texmf-dist/tex/latex/etoolbox/etoolbox.sty
 Package: etoolbox 2019/09/21 v2.5h e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count277
+\etb@tempcnta=\count278
 )
 \tcb@titlebox=\box56
 \tcb@upperbox=\box57
 \tcb@lowerbox=\box58
 \tcb@phantombox=\box59
-\c@tcbbreakpart=\count278
-\c@tcblayer=\count279
-\c@tcolorbox@number=\count280
+\c@tcbbreakpart=\count279
+\c@tcblayer=\count280
+\c@tcolorbox@number=\count281
 \tcb@temp=\box60
 \tcb@temp=\box61
 \tcb@temp=\box62
@@ -518,7 +519,7 @@ Package: etoolbox 2019/09/21 v2.5h e-TeX tools for LaTeX (JAW)
 )
 (/usr/local/texlive/2020/texmf-dist/tex/latex/apacite/apacite.sty
 Package: apacite 2013/07/21 v6.03 APA citation
-\c@BibCnt=\count281
+\c@BibCnt=\count282
 \bibleftmargin=\skip58
 \bibindent=\skip59
 \bibparsep=\skip60
@@ -547,15 +548,15 @@ File: p2e-xetex.def 2016/02/05 v0.1u Driver-dependant file (RN,HjG,JT)
 )
 (/usr/local/texlive/2020/texmf-dist/tex/latex/tools/calc.sty
 Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count282
-\calc@Bcount=\count283
+\calc@Acount=\count283
+\calc@Bcount=\count284
 \calc@Adimen=\dimen267
 \calc@Bdimen=\dimen268
 \calc@Askip=\skip63
 \calc@Bskip=\skip64
 LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count284
+\calc@Ccount=\count285
 \calc@Cskip=\skip65
 )
 (/usr/local/texlive/2020/texmf-dist/tex/latex/tools/array.sty
@@ -584,16 +585,16 @@ Package: longtable 2020/01/07 v4.13 Multi-page Table package (DPC)
 \LTright=\skip69
 \LTpre=\skip70
 \LTpost=\skip71
-\LTchunksize=\count285
+\LTchunksize=\count286
 \LTcapwidth=\dimen277
 \LT@head=\box69
 \LT@firsthead=\box70
 \LT@foot=\box71
 \LT@lastfoot=\box72
-\LT@cols=\count286
-\LT@rows=\count287
-\c@LT@tables=\count288
-\c@LT@chunks=\count289
+\LT@cols=\count287
+\LT@rows=\count288
+\c@LT@tables=\count289
+\c@LT@chunks=\count290
 \LT@p@ftn=\toks38
 )
 (/usr/local/texlive/2020/texmf-dist/tex/latex/pdflscape/pdflscape.sty
@@ -620,14 +621,34 @@ Package: rotating 2016/08/11 v2.16d rotated objects in LaTeX
 (/usr/local/texlive/2020/texmf-dist/tex/latex/base/ifthen.sty
 Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 )
-\c@r@tfl@t=\count290
+\c@r@tfl@t=\count291
 \rotFPtop=\skip72
 \rotFPbot=\skip73
 \rot@float@box=\box73
 \rot@mess@toks=\toks39
 )
-\c@experiment=\count291
+(/usr/local/texlive/2020/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
+Package: fancyhdr 2019/01/31 v3.10 Extensive control of page headers and footer
+s
+\f@nch@headwidth=\skip74
+\f@nch@O@elh=\skip75
+\f@nch@O@erh=\skip76
+\f@nch@O@olh=\skip77
+\f@nch@O@orh=\skip78
+\f@nch@O@elf=\skip79
+\f@nch@O@erf=\skip80
+\f@nch@O@olf=\skip81
+\f@nch@O@orf=\skip82
+)
 
+Package Fancyhdr Warning: \fancyhead's `E' option without twoside option is use
+less on input line 24.
+
+
+Package Fancyhdr Warning: \fancyfoot's `E' option without twoside option is use
+less on input line 25.
+
+\c@experiment=\count292
 (/usr/local/texlive/2020/texmf-dist/tex/latex/fontspec/fontspec.sty
 (/usr/local/texlive/2020/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
 (/usr/local/texlive/2020/texmf-dist/tex/latex/l3kernel/expl3.sty
@@ -635,35 +656,35 @@ Package: expl3 2020-05-15 L3 programming layer (loader)
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/l3backend/l3backend-xdvipdfmx.def
 File: l3backend-xdvipdfmx.def 2020-05-05 L3 backend support: xdvipdfmx
-\g__graphics_track_int=\count292
+\g__graphics_track_int=\count293
 \l__pdf_internal_box=\box74
-\g__pdf_backend_object_int=\count293
-\g__pdf_backend_annotation_int=\count294
+\g__pdf_backend_object_int=\count294
+\g__pdf_backend_annotation_int=\count295
 ))
 Package: xparse 2020-05-15 L3 Experimental document command parser
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/l3packages/xparse/xparse-generic.
 tex
-\l__xparse_current_arg_int=\count295
-\g__xparse_grabber_int=\count296
-\l__xparse_m_args_int=\count297
-\l__xparse_v_nesting_int=\count298
+\l__xparse_current_arg_int=\count296
+\g__xparse_grabber_int=\count297
+\l__xparse_m_args_int=\count298
+\l__xparse_v_nesting_int=\count299
 ))
 Package: fontspec 2020/02/21 v2.7i Font selection for XeLaTeX and LuaLaTeX
  (/usr/local/texlive/2020/texmf-dist/tex/latex/fontspec/fontspec-xetex.sty
 Package: fontspec-xetex 2020/02/21 v2.7i Font selection for XeLaTeX and LuaLaTe
 X
-\l__fontspec_script_int=\count299
-\l__fontspec_language_int=\count300
-\l__fontspec_strnum_int=\count301
-\l__fontspec_tmp_int=\count302
-\l__fontspec_tmpa_int=\count303
-\l__fontspec_tmpb_int=\count304
-\l__fontspec_tmpc_int=\count305
-\l__fontspec_em_int=\count306
-\l__fontspec_emdef_int=\count307
-\l__fontspec_strong_int=\count308
-\l__fontspec_strongdef_int=\count309
+\l__fontspec_script_int=\count300
+\l__fontspec_language_int=\count301
+\l__fontspec_strnum_int=\count302
+\l__fontspec_tmp_int=\count303
+\l__fontspec_tmpa_int=\count304
+\l__fontspec_tmpb_int=\count305
+\l__fontspec_tmpc_int=\count306
+\l__fontspec_em_int=\count307
+\l__fontspec_emdef_int=\count308
+\l__fontspec_strong_int=\count309
+\l__fontspec_strongdef_int=\count310
 \l__fontspec_tmpa_dim=\dimen278
 \l__fontspec_tmpb_dim=\dimen279
 \l__fontspec_tmpc_dim=\dimen280
@@ -696,27 +717,27 @@ Package fontspec Info: Font family 'TimesNewRoman(0)' created for font 'Times
 (./thesis.aux)
 \openout1 = `thesis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 40.
-LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 4
-0.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 37.
+LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 3
+7.
  (/usr/local/texlive/2020/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: xetex
@@ -753,7 +774,7 @@ LaTeX Font Info:    ... okay on input line 40.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 ABD: EveryShipout initializing macros
-\c@maskedRefs=\count310
+\c@maskedRefs=\count311
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/apacite/english.apc
 File: english.apc 2013/07/21 v6.03 apacite language file
@@ -764,7 +785,13 @@ LaTeX Info: Redefining \BHBI on input line 130.
 
 (./titlepage.tex [1
 
-]) [1] (./thesis.toc
+] [1
+
+] [2
+
+]) [1
+
+] (./thesis.toc
 LaTeX Font Info:    Trying to load font information for OT1+ztmcm on input line
  4.
 
@@ -801,75 +828,115 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 4.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 4.
- [2])
+ [2
+
+])
 \tf@toc=\write6
 \openout6 = `thesis.toc'.
 
- [3]
-(./thesis.lof)
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+Make it at least 14.49998pt.
+We now make it that large for the rest of the document.
+This may cause the page layout to be inconsistent, however.
+
+[3] (./thesis.lof)
 \tf@lof=\write7
 \openout7 = `thesis.lof'.
 
- (./thesis.lot)
+ [4
+
+] (./thesis.lot)
 \tf@lot=\write8
 \openout8 = `thesis.lot'.
 
- [4] [5] (./introduction_and_literature_review.tex
-Overfull \hbox (3.32684pt too wide) in paragraph at lines 21--31
+ [5
+
+] [6]
+(./introduction_and_literature_review.tex
+Chapter 1.
+[1
+
+]
+Overfull \hbox (3.32684pt too wide) in paragraph at lines 16--25
 \TU/TimesNewRoman(0)/m/n/12 risk. This address reflects one problem of the fact
 or model in finance: due to the data mining/multiple
  []
 
-[1] [2] [3] [4]) (./factor_strength.tex [5] [6] [7] [8] [9]) (./monte_carlo.tex
-[10] [11] [12]
-Overfull \hbox (0.81912pt too wide) in paragraph at lines 98--100
+[2] [3]
+Chapter 2.
+[4
+
+]) [5] (./factor_strength.tex [6]
+Chapter 3.
+[7
+
+] [8] [9]
+
+Package mathptmx Warning: There are no bold math fonts on input line 88.
+
+[10]) (./monte_carlo.tex [11]
+Chapter 4.
+[12
+
+] [13]
+Overfull \hbox (0.81912pt too wide) in paragraph at lines 77--79
 []\TU/TimesNewRoman(0)/m/it/12 Both $\OML/ztmcm/m/it/12 ^^L[]$ \TU/TimesNewRoma
 n(0)/m/it/12 and $\OML/ztmcm/m/it/12 ^^L[]$ \TU/TimesNewRoman(0)/m/it/12 are no
 n-zero. Er-
  []
 
-[13] [14] [15]) (./empirical_application_factor_strength.tex [16]
+[14] [15]) (./empirical_application_factor_strength.tex [16]
+Chapter 5.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 49.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 13.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 49.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 13.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 49.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 13.
+[17
 
-Overfull \hbox (19.05046pt too wide) in paragraph at lines 59--66
+]
+Overfull \hbox (19.05046pt too wide) in paragraph at lines 23--30
  [][] 
  []
 
 
-Overfull \hbox (3.45746pt too wide) in paragraph at lines 67--67
+Overfull \hbox (3.45746pt too wide) in paragraph at lines 31--31
 [][]\TU/TimesNewRoman(0)/m/n/10 The risk free rate was from the Kenneth R. Fren
 ch website: http://mba.tuck.dartmouth.edu/pages/faculty/ken.french/| 
  []
 
-[17] [18] [19] [20]
+[18] [19] [20] [21]
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 168.
+               Default added (so using `tbp') on input line 130.
 
-[21] [22] [23]) (./elastic_net_application.tex [24]
+[22] [23]) (./elastic_net_application.tex [24]
+Chapter 6.
+[25
 
-Package mathptmx Warning: There are no bold math fonts on input line 15.
-
-[25]
-
-LaTeX Warning: Reference `Empirical' on page 26 undefined on input line 33.
-
-[26] [27]
+] [26] [27] [28]
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 72.
+               Default added (so using `tbp') on input line 77.
 
-[28] [29] [30]
-Overfull \hbox (12.95679pt too wide) in paragraph at lines 144--151
+[29] [30]
+Overfull \hbox (53.40404pt too wide) in paragraph at lines 137--147
  [][] 
  []
 
-[31]) (./conclusion.tex) [32] (./thesis.bbl
+[31]
+Overfull \hbox (12.95679pt too wide) in paragraph at lines 167--174
+ [][] 
+ []
+
+) [32] (./conclusion.tex [33]
+Chapter 7.
+[34
+
+]) [35] (./thesis.bbl
 Underfull \hbox (badness 10000) in paragraph at lines 218--235
 []\TU/TimesNewRoman(0)/m/n/12 Carhart, M. M.  (1997, 3).  On persistence in mut
 ual fund perfor-
@@ -882,7 +949,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 218--235
 ewRoman(0)/m/n/12 , 57-82.  Retrieved from
  []
 
-[33]
+[36
+
+]
 Underfull \hbox (badness 10000) in paragraph at lines 311--329
 []\TU/TimesNewRoman(0)/m/n/12 Fama, E. F., & French, K. R.  (1992, 6).  The cro
 ss-section of expected
@@ -914,7 +983,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 455--474
 U/TimesNewRoman(0)/m/n/12 doi:
  []
 
-[34]
+[37]
 Underfull \hbox (badness 1824) in paragraph at lines 488--505
 []\TU/TimesNewRoman(0)/m/n/12 Freyberger, J., Neuhierl, A., & Weber, M.  (2020,
  4).  Dissecting characteristics non-
@@ -965,7 +1034,7 @@ eview of Financial Studies\TU/TimesNewRoman(0)/m/n/12 , \TU/TimesNewRoman(0)/m/
 it/12 29\TU/TimesNewRoman(0)/m/n/12 , 5-68.  Retrieved from
  []
 
-[35]
+[38]
 Underfull \hbox (badness 4954) in paragraph at lines 794--812
 []\TU/TimesNewRoman(0)/m/n/12 Kan, R., & Zhang, C.  (1999, 2).  Two-pass tests 
 of asset pricing models with
@@ -984,7 +1053,7 @@ Underfull \hbox (badness 1137) in paragraph at lines 826--842
 Characteristics are covariances: A uni-
  []
 
-[36]
+
 Underfull \hbox (badness 10000) in paragraph at lines 1024--1042
 []\TU/TimesNewRoman(0)/m/n/12 Phillips, P. C., & Perron, P.  (1988, 6).  Testin
 g for a unit root in
@@ -1003,7 +1072,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 1024--1042
 imesNewRoman(0)/m/n/12 doi:
  []
 
-
+[39]
 Underfull \hbox (badness 2452) in paragraph at lines 1056--1073
 []\TU/TimesNewRoman(0)/m/n/12 Pukthuanthong, K., Roll, R., & Subrahmanyam, A.  
 (2019, 8).  A protocol for fac-
@@ -1060,7 +1129,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 1151--1173
 \TU/TimesNewRoman(0)/m/n/12 doi:
  []
 
-[37]) [38] (./appendix.tex
+) [40] (./appendix.tex
+Appendix A.
 
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `tbp') on input line 126.
@@ -1069,105 +1139,93 @@ LaTeX Warning: No positions in optional float specifier.
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `tbp') on input line 177.
 
-) (./comparison_table.tex [39] [40] [41] [42] [43
+) (./comparison_table.tex [41
 
-] [44] [45] [46]
-Overfull \hbox (8.13461pt too wide) in paragraph at lines 217--224
+] [42] [43] [44] [45]
+Appendix B.
+[46
+
+
+] [47] [48] [49] [50]
+Overfull \hbox (8.13461pt too wide) in paragraph at lines 191--198
 $[]$
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 217--224
+Underfull \hbox (badness 10000) in paragraph at lines 191--198
 
  []
 
-[47] [48
+[51] [52
 
-] [49] [50]
-Underfull \hbox (badness 10000) in paragraph at lines 1493--1500
+] [53] [54]
+Underfull \hbox (badness 10000) in paragraph at lines 1467--1474
 
  []
 
-[51]
+[55]
 File: ./plot/strength_comparison_I.png Graphic file (type bmp)
 <./plot/strength_comparison_I.png>
 
 
-LaTeX Warning: Float too large for page by 39.10573pt on input line 1511.
+LaTeX Warning: Float too large for page by 45.35136pt on input line 1486.
 
-[52]
+[56]
 File: ./plot/strength_comparison_II.png Graphic file (type bmp)
 <./plot/strength_comparison_II.png>
- [53]
+ [57]
 File: ./plot/strength_comparison_III.png Graphic file (type bmp)
 <./plot/strength_comparison_III.png>
- [54]
+ [58]
 File: ./plot/strength_comparison_IV.png Graphic file (type bmp)
 <./plot/strength_comparison_IV.png>
- [55]
+ [59]
 File: ./plot/strength_comparison_V.png Graphic file (type bmp)
 <./plot/strength_comparison_V.png>
- [56]
+ [60]
 File: ./plot/strength_comparison_IV.png Graphic file (type bmp)
 <./plot/strength_comparison_IV.png>
 
 
-LaTeX Warning: Float too large for page by 46.8073pt on input line 1551.
+LaTeX Warning: Float too large for page by 46.8073pt on input line 1526.
 
-[57]
+[61]
 File: ./plot/thirty_decompose_I.png Graphic file (type bmp)
 <./plot/thirty_decompose_I.png>
 
 
-LaTeX Warning: Float too large for page by 15.12761pt on input line 1559.
+LaTeX Warning: Float too large for page by 15.12761pt on input line 1535.
 
-[58]
+[62]
 File: ./plot/thirty_decompose_II.png Graphic file (type bmp)
 <./plot/thirty_decompose_II.png>
- [59]
+ [63]
 File: ./plot/thirty_decompose_III.png Graphic file (type bmp)
 <./plot/thirty_decompose_III.png>
- [60]
+ [64]
 File: ./plot/thirty_decompose_IV.png Graphic file (type bmp)
 <./plot/thirty_decompose_IV.png>
- [61]
+ [65]
 File: ./plot/thirty_decompose_V.png Graphic file (type bmp)
 <./plot/thirty_decompose_V.png>
- [62]
+ [66]
 File: ./plot/thirty_decompose_VI.png Graphic file (type bmp)
 <./plot/thirty_decompose_VI.png>
 
 
-LaTeX Warning: Float too large for page by 46.8073pt on input line 1598.
+LaTeX Warning: Float too large for page by 46.8073pt on input line 1574.
 
-[63]
-File: ./plot/en_plot.png Graphic file (type bmp)
-<./plot/en_plot.png>
-
-Overfull \hbox (38.86932pt too wide) in paragraph at lines 1605--1607
- [][] 
- []
-
-[64]
-File: ./plot/lasso_plot.png Graphic file (type bmp)
-<./plot/lasso_plot.png>
-
-Overfull \hbox (38.86932pt too wide) in paragraph at lines 1612--1614
- [][] 
- []
-
-[65]) (./thesis.aux)
-
-LaTeX Warning: There were undefined references.
-
- ) 
+[67]
+File: ./plot/correlation_heat_map.png Graphic file (type bmp)
+<./plot/correlation_heat_map.png>
+) [68] (./thesis.aux) ) 
 Here is how much of TeX's memory you used:
- 17273 strings out of 479282
- 372738 string characters out of 5880512
- 714112 words of memory out of 5000000
- 34546 multiletter control sequences out of 15000+600000
+ 17408 strings out of 479282
+ 374429 string characters out of 5880512
+ 715610 words of memory out of 5000000
+ 34677 multiletter control sequences out of 15000+600000
  551270 words of font info for 100 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 59i,16n,75p,829b,320s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 59i,16n,75p,829b,437s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on thesis.pdf (71 pages).
+Output written on thesis.pdf (77 pages).
