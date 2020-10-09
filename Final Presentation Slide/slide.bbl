@@ -1,0 +1,153 @@
+\begin{thebibliography}{}
+
+\bibitem [\protect \citeauthoryear {%
+Bailey%
+, Kapetanios%
+\BCBL {}\ \BBA {} Pesaran%
+}{%
+Bailey%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2020}}%
+}]{%
+Bailey2020}
+\APACinsertmetastar {%
+Bailey2020}%
+\begin{APACrefauthors}%
+Bailey, N.%
+, Kapetanios, G.%
+\BCBL {}\ \BBA {} Pesaran, M\BPBI H.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2020}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Measurement of Factor Strength: Theory and Practice}
+  {Measurement of factor strength: Theory and practice}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{CESifo Working Paper}{}{}{}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Cochrane%
+}{%
+Cochrane%
+}{%
+{\protect \APACyear {2011}}%
+}]{%
+Cochrane2011}
+\APACinsertmetastar {%
+Cochrane2011}%
+\begin{APACrefauthors}%
+Cochrane, J\BPBI H.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2011}{8}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Presidential Address: Discount Rates} {Presidential
+  address: Discount rates}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{The Journal of Finance}{66}{}{1047-1108}.
+\newblock
+\begin{APACrefURL} \url{http://doi.wiley.com/10.1111/j.1540-6261.2011.01671.x}
+  \end{APACrefURL}
+\newblock
+\begin{APACrefDOI} \doi{10.1111/j.1540-6261.2011.01671.x} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Friedman%
+, Hastie%
+\BCBL {}\ \BBA {} Tibshirani%
+}{%
+Friedman%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2010}}%
+}]{%
+Friedman2010}
+\APACinsertmetastar {%
+Friedman2010}%
+\begin{APACrefauthors}%
+Friedman, J.%
+, Hastie, T.%
+\BCBL {}\ \BBA {} Tibshirani, R.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2010}{2}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Regularization paths for generalized linear models via
+  coordinate descent} {Regularization paths for generalized linear models via
+  coordinate descent}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Journal of Statistical Software}{33}{}{1-22}.
+\newblock
+\begin{APACrefURL}
+  \url{https://www.jstatsoft.org/index.php/jss/article/view/v033i01/v33i01.pdf
+  https://www.jstatsoft.org/index.php/jss/article/view/v033i01}
+  \end{APACrefURL}
+\newblock
+\begin{APACrefDOI} \doi{10.18637/jss.v033.i01} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Harvey%
+\ \BBA {} Liu%
+}{%
+Harvey%
+\ \BBA {} Liu%
+}{%
+{\protect \APACyear {2019}}%
+}]{%
+Harvey2019}
+\APACinsertmetastar {%
+Harvey2019}%
+\begin{APACrefauthors}%
+Harvey, C\BPBI R.%
+\BCBT {}\ \BBA {} Liu, Y.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2019}{3}{}.
+\newblock
+{\BBOQ}\APACrefatitle {A Census of the Factor Zoo} {A census of the factor
+  zoo}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{SSRN Electronic Journal}{}{}{}.
+\newblock
+\begin{APACrefDOI} \doi{10.2139/ssrn.3341728} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Zou%
+\ \BBA {} Hastie%
+}{%
+Zou%
+\ \BBA {} Hastie%
+}{%
+{\protect \APACyear {2005}}%
+}]{%
+Zou2005}
+\APACinsertmetastar {%
+Zou2005}%
+\begin{APACrefauthors}%
+Zou, H.%
+\BCBT {}\ \BBA {} Hastie, T.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2005}{4}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Regularization and variable selection via the elastic
+  net} {Regularization and variable selection via the elastic net}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Journal of the Royal Statistical Society: Series B
+  (Statistical Methodology)}{67}{}{301-320}.
+\newblock
+\begin{APACrefURL} \url{http://doi.wiley.com/10.1111/j.1467-9868.2005.00503.x}
+  \end{APACrefURL}
+\newblock
+\begin{APACrefDOI} \doi{10.1111/j.1467-9868.2005.00503.x} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\end{thebibliography}
