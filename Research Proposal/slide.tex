@@ -2,7 +2,7 @@
 \usepackage{amsmath}
 \usepackage[utf8]{inputenc}
 \usepackage{apacite}
-%\renewcommand\bibliographytypesize{\footnotesize}
+
 \usetheme{Singapore}
 \usepackage[style=british]{csquotes}
 
@@ -20,14 +20,16 @@
 \usepackage{soul}
 
 
-	\title{Factor Strength and Factor Selection\\
-		\large
-An Application to U.S. Stock Market }
-	\subtitle{Research Plan Presentation}
+	\title{Factor Strength and Factor Selection }
+	\subtitle{An Application to U.S. Stock Market}
 
 		\date{\today}
 		\author[author]{Zhiyuan Jiang\\
-			28710967\\[10mm]{\small Supervisors: Dr Natalia Bailey \\ \hspace{18.5mm} Dr David Frazier}}
+			28710967\\
+			[10mm]
+            Supervisors: Dr Natalia Bailey \\ 
+			\hspace{18.5mm} 
+			Dr David Frazier}
 		
 		
 \begin{document}
@@ -37,11 +39,12 @@ An Application to U.S. Stock Market }
 %-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------%
 %-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------%
 \section{Introduction and Motivation}
-\begin{frame}{Introduction and Motivation}
+
+\begin{frame}{Motivation}
+	
 Capital Asset Pricing Model (CAPM) is the benchmark of risk pricing.
 \[r_{it} - r_{ft} = a_i + \beta_{im}(r_{mt} - r_{ft}) + \sum_{j=1}^{k}\beta_{ij}f_{jt} + \varepsilon_{it} \]
 
-\frametitle{Motivation}
 \begin{columns}
 	\begin{column}{0.5\textwidth}
 \begin{itemize}
@@ -51,7 +54,7 @@ Capital Asset Pricing Model (CAPM) is the benchmark of risk pricing.
 \item $\beta_{im}$: market factor loading
 \end{itemize}
 	\end{column}
-	\begin{column}{0.5\textwidth}  %%<--- here
+	\begin{column}{0.5\textwidth}  
 		\begin{center}
 \begin{itemize}
 \item $r_{mt}$: market return 
@@ -81,11 +84,17 @@ Capital Asset Pricing Model (CAPM) is the benchmark of risk pricing.
 \end{frame}
 
 \begin{frame}
-\begin{aquote}{John Cohrane, 2011}
-We have a lot of questions to answer: \\
-Firstly, which characteristics really provide \textbf{independent} information about average returns? Which are subsumed by others ?
+\begin{aquote}{\citeNP{Cochrane2011}}
+	We have a lot of questions to answer: \\
+	Firstly, which characteristics really provide \textbf{independent} information about average returns? Which are subsumed by others ?
 \end{aquote}
+
+\begin{figure}
+	\includegraphics[scale = 0.2]{figure/cochrane.png}
+\end{figure}
 \end{frame}
+
+
 
 \begin{frame}
 	\frametitle{Factor Strength}
@@ -216,7 +225,7 @@ Considering the following loss function:
 %-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------%
 
 
-\section{Preliminary and Future Plan}
+\section{Data and Methods}
 
 
 \begin{frame}
@@ -235,20 +244,19 @@ Use Monte Carlo simulation to study the property of estimated factor strength.\\
 \end{frame}
 
 \begin{frame}
-\frametitle{Future Plan}
-For the next step, we will start the empirical analyses. 
-
-We will collect and examine the data for the empirical research. 
+\frametitle{Data}
+The data set contains two part:
 \begin{itemize}
-\item {\bf Assets}:  Companies from Standard \& Poor (S\&P) 500 index\\
-\item {\bf Time period}: 2008-2018, 10 years, monthly return. \\
-\item {\bf Factor}:  Factors from \citeA{Harvey2019}'s factor list\\
+\item {\bf Assets}: Stocks from Standard \& Poor (S\&P) 500 index companies\\
+\subitem Three year U.S. t-bill
+\subitem Average return of U.S. stock market
+\item {\bf Factor}: 145 risk factors plus one market factor.\\
 \end{itemize}
-%{\bf Assets}:  Companies from Standard \& Poor (S\&P) 500 index\\
-%{\bf Time period}: 2008-2018, 10 years, monthly return. \\
-%{\bf Factor}:  Factors from \citeA{Harvey2019}'s factor list\\
-Using factor strength as the criterion to trim first, and then apply the elastic net method.
+
+Thirty year time period: Jan 1987 - Dec 2007.\\
+Data set into three subsamples: 10/20/30 years.\\
 \end{frame}
+
 %-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------%
 %-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------%
 \begin{frame}
@@ -262,6 +270,6 @@ Using factor strength as the criterion to trim first, and then apply the elastic
 \begin{frame}[allowframebreaks]
 	\frametitle{Bibliography}
 	\bibliographystyle{apacite}
-{\footnotesize\bibliography{proposal.bib}}
+{\footnotesize\bibliography{library.bib}}
 \end{frame}
 \end{document}
