@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2020.5.27)  7 OCT 2020 22:00
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2020.5.27)  9 OCT 2020 17:47
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -743,16 +743,16 @@ LaTeX Font Info:    ... okay on input line 37.
 *geometry* detected driver: xetex
 *geometry* verbose mode - [ preamble ] result:
 * driver: xetex
-* paper: <default>
+* paper: a4paper
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * modes: 
-* h-part:(L,W,R)=(71.13188pt, 472.03123pt, 71.13188pt)
-* v-part:(T,H,B)=(71.13188pt, 652.70622pt, 71.13188pt)
-* \paperwidth=614.295pt
-* \paperheight=794.96999pt
-* \textwidth=472.03123pt
-* \textheight=652.70622pt
+* h-part:(L,W,R)=(71.13188pt, 455.24411pt, 71.13188pt)
+* v-part:(T,H,B)=(71.13188pt, 702.78308pt, 71.13188pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=455.24411pt
+* \textheight=702.78308pt
 * \oddsidemargin=-1.1381pt
 * \evensidemargin=-1.1381pt
 * \topmargin=-38.1381pt
@@ -853,41 +853,44 @@ This may cause the page layout to be inconsistent, however.
 
  [5
 
-] [6]
+]
 (./introduction_and_literature_review.tex
 Chapter 1.
 [1
 
-]
-Overfull \hbox (3.32684pt too wide) in paragraph at lines 16--25
-\TU/TimesNewRoman(0)/m/n/12 risk. This address reflects one problem of the fact
-or model in finance: due to the data mining/multiple
- []
-
-[2] [3]
+] [2] [3]
 Chapter 2.
 [4
 
 ]) [5] (./factor_strength.tex [6]
 Chapter 3.
+
+Overfull \hbox (9.51472pt too wide) in paragraph at lines 13--17
+[]\TU/TimesNewRoman(0)/m/n/12 In the left-hand side, we have $\OML/ztmcm/m/it/1
+2 x[]$ \TU/TimesNewRoman(0)/m/n/12 denotes the cross-section unit i at time t, 
+where $\OML/ztmcm/m/it/12 i \OT1/ztmcm/m/n/12 = 1\OML/ztmcm/m/it/12 ; \OT1/ztmc
+m/m/n/12 2\OML/ztmcm/m/it/12 ; \OT1/ztmcm/m/n/12 3\OML/ztmcm/m/it/12 ; []  ; n$
+
+ []
+
 [7
 
 ] [8] [9]
 
 Package mathptmx Warning: There are no bold math fonts on input line 88.
 
+
+Overfull \hbox (23.9848pt too wide) in paragraph at lines 98--102
+\TU/TimesNewRoman(0)/m/n/12 and $[][] \OT1/ztmcm/m/n/12 = [][]$ \TU/TimesNewRom
+an(0)/m/n/12 For the denominator’s $[]$, it was from $[] \OT1/ztmcm/m/n/12 = \O
+ML/ztmcm/m/it/12 T[] [][] []$\TU/TimesNewRoman(0)/m/n/12 ,
+ []
+
 [10]) (./monte_carlo.tex [11]
 Chapter 4.
 [12
 
-] [13]
-Overfull \hbox (0.81912pt too wide) in paragraph at lines 77--79
-[]\TU/TimesNewRoman(0)/m/it/12 Both $\OML/ztmcm/m/it/12 ^^L[]$ \TU/TimesNewRoma
-n(0)/m/it/12 and $\OML/ztmcm/m/it/12 ^^L[]$ \TU/TimesNewRoman(0)/m/it/12 are no
-n-zero. Er-
- []
-
-[14] [15]) (./empirical_application_factor_strength.tex [16]
+] [13] [14] [15]) (./empirical_application_factor_strength.tex [16]
 Chapter 5.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 13.
@@ -898,45 +901,47 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
 [17
 
 ]
-Overfull \hbox (19.05046pt too wide) in paragraph at lines 23--30
+Overfull \hbox (35.83759pt too wide) in paragraph at lines 23--30
  [][] 
  []
 
 
-Overfull \hbox (3.45746pt too wide) in paragraph at lines 31--31
+Overfull \hbox (20.24458pt too wide) in paragraph at lines 31--31
 [][]\TU/TimesNewRoman(0)/m/n/10 The risk free rate was from the Kenneth R. Fren
 ch website: http://mba.tuck.dartmouth.edu/pages/faculty/ken.french/| 
  []
 
-[18] [19] [20] [21]
+[18] [19] [20]
+Overfull \hbox (15.03525pt too wide) in paragraph at lines 103--118
+ [][] 
+ []
+
 
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `tbp') on input line 130.
 
-[22] [23]) (./elastic_net_application.tex [24]
+[21] [22] [23]) (./elastic_net_application.tex [24]
 Chapter 6.
 [25
 
-] [26] [27] [28]
+] [26] [27]
 
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `tbp') on input line 77.
 
-[29] [30]
-Overfull \hbox (53.40404pt too wide) in paragraph at lines 137--147
+[28] [29] [30]
+Overfull \hbox (29.74391pt too wide) in paragraph at lines 169--176
  [][] 
  []
 
-[31]
-Overfull \hbox (12.95679pt too wide) in paragraph at lines 167--174
- [][] 
- []
 
-) [32] (./conclusion.tex [33]
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[31]) (./conclusion.tex [32]
 Chapter 7.
-[34
+[33
 
-]) [35] (./thesis.bbl
+]) [34] (./thesis.bbl
 Underfull \hbox (badness 10000) in paragraph at lines 218--235
 []\TU/TimesNewRoman(0)/m/n/12 Carhart, M. M.  (1997, 3).  On persistence in mut
 ual fund perfor-
@@ -949,9 +954,59 @@ Underfull \hbox (badness 10000) in paragraph at lines 218--235
 ewRoman(0)/m/n/12 , 57-82.  Retrieved from
  []
 
-[36
+
+Underfull \hbox (badness 10000) in paragraph at lines 218--235
+\TU/lmtt/m/n/12 http://doi.wiley.com/10.1111/j.1540-6261.1997.tb03808.x   \TU/T
+imesNewRoman(0)/m/n/12 doi:
+ []
+
+[35
 
 ]
+Underfull \hbox (badness 10000) in paragraph at lines 247--263
+[]\TU/TimesNewRoman(0)/m/n/12 Cochrane, J. H.  (2011, 8).  Presidential address
+: Discount rates.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 247--263
+\TU/TimesNewRoman(0)/m/it/12 The Journal of Finance\TU/TimesNewRoman(0)/m/n/12 
+, \TU/TimesNewRoman(0)/m/it/12 66\TU/TimesNewRoman(0)/m/n/12 , 1047-1108.  Retr
+ieved from
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 247--263
+\TU/lmtt/m/n/12 http://doi.wiley.com/10.1111/j.1540-6261.2011.01671.x   \TU/Tim
+esNewRoman(0)/m/n/12 doi:
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 277--297
+[]\TU/TimesNewRoman(0)/m/n/12 Dickey, D. A., & Fuller, W. A.  (1979, 6).  Distr
+ibution of the esti-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 277--297
+\TU/TimesNewRoman(0)/m/n/12 mators for autoregressive time series with a unit r
+oot.  \TU/TimesNewRoman(0)/m/it/12 Journal of
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 277--297
+\TU/TimesNewRoman(0)/m/it/12 the American Statistical Association\TU/TimesNewRo
+man(0)/m/n/12 , \TU/TimesNewRoman(0)/m/it/12 74\TU/TimesNewRoman(0)/m/n/12 , 42
+7-431.  Retrieved from
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 277--297
+\TU/lmtt/m/n/12 https://www.tandfonline.com/doi/abs/10.1080/01621459.1979.10482
+531
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 311--329
 []\TU/TimesNewRoman(0)/m/n/12 Fama, E. F., & French, K. R.  (1992, 6).  The cro
 ss-section of expected
@@ -965,92 +1020,104 @@ U/TimesNewRoman(0)/m/n/12 , 427-465.  Retrieved from
  []
 
 
-Underfull \hbox (badness 6110) in paragraph at lines 455--474
+Underfull \hbox (badness 10000) in paragraph at lines 311--329
+\TU/lmtt/m/n/12 http://doi.wiley.com/10.1111/j.1540-6261.1992.tb04398.x   \TU/T
+imesNewRoman(0)/m/n/12 doi:
+ []
+
+
+Underfull \hbox (badness 7540) in paragraph at lines 455--474
 []\TU/TimesNewRoman(0)/m/n/12 Feng, G., Giglio, S., & Xiu, D.  (2020, 6).  Tami
-ng the factor zoo: A test
+ng the factor zoo: A
  []
 
 
-Underfull \hbox (badness 6825) in paragraph at lines 455--474
-\TU/TimesNewRoman(0)/m/n/12 of new factors.  \TU/TimesNewRoman(0)/m/it/12 The J
-ournal of Finance\TU/TimesNewRoman(0)/m/n/12 , \TU/TimesNewRoman(0)/m/it/12 75\
-TU/TimesNewRoman(0)/m/n/12 , 1327-1370.  Retrieved from
+Underfull \hbox (badness 4899) in paragraph at lines 455--474
+\TU/TimesNewRoman(0)/m/n/12 test of new factors.  \TU/TimesNewRoman(0)/m/it/12 
+The Journal of Finance\TU/TimesNewRoman(0)/m/n/12 , \TU/TimesNewRoman(0)/m/it/1
+2 75\TU/TimesNewRoman(0)/m/n/12 , 1327-1370.  Retrieved
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 455--474
-\TU/lmtt/m/n/12 https://onlinelibrary.wiley.com/doi/abs/10.1111/jofi.12883   \T
-U/TimesNewRoman(0)/m/n/12 doi:
- []
-
-[37]
-Underfull \hbox (badness 1824) in paragraph at lines 488--505
-[]\TU/TimesNewRoman(0)/m/n/12 Freyberger, J., Neuhierl, A., & Weber, M.  (2020,
- 4).  Dissecting characteristics non-
- []
-
-
-Underfull \hbox (badness 1490) in paragraph at lines 488--505
-\TU/TimesNewRoman(0)/m/n/12 parametrically.  \TU/TimesNewRoman(0)/m/it/12 The R
-eview of Financial Studies\TU/TimesNewRoman(0)/m/n/12 , \TU/TimesNewRoman(0)/m/
-it/12 33\TU/TimesNewRoman(0)/m/n/12 , 2326-2377.  Retrieved from
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 519--540
+[36]
+Overfull \hbox (13.53589pt too wide) in paragraph at lines 519--540
 \TU/lmtt/m/n/12 https://www.jstatsoft.org/index.php/jss/article/view/v033i01/v3
 3i01.pdf
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 519--540
+Underfull \hbox (badness 6825) in paragraph at lines 519--540
 \TU/lmtt/m/n/12 https://www.jstatsoft.org/index.php/jss/article/view/v033i01   
 \TU/TimesNewRoman(0)/m/n/12 doi:
  []
 
 
-Underfull \hbox (badness 5460) in paragraph at lines 617--634
+Underfull \hbox (badness 10000) in paragraph at lines 554--574
+[]\TU/TimesNewRoman(0)/m/n/12 Gospodinov, N., Kan, R., & Robotti, C.  (2014, 7)
+.  Misspecification-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 554--574
+\TU/TimesNewRoman(0)/m/n/12 robust inference in linear asset-pricing models wit
+h irrelevant risk fac-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 554--574
+\TU/TimesNewRoman(0)/m/n/12 tors.  \TU/TimesNewRoman(0)/m/it/12 Review of Finan
+cial Studies\TU/TimesNewRoman(0)/m/n/12 , \TU/TimesNewRoman(0)/m/it/12 27\TU/Ti
+mesNewRoman(0)/m/n/12 , 2139-2170.  Retrieved from
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 554--574
+\TU/lmtt/m/n/12 https://academic.oup.com/rfs/article/27/7/2139/1578148   \TU/Ti
+mesNewRoman(0)/m/n/12 doi:
+ []
+
+
+Underfull \hbox (badness 3343) in paragraph at lines 617--634
 []\TU/TimesNewRoman(0)/m/n/12 Gu, S., Kelly, B., & Xiu, D.  (2020, 2).  Empiric
 al asset pricing via machine
  []
 
 
-Underfull \hbox (badness 5388) in paragraph at lines 617--634
+Underfull \hbox (badness 2753) in paragraph at lines 617--634
 \TU/TimesNewRoman(0)/m/n/12 learning.  \TU/TimesNewRoman(0)/m/it/12 The Review 
 of Financial Studies\TU/TimesNewRoman(0)/m/n/12 , \TU/TimesNewRoman(0)/m/it/12 
 33\TU/TimesNewRoman(0)/m/n/12 , 2223-2273.  Retrieved from
  []
 
 
-Underfull \hbox (badness 3312) in paragraph at lines 704--721
+Underfull \hbox (badness 1953) in paragraph at lines 704--721
 []\TU/TimesNewRoman(0)/m/n/12 Harvey, C. R., Liu, Y., & Zhu, H.  (2015, 10).  …
  and the cross-section of ex-
  []
 
 
-Underfull \hbox (badness 4699) in paragraph at lines 704--721
+Underfull \hbox (badness 2435) in paragraph at lines 704--721
 \TU/TimesNewRoman(0)/m/n/12 pected returns.  \TU/TimesNewRoman(0)/m/it/12 The R
 eview of Financial Studies\TU/TimesNewRoman(0)/m/n/12 , \TU/TimesNewRoman(0)/m/
 it/12 29\TU/TimesNewRoman(0)/m/n/12 , 5-68.  Retrieved from
  []
 
-[38]
-Underfull \hbox (badness 4954) in paragraph at lines 794--812
+[37]
+Underfull \hbox (badness 7186) in paragraph at lines 794--812
 []\TU/TimesNewRoman(0)/m/n/12 Kan, R., & Zhang, C.  (1999, 2).  Two-pass tests 
-of asset pricing models with
+of asset pricing models
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 794--812
-\TU/TimesNewRoman(0)/m/n/12 useless factors.  \TU/TimesNewRoman(0)/m/it/12 The 
-Journal of Finance\TU/TimesNewRoman(0)/m/n/12 , \TU/TimesNewRoman(0)/m/it/12 54
-\TU/TimesNewRoman(0)/m/n/12 , 203-235.  Retrieved from
+Underfull \hbox (badness 7362) in paragraph at lines 794--812
+\TU/TimesNewRoman(0)/m/n/12 with useless factors.  \TU/TimesNewRoman(0)/m/it/12
+ The Journal of Finance\TU/TimesNewRoman(0)/m/n/12 , \TU/TimesNewRoman(0)/m/it/
+12 54\TU/TimesNewRoman(0)/m/n/12 , 203-235.  Retrieved
  []
 
 
-Underfull \hbox (badness 1137) in paragraph at lines 826--842
-[]\TU/TimesNewRoman(0)/m/n/12 Kelly, B. T., Pruitt, S., & Su, Y.  (2019, 12).  
-Characteristics are covariances: A uni-
+Underfull \hbox (badness 1460) in paragraph at lines 794--812
+\TU/TimesNewRoman(0)/m/n/12 from \TU/lmtt/m/n/12 http://doi.wiley.com/10.1111/0
+022-1082.00102   \TU/TimesNewRoman(0)/m/n/12 doi: 10.1111/0022-
  []
 
 
@@ -1072,30 +1139,23 @@ Underfull \hbox (badness 10000) in paragraph at lines 1024--1042
 imesNewRoman(0)/m/n/12 doi:
  []
 
-[39]
-Underfull \hbox (badness 2452) in paragraph at lines 1056--1073
+
+Underfull \hbox (badness 1215) in paragraph at lines 1056--1073
 []\TU/TimesNewRoman(0)/m/n/12 Pukthuanthong, K., Roll, R., & Subrahmanyam, A.  
 (2019, 8).  A protocol for fac-
  []
 
-
-Underfull \hbox (badness 2376) in paragraph at lines 1056--1073
-\TU/TimesNewRoman(0)/m/n/12 tor identification.  \TU/TimesNewRoman(0)/m/it/12 R
-eview of Financial Studies\TU/TimesNewRoman(0)/m/n/12 , \TU/TimesNewRoman(0)/m/
-it/12 32\TU/TimesNewRoman(0)/m/n/12 , 1573-1607.  Retrieved from
- []
-
-
-Underfull \hbox (badness 2150) in paragraph at lines 1118--1136
+[38]
+Underfull \hbox (badness 4940) in paragraph at lines 1118--1136
 []\TU/TimesNewRoman(0)/m/n/12 Sharpe, W. F.  (1964, 9).  Capital asset prices: 
-A theory of market equilibrium un-
+A theory of market equilib-
  []
 
 
-Underfull \hbox (badness 2653) in paragraph at lines 1118--1136
-\TU/TimesNewRoman(0)/m/n/12 der conditions of risk.  \TU/TimesNewRoman(0)/m/it/
-12 The Journal of Finance\TU/TimesNewRoman(0)/m/n/12 , \TU/TimesNewRoman(0)/m/i
-t/12 19\TU/TimesNewRoman(0)/m/n/12 , 425-442.  Retrieved from
+Underfull \hbox (badness 2781) in paragraph at lines 1118--1136
+\TU/TimesNewRoman(0)/m/n/12 rium under conditions of risk.  \TU/TimesNewRoman(0
+)/m/it/12 The Journal of Finance\TU/TimesNewRoman(0)/m/n/12 , \TU/TimesNewRoman
+(0)/m/it/12 19\TU/TimesNewRoman(0)/m/n/12 , 425-442.  Re-
  []
 
 
@@ -1118,18 +1178,24 @@ TU/TimesNewRoman(0)/m/n/12 , 1-13.  Retrieved from
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1151--1173
+Overfull \hbox (13.5119pt too wide) in paragraph at lines 1151--1173
 \TU/lmtt/m/n/12 https://www.jstatsoft.org/index.php/jss/article/view/v039i05/v3
 9i05.pdf
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1151--1173
+Underfull \hbox (badness 6825) in paragraph at lines 1151--1173
 \TU/lmtt/m/n/12 https://www.jstatsoft.org/index.php/jss/article/view/v039i05   
 \TU/TimesNewRoman(0)/m/n/12 doi:
  []
 
-) [40] (./appendix.tex
+
+Underfull \hbox (badness 1348) in paragraph at lines 1185--1203
+[]\TU/TimesNewRoman(0)/m/n/12 Tibshirani, R.  (1996, 1).  Regression shrinkage 
+and selection via the lasso.  \TU/TimesNewRoman(0)/m/it/12 Jour-
+ []
+
+) [39] (./appendix.tex
 Appendix A.
 
 LaTeX Warning: No positions in optional float specifier.
@@ -1139,93 +1205,115 @@ LaTeX Warning: No positions in optional float specifier.
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `tbp') on input line 177.
 
-) (./comparison_table.tex [41
+) (./comparison_table.tex [40
 
-] [42] [43] [44] [45]
+] [41] [42] [43] [44]
 Appendix B.
-[46
+[45
 
 
-] [47] [48] [49] [50]
-Overfull \hbox (8.13461pt too wide) in paragraph at lines 191--198
-$[]$
- []
+] [46] [47] [48] [49] [50] [51
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 191--198
-
- []
-
-[51] [52
-
-] [53] [54]
+] [52]
 Underfull \hbox (badness 10000) in paragraph at lines 1467--1474
 
  []
 
-[55]
+[53]
 File: ./plot/strength_comparison_I.png Graphic file (type bmp)
 <./plot/strength_comparison_I.png>
 
 
-LaTeX Warning: Float too large for page by 45.35136pt on input line 1486.
+LaTeX Warning: Float too large for page by 62.13849pt on input line 1486.
 
-[56]
+[54]
 File: ./plot/strength_comparison_II.png Graphic file (type bmp)
 <./plot/strength_comparison_II.png>
- [57]
+
+
+LaTeX Warning: Float too large for page by 9.99287pt on input line 1495.
+
+[55]
 File: ./plot/strength_comparison_III.png Graphic file (type bmp)
 <./plot/strength_comparison_III.png>
- [58]
+
+
+LaTeX Warning: Float too large for page by 9.99287pt on input line 1502.
+
+[56]
 File: ./plot/strength_comparison_IV.png Graphic file (type bmp)
 <./plot/strength_comparison_IV.png>
- [59]
+
+
+LaTeX Warning: Float too large for page by 9.99287pt on input line 1509.
+
+[57]
 File: ./plot/strength_comparison_V.png Graphic file (type bmp)
 <./plot/strength_comparison_V.png>
- [60]
+
+
+LaTeX Warning: Float too large for page by 9.99287pt on input line 1516.
+
+[58]
 File: ./plot/strength_comparison_IV.png Graphic file (type bmp)
 <./plot/strength_comparison_IV.png>
 
 
-LaTeX Warning: Float too large for page by 46.8073pt on input line 1526.
+LaTeX Warning: Float too large for page by 63.59442pt on input line 1526.
 
-[61]
+[59]
 File: ./plot/thirty_decompose_I.png Graphic file (type bmp)
 <./plot/thirty_decompose_I.png>
 
 
-LaTeX Warning: Float too large for page by 15.12761pt on input line 1535.
+LaTeX Warning: Float too large for page by 31.91473pt on input line 1535.
 
-[62]
+[60]
 File: ./plot/thirty_decompose_II.png Graphic file (type bmp)
 <./plot/thirty_decompose_II.png>
- [63]
+
+
+LaTeX Warning: Float too large for page by 9.99287pt on input line 1543.
+
+[61]
 File: ./plot/thirty_decompose_III.png Graphic file (type bmp)
 <./plot/thirty_decompose_III.png>
- [64]
+
+
+LaTeX Warning: Float too large for page by 9.99287pt on input line 1550.
+
+[62]
 File: ./plot/thirty_decompose_IV.png Graphic file (type bmp)
 <./plot/thirty_decompose_IV.png>
- [65]
+
+
+LaTeX Warning: Float too large for page by 9.99287pt on input line 1557.
+
+[63]
 File: ./plot/thirty_decompose_V.png Graphic file (type bmp)
 <./plot/thirty_decompose_V.png>
- [66]
+
+
+LaTeX Warning: Float too large for page by 9.99287pt on input line 1564.
+
+[64]
 File: ./plot/thirty_decompose_VI.png Graphic file (type bmp)
 <./plot/thirty_decompose_VI.png>
 
 
-LaTeX Warning: Float too large for page by 46.8073pt on input line 1574.
+LaTeX Warning: Float too large for page by 63.59442pt on input line 1574.
 
-[67]
+[65]
 File: ./plot/correlation_heat_map.png Graphic file (type bmp)
 <./plot/correlation_heat_map.png>
-) [68] (./thesis.aux) ) 
+) [66] (./thesis.aux) ) 
 Here is how much of TeX's memory you used:
  17408 strings out of 479282
  374429 string characters out of 5880512
- 715610 words of memory out of 5000000
+ 715683 words of memory out of 5000000
  34677 multiletter control sequences out of 15000+600000
  551270 words of font info for 100 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  59i,16n,75p,829b,437s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on thesis.pdf (77 pages).
+Output written on thesis.pdf (74 pages).

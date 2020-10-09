@@ -9,18 +9,18 @@ Numerous researchers have contributed to this field, and the direct result is an
  
 But we should notice that for a factor, it may not able to capture the risk-return relationship for every asset.
 Therefore, \citeA{Pesaran2019} introduced a new criterion named factor strength to assesses the significance of each factor.
-The idea of factor strength is to measure how many non-zero coefficient, or refer it as loadings in financial literature, a factor can generates for different assets.
+The idea of factor strength is to measure how many non-zero coefficient, or refer it as loadings in financial literature, a factor can generate for different assets.
 The more non-zero significant loadings a factor can produce, the stronger it strength is.
-The idea of factor strength provides us a standard to evaluate the risk pricing performance of factor, enable the risk-pricing ability comparison among factors.
+The idea of factor strength provides us with a standard to evaluate the risk pricing performance of factor, enable the risk-pricing ability comparison among factors.
 
-In his 2011 president address of American Finance Association, \citeauthor{Cochrane2011} emphasised the importance of finding factors which can provide independent information about average return and risk.
+In his 2011 presidential address of American Finance Association, \citeauthor{Cochrane2011} emphasised the importance of finding factors which can provide independent information about average return and risk.
 This address reflects one problem of the factor model in finance: due to the data mining/multiple test problem, some newly discovered factors are false-positive.
-Those newly proposed factors show significant results purely by chance, and \citeA{Hou2018} proved this by demonstrated that they can not replicate large proportion of those factor papers.
-With regard to this, many scholars applied various methods to filter factors that can provides fresh information of risk-return relationship from a large existed factor pool.
+Those newly proposed factors show significant results purely by chance, and \citeA{Hou2018} proved this by demonstrated that they can not replicate a large proportion of those factor papers.
+With regard to this, many scholars applied various methods to filter factors that can provide fresh information of risk-return relationship from a large existed factor pool.
 For instance, \citeA{Harvey2017} provided a bootstrap method to adjust the threshold of factor loading's significant test, trying to exclude some falsely significant factor caused by multiple-test problem.
 Some other scholars are using machine learning methods to identify factors from a group of candidates.
 One stream of them has used a shrinkage and subset selection method called Lasso \cite{Tibshirani1996} and the variations of it to find suitable factors.
-A example of such application is made by \citeA{Rapach2013}.
+An example of such application is made by \citeA{Rapach2013}.
 They applied the Lasso regression, trying to find some characteristics from a large group, and then constructed a correspond CAPM model to predict the global stock market's return.
 
 However, there is an additional challenge that factors, especially in high-dimensions, are usually highly correlated.
@@ -59,21 +59,21 @@ First formulated by \citeA{Sharpe1964}, \citeA{Lintner1965}, and \citeA{Black197
 The original CAPM model only contains the market factor, which is denoted by the difference between average market return and risk-free return, then\citeA{Fama1992} extend the model to contain size factor (SMB) and the value factor (HML).
 \citeA{Carhart1997}, base on the Fama-French three factors model, added the momentum factor and makes it a new standard of factor pricing model.
 Some recent researches are attempting to extend the factor model even further.
-For instance \citeA{Fama2015} create a five factors model base on their 1995 works by adding a investment factor and a profitability factor.
-They also added created a six-factor model \cite{Fama2018}, by adding an momentum factor of their on version base on the five-factor models.
-\citeA{Kelly2019} proposed an new method named Instrumented Principle Component Analysis (IPCA) which can identify latent factor structure.
-They applied the IPCA and constructed a six-factor model, claimed their six-factor model outperforms most of sparse factor models, such as the five-factor models published by Fama and French in 2015.
+For instance, \citeA{Fama2015} create a five factors model base on their 1995 works by adding an investment factor and a profitability factor.
+They also added created a six-factor model \cite{Fama2018}, by adding a momentum factor of their on version base on the five-factor models.
+\citeA{Kelly2019} proposed a new method named Instrumented Principle Component Analysis (IPCA) which can identify latent factor structure.
+They applied the IPCA and constructed a six-factor model, claimed their six-factor model outperforms most of the sparse factor models, such as the five-factor models published by Fama and French in 2015.
 In terms of assessing the strength of risk factors, this thesis also relates to papers discussing factors that have no or weak correlation with assets' return under the paradigm of the CAPM model.
-The Fama-MacBeth two stage regression (FM two-stage regression) introduced by \citeA{Fama1973} is a standard method when trying to estimates the CAPM and its multi factor extension. 
+The Fama-MacBeth two-stage regression (FM two-stage regression) introduced by \citeA{Fama1973} is a standard method when trying to estimates the CAPM and its multi-factor extension. 
 \citeA{Kan1999} found that the test-statistic of FM two-stage regression will inflate when incorporating factors which are independent of the cross-section return.
 Therefore, when factors with no pricing power were added into the model, those factors may have the chance to pass the significant test falsely.
 \citeA{Kleibergen2015} found out that even when some factor-return relationship does not exist, the r-square and the t-statistic of the FM two-stage regression would become in favour of the conclusion of such structure presence. 
 \citeA{Gospodinov2017} show how the addition of a spurious factor will distort the statistical inference of parameters, and misleads the researchers to believe that they correctly specified the factor structure exist, even when the degree of misspecification is arbitrarily large
 Besides, \citeA{Anatolyev2018} studied the behaviours of the model with the presence of weak factors under asymptotic settings, and they find the regression will lead to an inconsistent risk premia estimation result.
-To address the problem of misspecified factor-return relationship, \citeA{Gospodinov2014} proposed a factor selection procedure, which base on their statement, can eliminates the falsely presented factor robustly, and restores the inference. 
+To address the problem of misspecified factor-return relationship, \citeA{Gospodinov2014} proposed a factor selection procedure, which bases on their statement, can eliminates the falsely presented factor robustly, and restores the inference. 
 	
 Finally, of interest in this thesis is the large dimension of potential factors.
-\citeA{Harvey2019} documented over 500 published risk factors, and they indicated that more factors are discovered every years.
+\citeA{Harvey2019} documented over 500 published risk factors, and they indicated that more factors are discovered every year.
 Among all those risk factors, \citeA{Hou2018} tried to replicates 452 of them, and they find only 35\% to 18\% factors are reproducible.
 For these reasons, it borrows from researchers that identify useful factors from a group of potential factors.
 \citeA{Harvey2015} examine over 300 factors published in journals, presents a new multi testing framework to exam the significance of factors.
@@ -82,11 +82,11 @@ Methods like a Bayesian test procedure introduced by \citeA{Barillas2018}.
 The method enables researchers to compare the probabilities of a collection of potential models can be constructed after giving a group of factors.
 In order to identify factors risk-pricing ability, \citeA{Pukthuanthong2019} defined several criteria for "genuine risk factor", and based on those criteria introduced a protocol to examine whether a factor is associated with the risk premium.
 Once the factor strength is identified, the thesis will attempt to reconcile empirically the factor selection under machine learning techniques and the factor strength implied by the selection.
-\citeA{Gu2020} elaborate on the advantages of using emerging machine learning algorithms in measuring the equity risk premiums.
-They obtained a higher predictive accuracy in measuring risk premium, and demonstrated large economics gains using investment strategy base on the machine learning forecast.
-In recent years, machine learning algorithms have became popular in the finance studies, and various methods are adopted when selecting factors for the factor model.
+\citeA{Gu2020} elaborate on the advantages of using emerging machine learning algorithms in measuring equity risk premiums.
+They obtained a higher predictive accuracy in measuring risk premium and demonstrated large economics gains using investment strategy base on the machine learning forecast.
+In recent years, machine learning algorithms have become popular in the finance studies, and various methods are adopted when selecting factors for the factor model.
 \citeA{Lettau2020} apply Principle Components Analysis when investigating the latent factor of the model. 
-Lasso, been innovated by \citeA{Tibshirani1996}, is a popular algorithms which can eliminate redundant features. 
+Lasso, been innovated by \citeA{Tibshirani1996}, is a popular algorithm which can eliminate redundant features. 
 The derivation of Lasso has become increasingly popular in the factor selection.
 For example, \citeA{Feng2019} used the double-selected Lasso method \cite{Belloni2014}, and \citeA{Freyberger2020} used a grouped lasso method \cite{Huang2010} when picking factors from a group of candidates. 
 \citeA{Kozak2020} arguing that the sparse factor model is ultimately futile by using a Bayesian-based method. 
