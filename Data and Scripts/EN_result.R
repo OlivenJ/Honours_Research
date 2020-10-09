@@ -452,3 +452,12 @@ head(strong_en_result, 10)
 head(weak_en_result, 10)
 head(semi_en_result, 10)
 head()
+
+
+thirty_return %>% select(Ticker, Excess) %>% group_by(Ticker) %>% 
+  nest() %>% rowwise()
+  
+  
+
+
+
