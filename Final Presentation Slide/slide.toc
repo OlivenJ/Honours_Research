@@ -1,4 +1,4 @@
 \beamer@sectionintoc {1}{Introduction and Motivation}{2}{0}{1}
-\beamer@sectionintoc {2}{Data and Methodology}{8}{0}{2}
-\beamer@sectionintoc {3}{Empirical Findings}{13}{0}{3}
+\beamer@sectionintoc {2}{Method and Data}{10}{0}{2}
+\beamer@sectionintoc {3}{Empirical Findings}{15}{0}{3}
 \contentsline {section}{References}

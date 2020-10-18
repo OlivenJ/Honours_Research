@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2020.5.27)  9 OCT 2020 20:12
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2020.5.27)  18 OCT 2020 21:34
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -909,107 +909,161 @@ LaTeX Info: Redefining \BHBI on input line 130.
 ) (./slide.nav) [1
 
 ]
-LaTeX Font Info:    Trying to load font information for U+msa on input line 68.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 82.
 
  (/usr/local/texlive/2020/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 68.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 82.
 
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <12> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 68.
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 82.
 LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <8> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 68.
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 82.
 LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <6> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 68.
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 82.
  [2
+
+]
+File: figure/CAPM.png Graphic file (type bmp)
+<figure/CAPM.png>
+ [3
 
 ]
 File: figure/factor_growth.png Graphic file (type bmp)
 <figure/factor_growth.png>
 
-Overfull \hbox (12.4037pt too wide) in paragraph at lines 76--76
+Overfull \hbox (12.4037pt too wide) in paragraph at lines 103--103
  [] 
  []
 
-[3
+[4
+
+]
+LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <10.95> not available
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 125.
+
+
+LaTeX Warning: Citation `Hou2018' undefined on input line 125.
+
+
+LaTeX Warning: Citation `Gospodinov2017' undefined on input line 125.
+
+
+LaTeX Warning: Citation `Anatolyev2018' undefined on input line 125.
+
+[5
 
 ]
 LaTeX Font Info:    Font shape `TU/lmss/bx/it' in size <12> not available
-(Font)              Font shape `TU/lmss/bx/sl' tried instead on input line 86.
+(Font)              Font shape `TU/lmss/bx/sl' tried instead on input line 135.
+
 File: figure/cochrane.png Graphic file (type bmp)
 <figure/cochrane.png>
- [4
+ [6
 
-] [5
+]
 
-] [6
+LaTeX Warning: Citation `Harvey2015' undefined on input line 155.
 
-] [7
 
-] [8
+LaTeX Warning: Citation `Barillas2018' undefined on input line 155.
+
+
+LaTeX Warning: Citation `Lettau2020' undefined on input line 155.
+
+
+LaTeX Warning: Citation `Feng2019' undefined on input line 155.
+
+[7
+
+]
+
+LaTeX Warning: Citation `Harvey2015' undefined on input line 155.
+
+
+LaTeX Warning: Citation `Barillas2018' undefined on input line 155.
+
+
+LaTeX Warning: Citation `Lettau2020' undefined on input line 155.
+
+
+LaTeX Warning: Citation `Feng2019' undefined on input line 155.
+
+[8
 
 ] [9
 
 ] [10
 
-] [11
+]
+! Missing \right. inserted.
+<inserted text> 
+                \right .
+l.213 \end{frame}
+                 
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+[11
 
 ]
 
 LaTeX Font Warning: Font shape `OT1/cmss/b/n' undefined
-(Font)              using `OT1/cmss/m/n' instead on input line 191.
+(Font)              using `OT1/cmss/m/n' instead on input line 239.
 
 LaTeX Font Info:    Font shape `TU/lmss/b/n' in size <12> not available
-(Font)              Font shape `TU/lmss/bx/n' tried instead on input line 191.
+(Font)              Font shape `TU/lmss/bx/n' tried instead on input line 239.
 LaTeX Font Info:    Font shape `TU/lmss/b/n' in size <8> not available
-(Font)              Font shape `TU/lmss/bx/n' tried instead on input line 191.
+(Font)              Font shape `TU/lmss/bx/n' tried instead on input line 239.
 LaTeX Font Info:    Font shape `TU/lmss/b/n' in size <6> not available
-(Font)              Font shape `TU/lmss/bx/n' tried instead on input line 191.
+(Font)              Font shape `TU/lmss/bx/n' tried instead on input line 239.
 LaTeX Font Info:    Font shape `TU/lmss/b/it' in size <12> not available
-(Font)              Font shape `TU/lmss/bx/it' tried instead on input line 191.
+(Font)              Font shape `TU/lmss/bx/it' tried instead on input line 239.
 
 LaTeX Font Info:    Font shape `TU/lmss/bx/it' in size <12> not available
-(Font)              Font shape `TU/lmss/bx/sl' tried instead on input line 191.
+(Font)              Font shape `TU/lmss/bx/sl' tried instead on input line 239.
 
 LaTeX Font Info:    Font shape `TU/lmss/b/it' in size <8> not available
-(Font)              Font shape `TU/lmss/bx/it' tried instead on input line 191.
+(Font)              Font shape `TU/lmss/bx/it' tried instead on input line 239.
 
 LaTeX Font Info:    Font shape `TU/lmss/bx/it' in size <8> not available
-(Font)              Font shape `TU/lmss/bx/sl' tried instead on input line 191.
+(Font)              Font shape `TU/lmss/bx/sl' tried instead on input line 239.
 
 LaTeX Font Info:    Font shape `TU/lmss/b/it' in size <6> not available
-(Font)              Font shape `TU/lmss/bx/it' tried instead on input line 191.
+(Font)              Font shape `TU/lmss/bx/it' tried instead on input line 239.
 
 LaTeX Font Info:    Font shape `TU/lmss/bx/it' in size <6> not available
-(Font)              Font shape `TU/lmss/bx/sl' tried instead on input line 191.
+(Font)              Font shape `TU/lmss/bx/sl' tried instead on input line 239.
 
 [12
 
-]
-File: figure/strength_proportion.png Graphic file (type bmp)
-<figure/strength_proportion.png>
-
-Overfull \hbox (13.40746pt too wide) in paragraph at lines 201--201
- [] 
- []
-
-[13
+] [13
 
 ] [14
+
+]
+File: figure/30_strength.png Graphic file (type bmp)
+<figure/30_strength.png>
+ [15
+
+] [16
 
 ]
 File: figure/correlation_heat_map.png Graphic file (type bmp)
 <figure/correlation_heat_map.png>
 
-Overfull \vbox (27.68526pt too high) detected at line 236
+Overfull \vbox (27.68526pt too high) detected at line 341
  []
 
-[15
+[17
 
 ]
 
@@ -1019,39 +1073,12 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.257 \end{frame}
+l.361 \end{frame}
                  
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
-[16
-
-]
-! Undefined control sequence.
-\beamer@doifinframe ...strength increase \subitem 
-                                                  May because of the correla...
-l.285 \end{frame}
-                 
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-\beamer@doifinframe ...educe redundancy. \subitem 
-                                                  Eight of Top 10 most selec...
-l.285 \end{frame}
-                 
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-[17
-
-] [18
+[18
 
 ] [19
 
@@ -1059,9 +1086,15 @@ and I'll forget about whatever was undefined.
 
 ] [21
 
-] (./slide.bbl) [22
+] [22
 
 ] [23
+
+] [24
+
+] (./slide.bbl) [25
+
+] [26
 
 
 ]
@@ -1074,25 +1107,28 @@ and I'll forget about whatever was undefined.
 \tf@snm=\write8
 \openout8 = `slide.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 336.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 336.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 448.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 448.
  (./slide.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 336.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 336.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 448.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 448.
 Package rerunfilecheck Info: File `slide.out' has not changed.
-(rerunfilecheck)             Checksum: 2FAA16CD4D9562C5F9CE117CEA948E72;343.
+(rerunfilecheck)             Checksum: A59B2EB70D768291E680163224DDD729;373.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
+
+LaTeX Warning: There were undefined references.
+
  ) 
 Here is how much of TeX's memory you used:
- 22335 strings out of 479282
- 405476 string characters out of 5880512
- 711495 words of memory out of 5000000
- 39493 multiletter control sequences out of 15000+600000
- 539658 words of font info for 69 fonts, out of 8000000 for 9000
+ 22403 strings out of 479282
+ 406978 string characters out of 5880512
+ 714465 words of memory out of 5000000
+ 39557 multiletter control sequences out of 15000+600000
+ 541219 words of font info for 76 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  58i,19n,67p,792b,786s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on slide.pdf (23 pages).
+Output written on slide.pdf (26 pages).
