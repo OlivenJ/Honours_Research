@@ -180,3 +180,15 @@ long_thirty_combine %>% filter(num >375 )%>%
  
  ggarrange(twenty_plot, thirty_plot)
  
+ thirty_strength %>% group_by(level) %>% summarise(Proportion = n()/145) %>% 
+   ggplot(aes(x=level,y=Proportion))+
+   geom_bar(stat="identity",position="dodge")+
+   theme_minimal()+
+   #theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank())
+   theme(panel.background = element_blank())+
+   theme(axis.text.x = element_text(angle = 60, hjust = 1))+
+   guides(fill = guide_legend(title = "Data Time Length"))+
+   xlab("Strength Group")+
+   ylab("Proportion")
+   
+ 

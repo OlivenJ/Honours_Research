@@ -23,19 +23,19 @@ three_thirty_strength %>% arrange(desc(strength)) %>% view()
 #=============================================================================================#
 #===========================#Classify the factor strength#====================================#
 
-ten_strength<- label_strength(ten_strength) 
-twenty_strength<- label_strength(twenty_strength)
-thirty_strength<- label_strength(thirty_strength)
-one_thirty_strength<- label_strength(one_thirty_strength)
-two_thirty_strength<- label_strength(two_thirty_strength)
-three_thirty_strength<- label_strength(three_thirty_strength)
+ten_strength<- label_strength(ten_strength %>% select(-level)) 
+twenty_strength<- label_strength(twenty_strength%>% select(-level))
+thirty_strength<- label_strength(thirty_strength%>% select(-level))
+one_thirty_strength<- label_strength(one_thirty_strength%>% select(-level))
+two_thirty_strength<- label_strength(two_thirty_strength%>% select(-level))
+three_thirty_strength<- label_strength(three_thirty_strength%>% select(-level))
 
-ten_strength$level <- ten_strength$level %>% factor(levels= c("above09","085to09","08to085","075to08","07to075","065to07","06to065", "055to06", "05to055", "below05"))
-twenty_strength$level <- twenty_strength$level %>% factor(levels= c("above09","085to09","08to085","075to08","07to075","065to07","06to065", "055to06", "05to055", "below05"))
-thirty_strength$level <- thirty_strength$level %>% factor(levels= c("above09","085to09","08to085","075to08","07to075","065to07","06to065", "055to06", "05to055", "below05"))
-one_thirty_strength$level <- one_thirty_strength$level %>% factor(levels= c("above09","085to09","08to085","075to08","07to075","065to07","06to065", "055to06", "05to055", "below05"))
-two_thirty_strength$level <- two_thirty_strength$level %>% factor(levels= c("above09","085to09","08to085","075to08","07to075","065to07","06to065", "055to06", "05to055", "below05"))
-three_thirty_strength$level <- three_thirty_strength$level %>% factor(levels= c("above09","085to09","08to085","075to08","07to075","065to07","06to065", "055to06", "05to055", "below05"))
+ten_strength$level <- ten_strength$level %>% factor(levels= c("[0.9, 1]","[0.85, 0.9)","[0.8, 0.85)","[0.75, 0.8)","[0.7, 0.75)","[0.65, 0.7)","[0.6, 0.65)", "[0.55, 0.6)", "[0.5, 0.55)", "[0, 0.5)"))
+twenty_strength$level <- twenty_strength$level %>% factor(levels= c("[0.9, 1]","[0.85, 0.9)","[0.8, 0.85)","[0.75, 0.8)","[0.7, 0.75)","[0.65, 0.7)","[0.6, 0.65)", "[0.55, 0.6)", "[0.5, 0.55)", "[0, 0.5)"))
+thirty_strength$level <- thirty_strength$level %>% factor(levels= c("[0.9, 1]","[0.85, 0.9)","[0.8, 0.85)","[0.75, 0.8)","[0.7, 0.75)","[0.65, 0.7)","[0.6, 0.65)", "[0.55, 0.6)", "[0.5, 0.55)", "[0, 0.5)"))
+one_thirty_strength$level <- one_thirty_strength$level %>% factor(levels= c("[0.9, 1]","[0.85, 0.9)","[0.8, 0.85)","[0.75, 0.8)","[0.7, 0.75)","[0.65, 0.7)","[0.6, 0.65)", "[0.55, 0.6)", "[0.5, 0.55)", "[0, 0.5)"))
+two_thirty_strength$level <- two_thirty_strength$level %>% factor(levels= c("[0.9, 1]","[0.85, 0.9)","[0.8, 0.85)","[0.75, 0.8)","[0.7, 0.75)","[0.65, 0.7)","[0.6, 0.65)", "[0.55, 0.6)", "[0.5, 0.55)", "[0, 0.5)"))
+three_thirty_strength$level <- three_thirty_strength$level %>% factor(levels= c("[0.9, 1]","[0.85, 0.9)","[0.8, 0.85)","[0.75, 0.8)","[0.7, 0.75)","[0.65, 0.7)","[0.6, 0.65)", "[0.55, 0.6)", "[0.5, 0.55)", "[0, 0.5)"))
 
 ten_strength %>% arrange(desc(strength)) %>% select(Factor, Market_strength,strength) %>% 
   add_column(twenty_strength %>% arrange(desc(strength)) %>% select(Factor, Market_strength,strength))

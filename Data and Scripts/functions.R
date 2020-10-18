@@ -74,25 +74,25 @@ label_strength<- function(result){
   result <- result %>% add_column(level = rep("", nrow(result)))
   for(i in 1:nrow(result)){
     if(result[i,]$strength >= 0.9){
-      result[i,]$level = "above09"
+      result[i,]$level = "[0.9, 1]"
     }else if(result[i,]$strength < 0.9 & result[i,]$strength >= 0.85){
-      result[i,]$level = "085to09"
+      result[i,]$level = "[0.85, 0.9)"
     }else if(result[i,]$strength < 0.85 & result[i,]$strength >= 0.8){
-      result[i,]$level = "08to085"
+      result[i,]$level = "[0.8, 0.85)"
     }else if(result[i,]$strength < 0.8 & result[i,]$strength >= 0.75){
-      result[i,]$level = "075to08"
+      result[i,]$level = "[0.75, 0.8)"
     }else if(result[i,]$strength < 0.75 & result[i,]$strength >= 0.7){
-      result[i,]$level = "07to075"
+      result[i,]$level = "[0.7, 0.75)"
     }else if(result[i,]$strength < 0.7 & result[i,]$strength >= 0.65){
-      result[i,]$level = "065to07"
+      result[i,]$level = "[0.65, 0.7)"
     }else if(result[i,]$strength < 0.65 & result[i,]$strength >= 0.6){
-      result[i,]$level = "06to065"
+      result[i,]$level = "[0.6, 0.65)"
     }else if(result[i,]$strength < 0.6 & result[i,]$strength >= 0.55){
-      result[i,]$level = "055to06"
+      result[i,]$level = "[0.55, 0.6)"
     }else if(result[i,]$strength < 0.55 & result[i,]$strength >= 0.5){
-      result[i,]$level = "05to055"
+      result[i,]$level = "[0.5, 0.55)"
     }else{
-      result[i,]$level = "below05"
+      result[i,]$level = "[0, 0.5)"
     }
   }
   return(result)

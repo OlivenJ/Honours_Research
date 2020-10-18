@@ -182,6 +182,10 @@ sum(comp_mix$toler)/nrow(comp_mix)
 sum(comp_mix$exact)/nrow(comp_mix)
 
 
+en_result_mix %>% arrange(desc(prop)) %>% inner_join(thirty_strength, by = "Factor")
+lasso_result_mix %>% arrange(desc(prop)) %>% inner_join(thirty_strength, by = "Factor")
+
+
 
 en_result_0506       ; lasso_result_0506       
 en_model_0506        ; lasso_model_0506        

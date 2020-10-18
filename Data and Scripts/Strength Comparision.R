@@ -92,13 +92,41 @@ xtable(one_thirty_strength %>% arrange(desc(strength)) %>%
 
 
 ten_strength %>% group_by(level) %>% 
-  summarise(proportion = n()/145*100)
-
-twenty_strength %>% group_by(level) %>% 
-  summarise( proportion = n()/145*100)
+  summarise(proportion = n()/145*100) %>% 
+  right_join(twenty_strength %>% group_by(level) %>% 
+  summarise( proportion = n()/145*100), by = "level") %>% 
+  right_join(thirty_strength %>% group_by(level) %>% 
+               summarise( proportion = n()/145*100), by = "level") %>% 
+  dplyr::select(level, ten = proportion.x ,  twenty = proportion.y, thirty = proportion) %>% 
+  pivot_longer(-level, names_to = "length", values_to = "proportion") %>% 
+  ggplot(aes(x = level, y = proportion, fill = factor(level)))+
+  geom_bar(position = "dodge", stat = "identity")
 
 thirty_strength %>% group_by(level) %>% 
   summarise(proportion = n()/145*100)
 
 thirty_combine %>% mutate(one_two = Strength.one - Strength.two, two_three =Strength.two - Strength.three ) %>% 
   filter(one_two < 0 & two_three >0)
+ 
+ten_strength %>% group_by(level) %>% 
+  summarise(proportion = n()/145*100) %>% 
+  right_join(twenty_strength %>% group_by(level) %>% 
+               summarise( proportion = n()/145*100), by = "level") %>% 
+  right_join(thirty_strength %>% group_by(level) %>% 
+               summarise( proportion = n()/145*100), by = "level") %>% 
+  dplyr::select(level, ten = proportion.x ,  twenty = proportion.y, thirty = proportion) %>% 
+  pivot_longer(-level, names_to = "length", values_to = "proportion") %>% 
+  ggplot(aes(x=level,y=proportion,fill=factor(length)))+
+  geom_bar(stat="identity",position="dodge")+
+  theme_minimal()+
+  #theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank())
+  theme(panel.background = element_blank())+
+  theme(axis.text.x = element_text(angle = 60, hjust = 1))+
+  guides(fill = guide_legend(title = "Data Time Length"))+
+  xlab("Strength Group")+
+  ylab("Proportion")
+
+
+
+
+
