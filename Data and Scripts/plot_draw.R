@@ -1,4 +1,4 @@
-
+library(corrplot)
 
 ten_strength %>% 
   ggplot(aes(x = strength)) +
@@ -180,7 +180,7 @@ long_thirty_combine %>% filter(num >375 )%>%
  
  ggarrange(twenty_plot, thirty_plot)
  
- thirty_strength %>% group_by(level) %>% summarise(Proportion = n()/145) %>% 
+ thirty_strength %>% group_by(level) %>% summarise(Proportion = n()/145) %>%
    ggplot(aes(x=level,y=Proportion))+
    geom_bar(stat="identity",position="dodge")+
    theme_minimal()+
@@ -190,5 +190,8 @@ long_thirty_combine %>% filter(num >375 )%>%
    guides(fill = guide_legend(title = "Data Time Length"))+
    xlab("Strength Group")+
    ylab("Proportion")
+   
+ corrplot(cor(risk_factors %>% left_join(thirty_strength %>% select(Factor, strength), by = "Factor") %>% 
+              arrange(strength)  %>% pivot_wider(names_from = Factor, values_from = Value) %>% select(-Date, -strength)), method = "color" )
    
  
