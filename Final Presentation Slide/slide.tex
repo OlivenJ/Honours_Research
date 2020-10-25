@@ -216,12 +216,14 @@ $\alpha_j \in [0,1]$.\\
 \begin{frame}
 \frametitle{Elastic Net}
 Introduce by \citeA{Zou2005}, is a modified method to select factor.\\
-For demonstration, we consider a simple linear regression. $\boldsymbol{y} = c +  \boldsymbol{x}{\boldsymbol{\beta}}$. \\ N observation pairs ($x_i$, $y_i$ ) with $i =1,2,3, \cdots N$, and $\boldsymbol{\beta} = [\beta_1, \beta_2, \beta_3, \cdots, \beta_K]^{\prime}$.
+For demonstration, we consider a simple linear model. $y_i = c + \sum_{j = 1}^K x_{j}\beta_{j}$ \\with N observations: $i = 1,2,3\cdots N$, and K variables.
+
+%$\boldsymbol{y} = c +  \boldsymbol{x}{\boldsymbol{\beta}}$. \\ N observation pairs ($x_i$, $y_i$ ) with $i =1,2,3, \cdots N$, and $\boldsymbol{\beta} = [\beta_1, \beta_2, \beta_3, \cdots, \beta_K]^{\prime}$.
 
 %\[ \hat{\beta} = \argmin\{    \frac{1}{2}[y - x\beta] + \phi P_{\theta}(\beta)        \}   \]
 %\[ P_{\theta}(\beta) = (1-\theta)\beta^2 + \theta|\beta|  \]
 
-\[  \hat{\boldsymbol{\beta}} = \argmin \{ \sum_{i = 1}^N(y_i - c - \sum_{j=1}^{K}\beta_{j}x_{ij})^2 + \phi P_\theta(\boldsymbol{\beta})          \}  \]
+\[  \hat{\boldsymbol{\beta}} = \argmin \{ \frac{1}{2N}\sum_{i = 1}^N(y_i - c - \sum_{j=1}^{K}\beta_{j}x_{j})^2 + \phi P_\theta(\boldsymbol{\beta})          \}  \]
 \[  P_{\theta}(\boldsymbol{\beta}) = \sum_{j = 1}^{K}[(1- \theta)\beta_j^2 + \theta |\beta_j| ]          \]
 
 %\[  \hat{\beta} = \argmin \{ (y_i - c - x_i^{\prime}\beta)^2 + \phi P_\theta(\beta)    \}   \]
@@ -373,11 +375,11 @@ The trick is: minimise the MSE (and cross-validation).\\
 			\hline
 Factor Group                                     & [0,0.5{)} & [0.5, 0.6{)} & [0.6, 0.7{)} & [0.7, 0.8{)} & [0.8,0.9{)} & [0.9,1{]} & mix \\ 
 			Factor Amount                  & 12            & 10               & 17               & 37               & 35              & 34            & 20  \\ \hline
-			\begin{tabular}[c]{@{}c@{}}Proportion of Agreement\\ (Exact)\end{tabular} & 68.7\%                        & 55.9\%                           & 42.8\%                           & 20.9\%                           & 17.7\%                          & 13.9\%                        & 34.6\% \\
+			\begin{tabular}[c]{@{}c@{}}Proportion of Agreement\\ (Exact)\end{tabular} & \alert{68.7\%}                        & 55.9\%                           & 42.8\%                           & 20.9\%                           & 17.7\%                          & \alert{13.9\%}                        & 34.6\% \\
 			\begin{tabular}[c]{@{}c@{}}Proportion of Agreement\\ (90\%)\end{tabular}  & 86.8\%                        & 72.0\%                           & 74.5\%                           & 72.0\%                           & 79.8\%                          & 74.4\%                        & 76.1\% \\\hline
-		Avg EN selection amount        & 2.11          & 4.47             & 8.67             & 14.67            & 13.51           & 12.37         & 8.45                  \\
+		Avg EN selection amount        & \alert{2.11}          & 4.47             & 8.67             & 14.67            & 13.51           & \alert{12.37}         & 8.45                  \\
 		Avg EN selection proportion    & 17.5\%        & 44.73\%          & 51.00\%          & 39.65\%          & 38.61\%         & 36.38\%       & 42.28\%                 \\
-		Avg Lasso selection amount     & 2.06          & 3.87             & 8.43             & 13               & 12.19           & 10.46         & 7.26                    \\
+		Avg Lasso selection amount     & \alert{2.06}          & 3.87             & 8.43             & 13               & 12.19           & \alert{10.46}         & 7.26                    \\
 		Avg Lasso selection proportion & 17.2\%        & 38.76\%          & 49.60\%          & 35.14\%          & 34.83\%         & 30.75\%       & 36.27\%                 \\ \hline\hline
 	\end{tabular}
 }
@@ -394,6 +396,15 @@ Factor Group                                     & [0,0.5{)} & [0.5, 0.6{)} & [0
 
 
 \section*{epilogue}
+\begin{frame}
+\frametitle{Wrap Up}
+\begin{itemize}
+\item 
+\item Elastic net doing pretty well on eliminating weak factors.
+\item MSE is not a good criterion for finance when tuning parameters.
+\end{itemize}
+\end{frame}
+
 \begin{frame}
 \frametitle{Potential Extension}
 \begin{enumerate}
@@ -439,6 +450,7 @@ Assume we have N units of stock, J risk factors, and T observations.\\
 In practice, because the problem of computation burden, we will randomly select 10 factors from each group, and 10 companies to conduct the procedure.\\
 Then, we repeat the whole procedure 2000 times, and take the average of parameter results.\\ 
 \end{frame}
+
 
 %-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------%
 %-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------%
