@@ -13,7 +13,7 @@ Here $r_{mt}$ is the average market return of hypothetically all assets in the u
 %In the classical CAPM model and it's multi-factor extensions, for example, the three-factor model introduced by \citeA{Fama1992}, both $q_1$ and $q_2$ are linear.
 Now consider the following data generating process (DGP):
 	
-		\[ x_{it} = f_{mt} +  \sum_{j=1}^k\beta_{ij}f_{jt} +\epsilon_{it}  \]
+		\[ x_{it} = \beta_{im}f_{mt} +  \sum_{j=1}^k\beta_{ij}f_{jt} +\epsilon_{it}  \]
 	
 %	\[ x_{it} = q_1(f_{mt}) + q_2( \sum_{j=1}^k\beta_{ij}f_{jt}) +\epsilon_{it}  \]
 
@@ -54,7 +54,7 @@ Then we randomly assign $n - [n^{\alpha_{1}}]$ and $n - [n^{\alpha_{2}}]$ factor
 $\alpha_1$ and $\alpha_2$ are the true factor strength of $f_1$ and $f_2$. 
 In this simulation, we will start the factor strength from 0.7 and increase it gradually till unity with pace 0.05, say $(\alpha_{1}, \alpha_{2}) = \{0.7, 0.75,0.8,\cdots,1\}$.
  $[\cdot]$ is the integer operator defined at chapter (\ref{strength_one_factor_estimation}).
-This step reflects the fact that only $[n^\alpha_1]$ or $[n^\alpha_2]$ factor loadings are non-zero.
+This step reflects the fact that only $[n^{\alpha_1}]$ or $[n^{\alpha_2}]$ factor loadings are non-zero.
 In terms of the factors, they come from a multinomial distribution $MVN(\bm{0}, \Sigma) $, as we discuss before.
 
 Currently, we consider four different experiments set up:
@@ -82,7 +82,7 @@ The factor strength in experiment one is estimated using the method discussed in
 The size of the significance test is $p = 0.05$, and the critical value exponent $\sigma$ has been set as 0.5.
 For each experiment, we calculate the bias, the RMSE and the size of the test to assess the estimation performances.
 The bias is calculated as the difference between the true factor strength $\alpha$ and the estimated factor strength $\hat{\alpha}$.
-\[bias = \alpha - \hat{\alpha}\]
+\[bias = \frac{1}{R}\sum_{r = 1}^R(\alpha - \hat{\alpha}_r)\]
 The Root Square Mean Error (RMSE) comes from:
 \[ RMSE =[\frac{1}{R}\sum_{r=1}^{R}(bias_r)^2 ]^{1/2}\]
 Where the R represents the total number of replication.

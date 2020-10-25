@@ -7,7 +7,7 @@ In this chapter, we will use the method introduced in the chapter \ref{strength}
 First, we introduce the data set used in this empirical chapter, and the setting for the estimation process.
 Then, we discuss the findings from the estimation results.
 The estimated factors strength provides us a starting point when applied the Elastic net method in the chapter \ref{Empirical:Elastic_net}.
-	\section{Data for Factor Strength Estimation}\label{data}
+	\section{Description of Data for Factor Strength Estimation}\label{data}
 	
 In the empirical application part, we use the monthly returns on U.S. securities as the assets.
 The companies are selected from Standard Poor (S\&P) 500 index component companies.\footnote{The companies return data was obtained from the Global Finance Data: http://www.globalfinancialdata.com/,\\ Osiris: https://www.bvdinfo.com/en-gb/our-products/data/international/osiris, \\and Yahoo Finance: https://finance.yahoo.com/.}
@@ -46,12 +46,13 @@ Each factor contains observations from January 1988 to December 2017.
 For the first part of the empirical application, we estimate the factor strength using the method discussed in chapter \ref{strength}.
 More precisely, we set the regression models based on chapter \ref{strength_multi_estimation}.
 \begin{align*}
-  x_{it} &= a_i + \beta_{im}(r_{mt} - r_{ft}) + v_{it} \\
- x_{it} &= a_i + \beta_{im}(r_{mt} - r_{ft}) + \beta_{ij}f_{jt} + v_{it} 
+  r_{it} - rf_{t} &= a_i + \beta_{im}(r_{mt} - rf_{t}) + v_{it} \\
+r_{it} - rf_{t} &= a_i + \beta_{im}(r_{mt} - rf_{t}) + \beta_{ij}f_{jt} + v_{it} 
 \end{align*}
 
-Here $x_{it}$ is the excess return of asset i at time t, which is pre-defined in chapter \ref{data}.
-$r_{mt} - r_{ft}$ represents the market factor, calculated by the difference between average market return and risk-free return at the same time t.
+Here $r_{it}$ is the return of asset i at time t, and $rf_t$ is the risk free return.
+Therefore, $r_{it} - rf_t$ is the excess return of the asset i.
+$r_{mt} - rf_{t}$ represents the market factor, calculated by the difference between average market return and risk-free return at the same time t.
 $f_{jt}$ is the value of $j^{th}$ risk factor  at time t. 
 Here $j = 1, 2, 3,\cdots 145$ . 
 $\beta_{mt}$ and $\beta_{ij}$ are the factor loadings for market factor and risk factor, respectively.
@@ -60,7 +61,7 @@ We use two different regressions in the purpose of estimating the strength under
 However, due to the potential correlations among factors, we will only focus the market factor strength when using the first single factor regression.
 
 
-	\section{Factor Strength Findings}
+	\section{Factor Strength Estimation and Discussion}
 The complete set of results of factor strength estimation is presented in the appendix \ref{strength_table} and \ref{strength_figures}.
 We estimated the factors' strength using three different data sets discussed in the \ref{data}, and rank those strength from strong to weak, alongside the market factor strength, in the table (\ref{table:three_ranked_compare}).
 
@@ -99,7 +100,7 @@ In the thirty-year scenario, the salecash (sales to cash) is the strongest with 
 
 \begin{table}[hbt!]
 	\centering
-	\caption{Proportion of Strength (Excluded Market Factor) }\label{table:proportion}
+	\caption{ Proportion of factor within certain strength range }\label{table:proportion}
 	\begin{tabular}{lccc}
 		\hline
 		\hline
@@ -129,7 +130,7 @@ This might indicates a persistent risk pricing ability of these three factors ex
 
 \begin{table}[]
 	\centering
-	\caption{Selected Risk Factor with Strength: top 15 factors from each data set and three well know factors.}
+	\caption{Selected Risk Factor with Strength: top 15 factors from each data set and three well known factors.}
 	\begin{tabular}{llc|llc|llc}
 		\hline
 		\multicolumn{3}{c|}{Ten Year} & \multicolumn{3}{c|}{Twenty Yera} & \multicolumn{3}{c}{Thirty Year} \\ \hline

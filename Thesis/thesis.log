@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2020.5.27)  18 OCT 2020 21:59
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2020.5.27)  25 OCT 2020 23:32
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -862,7 +862,7 @@ Chapter 1.
 Chapter 2.
 [4
 
-]) [5] (./factor_strength.tex [6]
+] [5]) (./factor_strength.tex [6]
 Chapter 3.
 
 Overfull \hbox (9.51472pt too wide) in paragraph at lines 13--17
@@ -912,36 +912,34 @@ ch website: http://mba.tuck.dartmouth.edu/pages/faculty/ken.french/|
  []
 
 [18] [19] [20]
-Overfull \hbox (15.03525pt too wide) in paragraph at lines 103--118
+Overfull \hbox (15.03525pt too wide) in paragraph at lines 104--119
  [][] 
  []
 
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 130.
+               Default added (so using `tbp') on input line 131.
 
 [21] [22] [23]) (./elastic_net_application.tex [24]
 Chapter 6.
 [25
 
-] [26] [27]
-
-LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 77.
-
-[28] [29] [30]
-Overfull \hbox (29.74391pt too wide) in paragraph at lines 169--176
+] [26] [27] [28] [29] [30] [31]
+Overfull \hbox (29.74391pt too wide) in paragraph at lines 175--182
  [][] 
  []
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[31]) (./conclusion.tex [32]
+) [32] (./conclusion.tex [33]
 Chapter 7.
-[33
 
-]) [34] (./thesis.bbl
+Overfull \hbox (0.83676pt too wide) in paragraph at lines 3--6
+\TU/TimesNewRoman(0)/m/n/12 In this thesis, we propose the concept of factor st
+rength and the corresponding estimation method.
+ []
+
+[34
+
+] [35]) [36] (./thesis.bbl
 Underfull \hbox (badness 10000) in paragraph at lines 218--235
 []\TU/TimesNewRoman(0)/m/n/12 Carhart, M. M.  (1997, 3).  On persistence in mut
 ual fund perfor-
@@ -960,7 +958,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 218--235
 imesNewRoman(0)/m/n/12 doi:
  []
 
-[35
+[37
 
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 247--263
@@ -1038,7 +1036,7 @@ The Journal of Finance\TU/TimesNewRoman(0)/m/n/12 , \TU/TimesNewRoman(0)/m/it/1
 2 75\TU/TimesNewRoman(0)/m/n/12 , 1327-1370.  Retrieved
  []
 
-[36]
+[38]
 Overfull \hbox (13.53589pt too wide) in paragraph at lines 519--540
 \TU/lmtt/m/n/12 https://www.jstatsoft.org/index.php/jss/article/view/v033i01/v3
 3i01.pdf
@@ -1101,7 +1099,7 @@ eview of Financial Studies\TU/TimesNewRoman(0)/m/n/12 , \TU/TimesNewRoman(0)/m/
 it/12 29\TU/TimesNewRoman(0)/m/n/12 , 5-68.  Retrieved from
  []
 
-[37]
+[39]
 Underfull \hbox (badness 7186) in paragraph at lines 794--812
 []\TU/TimesNewRoman(0)/m/n/12 Kan, R., & Zhang, C.  (1999, 2).  Two-pass tests 
 of asset pricing models
@@ -1145,7 +1143,7 @@ Underfull \hbox (badness 1215) in paragraph at lines 1056--1073
 (2019, 8).  A protocol for fac-
  []
 
-[38]
+[40]
 Underfull \hbox (badness 4940) in paragraph at lines 1118--1136
 []\TU/TimesNewRoman(0)/m/n/12 Sharpe, W. F.  (1964, 9).  Capital asset prices: 
 A theory of market equilib-
@@ -1195,7 +1193,7 @@ Underfull \hbox (badness 1348) in paragraph at lines 1185--1203
 and selection via the lasso.  \TU/TimesNewRoman(0)/m/it/12 Jour-
  []
 
-) [39] (./appendix.tex
+) [41] (./appendix.tex
 Appendix A.
 
 LaTeX Warning: No positions in optional float specifier.
@@ -1205,108 +1203,108 @@ LaTeX Warning: No positions in optional float specifier.
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `tbp') on input line 177.
 
-) (./comparison_table.tex [40
+) (./comparison_table.tex [42
 
-] [41] [42] [43] [44]
+] [43] [44] [45] [46]
 Appendix B.
-[45
+[47
 
 
-] [46] [47] [48] [49] [50] [51
+] [48] [49] [50] [51] [52] [53
 
-] [52]
+] [54]
 Underfull \hbox (badness 10000) in paragraph at lines 1467--1474
 
  []
 
-[53]
+[55]
 File: ./plot/strength_comparison_I.png Graphic file (type bmp)
 <./plot/strength_comparison_I.png>
 
 
 LaTeX Warning: Float too large for page by 62.13849pt on input line 1486.
 
-[54]
+[56]
 File: ./plot/strength_comparison_II.png Graphic file (type bmp)
 <./plot/strength_comparison_II.png>
 
 
 LaTeX Warning: Float too large for page by 9.99287pt on input line 1495.
 
-[55]
+[57]
 File: ./plot/strength_comparison_III.png Graphic file (type bmp)
 <./plot/strength_comparison_III.png>
 
 
 LaTeX Warning: Float too large for page by 9.99287pt on input line 1502.
 
-[56]
+[58]
 File: ./plot/strength_comparison_IV.png Graphic file (type bmp)
 <./plot/strength_comparison_IV.png>
 
 
 LaTeX Warning: Float too large for page by 9.99287pt on input line 1509.
 
-[57]
+[59]
 File: ./plot/strength_comparison_V.png Graphic file (type bmp)
 <./plot/strength_comparison_V.png>
 
 
 LaTeX Warning: Float too large for page by 9.99287pt on input line 1516.
 
-[58]
+[60]
 File: ./plot/strength_comparison_IV.png Graphic file (type bmp)
 <./plot/strength_comparison_IV.png>
 
 
 LaTeX Warning: Float too large for page by 63.59442pt on input line 1526.
 
-[59]
+[61]
 File: ./plot/thirty_decompose_I.png Graphic file (type bmp)
 <./plot/thirty_decompose_I.png>
 
 
 LaTeX Warning: Float too large for page by 31.91473pt on input line 1535.
 
-[60]
+[62]
 File: ./plot/thirty_decompose_II.png Graphic file (type bmp)
 <./plot/thirty_decompose_II.png>
 
 
 LaTeX Warning: Float too large for page by 9.99287pt on input line 1543.
 
-[61]
+[63]
 File: ./plot/thirty_decompose_III.png Graphic file (type bmp)
 <./plot/thirty_decompose_III.png>
 
 
 LaTeX Warning: Float too large for page by 9.99287pt on input line 1550.
 
-[62]
+[64]
 File: ./plot/thirty_decompose_IV.png Graphic file (type bmp)
 <./plot/thirty_decompose_IV.png>
 
 
 LaTeX Warning: Float too large for page by 9.99287pt on input line 1557.
 
-[63]
+[65]
 File: ./plot/thirty_decompose_V.png Graphic file (type bmp)
 <./plot/thirty_decompose_V.png>
 
 
 LaTeX Warning: Float too large for page by 9.99287pt on input line 1564.
 
-[64]
+[66]
 File: ./plot/thirty_decompose_VI.png Graphic file (type bmp)
 <./plot/thirty_decompose_VI.png>
 
 
 LaTeX Warning: Float too large for page by 63.59442pt on input line 1574.
 
-[65]
+[67]
 File: ./plot/correlation_heat_map.png Graphic file (type bmp)
 <./plot/correlation_heat_map.png>
-) [66] (./thesis.aux) ) 
+) [68] (./thesis.aux) ) 
 Here is how much of TeX's memory you used:
  17408 strings out of 479282
  374429 string characters out of 5880512
@@ -1316,4 +1314,4 @@ Here is how much of TeX's memory you used:
  1348 hyphenation exceptions out of 8191
  59i,16n,75p,829b,437s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on thesis.pdf (74 pages).
+Output written on thesis.pdf (76 pages).

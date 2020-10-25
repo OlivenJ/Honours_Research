@@ -1,31 +1,39 @@
 	\chapter{Conclusion and Possible Extension}\label{Conclusion}
 		\section{Conclusion}
-In this thesis, we proposed the concept of factor strength and the corresponding estimation method to a set of 145 risk factors plus one market factor.
-We also employed the method of Elastic net and Lasso regression to conduct feature selection to 145 risk factors.
+In this thesis, we propose the concept of factor strength and the corresponding estimation method.
+We applied the estimation on 145 different risk factors plus the market factor, estimating their strength and use the strength as reference to categorised each factors to reduce the dimension of potential factor group.
+On the basis of dimension-reduced factor group, we applied two feature selection methods namely Lasso and Elastic net, trying to eliminate the redundancy of factor groups. 
 
-From the factor strength estimation, we have a consistently estimated result of most of the strong factors.
+From the factor strength estimation, we have a consistent estimation result of most of the strong factors.
 In general, factor strength will evolve in an upward manner with time increasing.
 And the strong factors will keep high strength through times.
-But we also notice that the overall factor strength is significantly lower when we use data set contains short time-spam, compare with results obtained from using larger data set with more observation.
+But we also notice that the overall factor strength is significantly lower when we use data set contains short time-spam, compare with results obtained from using larger data set with more observations.
 Also, it worth to notice that some conventionally strong factors, for instance, the size factor, value factor, and the momentum factor do not show particular high strength.
 
-The empirical results of elastic net application indicate that both Elastic net method and Lasso regression are able to correctly and effectively eliminate factors without the ability to generating sufficient factor loadings.
+The empirical results of feature selection indicates that both Elastic net method and Lasso regression are both able to correctly and effectively eliminate factors without the ability to generating sufficient factor loadings.
 In another word, both Elastic net and Lasso can identify factor with weak strength and disregard those redundant features.
 However, since the factors with strong strength are almost all highly correlated, the Elastic net and Lasso fail to make a mutual agreement when facing strong factors.
+On average, Elastic net will selects two more factors than Lasso when facing factors with strength above 0.9.
+We also noticed that when factors with different are mixed with each other, both lasso and elastic net can effectively pick up factor with strong strength and disregard weak factors.
 
 \section{Possible Extension}
-During the empirical exploration, we discovered some possible extension of this paper, and because of the time-limit and other restrictions, we could not propose those extensions.
-Therefore, we provide some discussion about the potential extension for further research.
+
+During the empirical exploration, we discovered some possible extension of this paper, and because of the time-limit as well as other restrictions, we could not propose those extensions.
+Here, we summarise those potential extensions to provide a starting point for future research.
 
 Firstly, when discussing the factor strength, we ignore the heterogeneity of companies and factors.
 Ideally, companies and factors should be categorised based on their nature.
 For instance, companies from different industries may react differently to different factors.
-Therefore, one possible treatment is to group companies base on their industries types, or categorised factors base on their economical meanings.
-And estimated the factor strength to investigates how will the loading generating changes with different industries and different factors.
+Therefore, one possible treatment is to group companies base on their industries types, or categorised factors base on their economical or financial meanings.
+Also, \citeA{Harvey2019} suggests that newly propsoed factors are more likely to encounter the multiple=testing problem, and hence they are more likely to be the factors that can not independently provides information to explain risk-return relationship.
+So, we could also categorised the factors base on their published time, and to investigates the relationship between factor strength and time.
 
-Secondly, we use MSE to determine the tuning parameter $\theta$ and $\phi$ of the elastic net. 
-As we present above, the MSE  does not display notable differences for different tuning parameter combinations.
-Hence, considering other criteria may lead to better performance of parameter tuning.
 
-Also, some other feature selection methods or dimension reduced techniques can be taken into consideration, in order to compare the result of Elastic net and Lasso.
+Secondly, as discussed in the chapter \ref{EN:parameter_tuning },the principle of parameter tuning when applying elastic net is to select the parameter combination that minimise the MSE.
+However, the results present in the corresponding chapter indicates that MSE can not distinction different parameter combination significantly enough.
+Hence, considering use other criteria may lead to better performance of parameter tuning, and therefore improve the results of the Elastic net application.
+
+Also, some other feature selection methods or dimension reduced techniques can be taken into consideration.
+The application of those methods can be used to cross-check with the results of Elastic and Lasso.
+Some potential methods including simple stepwise selection method, dantzig selector, and tree-based method like decision tree.
 
