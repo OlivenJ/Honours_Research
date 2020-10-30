@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2020.5.27)  25 OCT 2020 23:32
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2020.5.27)  30 OCT 2020 23:35
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -235,296 +235,140 @@ Package: appendix 2020/02/08 v1.2c extra appendix facilities
 Package: bm 2019/07/24 v1.2d Bold Symbol Support (DPC/FMi)
 LaTeX Info: Redefining \bm on input line 209.
 )
-(/usr/local/texlive/2020/texmf-dist/tex/latex/tcolorbox/tcolorbox.sty
-Package: tcolorbox 2020/04/28 version 4.30 text color boxes
+(/usr/local/texlive/2020/texmf-dist/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2020-05-15 v7.00e Hypertext links for LaTeX
 
-(/usr/local/texlive/2020/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
-(/usr/local/texlive/2020/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
-(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.te
-x
-\pgfutil@everybye=\toks24
-\pgfutil@tempdima=\dimen169
-\pgfutil@tempdimb=\dimen170
+(/usr/local/texlive/2020/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
+Package: ltxcmds 2019/12/15 v1.24 LaTeX kernel commands for general use (HO)
+)
+(/usr/local/texlive/2020/texmf-dist/tex/latex/pdftexcmds/pdftexcmds.sty
+Package: pdftexcmds 2019/11/24 v0.31 Utility functions of pdfTeX for LuaTeX (HO
+)
 
-(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/utilities/pgfutil-common-li
-sts.tex))
-(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
-\pgfutil@abb=\box49
-(/usr/local/texlive/2020/texmf-dist/tex/latex/ms/everyshi.sty
-Package: everyshi 2001/05/15 v3.00 EveryShipout Package (MS)
+(/usr/local/texlive/2020/texmf-dist/tex/generic/infwarerr/infwarerr.sty
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode not found.
+)
+(/usr/local/texlive/2020/texmf-dist/tex/generic/kvsetkeys/kvsetkeys.sty
+Package: kvsetkeys 2019/12/15 v1.18 Key value parser (HO)
+)
+(/usr/local/texlive/2020/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
+Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
+)
+(/usr/local/texlive/2020/texmf-dist/tex/generic/pdfescape/pdfescape.sty
+Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
+)
+(/usr/local/texlive/2020/texmf-dist/tex/latex/hycolor/hycolor.sty
+Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
+)
+(/usr/local/texlive/2020/texmf-dist/tex/latex/letltxmacro/letltxmacro.sty
+Package: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
+)
+(/usr/local/texlive/2020/texmf-dist/tex/latex/auxhook/auxhook.sty
+Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
+)
+(/usr/local/texlive/2020/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+Package: kvoptions 2019/11/29 v3.13 Key value format for package options (HO)
+)
+\@linkdim=\dimen169
+\Hy@linkcounter=\count199
+\Hy@pagecounter=\count266
+
+(/usr/local/texlive/2020/texmf-dist/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2020-05-15 v7.00e Hyperref: PDFDocEncoding definition (HO)
+)
+(/usr/local/texlive/2020/texmf-dist/tex/generic/intcalc/intcalc.sty
+Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
+)
+(/usr/local/texlive/2020/texmf-dist/tex/generic/etexcmds/etexcmds.sty
+Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
+)
+\Hy@SavedSpaceFactor=\count267
+Package hyperref Info: Hyper figures OFF on input line 4464.
+Package hyperref Info: Link nesting OFF on input line 4469.
+Package hyperref Info: Hyper index ON on input line 4472.
+Package hyperref Info: Plain pages OFF on input line 4479.
+Package hyperref Info: Backreferencing OFF on input line 4484.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4717.
+\c@Hy@tempcnt=\count268
+
+(/usr/local/texlive/2020/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip17
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 5076.
+\XeTeXLinkMargin=\dimen170
+
+(/usr/local/texlive/2020/texmf-dist/tex/generic/bitset/bitset.sty
+Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
+
+(/usr/local/texlive/2020/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
+Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
+)
 ))
-(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex
-(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/pgf.revision.tex)
-Package: pgfrcs 2020/01/08 v3.1.5b (3.1.5b)
-))
-Package: pgf 2020/01/08 v3.1.5b (3.1.5b)
+\Fld@menulength=\count269
+\Field@Width=\dimen171
+\Fld@charsize=\dimen172
+Package hyperref Info: Hyper figures OFF on input line 6347.
+Package hyperref Info: Link nesting OFF on input line 6352.
+Package hyperref Info: Hyper index ON on input line 6355.
+Package hyperref Info: backreferencing OFF on input line 6362.
+Package hyperref Info: Link coloring OFF on input line 6367.
+Package hyperref Info: Link coloring with OCG OFF on input line 6372.
+Package hyperref Info: PDF/A mode OFF on input line 6377.
+LaTeX Info: Redefining \ref on input line 6417.
+LaTeX Info: Redefining \pageref on input line 6421.
 
-(/usr/local/texlive/2020/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty
-(/usr/local/texlive/2020/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty
-(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
-Package: pgfsys 2020/01/08 v3.1.5b (3.1.5b)
-(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
-\pgfkeys@pathtoks=\toks25
-\pgfkeys@temptoks=\toks26
+(/usr/local/texlive/2020/texmf-dist/tex/generic/atbegshi/atbegshi.sty
+Package: atbegshi 2019/12/05 v1.19 At begin shipout hook (HO)
+)
+\Hy@abspage=\count270
+\c@Item=\count271
+\c@Hfootnote=\count272
+)
+Package hyperref Info: Driver (autodetected): hxetex.
 
-(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/utilities/pgfkeysfiltered.c
-ode.tex
-\pgfkeys@tmptoks=\toks27
-))
-\pgf@x=\dimen171
-\pgf@y=\dimen172
-\pgf@xa=\dimen173
-\pgf@ya=\dimen174
-\pgf@xb=\dimen175
-\pgf@yb=\dimen176
-\pgf@xc=\dimen177
-\pgf@yc=\dimen178
-\pgf@xd=\dimen179
-\pgf@yd=\dimen180
-\w@pgf@writea=\write3
-\r@pgf@reada=\read2
-\c@pgf@counta=\count199
-\c@pgf@countb=\count266
-\c@pgf@countc=\count267
-\c@pgf@countd=\count268
-\t@pgf@toka=\toks28
-\t@pgf@tokb=\toks29
-\t@pgf@tokc=\toks30
-\pgf@sys@id@count=\count269
+(/usr/local/texlive/2020/texmf-dist/tex/latex/hyperref/hxetex.def
+File: hxetex.def 2020-05-15 v7.00e Hyperref driver for XeTeX
 
-(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
-File: pgf.cfg 2020/01/08 v3.1.5b (3.1.5b)
+(/usr/local/texlive/2020/texmf-dist/tex/latex/hyperref/puenc.def
+File: puenc.def 2020-05-15 v7.00e Hyperref: PDF Unicode definition (HO)
 )
-Driver file for pgf: pgfsys-xetex.def
+(/usr/local/texlive/2020/texmf-dist/tex/generic/stringenc/stringenc.sty
+Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO
+)
+)
+\pdfm@box=\box49
+\c@Hy@AnnotLevel=\count273
+\HyField@AnnotCount=\count274
+\Fld@listcount=\count275
+\c@bookmark@seq@number=\count276
 
-(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-xetex.de
-f
-File: pgfsys-xetex.def 2020/01/08 v3.1.5b (3.1.5b)
-
-(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-dvipdfmx
-.def
-File: pgfsys-dvipdfmx.def 2020/01/08 v3.1.5b (3.1.5b)
-
-(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-p
-df.def
-File: pgfsys-common-pdf.def 2020/01/08 v3.1.5b (3.1.5b)
+(/usr/local/texlive/2020/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+Package: rerunfilecheck 2019/12/05 v1.9 Rerun checks for auxiliary files (HO)
+(/usr/local/texlive/2020/texmf-dist/tex/latex/atveryend/atveryend.sty
+Package: atveryend 2019-12-11 v1.11 Hooks at the very end of document (HO)
+Package atveryend Info: \enddocument detected (standard20110627).
 )
-\pgfsys@objnum=\count270
-)))
-(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.
-code.tex
-File: pgfsyssoftpath.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgfsyssoftpath@smallbuffer@items=\count271
-\pgfsyssoftpath@bigbuffer@items=\count272
+(/usr/local/texlive/2020/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
+Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 )
-(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.
-code.tex
-File: pgfsysprotocol.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-)) (/usr/local/texlive/2020/texmf-dist/tex/latex/xcolor/xcolor.sty
-Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
-
-(/usr/local/texlive/2020/texmf-dist/tex/latex/graphics-cfg/color.cfg
-File: color.cfg 2016/01/02 v1.6 sample color configuration
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
+86.
 )
-Package xcolor Info: Driver file: xetex.def on input line 225.
-Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
-Package xcolor Info: Model `RGB' extended on input line 1364.
-Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1366.
-Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1367.
-Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1368.
-Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
-Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
-Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
-)
-(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
-Package: pgfcore 2020/01/08 v3.1.5b (3.1.5b)
-(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex
-(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex
-(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex)
-(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
-\pgfmath@dimen=\dimen181
-\pgfmath@count=\count273
-\pgfmath@box=\box50
-\pgfmath@toks=\toks31
-\pgfmath@stack@operand=\toks32
-\pgfmath@stack@operation=\toks33
-)
-(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.
-tex
-(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic
-.code.tex)
-(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigo
-nometric.code.tex)
-(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.rando
-m.code.tex)
-(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.compa
-rison.code.tex)
-(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.
-code.tex)
-(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round
-.code.tex)
-(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.
-code.tex)
-(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integ
-erarithmetics.code.tex)))
-(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
-\c@pgfmathroundto@lastzeros=\count274
-)) (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfint.code.tex)
-(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.co
-de.tex
-File: pgfcorepoints.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@picminx=\dimen182
-\pgf@picmaxx=\dimen183
-\pgf@picminy=\dimen184
-\pgf@picmaxy=\dimen185
-\pgf@pathminx=\dimen186
-\pgf@pathmaxx=\dimen187
-\pgf@pathminy=\dimen188
-\pgf@pathmaxy=\dimen189
-\pgf@xx=\dimen190
-\pgf@xy=\dimen191
-\pgf@yx=\dimen192
-\pgf@yy=\dimen193
-\pgf@zx=\dimen194
-\pgf@zy=\dimen195
-)
-(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconst
-ruct.code.tex
-File: pgfcorepathconstruct.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@path@lastx=\dimen196
-\pgf@path@lasty=\dimen197
-)
-(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage
-.code.tex
-File: pgfcorepathusage.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@shorten@end@additional=\dimen198
-\pgf@shorten@start@additional=\dimen199
-)
-(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.co
-de.tex
-File: pgfcorescopes.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgfpic=\box51
-\pgf@hbox=\box52
-\pgf@layerbox@main=\box53
-\pgf@picture@serial@count=\count275
-)
-(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicst
-ate.code.tex
-File: pgfcoregraphicstate.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgflinewidth=\dimen256
-)
-(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransform
-ations.code.tex
-File: pgfcoretransformations.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@pt@x=\dimen257
-\pgf@pt@y=\dimen258
-\pgf@pt@temp=\dimen259
-)
-(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.cod
-e.tex
-File: pgfcorequick.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-)
-(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.c
-ode.tex
-File: pgfcoreobjects.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-)
-(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathproce
-ssing.code.tex
-File: pgfcorepathprocessing.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-)
-(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.co
-de.tex
-File: pgfcorearrows.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgfarrowsep=\dimen260
-)
-(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.cod
-e.tex
-File: pgfcoreshade.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@max=\dimen261
-\pgf@sys@shading@range@num=\count276
-\pgf@shadingcount=\count277
-)
-(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.cod
-e.tex
-File: pgfcoreimage.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-
-(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.
-code.tex
-File: pgfcoreexternal.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgfexternal@startupbox=\box54
-))
-(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.co
-de.tex
-File: pgfcorelayers.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-)
-(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretranspare
-ncy.code.tex
-File: pgfcoretransparency.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-)
-(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepatterns.
-code.tex
-File: pgfcorepatterns.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-)
-(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcorerdf.code.
-tex
-File: pgfcorerdf.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-)))
-(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.cod
-e.tex
-File: pgfmoduleshapes.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgfnodeparttextbox=\box55
-)
-(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.
-tex
-File: pgfmoduleplot.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-)
-(/usr/local/texlive/2020/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version
--0-65.sty
-Package: pgfcomp-version-0-65 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@nodesepstart=\dimen262
-\pgf@nodesepend=\dimen263
-)
-(/usr/local/texlive/2020/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version
--1-18.sty
-Package: pgfcomp-version-1-18 2020/01/08 v3.1.5b (3.1.5b)
-)) (/usr/local/texlive/2020/texmf-dist/tex/latex/tools/verbatim.sty
-Package: verbatim 2019/11/10 v1.5r LaTeX2e package for verbatim enhancements
-\every@verbatim=\toks34
-\verbatim@line=\toks35
-\verbatim@in@stream=\read3
-)
-(/usr/local/texlive/2020/texmf-dist/tex/latex/environ/environ.sty
-Package: environ 2014/05/04 v0.3 A new way to define environments
-
-(/usr/local/texlive/2020/texmf-dist/tex/latex/trimspaces/trimspaces.sty
-Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
-))
-(/usr/local/texlive/2020/texmf-dist/tex/latex/etoolbox/etoolbox.sty
-Package: etoolbox 2019/09/21 v2.5h e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count278
-)
-\tcb@titlebox=\box56
-\tcb@upperbox=\box57
-\tcb@lowerbox=\box58
-\tcb@phantombox=\box59
-\c@tcbbreakpart=\count279
-\c@tcblayer=\count280
-\c@tcolorbox@number=\count281
-\tcb@temp=\box60
-\tcb@temp=\box61
-\tcb@temp=\box62
-\tcb@temp=\box63
-\tcb@out=\write4
-\tcb@record@out=\write5
-)
-(/usr/local/texlive/2020/texmf-dist/tex/latex/apacite/apacite.sty
+\Hy@SectionHShift=\skip58
+) (/usr/local/texlive/2020/texmf-dist/tex/latex/apacite/apacite.sty
 Package: apacite 2013/07/21 v6.03 APA citation
-\c@BibCnt=\count282
-\bibleftmargin=\skip58
-\bibindent=\skip59
-\bibparsep=\skip60
-\bibitemsep=\skip61
-\biblabelsep=\skip62
+\c@BibCnt=\count277
+\bibleftmargin=\skip59
+\bibindent=\skip60
+\bibparsep=\skip61
+\bibitemsep=\skip62
+\biblabelsep=\skip63
 )
 (/usr/local/texlive/2020/texmf-dist/tex/latex/diagbox/diagbox.sty
 Package: diagbox 2020/02/09 v2.3 Making table heads with diagonal lines
@@ -541,61 +385,61 @@ Package pict2e Info: Driver file for pict2e: p2e-xetex.def on input line 121.
 (/usr/local/texlive/2020/texmf-dist/tex/latex/pict2e/p2e-xetex.def
 File: p2e-xetex.def 2016/02/05 v0.1u Driver-dependant file (RN,HjG,JT)
 )
-\pIIe@GRAPH=\toks36
-\@arclen=\dimen264
-\@arcrad=\dimen265
-\@tempdimd=\dimen266
+\pIIe@GRAPH=\toks24
+\@arclen=\dimen173
+\@arcrad=\dimen174
+\@tempdimd=\dimen175
 )
 (/usr/local/texlive/2020/texmf-dist/tex/latex/tools/calc.sty
 Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count283
-\calc@Bcount=\count284
-\calc@Adimen=\dimen267
-\calc@Bdimen=\dimen268
-\calc@Askip=\skip63
-\calc@Bskip=\skip64
+\calc@Acount=\count278
+\calc@Bcount=\count279
+\calc@Adimen=\dimen176
+\calc@Bdimen=\dimen177
+\calc@Askip=\skip64
+\calc@Bskip=\skip65
 LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count285
-\calc@Cskip=\skip65
+\calc@Ccount=\count280
+\calc@Cskip=\skip66
 )
 (/usr/local/texlive/2020/texmf-dist/tex/latex/tools/array.sty
 Package: array 2019/08/31 v2.4l Tabular extension package (FMi)
-\col@sep=\dimen269
-\ar@mcellbox=\box64
-\extrarowheight=\dimen270
-\NC@list=\toks37
-\extratabsurround=\skip66
-\backup@length=\skip67
-\ar@cellbox=\box65
+\col@sep=\dimen178
+\ar@mcellbox=\box50
+\extrarowheight=\dimen179
+\NC@list=\toks25
+\extratabsurround=\skip67
+\backup@length=\skip68
+\ar@cellbox=\box51
 )
-\diagbox@boxa=\box66
-\diagbox@boxb=\box67
-\diagbox@boxm=\box68
-\diagbox@wd=\dimen271
-\diagbox@ht=\dimen272
-\diagbox@insepl=\dimen273
-\diagbox@insepr=\dimen274
-\diagbox@outsepl=\dimen275
-\diagbox@outsepr=\dimen276
+\diagbox@boxa=\box52
+\diagbox@boxb=\box53
+\diagbox@boxm=\box54
+\diagbox@wd=\dimen180
+\diagbox@ht=\dimen181
+\diagbox@insepl=\dimen182
+\diagbox@insepr=\dimen183
+\diagbox@outsepl=\dimen184
+\diagbox@outsepr=\dimen185
 )
 (/usr/local/texlive/2020/texmf-dist/tex/latex/tools/longtable.sty
 Package: longtable 2020/01/07 v4.13 Multi-page Table package (DPC)
-\LTleft=\skip68
-\LTright=\skip69
-\LTpre=\skip70
-\LTpost=\skip71
-\LTchunksize=\count286
-\LTcapwidth=\dimen277
-\LT@head=\box69
-\LT@firsthead=\box70
-\LT@foot=\box71
-\LT@lastfoot=\box72
-\LT@cols=\count287
-\LT@rows=\count288
-\c@LT@tables=\count289
-\c@LT@chunks=\count290
-\LT@p@ftn=\toks38
+\LTleft=\skip69
+\LTright=\skip70
+\LTpre=\skip71
+\LTpost=\skip72
+\LTchunksize=\count281
+\LTcapwidth=\dimen186
+\LT@head=\box55
+\LT@firsthead=\box56
+\LT@foot=\box57
+\LT@lastfoot=\box58
+\LT@cols=\count282
+\LT@rows=\count283
+\c@LT@tables=\count284
+\c@LT@chunks=\count285
+\LT@p@ftn=\toks26
 )
 (/usr/local/texlive/2020/texmf-dist/tex/latex/pdflscape/pdflscape.sty
 Package: pdflscape 2019/12/05 v0.12 Display of landscape pages in PDF (HO)
@@ -605,50 +449,41 @@ Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
 )
 Package pdflscape Info: Auto-detected driver: dvipdfm (xetex) on input line 98.
 
-
-(/usr/local/texlive/2020/texmf-dist/tex/generic/atbegshi/atbegshi.sty
-Package: atbegshi 2019/12/05 v1.19 At begin shipout hook (HO)
-
-(/usr/local/texlive/2020/texmf-dist/tex/generic/infwarerr/infwarerr.sty
-Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
 )
-(/usr/local/texlive/2020/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
-Package: ltxcmds 2019/12/15 v1.24 LaTeX kernel commands for general use (HO)
-)))
 (/usr/local/texlive/2020/texmf-dist/tex/latex/graphics/rotating.sty
 Package: rotating 2016/08/11 v2.16d rotated objects in LaTeX
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/base/ifthen.sty
 Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 )
-\c@r@tfl@t=\count291
-\rotFPtop=\skip72
-\rotFPbot=\skip73
-\rot@float@box=\box73
-\rot@mess@toks=\toks39
+\c@r@tfl@t=\count286
+\rotFPtop=\skip73
+\rotFPbot=\skip74
+\rot@float@box=\box59
+\rot@mess@toks=\toks27
 )
 (/usr/local/texlive/2020/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
 Package: fancyhdr 2019/01/31 v3.10 Extensive control of page headers and footer
 s
-\f@nch@headwidth=\skip74
-\f@nch@O@elh=\skip75
-\f@nch@O@erh=\skip76
-\f@nch@O@olh=\skip77
-\f@nch@O@orh=\skip78
-\f@nch@O@elf=\skip79
-\f@nch@O@erf=\skip80
-\f@nch@O@olf=\skip81
-\f@nch@O@orf=\skip82
+\f@nch@headwidth=\skip75
+\f@nch@O@elh=\skip76
+\f@nch@O@erh=\skip77
+\f@nch@O@olh=\skip78
+\f@nch@O@orh=\skip79
+\f@nch@O@elf=\skip80
+\f@nch@O@erf=\skip81
+\f@nch@O@olf=\skip82
+\f@nch@O@orf=\skip83
 )
 
 Package Fancyhdr Warning: \fancyhead's `E' option without twoside option is use
-less on input line 24.
+less on input line 27.
 
 
 Package Fancyhdr Warning: \fancyfoot's `E' option without twoside option is use
-less on input line 25.
+less on input line 28.
 
-\c@experiment=\count292
+\c@experiment=\count287
 (/usr/local/texlive/2020/texmf-dist/tex/latex/fontspec/fontspec.sty
 (/usr/local/texlive/2020/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
 (/usr/local/texlive/2020/texmf-dist/tex/latex/l3kernel/expl3.sty
@@ -656,38 +491,38 @@ Package: expl3 2020-05-15 L3 programming layer (loader)
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/l3backend/l3backend-xdvipdfmx.def
 File: l3backend-xdvipdfmx.def 2020-05-05 L3 backend support: xdvipdfmx
-\g__graphics_track_int=\count293
-\l__pdf_internal_box=\box74
-\g__pdf_backend_object_int=\count294
-\g__pdf_backend_annotation_int=\count295
+\g__graphics_track_int=\count288
+\l__pdf_internal_box=\box60
+\g__pdf_backend_object_int=\count289
+\g__pdf_backend_annotation_int=\count290
 ))
 Package: xparse 2020-05-15 L3 Experimental document command parser
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/l3packages/xparse/xparse-generic.
 tex
-\l__xparse_current_arg_int=\count296
-\g__xparse_grabber_int=\count297
-\l__xparse_m_args_int=\count298
-\l__xparse_v_nesting_int=\count299
+\l__xparse_current_arg_int=\count291
+\g__xparse_grabber_int=\count292
+\l__xparse_m_args_int=\count293
+\l__xparse_v_nesting_int=\count294
 ))
 Package: fontspec 2020/02/21 v2.7i Font selection for XeLaTeX and LuaLaTeX
  (/usr/local/texlive/2020/texmf-dist/tex/latex/fontspec/fontspec-xetex.sty
 Package: fontspec-xetex 2020/02/21 v2.7i Font selection for XeLaTeX and LuaLaTe
 X
-\l__fontspec_script_int=\count300
-\l__fontspec_language_int=\count301
-\l__fontspec_strnum_int=\count302
-\l__fontspec_tmp_int=\count303
-\l__fontspec_tmpa_int=\count304
-\l__fontspec_tmpb_int=\count305
-\l__fontspec_tmpc_int=\count306
-\l__fontspec_em_int=\count307
-\l__fontspec_emdef_int=\count308
-\l__fontspec_strong_int=\count309
-\l__fontspec_strongdef_int=\count310
-\l__fontspec_tmpa_dim=\dimen278
-\l__fontspec_tmpb_dim=\dimen279
-\l__fontspec_tmpc_dim=\dimen280
+\l__fontspec_script_int=\count295
+\l__fontspec_language_int=\count296
+\l__fontspec_strnum_int=\count297
+\l__fontspec_tmp_int=\count298
+\l__fontspec_tmpa_int=\count299
+\l__fontspec_tmpb_int=\count300
+\l__fontspec_tmpc_int=\count301
+\l__fontspec_em_int=\count302
+\l__fontspec_emdef_int=\count303
+\l__fontspec_strong_int=\count304
+\l__fontspec_strongdef_int=\count305
+\l__fontspec_tmpa_dim=\dimen187
+\l__fontspec_tmpb_dim=\dimen188
+\l__fontspec_tmpc_dim=\dimen189
 (/usr/local/texlive/2020/texmf-dist/tex/latex/base/fontenc.sty
 Package: fontenc 2020/02/11 v2.0o Standard LaTeX package
 )
@@ -717,27 +552,31 @@ Package fontspec Info: Font family 'TimesNewRoman(0)' created for font 'Times
 (./thesis.aux)
 \openout1 = `thesis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 37.
-LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 3
-7.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 40.
+LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 4
+0.
  (/usr/local/texlive/2020/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: xetex
@@ -773,19 +612,57 @@ LaTeX Font Info:    ... okay on input line 37.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-ABD: EveryShipout initializing macros
-\c@maskedRefs=\count311
+\AtBeginShipoutBox=\box61
+Package hyperref Info: Link coloring OFF on input line 40.
+(/usr/local/texlive/2020/texmf-dist/tex/latex/hyperref/nameref.sty
+Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
+
+(/usr/local/texlive/2020/texmf-dist/tex/latex/refcount/refcount.sty
+Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
+)
+(/usr/local/texlive/2020/texmf-dist/tex/generic/gettitlestring/gettitlestring.s
+ty
+Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
+)
+\c@section@level=\count306
+)
+LaTeX Info: Redefining \ref on input line 40.
+LaTeX Info: Redefining \pageref on input line 40.
+LaTeX Info: Redefining \nameref on input line 40.
+ (./thesis.out) (./thesis.out)
+\@outlinefile=\write3
+\openout3 = `thesis.out'.
+
+\c@maskedRefs=\count307
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/apacite/english.apc
 File: english.apc 2013/07/21 v6.03 apacite language file
 LaTeX Info: Redefining \BPBI on input line 129.
 LaTeX Info: Redefining \BHBI on input line 130.
 )
-\AtBeginShipoutBox=\box75
+(./titlepage.tex
+File: plot/monash.jpg Graphic file (type bmp)
+<plot/monash.jpg>
 
-(./titlepage.tex [1
+(/usr/local/texlive/2020/texmf-dist/tex/generic/stringenc/se-ascii-print.def
+File: se-ascii-print.def 2019/11/29 v1.12 stringenc: Printable ASCII characters
 
-] [1
+)
+[1
+
+]
+! Missing } inserted.
+<inserted text> 
+                }
+l.26 \end{titlepage}
+                    
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+[1
 
 ] [2
 
@@ -831,8 +708,8 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
  [2
 
 ])
-\tf@toc=\write6
-\openout6 = `thesis.toc'.
+\tf@toc=\write4
+\openout4 = `thesis.toc'.
 
 
 
@@ -842,14 +719,14 @@ We now make it that large for the rest of the document.
 This may cause the page layout to be inconsistent, however.
 
 [3] (./thesis.lof)
-\tf@lof=\write7
-\openout7 = `thesis.lof'.
+\tf@lof=\write5
+\openout5 = `thesis.lof'.
 
  [4
 
 ] (./thesis.lot)
-\tf@lot=\write8
-\openout8 = `thesis.lot'.
+\tf@lot=\write6
+\openout6 = `thesis.lot'.
 
  [5
 
@@ -864,15 +741,6 @@ Chapter 2.
 
 ] [5]) (./factor_strength.tex [6]
 Chapter 3.
-
-Overfull \hbox (9.51472pt too wide) in paragraph at lines 13--17
-[]\TU/TimesNewRoman(0)/m/n/12 In the left-hand side, we have $\OML/ztmcm/m/it/1
-2 x[]$ \TU/TimesNewRoman(0)/m/n/12 denotes the cross-section unit i at time t, 
-where $\OML/ztmcm/m/it/12 i \OT1/ztmcm/m/n/12 = 1\OML/ztmcm/m/it/12 ; \OT1/ztmc
-m/m/n/12 2\OML/ztmcm/m/it/12 ; \OT1/ztmcm/m/n/12 3\OML/ztmcm/m/it/12 ; []  ; n$
-
- []
-
 [7
 
 ] [8] [9]
@@ -907,29 +775,41 @@ Overfull \hbox (35.83759pt too wide) in paragraph at lines 23--30
 
 
 Overfull \hbox (20.24458pt too wide) in paragraph at lines 31--31
-[][]\TU/TimesNewRoman(0)/m/n/10 The risk free rate was from the Kenneth R. Fren
-ch website: http://mba.tuck.dartmouth.edu/pages/faculty/ken.french/| 
+[][][]\TU/TimesNewRoman(0)/m/n/10 The risk free rate was from the Kenneth R. Fr
+ench website: http://mba.tuck.dartmouth.edu/pages/faculty/ken.french/| 
  []
 
-[18] [19] [20]
-Overfull \hbox (15.03525pt too wide) in paragraph at lines 104--119
+[18] [19]
+Overfull \hbox (15.03525pt too wide) in paragraph at lines 114--129
  [][] 
  []
 
+[20]
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 131.
+               Default added (so using `tbp') on input line 141.
 
-[21] [22] [23]) (./elastic_net_application.tex [24]
+[21] [22]) (./elastic_net_application.tex [23]
 Chapter 6.
-[25
+[24
 
-] [26] [27] [28] [29] [30] [31]
-Overfull \hbox (29.74391pt too wide) in paragraph at lines 175--182
+]
+Overfull \hbox (8.80841pt too wide) in paragraph at lines 24--29
+\TU/TimesNewRoman(0)/m/n/12 Here, the estimated $[][]$ loading value is subject
+ to two penalty terms: the Lasso penalty $\OML/ztmcm/m/it/12 ^^U[] [][] \OMS/zt
+mcm/m/n/12 j\OML/ztmcm/m/it/12 ^^L[]\OMS/ztmcm/m/n/12 j$
+ []
+
+[25] [26] [27] [28]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[29]
+Overfull \hbox (29.74391pt too wide) in paragraph at lines 187--194
  [][] 
  []
 
-) [32] (./conclusion.tex [33]
+[30]) (./conclusion.tex [31]
 Chapter 7.
 
 Overfull \hbox (0.83676pt too wide) in paragraph at lines 3--6
@@ -937,263 +817,25 @@ Overfull \hbox (0.83676pt too wide) in paragraph at lines 3--6
 rength and the corresponding estimation method.
  []
 
-[34
+[32
 
-] [35]) [36] (./thesis.bbl
-Underfull \hbox (badness 10000) in paragraph at lines 218--235
-[]\TU/TimesNewRoman(0)/m/n/12 Carhart, M. M.  (1997, 3).  On persistence in mut
-ual fund perfor-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 218--235
-\TU/TimesNewRoman(0)/m/n/12 mance.  \TU/TimesNewRoman(0)/m/it/12 The Journal of
- Finance\TU/TimesNewRoman(0)/m/n/12 , \TU/TimesNewRoman(0)/m/it/12 52\TU/TimesN
-ewRoman(0)/m/n/12 , 57-82.  Retrieved from
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 218--235
-\TU/lmtt/m/n/12 http://doi.wiley.com/10.1111/j.1540-6261.1997.tb03808.x   \TU/T
-imesNewRoman(0)/m/n/12 doi:
- []
-
-[37
+] [33]) [34] (./thesis.bbl [35
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 247--263
-[]\TU/TimesNewRoman(0)/m/n/12 Cochrane, J. H.  (2011, 8).  Presidential address
-: Discount rates.
+Underfull \hbox (badness 10000) in paragraph at lines 519--540
+[]$[][][][][] [][][] [][][] [] [][][][][][][][][][] [] [][][][] [] [][][][][] [
+] [][][][] [] [][][] [] [][][][][][][] [] [][][][] [] [][][][][][][] [] [][][][
+][][] []
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 247--263
-\TU/TimesNewRoman(0)/m/it/12 The Journal of Finance\TU/TimesNewRoman(0)/m/n/12 
-, \TU/TimesNewRoman(0)/m/it/12 66\TU/TimesNewRoman(0)/m/n/12 , 1047-1108.  Retr
-ieved from
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 247--263
-\TU/lmtt/m/n/12 http://doi.wiley.com/10.1111/j.1540-6261.2011.01671.x   \TU/Tim
-esNewRoman(0)/m/n/12 doi:
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 277--297
-[]\TU/TimesNewRoman(0)/m/n/12 Dickey, D. A., & Fuller, W. A.  (1979, 6).  Distr
-ibution of the esti-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 277--297
-\TU/TimesNewRoman(0)/m/n/12 mators for autoregressive time series with a unit r
-oot.  \TU/TimesNewRoman(0)/m/it/12 Journal of
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 277--297
-\TU/TimesNewRoman(0)/m/it/12 the American Statistical Association\TU/TimesNewRo
-man(0)/m/n/12 , \TU/TimesNewRoman(0)/m/it/12 74\TU/TimesNewRoman(0)/m/n/12 , 42
-7-431.  Retrieved from
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 277--297
-\TU/lmtt/m/n/12 https://www.tandfonline.com/doi/abs/10.1080/01621459.1979.10482
-531
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 311--329
-[]\TU/TimesNewRoman(0)/m/n/12 Fama, E. F., & French, K. R.  (1992, 6).  The cro
-ss-section of expected
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 311--329
-\TU/TimesNewRoman(0)/m/n/12 stock returns.  \TU/TimesNewRoman(0)/m/it/12 The Jo
-urnal of Finance\TU/TimesNewRoman(0)/m/n/12 , \TU/TimesNewRoman(0)/m/it/12 47\T
-U/TimesNewRoman(0)/m/n/12 , 427-465.  Retrieved from
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 311--329
-\TU/lmtt/m/n/12 http://doi.wiley.com/10.1111/j.1540-6261.1992.tb04398.x   \TU/T
-imesNewRoman(0)/m/n/12 doi:
- []
-
-
-Underfull \hbox (badness 7540) in paragraph at lines 455--474
-[]\TU/TimesNewRoman(0)/m/n/12 Feng, G., Giglio, S., & Xiu, D.  (2020, 6).  Tami
-ng the factor zoo: A
- []
-
-
-Underfull \hbox (badness 4899) in paragraph at lines 455--474
-\TU/TimesNewRoman(0)/m/n/12 test of new factors.  \TU/TimesNewRoman(0)/m/it/12 
-The Journal of Finance\TU/TimesNewRoman(0)/m/n/12 , \TU/TimesNewRoman(0)/m/it/1
-2 75\TU/TimesNewRoman(0)/m/n/12 , 1327-1370.  Retrieved
- []
-
-[38]
-Overfull \hbox (13.53589pt too wide) in paragraph at lines 519--540
-\TU/lmtt/m/n/12 https://www.jstatsoft.org/index.php/jss/article/view/v033i01/v3
-3i01.pdf
- []
-
-
-Underfull \hbox (badness 6825) in paragraph at lines 519--540
-\TU/lmtt/m/n/12 https://www.jstatsoft.org/index.php/jss/article/view/v033i01   
-\TU/TimesNewRoman(0)/m/n/12 doi:
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 554--574
-[]\TU/TimesNewRoman(0)/m/n/12 Gospodinov, N., Kan, R., & Robotti, C.  (2014, 7)
-.  Misspecification-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 554--574
-\TU/TimesNewRoman(0)/m/n/12 robust inference in linear asset-pricing models wit
-h irrelevant risk fac-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 554--574
-\TU/TimesNewRoman(0)/m/n/12 tors.  \TU/TimesNewRoman(0)/m/it/12 Review of Finan
-cial Studies\TU/TimesNewRoman(0)/m/n/12 , \TU/TimesNewRoman(0)/m/it/12 27\TU/Ti
-mesNewRoman(0)/m/n/12 , 2139-2170.  Retrieved from
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 554--574
-\TU/lmtt/m/n/12 https://academic.oup.com/rfs/article/27/7/2139/1578148   \TU/Ti
-mesNewRoman(0)/m/n/12 doi:
- []
-
-
-Underfull \hbox (badness 3343) in paragraph at lines 617--634
-[]\TU/TimesNewRoman(0)/m/n/12 Gu, S., Kelly, B., & Xiu, D.  (2020, 2).  Empiric
-al asset pricing via machine
- []
-
-
-Underfull \hbox (badness 2753) in paragraph at lines 617--634
-\TU/TimesNewRoman(0)/m/n/12 learning.  \TU/TimesNewRoman(0)/m/it/12 The Review 
-of Financial Studies\TU/TimesNewRoman(0)/m/n/12 , \TU/TimesNewRoman(0)/m/it/12 
-33\TU/TimesNewRoman(0)/m/n/12 , 2223-2273.  Retrieved from
- []
-
-
-Underfull \hbox (badness 1953) in paragraph at lines 704--721
-[]\TU/TimesNewRoman(0)/m/n/12 Harvey, C. R., Liu, Y., & Zhu, H.  (2015, 10).  …
- and the cross-section of ex-
- []
-
-
-Underfull \hbox (badness 2435) in paragraph at lines 704--721
-\TU/TimesNewRoman(0)/m/n/12 pected returns.  \TU/TimesNewRoman(0)/m/it/12 The R
-eview of Financial Studies\TU/TimesNewRoman(0)/m/n/12 , \TU/TimesNewRoman(0)/m/
-it/12 29\TU/TimesNewRoman(0)/m/n/12 , 5-68.  Retrieved from
- []
-
-[39]
-Underfull \hbox (badness 7186) in paragraph at lines 794--812
-[]\TU/TimesNewRoman(0)/m/n/12 Kan, R., & Zhang, C.  (1999, 2).  Two-pass tests 
-of asset pricing models
- []
-
-
-Underfull \hbox (badness 7362) in paragraph at lines 794--812
-\TU/TimesNewRoman(0)/m/n/12 with useless factors.  \TU/TimesNewRoman(0)/m/it/12
- The Journal of Finance\TU/TimesNewRoman(0)/m/n/12 , \TU/TimesNewRoman(0)/m/it/
-12 54\TU/TimesNewRoman(0)/m/n/12 , 203-235.  Retrieved
- []
-
-
-Underfull \hbox (badness 1460) in paragraph at lines 794--812
-\TU/TimesNewRoman(0)/m/n/12 from \TU/lmtt/m/n/12 http://doi.wiley.com/10.1111/0
-022-1082.00102   \TU/TimesNewRoman(0)/m/n/12 doi: 10.1111/0022-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1024--1042
-[]\TU/TimesNewRoman(0)/m/n/12 Phillips, P. C., & Perron, P.  (1988, 6).  Testin
-g for a unit root in
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1024--1042
-\TU/TimesNewRoman(0)/m/n/12 time series regression.  \TU/TimesNewRoman(0)/m/it/
-12 Biometrika\TU/TimesNewRoman(0)/m/n/12 , \TU/TimesNewRoman(0)/m/it/12 75\TU/T
-imesNewRoman(0)/m/n/12 , 335-346.  Retrieved from
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1024--1042
-\TU/lmtt/m/n/12 https://academic.oup.com/biomet/article/75/2/335/292919   \TU/T
-imesNewRoman(0)/m/n/12 doi:
- []
-
-
-Underfull \hbox (badness 1215) in paragraph at lines 1056--1073
-[]\TU/TimesNewRoman(0)/m/n/12 Pukthuanthong, K., Roll, R., & Subrahmanyam, A.  
-(2019, 8).  A protocol for fac-
- []
-
-[40]
-Underfull \hbox (badness 4940) in paragraph at lines 1118--1136
-[]\TU/TimesNewRoman(0)/m/n/12 Sharpe, W. F.  (1964, 9).  Capital asset prices: 
-A theory of market equilib-
- []
-
-
-Underfull \hbox (badness 2781) in paragraph at lines 1118--1136
-\TU/TimesNewRoman(0)/m/n/12 rium under conditions of risk.  \TU/TimesNewRoman(0
-)/m/it/12 The Journal of Finance\TU/TimesNewRoman(0)/m/n/12 , \TU/TimesNewRoman
-(0)/m/it/12 19\TU/TimesNewRoman(0)/m/n/12 , 425-442.  Re-
- []
-
-
+[36] [37]
 Underfull \hbox (badness 10000) in paragraph at lines 1151--1173
-[]\TU/TimesNewRoman(0)/m/n/12 Simon, N., Friedman, J., Hastie, T., & Tibshirani
-, R.  (2011, 3).  Regu-
+[][][][][][][] [] [][][][][][] [] [][][][][][][][][] [][][] [][][] [] [][][][][
+][][][][][] [] [][][][] [] [][][][][] [] [][][][] [] [][][] [] [][][][][][][] [
+]
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 1151--1173
-\TU/TimesNewRoman(0)/m/n/12 larization paths for cox’s proportional hazards mod
-el via coordinate de-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1151--1173
-\TU/TimesNewRoman(0)/m/n/12 scent.  \TU/TimesNewRoman(0)/m/it/12 Journal of Sta
-tistical Software\TU/TimesNewRoman(0)/m/n/12 , \TU/TimesNewRoman(0)/m/it/12 39\
-TU/TimesNewRoman(0)/m/n/12 , 1-13.  Retrieved from
- []
-
-
-Overfull \hbox (13.5119pt too wide) in paragraph at lines 1151--1173
-\TU/lmtt/m/n/12 https://www.jstatsoft.org/index.php/jss/article/view/v039i05/v3
-9i05.pdf
- []
-
-
-Underfull \hbox (badness 6825) in paragraph at lines 1151--1173
-\TU/lmtt/m/n/12 https://www.jstatsoft.org/index.php/jss/article/view/v039i05   
-\TU/TimesNewRoman(0)/m/n/12 doi:
- []
-
-
-Underfull \hbox (badness 1348) in paragraph at lines 1185--1203
-[]\TU/TimesNewRoman(0)/m/n/12 Tibshirani, R.  (1996, 1).  Regression shrinkage 
-and selection via the lasso.  \TU/TimesNewRoman(0)/m/it/12 Jour-
- []
-
-) [41] (./appendix.tex
+[38]) [39] (./appendix.tex
 Appendix A.
 
 LaTeX Warning: No positions in optional float specifier.
@@ -1203,115 +845,125 @@ LaTeX Warning: No positions in optional float specifier.
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `tbp') on input line 177.
 
-) (./comparison_table.tex [42
+) (./comparison_table.tex [40
 
-] [43] [44] [45] [46]
+] [41] [42] [43] [44]
 Appendix B.
-[47
+[45
 
 
-] [48] [49] [50] [51] [52] [53
+] [46] [47] [48] [49] [50] [51
 
-] [54]
+] [52]
 Underfull \hbox (badness 10000) in paragraph at lines 1467--1474
 
  []
 
-[55]
+[53]
 File: ./plot/strength_comparison_I.png Graphic file (type bmp)
 <./plot/strength_comparison_I.png>
 
 
 LaTeX Warning: Float too large for page by 62.13849pt on input line 1486.
 
-[56]
+[54]
 File: ./plot/strength_comparison_II.png Graphic file (type bmp)
 <./plot/strength_comparison_II.png>
 
 
 LaTeX Warning: Float too large for page by 9.99287pt on input line 1495.
 
-[57]
+[55]
 File: ./plot/strength_comparison_III.png Graphic file (type bmp)
 <./plot/strength_comparison_III.png>
 
 
 LaTeX Warning: Float too large for page by 9.99287pt on input line 1502.
 
-[58]
+[56]
 File: ./plot/strength_comparison_IV.png Graphic file (type bmp)
 <./plot/strength_comparison_IV.png>
 
 
 LaTeX Warning: Float too large for page by 9.99287pt on input line 1509.
 
-[59]
+[57]
 File: ./plot/strength_comparison_V.png Graphic file (type bmp)
 <./plot/strength_comparison_V.png>
 
 
 LaTeX Warning: Float too large for page by 9.99287pt on input line 1516.
 
-[60]
+[58]
 File: ./plot/strength_comparison_IV.png Graphic file (type bmp)
 <./plot/strength_comparison_IV.png>
 
 
 LaTeX Warning: Float too large for page by 63.59442pt on input line 1526.
 
-[61]
+[59]
 File: ./plot/thirty_decompose_I.png Graphic file (type bmp)
 <./plot/thirty_decompose_I.png>
 
 
 LaTeX Warning: Float too large for page by 31.91473pt on input line 1535.
 
-[62]
+[60]
 File: ./plot/thirty_decompose_II.png Graphic file (type bmp)
 <./plot/thirty_decompose_II.png>
 
 
 LaTeX Warning: Float too large for page by 9.99287pt on input line 1543.
 
-[63]
+[61]
 File: ./plot/thirty_decompose_III.png Graphic file (type bmp)
 <./plot/thirty_decompose_III.png>
 
 
 LaTeX Warning: Float too large for page by 9.99287pt on input line 1550.
 
-[64]
+[62]
 File: ./plot/thirty_decompose_IV.png Graphic file (type bmp)
 <./plot/thirty_decompose_IV.png>
 
 
 LaTeX Warning: Float too large for page by 9.99287pt on input line 1557.
 
-[65]
+[63]
 File: ./plot/thirty_decompose_V.png Graphic file (type bmp)
 <./plot/thirty_decompose_V.png>
 
 
 LaTeX Warning: Float too large for page by 9.99287pt on input line 1564.
 
-[66]
+[64]
 File: ./plot/thirty_decompose_VI.png Graphic file (type bmp)
 <./plot/thirty_decompose_VI.png>
 
 
 LaTeX Warning: Float too large for page by 63.59442pt on input line 1574.
 
-[67]
+[65]
 File: ./plot/correlation_heat_map.png Graphic file (type bmp)
 <./plot/correlation_heat_map.png>
-) [68] (./thesis.aux) ) 
+)
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 80.
+ [66]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 80.
+ (./thesis.aux)
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 80.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 80.
+Package rerunfilecheck Info: File `thesis.out' has not changed.
+(rerunfilecheck)             Checksum: 45DCEE36A1EE5A0B26701FE6321DEDCC;2108.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 80.
+ ) 
 Here is how much of TeX's memory you used:
- 17408 strings out of 479282
- 374429 string characters out of 5880512
- 716683 words of memory out of 5000000
- 34677 multiletter control sequences out of 15000+600000
- 551270 words of font info for 100 fonts, out of 8000000 for 9000
+ 14496 strings out of 479282
+ 265686 string characters out of 5880512
+ 637870 words of memory out of 5000000
+ 31863 multiletter control sequences out of 15000+600000
+ 551630 words of font info for 101 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 59i,16n,75p,829b,437s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 44i,16n,70p,704b,555s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on thesis.pdf (76 pages).
+Output written on thesis.pdf (74 pages).

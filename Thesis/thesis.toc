@@ -1,28 +1,28 @@
-\contentsline {chapter}{\numberline {1}Introduction and Motivation}{1}%
-\contentsline {chapter}{\numberline {2}Related Literature}{4}%
-\contentsline {chapter}{\numberline {3}Factor Strength}{7}%
-\contentsline {section}{\numberline {3.1}Definition}{7}%
-\contentsline {section}{\numberline {3.2}Estimation Under Single-factor Setting}{8}%
-\contentsline {section}{\numberline {3.3}Estimation Under Multi-Factor Setting}{10}%
-\contentsline {chapter}{\numberline {4}Monte Carlo Simulation}{12}%
-\contentsline {section}{\numberline {4.1}Simulation Design}{12}%
-\contentsline {section}{\numberline {4.2}Experiment Setting}{13}%
-\contentsline {section}{\numberline {4.3}Monte Carlo Findings}{15}%
-\contentsline {chapter}{\numberline {5}Empirical Application: Factor Strength}{17}%
-\contentsline {section}{\numberline {5.1}Description of Data for Factor Strength Estimation}{17}%
-\contentsline {section}{\numberline {5.2}Setting for Factor Strength Estimation}{19}%
-\contentsline {section}{\numberline {5.3}Factor Strength Estimation and Discussion}{19}%
-\contentsline {chapter}{\numberline {6}Empirical Application: Elastic Net}{25}%
-\contentsline {section}{\numberline {6.1}Brief Introduction to Elastic Net}{25}%
-\contentsline {section}{\numberline {6.2}Properties of Risk Factors}{27}%
-\contentsline {section}{\numberline {6.3}Tuning Parameter}{28}%
-\contentsline {section}{\numberline {6.4}Elastic Net Findings}{30}%
-\contentsline {chapter}{\numberline {7}Conclusion and Possible Extension}{34}%
-\contentsline {section}{\numberline {7.1}Conclusion}{34}%
-\contentsline {section}{\numberline {7.2}Possible Extension}{35}%
-\contentsline {chapter}{References}{37}%
-\contentsline {chapter}{\numberline {A}Simulation Results}{42}%
-\contentsline {chapter}{\numberline {B}Empirical Application Results}{47}%
-\contentsline {section}{\numberline {B.1}Empirical Factor Strength Estimates Tables}{47}%
-\contentsline {section}{\numberline {B.2}Strength Comparisons Figures}{56}%
-\contentsline {section}{\numberline {B.3}Factor Correlation}{68}%
+\contentsline {chapter}{\numberline {1}Introduction and Motivation}{1}{chapter.1}%
+\contentsline {chapter}{\numberline {2}Related Literature}{4}{chapter.2}%
+\contentsline {chapter}{\numberline {3}Factor Strength}{7}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Definition}{7}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Estimation Under Single-factor Setting}{8}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Estimation Under Multi-Factor Setting}{10}{section.3.3}%
+\contentsline {chapter}{\numberline {4}Monte Carlo Simulation}{12}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Simulation Design}{12}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Experiment Setting}{13}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Monte Carlo Findings}{15}{section.4.3}%
+\contentsline {chapter}{\numberline {5}Empirical Application: Factor Strength}{17}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Description of Data for Factor Strength Estimation}{17}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Setting for Factor Strength Estimation}{19}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Factor Strength Estimation and Discussion}{19}{section.5.3}%
+\contentsline {chapter}{\numberline {6}Empirical Application: Elastic Net}{24}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Brief Introduction to Elastic Net}{24}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Properties of Risk Factors}{26}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Tuning Parameter}{27}{section.6.3}%
+\contentsline {section}{\numberline {6.4}Elastic Net Findings}{29}{section.6.4}%
+\contentsline {chapter}{\numberline {7}Conclusion and Possible Extension}{32}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Conclusion}{32}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Possible Extension}{33}{section.7.2}%
+\contentsline {chapter}{References}{35}{chapter*.20}%
+\contentsline {chapter}{\numberline {A}Simulation Results}{40}{appendix.A}%
+\contentsline {chapter}{\numberline {B}Empirical Application Results}{45}{appendix.B}%
+\contentsline {section}{\numberline {B.1}Empirical Factor Strength Estimates Tables}{45}{section.B.1}%
+\contentsline {section}{\numberline {B.2}Strength Comparisons Figures}{54}{section.B.2}%
+\contentsline {section}{\numberline {B.3}Factor Correlation}{66}{section.B.3}%

@@ -3,21 +3,21 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {5.1}{\ignorespaces Data Set Dimensions}}{18}%
-\contentsline {table}{\numberline {5.2}{\ignorespaces Market factor strength estimation}}{20}%
-\contentsline {table}{\numberline {5.3}{\ignorespaces Proportion of factor within certain strength range }}{21}%
-\contentsline {table}{\numberline {5.4}{\ignorespaces Selected Risk Factor with Strength: top 15 factors from each data set and three well known factors.}}{22}%
+\contentsline {table}{\numberline {5.1}{\ignorespaces Data Set Dimensions}}{18}{table.5.1}%
+\contentsline {table}{\numberline {5.2}{\ignorespaces Market factor strength estimation}}{19}{table.5.2}%
+\contentsline {table}{\numberline {5.3}{\ignorespaces Proportion of factor within certain strength range }}{20}{table.5.3}%
+\contentsline {table}{\numberline {5.4}{\ignorespaces Selected Risk Factor with Strength: top 15 factors from each data set and three well known factors.}}{21}{table.5.4}%
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {6.1}{\ignorespaces Estimated Optimal $\theta $ values for different factor groups}}{29}%
-\contentsline {table}{\numberline {6.2}{\ignorespaces Average factor selection proportions and factor selection counts of Elastic Net and Lasso}}{31}%
-\contentsline {table}{\numberline {6.3}{\ignorespaces Proportion of Lasso Regression and Elastic Net produces same or largely similar results for 145 companies}}{32}%
-\contentsline {table}{\numberline {6.4}{\ignorespaces Correlation Coefficient among different factor groups. }}{32}%
+\contentsline {table}{\numberline {6.1}{\ignorespaces Estimated Optimal $\theta $ values for different factor groups}}{28}{table.6.1}%
+\contentsline {table}{\numberline {6.2}{\ignorespaces Average factor selection proportions and factor selection counts of Elastic Net and Lasso}}{30}{table.6.2}%
+\contentsline {table}{\numberline {6.3}{\ignorespaces Proportion of Lasso Regression and Elastic Net produces same or largely similar results for 145 companies}}{30}{table.6.3}%
+\contentsline {table}{\numberline {6.4}{\ignorespaces Correlation Coefficient among different factor groups. }}{31}{table.6.4}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {A.1}{\ignorespaces Simulation result for single factor setting}}{43}%
-\contentsline {table}{\numberline {A.2}{\ignorespaces Simulation result for double factors setting (no correlation)}}{44}%
-\contentsline {table}{\numberline {A.3}{\ignorespaces Simulation result for double factors setting (weak correlation)}}{45}%
-\contentsline {table}{\numberline {A.4}{\ignorespaces Simulation result for double factors setting (strong correlation)}}{46}%
+\contentsline {table}{\numberline {A.1}{\ignorespaces Simulation result for single factor setting}}{41}{table.A.1}%
+\contentsline {table}{\numberline {A.2}{\ignorespaces Simulation result for double factors setting (no correlation)}}{42}{table.A.2}%
+\contentsline {table}{\numberline {A.3}{\ignorespaces Simulation result for double factors setting (weak correlation)}}{43}{table.A.3}%
+\contentsline {table}{\numberline {A.4}{\ignorespaces Simulation result for double factors setting (strong correlation)}}{44}{table.A.4}%
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {B.1}{Comparison table of estimated factor strength on three different data sets, from strong to weak}}{47}%
-\contentsline {table}{\numberline {B.2}{Decompose the thirty year data into three ten year subset, estimated the factor strength base on those three data set separately. Rank the result base on the factor strength, from strong to weak.}}{53}%
+\contentsline {table}{\numberline {B.1}{Comparison table of estimated factor strength on three different data sets, from strong to weak}}{45}{table.B.1}%
+\contentsline {table}{\numberline {B.2}{Decompose the thirty year data into three ten year subset, estimated the factor strength base on those three data set separately. Rank the result base on the factor strength, from strong to weak.}}{51}{table.B.2}%

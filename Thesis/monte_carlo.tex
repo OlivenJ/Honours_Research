@@ -4,9 +4,9 @@
 	
 \section{Simulation Design}
 The experiments is designed to reflect the CAPM model and its extension.
-For simplicity, we first define $x_{it} := r_{it}- r_{ft}$.
-$r_{it}$ is the unit's return, and $r_{ft}$ represent the risk-free rate at time t, therefore, the $x_{it}$ is the excess return of unit i at time t.
-We use $f_{mt}:=r_{mt} - r_{ft}$ to denote the market factor.
+For simplicity, we first define $x_{it} := r_{it}- rf_{t}$.
+$r_{it}$ is the unit's return, and $rf_{t}$ represent the risk-free rate at time t, therefore, the $x_{it}$ is the excess return of unit i at time t.
+We use $f_{mt}:=r_{mt} - rf_{t}$ to denote the market factor, and $\beta_{im}$ to denotes the market factor loading.
 The market factor is defined as the difference between the average market return, and the risk free return.
 Here $r_{mt}$ is the average market return of hypothetically all assets in the universe.
 %Additionally, we set $q_1(\cdot)$ and $q_2(\cdot)$ as two different functions that represent the unknown mechanism of market factor and other risk factors in pricing asset risk.
@@ -18,7 +18,7 @@ Now consider the following data generating process (DGP):
 %	\[ x_{it} = q_1(f_{mt}) + q_2( \sum_{j=1}^k\beta_{ij}f_{jt}) +\epsilon_{it}  \]
 
 
-In the simulation, we consider a dataset has $i = 1, 2,\dots, n$ different cross-section units, with $t= 1, 2,\dots, T$ different observations. 
+In the simulation, we consider a dataset has $i = 1, 2,\dots, n$ different cross-section units, with $t= 1, 2,\dots, T$ different time-series observations. 
 $f_{jt}$ represents different risk factors, and the corresponding  $\beta_{ij}$ are the factor loadings.
 We expect the market factor will have strength equal to one all the time, so we consider the market factor has strength $\alpha_m = 1$.
 $\varepsilon_{it}$ is the stochastic error term.
@@ -52,8 +52,8 @@ For the factor loading $\beta_{i1}$ and $\beta_{i2}$, we first use a uniform dis
 Here we set $\mu_{\beta}=0.71$ to make sure every generated loading value is sufficiently larger than 0.
 Then we randomly assign $n - [n^{\alpha_{1}}]$ and $n - [n^{\alpha_{2}}]$ factor loadings as zero.
 $\alpha_1$ and $\alpha_2$ are the true factor strength of $f_1$ and $f_2$. 
-In this simulation, we will start the factor strength from 0.7 and increase it gradually till unity with pace 0.05, say $(\alpha_{1}, \alpha_{2}) = \{0.7, 0.75,0.8,\cdots,1\}$.
- $[\cdot]$ is the integer operator defined at chapter (\ref{strength_one_factor_estimation}).
+In this simulation, we will start the factor strength from 0.7 and increase it with increment 0.05 till unity, say $(\alpha_{1}, \alpha_{2}) = \{0.7, 0.75,0.8,\cdots,1\}$.
+ $[\cdot]$ is the integer operator defined at chapter \ref{strength_one_factor_estimation}.
 This step reflects the fact that only $[n^{\alpha_1}]$ or $[n^{\alpha_2}]$ factor loadings are non-zero.
 In terms of the factors, they come from a multinomial distribution $MVN(\bm{0}, \Sigma) $, as we discuss before.
 
@@ -97,8 +97,8 @@ Therefore, we calculate the size of the test base on:
 	\[ size = \frac{\sum_{r=1}^{R} \bm{1}(|z_{\hat{\alpha_j}:\alpha_j} |>1.96|H_0)}{R} \quad j =1,2 \tag{10}, \label{size_calculator}\]
 
 
-In purpose of Monte Carlo Simulation, we consider the different combinations of T and n with $T = \{120, 240, 360\}$, $n =\{100, 300, 500\} $.
-The market factor will have strength $\alpha_m = 1$ all the time, and the strength of the other factor will be $\alpha_{x} = \{0.7, 0.75, 0.8,0.85, 0.9,0.95, 1\}$. For every setting, we will replicate 2000 times independently, all the constant and variables will be re-generated for each replication.
+For this Monte Carlo Simulation, we consider the different combinations of T and n with $T = \{120, 240, 360\}$, $n =\{100, 300, 500\} $.
+The market factor design to have strength $\alpha_m = 1$ all the time, and the strength of the other factor will be $\alpha_{x} = \{0.7, 0.75, 0.8,0.85, 0.9,0.95, 1\}$. For every setting, we will repeat the experiment 2000 times independently, all the constant and variables will be re-generate for each replication.
 
 
  

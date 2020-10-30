@@ -6,14 +6,14 @@ Here, we focus on the case of observed factor, and use the method of \citeA{Bail
 
 \section{Definition}\label{strength_definiton}
 
-Consider the following multi-factor model for n different cross-section units and T observations with k  factors.
+Consider the following multi-factor model for n different cross-section units and T time-series observations with k  factors.
 
 \[  x_{it} = a_{i}+  \sum_{j=1}^{k}\beta_{ij}f_{jt} + \varepsilon_{it} \tag{1}\label{definition_model} \]
 
-In the left-hand side, we have $x_{it}$ denotes the cross-section unit i at time t, where $i = 1, 2,3, \cdots, n$ and $t = 1,2,3, \cdots T$.  
-In the other hand, $a_{i}$ is the constant term.
-$f_{jt}$ of $j = 1, 2, 3\cdots k$ is factors included in the model, and $\beta_{ij}$ is the corresponding factor loading.
-$\varepsilon_{it}$ is the stochastic error term.
+In the left-hand side, we have $x_{it}$ denotes the cross-section unit i at time t, where $i = 1, 2, \cdots, n$ and $t = 1,2, \cdots T$.  
+In the other hand side, $a_{i}$ is the constant term.
+We use $f_{jt}$ of $j = 1, 2, \cdots k$ to represent the factor included in the model, and $\beta_{ij}$ or represent the corresponding factor loading.
+For the error term, we use $\varepsilon_{it}$.
 
 The factor strength relates to how many non-zero loadings correspond to a factor.
 More precisely, for a factor $f_{jt}$ with n different factor loading $\beta_{ij}$, we assume that:
@@ -24,8 +24,8 @@ More precisely, for a factor $f_{jt}$ with n different factor loading $\beta_{ij
 \end{align*}
 
 The $\alpha_j$ represents the strength of factor $f_{jt}$ and $\alpha_j \in [0,1]$.
-If a factor has strength $\alpha_j$, we will assume that the first $[n^{\alpha_j}]$ loadings are all different from zero, and here $[\cdot] $  is defined as the integral operator, which will only take the integral part of the inside value.
-The rest $n - [n^{\alpha_j}]$ terms are all equal to zero. 
+If a factor has strength $\alpha_j$, we will assume that the first $[n^{\alpha_j}]$ loadings are all different from zero, and here $[\cdot] $  is defined as the integer operator, which will only take the integer part of the inside value.
+The remaining $n - [n^{\alpha_j}]$ terms are all equal to zero. 
 Assume for a factor which has strength $\alpha = 1$, the factor's loadings will be non-zero for all cross-section units.
 We will refer such factor as a strong factor.
 And if we have factor strength $\alpha = 0$, it means that the factor has all factor loadings equal to zero, and we will describe such factor as a weak factor \cite{Bailey2016}.
@@ -33,19 +33,19 @@ For any factor with strength in [0.5, 1], we will refer such factor as semi-stro
 In general term, the more non-zero loading a factor has, the stronger the factor's strength is. 
 
 	\section{Estimation Under Single-factor Setting}\label{strength_one_factor_estimation}
-To estimate the strength $\alpha_j$, \citeA{Bailey2020} provides the following estimation.
+To estimate the strength $\alpha_j$, \citeA{Bailey2020} suggest the following procedure.
 
-To begin with, we consider a single-factor model with the only factor named $f_t$. 
- $\beta_{i}$ is the factor loading of unit i.
-$v_{it}$ is the stochastic error term.
+We first present the procedure in the case a single factor model with only factor $f_t$ and corresponding loading $\beta_{i}$.
+The index i indicates $i^{th}$ unit, and $t$ represents the $t^{th}$ time observation.
+Here $v_{it}$ is the stochastic error term.
 
 \[  x_{it} = a_{i} +  \beta_{i}f_{t} + v_{it} \tag{2} \label{estimation_model}\]
 
-Assume we have n different units and T observations for each unit: $i = 1, 2, 3, \cdots, n$ and $t = 1,2,3, \cdots T$.
-Running the OLS time-regression for each $i = 1,2,3\cdots, n$, we obtain:
+Assume we have n different units and T observations for each unit: $i = 1, 2,  \cdots, n$ and $t = 1,2, \cdots T$.
+Running the OLS time-regression for each $i = 1,2, \cdots, n$, we obtain:
 \[   x_{it} = \hat{a}_{iT} +  \hat{\beta}_{iT}f_{t} + \hat{v}_{it}  \]
 
-For every estimated factor loading of the unit i:  $\hat{\beta}_{iT}$, we can construct a t-test to examine its significance under the null hypothesis of the loading is zero.
+For every estimated factor loading $\hat{\beta}_{iT}$, we can construct a t-test to examine the significance under the null hypothesis of the loading is zero.
 The t-test statistic will be $t_{iT} = \frac{\hat{\beta}_{iT} - 0}{\hat{\sigma}_{iT}}$.  
 Empirically, we calculate the t-statistic of $\hat{\beta}_i$ using:
 
@@ -58,13 +58,13 @@ Using this test statistic, we can then define an indicator function as: $\ell_{i
 If the factor loading is non-zero, $\ell_{i,n} = 1$.
 In practice, we use the $\hat{\ell}_{i,nT} := {\bf1}[|t_{it}|>c_p(n)]$.
 Here, if the t-statistic $t_{iT}$ is greater than critical value $c_p(n)$,  $\hat{\ell}_{i,n} = 1$, otherwise $\hat{\ell}_{i,n} = 0$.
-In other words, we are counting how many $\hat{\beta}_{iT}$ is significant.
+In other words, we are counting how many $\hat{\beta}_{iT}$ are significant.
 With the indicator function, we then define $\hat{\pi}_{nT}$ as the fraction of significant factor loading amount to the total factor loadings:
 
 \[  \hat{\pi}_{nT} = \frac{\sum_{i=1}^n \hat{\ell}_{i,nT}}{n} \tag{4} \label{pi_function} \]
 
 
-In term of the critical value $c_p(n)$, rather than use the traditional critical value from student-t distribution $\Phi^{-1}(1-\frac{P}{2})$, we use:
+In term of the critical value $c_p(n)$, we use the following critical value function.
 
 \[   c_p(n) = \Phi^{-1}(1 - \frac{p}{2n^\delta})   \tag{5} \label{critical_value_function} \]
 
