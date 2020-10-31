@@ -126,7 +126,12 @@ ten_strength %>% group_by(level) %>%
   xlab("Strength Group")+
   ylab("Proportion")
 
-
+one_thirty_strength %>%
+  select(Factor, one = strength) %>% 
+  left_join(two_thirty_strength %>% select(Factor, two = strength), by = "Factor") %>% 
+left_join(three_thirty_strength %>% select(Factor, three = strength), by = "Factor") %>% 
+  mutate(changes = if_else(two > one, if_else(two > three, 1,0), 0)) %>% 
+  summarise(sum(changes)/145)
 
 
 
