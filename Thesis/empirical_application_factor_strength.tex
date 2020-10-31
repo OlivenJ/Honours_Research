@@ -7,14 +7,16 @@ In this chapter, we will use the method introduced in the chapter \ref{strength}
 First, we introduce the data set used in this empirical chapter, and the setting for the estimation process.
 Then, we discuss the findings from the estimation results.
 The estimated factors strength provides us a starting point when applied the Elastic net method in the chapter \ref{Empirical:Elastic_net}.
+
 	\section{Description of Data for Factor Strength Estimation}\label{data}
 	
-In the empirical application part, we use the monthly returns on U.S. securities as the assets.
+
+In the empirical application part, we use the monthly returns of company securities listed on the U.S. market.
 The companies are selected from Standard Poor (S\&P) 500 index component companies.\footnote{The companies return data was obtained from the Global Finance Data: http://www.globalfinancialdata.com/,\\ Osiris: https://www.bvdinfo.com/en-gb/our-products/data/international/osiris, \\and Yahoo Finance: https://finance.yahoo.com/.}
 We prepared three data sets for different time spans: 10 years (January 2008 to December 2017, T = 120), 20 years (January 1998 to December 2017, T  = 240), and 30 years (January 1989 to December 2017, T = 360).
-The initial data set contains 505 companies, but because of the components companies of the index are constantly changing, bankrupt companies will be moved out, and new companies will be added in.
+The initial data set contains 505 companies, because of the components companies of the index are constantly changing, bankrupt comanies will be moved out, and new companies will be added in.
 Also, some companies do not have enough observations.
-Therefore, for each of the datasets, the number of companies (n) is different, the dimensions of the data set are showing in the table (\ref{Data_set}) below.
+Therefore, for each of the datasets, the number of companies (n) is different, the dimensions of the data set are showing in the table (\ref{Data_set}).
 
 \begin{table}[H]
 	\centering
@@ -29,11 +31,11 @@ Therefore, for each of the datasets, the number of companies (n) is different, t
 	\end{tabular}
 \end{table}
 For the risk-free rate, we use the one-month U.S. treasury bill return.\footnote{ The risk free rate was from the Kenneth R. French website: http://mba.tuck.dartmouth.edu/pages/faculty/ken.french/}
-For company i, we calculate the companies return at month t ($r_{it}$) using the following formula:
+For any company i, we calculate the companies return at month t ($r_{it}$) using the following formula:
 \begin{align*}
 r_{it} = \frac{p_{i t} - p_{i t-1}}{p_{i t-1}}\times 100
 \end{align*}
-and calculate the excess return $x_{it} = r_{it} - r_{ft}$.
+and thenf calculate the excess return $x_{it} = r_{it} - r_{ft}$.
 Here the $p_{it}$ and $p_{i t-1}$ are the company's close stock price on the first trading day of month t and t-1.
 The price is adjusted for the dividends and splits.\footnote{The data is adjusted base on the Central for Research in Security Price (CRSP) method.}
 
@@ -52,10 +54,10 @@ r_{it} - rf_{t} &= a_i + \beta_{im}(r_{mt} - rf_{t}) + \beta_{ij}f_{jt} + v_{it}
 
 Here $r_{it}$ is the return of asset i at time t, and $rf_t$ is the risk free return.
 Therefore, $r_{it} - rf_t$ is the excess return of the asset i.
-$r_{mt} - rf_{t}$ represents the market factor, calculated by the difference between average market return and risk-free return at the same time t.
-$f_{jt}$ is the value of $j^{th}$ risk factor  at time t. 
+We calculate the market factor using $r_{mt} - rf_{t}$, the difference between average market return and risk-free return at the same time t.
+The $j^{th}$ risk factor at time is represented by $f_{jt}$.
 Here $j = 1, 2, \cdots 145$ . 
-$\beta_{mt}$ and $\beta_{ij}$ are the factor loadings for market factor and risk factor, respectively.
+Market factor loading and risk factor loadings are denotes by $\beta_{mt}$ and $\beta_{ij}$ respectively.
 
 %When conducting the estimation, we will re-estimates the market factor strength when estimating the strength for different risk factors.
 %This means that we will have 145 different market factor estimated strength $\alpha_{mj}$ for $j = 1,2, \cdots , 145$ 
@@ -68,7 +70,7 @@ $\beta_{mt}$ and $\beta_{ij}$ are the factor loadings for market factor and risk
 
 	\section{Factor Strength Estimation and Discussion}
 The complete set of results of factor strength estimation is presented in the appendix \ref{strength_table} and \ref{strength_figures}.
-We estimated the factors' strength using three different data sets discussed in the \ref{data}, and rank those strength from strong to weak, alongside the market factor strength, in the table (\ref{table:three_ranked_compare}).
+We estimated the factors' strength using three different data sets discussed in the chapter \ref{data}, and rank those strength from strong to weak, alongside the market factor strength, in the table \ref{table:three_ranked_compare}.
 
 We first look at the market factor strength. (see table \ref{table:market})
 
@@ -88,19 +90,18 @@ We first look at the market factor strength. (see table \ref{table:market})
 %Although the value is close to unity, we still notice that the strength will increase slightly with the time span extended.
 %This might indicate that for the security returns, from the long run, it will more closely mimic the behaviours of the market than the short run. 
 %Then, we turn to the double factor CAPM setting.
-Because of the model we used in estimating strength contains both market factor and risk factor, we will re-estimates the market factor strength when estimating the strength for different risk factors.
-This means that we will have 145 different market factor estimated strength $\alpha_{mj}$ for $j = 1,2, \cdots , 145$ 
-So, we calculate the average market factor here:
+Because of the model we used in estimating strength contains both market factor and risk factor, we will re-estimate the market factor strength when estimating the strength for different risk factors.
+This means that we will have 145 different market factor strength estimation results: $\alpha_{mj}$ for $j = 1,2, \cdots , 145$. 
+So, we calculate the average market factor strength here:
 \[ \bar{\alpha}_{m} = \frac{1}{145}\sum_{j= 1}^{145}\alpha_{jm}   \]
 %$\alpha_{im}$ is the estimated market factor strength for the $i^{th}$ risk factor setting.
-As we expected, the estimated strength of market factor under all three scenarios shows consistently strong results.
+As the financial theory suggests, the estimated strength of market factor under all three scenarios shows consistently strong results.
 The market factor strength across the three periods is close to unity, which indicates that the market factor can generate significant factor loading almost all time for every asset.
 Although the value is close to unity, we still notice that the strength will increase slightly with the time span extended.
 This might indicate that for the security returns, from the long run, it will more closely mimic the behaviours of the market than the short run. 
 %Table\ref{table:market} shows that the estimated strength is consistent with the single factor settings.
 %All three data sets provides extremely strong results, strengths are close to one.
 %Overall, the market factor results indicates that the market factor can generate significant loadings for almost every companies' return at any time.
-The strong estimated strength result fits with the financial theory states that individual stocks will in general move with the market.
 
 When looking at other factors (see table \ref{table:top15}),  the ten-year data set in general provides a significantly weaker result, compares with the other two data sets results.
 Except for the market factor, no other factors from the ten-years result show strength above 0.8.
@@ -128,11 +129,11 @@ In the thirty-year scenario, the salecash (sales to cash) is the strongest with 
 	\end{tabular}
 \end{table}
 
-When comparing the proportion of factors with strengths falling in different intervals between 0 and 1 (see table (\ref{table:proportion})), we can find that when using 0.8 as a threshold, over forty-five per cent factors in the twenty-year and thirty-year result exceeds this threshold.
+When comparing the proportion of factors with strengths falling in different intervals between 0 and 1 (see table \ref{table:proportion}), we can find that when using 0.8 as a threshold, over forty-five per cent factors in the twenty-year and thirty-year result exceeds this threshold.
 In ten year results, the number is zero.
 We also find that nearly 40\% of factors from the ten-year dataset show strength less than 0.5, which is almost four times higher than the twenty and thirty years proportion.
 When look at the ranking, we found that the top three factors are consistent for the twenty year data set result and thirty year data set result.
-The top three factors are: ndq (Net debt-to-price ), salecash (sales to cash), and quick (quick ratio).
+The top three factors: ndq (Net debt-to-price ), salecash (sales to cash), and quick (quick ratio) are presents in both twenty and thirty years results with different order.
 We would expect when applying the elastic net method with the twenty-year and thirty-year data set, those three factors with the market factors would be selected.
 
 Another interesting finding is that the roavol (Earnings volatility, 10th of ten-year result, 7th of twenty-year result, 5th of thirty-year result ), age (Years since first Compustat coverage, 11th of ten-year result, 9th of twenty-year result, 4th of thirty-year result), and ndp (net debt-to-price, 14th of ten-year result, 1st of twenty-year result, 2nd of thirty-year result) are all ranking high  in all three time periods estimated results.

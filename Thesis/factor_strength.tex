@@ -5,38 +5,41 @@ In a separate paper, \citeA{Bailey2019} extended the method by loosening some re
 Here, we focus on the case of observed factor, and use the method of \citeA{Bailey2020} in this project.
 
 \section{Definition}\label{strength_definiton}
-
 Consider the following multi-factor model for n different cross-section units and T time-series observations with k  factors.
 
 \[  x_{it} = a_{i}+  \sum_{j=1}^{k}\beta_{ij}f_{jt} + \varepsilon_{it} \tag{1}\label{definition_model} \]
 
 In the left-hand side, we have $x_{it}$ denotes the cross-section unit i at time t, where $i = 1, 2, \cdots, n$ and $t = 1,2, \cdots T$.  
 In the other hand side, $a_{i}$ is the constant term.
-We use $f_{jt}$ of $j = 1, 2, \cdots k$ to represent the factor included in the model, and $\beta_{ij}$ or represent the corresponding factor loading.
+We use $f_{jt}$ of $j = 1, 2, \cdots k$ to represent the factors included in the model, and $\beta_{ij}$ or represent the corresponding factor loading.
 For the error term, we use $\varepsilon_{it}$.
 
 The factor strength relates to how many non-zero loadings correspond to a factor.
-More precisely, for a factor $f_{jt}$ with n different factor loading $\beta_{ij}$, we assume that:
+More precisely, for a factor $f_{jt}$ with n different factor loading $\beta_{ij}$ and strength $\alpha_j$, we assume that:
 
 \begin{align*}
 |\beta_{ij}| &> 0\quad i = 1, 2,  \dots, [n^{\alpha_j}]\\
 |\beta_{ij}| &= 0 \quad i = [n^{\alpha_j}] + 1, [n^{\alpha_j}] +2 ,\dots, n
 \end{align*}
 
-The $\alpha_j$ represents the strength of factor $f_{jt}$ and $\alpha_j \in [0,1]$.
-If a factor has strength $\alpha_j$, we will assume that the first $[n^{\alpha_j}]$ loadings are all different from zero, and here $[\cdot] $  is defined as the integer operator, which will only take the integer part of the inside value.
+%The $\alpha_j$ represents the strength of factor $f_{jt}$ and $\alpha_j \in [0,1]$.
+All factor strength, by definition, should fall in the interval of $[0,1]$.
+In this case, the strength $\alpha_j$ represents that the first $[n^{\alpha_j}]$ loadings are all significantly different from zero.
+Here $[\cdot]$ is defined as the integer operator, which will only take the integer part of the inner value.
+%If a factor has strength $\alpha_j$, we will assume that the first $[n^{\alpha_j}]$ loadings are all different from zero, and here $[\cdot] $  is defined as the integer operator, which will only take the integer part of the inside value.
 The remaining $n - [n^{\alpha_j}]$ terms are all equal to zero. 
 Assume for a factor which has strength $\alpha = 1$, the factor's loadings will be non-zero for all cross-section units.
 We will refer such factor as a strong factor.
+The financial theory suggests that the market factor, denotes by the difference between average market return and market risk free return, should have strength equals to one.
 And if we have factor strength $\alpha = 0$, it means that the factor has all factor loadings equal to zero, and we will describe such factor as a weak factor \cite{Bailey2016}.
-For any factor with strength in [0.5, 1], we will refer such factor as semi-strong factor.
+For any factor with strength in [0.5, 1), we will refer such factor as semi-strong factor.
 In general term, the more non-zero loading a factor has, the stronger the factor's strength is. 
 
-	\section{Estimation Under Single-factor Setting}\label{strength_one_factor_estimation}
+\section{Estimation Under Single-factor Setting}\label{strength_one_factor_estimation}
 To estimate the strength $\alpha_j$, \citeA{Bailey2020} suggest the following procedure.
 
 We first present the procedure in the case a single factor model with only factor $f_t$ and corresponding loading $\beta_{i}$.
-The index i indicates $i^{th}$ unit, and $t$ represents the $t^{th}$ time observation.
+The index i indicates $i^{th}$ unit, and t represents the $t^{th}$ time observation.
 Here $v_{it}$ is the stochastic error term.
 
 \[  x_{it} = a_{i} +  \beta_{i}f_{t} + v_{it} \tag{2} \label{estimation_model}\]
@@ -50,16 +53,15 @@ The t-test statistic will be $t_{iT} = \frac{\hat{\beta}_{iT} - 0}{\hat{\sigma}_
 Empirically, we calculate the t-statistic of $\hat{\beta}_i$ using:
 
 \[t_{i T}=\frac{\left(\bm{f}^{\prime} \bm{M}_{\tau} \bm{f}\right)^{1 / 2} \hat{\beta}_{i T}}{\hat{\sigma}_{i T}}=\frac{\left(\bm{f}^{\prime} \bm{M}_{\tau} \bm{f}\right)^{-1 / 2}\left(\bm{f}^{\prime} \bm{M}_{\tau} \bm{x}_{i}\right)}{\hat{\sigma}_{i T}} \tag{3} \label{test_statistic} \]
-Here, the $\bm{M}_{\tau} = \bm{I}_T - T^{-1}\bm{\tau}\bm{\tau^\prime}$, and the $\bm{\tau}$ is a $T\times 1$ vector with every elements equals to 1.
-$\bm{f}$ and $\bm{x_i}$ are two vectors with: $\bm{f} = (f_1, f_2 \cdots, f_T)^{\prime}$   $\bm{x_i} = (x_{i1}, x_{i2}, \cdots, x_{iT})$.
+Here, the $\bm{M}_{\tau} = \bm{I}_T - T^{-1}\bm{\tau}\bm{\tau^\prime}$, and the $\bm{\tau}$ is a $T\times 1$ vector with every elements equals to one, $\bm{f}$ and $\bm{x_i}$ are two vectors with: $\bm{f} = (f_1, f_2 \cdots, f_T)^{\prime}$   $\bm{x_i} = (x_{i1}, x_{i2}, \cdots, x_{iT})$.
 The denominator $\hat{\sigma}_{iT} = \frac{\sum_{i=1}^{T} \hat{v}^2_{it} }{T}$.
 
 Using this test statistic, we can then define an indicator function as: $\ell_{i,n} := {\bf1}[|\beta_i|>0]$.
-If the factor loading is non-zero, $\ell_{i,n} = 1$.
+If the factor loading is non-zero , $\ell_{i,n} = 1$.
 In practice, we use the $\hat{\ell}_{i,nT} := {\bf1}[|t_{it}|>c_p(n)]$.
-Here, if the t-statistic $t_{iT}$ is greater than critical value $c_p(n)$,  $\hat{\ell}_{i,n} = 1$, otherwise $\hat{\ell}_{i,n} = 0$.
-In other words, we are counting how many $\hat{\beta}_{iT}$ are significant.
-With the indicator function, we then define $\hat{\pi}_{nT}$ as the fraction of significant factor loading amount to the total factor loadings:
+Here, if the t-statistic $t_{iT}$ is greater than critical value $c_p(n)$, i.e. if the test result reject the null hypothesis, $\hat{\ell}_{i,n} = 1$, otherwise $\hat{\ell}_{i,n} = 0$.
+In other words, we are counting how many $\hat{\beta}_{iT}$ are significantly different from zero.
+With the indicator function, we then define $\hat{\pi}_{nT}$ as the fraction of significant factor loading amount to the total factor loading amount:
 
 \[  \hat{\pi}_{nT} = \frac{\sum_{i=1}^n \hat{\ell}_{i,nT}}{n} \tag{4} \label{pi_function} \]
 
@@ -72,7 +74,7 @@ Suggested by \citeA{Bailey2019}, here, $\Phi^{-1}(\cdot)$ is the inverse cumulat
 Adopting this adjusted value helps to tackle the problem of multiple-testing.
 
 
-After obtaining the $\hat{\pi}_{nT}$, we can use the following formula provided by \citeA{Bailey2020} to estimate our strength indicator $\alpha_j$:
+After obtaining the $\hat{\pi}_{nT}$, we can use the following formula provided by \citeA{Bailey2020} to estimate the strength of factor:
 \[ \hat{\alpha} = \begin{cases}
 1+\frac{\ln(\hat{\pi}_{nT})}{\ln n} & \text{if}\; \hat{\pi}_{nT} > 0,\\
 0, & \text{if}\; \hat{\pi}_{nT} = 0.
@@ -85,13 +87,16 @@ From the estimation, we can find out that $\hat{\alpha} \in [0,1]$.
 
 This estimation can also be extended into a multi-factor set up.
 Consider the following multi-factor model:
-\[x_{it} = a_i +\sum_{j = 1}^k\beta_{ij}f_{jt} +v_{it} = a_i + \bm{\beta^{\prime}_{i}f_{t}} +v_{it} \tag{7} \label{multi_factor_model} \]
 
-In this set up, we have $i = 1, 2, \cdots, n$ units, $t = 1, 2, \cdots, T$ time observations, and specially, $j = 1, 2,\cdots, k$ different factors.
-Here $\bm{\beta}_{i} = (\beta_{i1}, \beta_{i2}, \cdots, \beta_{ij})^{\prime} $ and $\bm{f}_t = (f_{1t}, f_{2t}\cdots, f_{jt})$.
+\[x_{it} = a_i +\sum_{j = 1}^k\beta_{ij}f_{jt} +v_{it} = a_i + \bm{\beta}^{\prime}_{i}\bm{f}_{t} +v_{it} \tag{7} \label{multi_factor_model} \]
+
+In this set up, we have $i = 1, 2, \cdots, n$ units, $t = 1, 2, \cdots, T$ time-series observations, and specially, $j = 1, 2,\cdots, k$ different factors.
+Here $\bm{\beta}_{i} = (\beta_{i1}, \beta_{i2}, \cdots, \beta_{ij})^{\prime} $ and $\bm{f}_t = (f_{1t}, f_{2t}\cdots, f_{jt})^{\prime}$.
 We employed the same strategy as above, after running OLS and obtain the:
 
-\[ x_{it} =\hat{a}_{iT} + \bm{\hat{\beta}^{\prime}_{i}}\bm{f}_{t} + \hat{v}_{it}    \]
+\[ x_{it} =\hat{a}_{iT} + \bm{\hat{\beta}}^{\prime}_{i}\bm{f}_{t} + \hat{v}_{it}    \]
+
+We use the significance test to exam how many factor loadings are non-zero.
 To conduct the significance test, we calculate the t-statistic: $t_{ijT} = \frac{\hat{\beta}_{ijT}-0}{\hat{\sigma}_{ijT}}$. Empirically, the test statistic can be calculated using:
 \[ t_{i j T}=\frac{\left(\bm{f}_{j t}^{\prime} \bm{M}_{F_{-j}} \bm{f}_{j t}\right)^{-1 / 2}\left(\bm{f}_{j t}^{\prime} \bm{M}_{F_{-j}} \bm{x}_{i}\right)}{\hat{\sigma}_{i T}} \]
 
@@ -105,4 +110,4 @@ Obtaining the corresponding ratio $\hat{\pi}_{nTj}$  from (\ref{pi_function}), a
 0, \text { if } \hat{\pi}_{n T, j}=0
 \end{array}\right.
 \end{equation*}
-to estimate the factor strength.
+to estimate the factor strength under the multi-factor scenario.
