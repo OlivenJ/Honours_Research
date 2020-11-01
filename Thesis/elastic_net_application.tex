@@ -2,12 +2,11 @@
 As introduced in the previous chapter, the high-dimension risk factor group posts challenge when selecting factors.
 We want to identify factor that can independently provides information to explain the risk-return relationship. \cite{Cochrane2011}.
 In this chapter, we employed the Elastic net algorithm to discuss this problem.
-The application is build on the basis of factor strength we estimated in the previous chapter.
+The application is build on the basis of factor strength we estimated in the chapter \ref{Empirical:factor_strength}.
 Factor strength provides a criterion to reduce the dimensions of potential factor groups.
 The factor strength also works as a reference when evaluating the performances of algorithms.
-%We would expect the method tend to select factor with strong strength than weak one.
 For the rest of this chapter, we first briefly introduce the core idea of the Elastic net method, explain what's different between Elastic net and other factor selection methods, especially the Ridge regression and Lasso regression.
-Then, we provide a full discussion of how to select the tuning parameter with regard to the Elastic net method when using r package \textit{glmnet} to imply the Elastic net.
+Then, we provide a full discussion of how to select the tuning parameter with regard to the Elastic net method when using r package \textit{glmnet} to implement the Elastic net.
 Finally, we compare and discuss the differences selection results of both elastic net methods and Lasso.
 
 
@@ -19,25 +18,29 @@ To illustrate the application of the Elastic net method in our research, recall 
 When applying the OLS to estimate the factor loading $\bm{\beta_{i}} = \{ \beta_{i1}, \beta_{i2}, \cdots, \beta_{ij}   \}$ of corresponding factor $\bm{f_{t}} = \{ f_{1t}, f_{2t}, \cdots, f_{jt} \}$ for model (\ref{multi_factor_model}), we targeting minimise the residual sum of squares (RSS):
 \[  \bm{\beta}_i =   \argmin\{  (x_{it} - a_{iT} - \bm{\beta}_i^{\prime}\bm{f}_t )^2 \}    \]
 The OLS method will consider all factors proposed by users when constructing the multi-factor CAPM model.
-This means that even factors with weak strength, which can not bring any new information to price the risk of assets will generate loadings under the OLS method.
-The Elastic net method, although also focusing on minimising RSS, including two extra penalty terms inside the loss function.
+%This means that even factors with weak strength, which can not bring any new information to price the risk of assets will generate loadings under the OLS method.
+This means that even factors with weak or no relationship with the assets, will generate loadings under the OLS method.
+%The Elastic net method, although also focusing on minimising RSS, including two extra penalty terms inside the loss function.
+The Elastic net method, although also focusing on minimising RSS, avoid this problem by adding two extra penalty terms.
+When applying the Elastic net, we focusing on the following loss function:
 \[   \bm{\beta}_{i}  = \argmin_{\beta_{ij}}\{ (x_{it} - a_{iT} - \bm{\beta}_{i} ^{\prime}\bm{f}_{t})^2 + \lambda_2\sum_{j = 1}^k\beta_{ij}^2  + \lambda_1\sum_{j=1}^k|\beta_{ij}|  \label{ENcriterion} \tag{11}   \}    \]
 Here, the estimated $\bm{\beta}_i$ loading value is subject to two penalty terms: the Lasso penalty $\lambda_1\sum_{j=1}^k|\beta_{ij}|$ and the Ridge penalty $\lambda_2\sum_{j = 1}^k\beta_{ij}^2$.
 The Elastic net estimation, in essence, is a combination method of Ridge regression and the Lasso regression.
-If setting $\lambda_1 = 0$, the Elastic net will collapse into the Lasso regression, and if $\lambda_2 = 0$, we will obtain result of the Ridge regression.
-In the empirical application of this paper, the Elastic net estimation uses the following form \cite{Friedman2010}:
+If setting $\lambda_1 = 0$, the Elastic net will collapse into the Lasso regression, and if $\lambda_2 = 0$, we will obtain same result as the Ridge regression.
+In the empirical application of this paper, the Elastic net estimation uses the following loss function \cite{Friedman2010}:
 \[		\bm{\beta}_{i} = \argmin_{\beta_{ij}}\{ \frac{1}{2N} (x_{it}-a_{iT} - \bm{\beta_{i}^{\prime}}\bm{f}_t ^2 ) +\phi P_{\theta}(\bm{\beta}_i)  \} \label{EN:empirical_formula}\tag{12} \]
 \[	P_{\theta}(\bm{\beta}_i) =\sum_{j=1}^k [ (1-\theta)\beta_{ij}^2 + \theta |\beta_{ij}|] \label{EN:elastic_net_penalty} \tag{13}\]
 Here \citeauthor{Zou2005} call the $P_{\theta}(\bm{\beta}_{i})$ as the elastic net penalty.
-$\theta$ acts as the turning parameter to determine how will the elastic net penalty is combined by the Lasso penalty and Ridge penalty.
-When set $\theta = 1$, we have $P_{\theta}(\bm{\beta}_i) =\sum_{j=1}^k  |\beta_{ij}|$ which is identical to the Lasso penalty therefore we have the Elastic net collapse to the Lasso regression.
+Parameter $\theta$ acts as the turning parameter to determine how will the elastic net penalty is combined by the Lasso penalty and Ridge penalty.
+When set $\theta = 1$, we have $P_{\theta}(\bm{\beta}_i) =\sum_{j=1}^k  |\beta_{ij}|$ which is identical to the Lasso penalty.
+Therefore we have the Elastic net collapse to the Lasso regression when $\theta = 1$.
 Similarly, when setting $\theta = 0$, we have the Elastic net collapse to the Ridge regression. 
 %and when $\theta = 0.5$, the Elastic net is the half-half combination of Lasso and Ridge.
 The other tuning parameter $\phi$ decides how strong the penalty terms is.
 If $\phi = 0$ the elastic net will become the OLS estimation.
 
 In this study, we use the data introduced in chapter \ref{data}, and the estimated factor strength from the chapter \ref{Empirical:factor_strength}.
-We will briefly review risk factors with their strength in the next chapter.
+We will briefly review risk factors with their strength in the next section.
 More specifically, we allocates the 145 risk factors into six subgroups according to there thirty-year estimated strength.
 For each subgroup, we want to investigate how will the Elastic net algorithm, alongside the Lasso regression, select the risk factors for company stock.
 We would expect that when facing factor with strong strength, the algorithm will construct a dense factor model, and with the factor strength decrease, the density will decrease simultaneously.
@@ -45,13 +48,13 @@ We would expect that when facing factor with strong strength, the algorithm will
 To simplify implementation of the Elastic net, we first run an OLS regression between the market factor and the excess return of each company, and use the resulting residuals as the dependent variable in the Elastic net regression.
 This step helps us to remove the potential influence of market factors, allowing the algorithms only focussing on the risk factors. 
 
-Now, the main challenge of applying the elastic net algorithm is to select the appropriate tuning parameters $\theta$ and $\phi$, and we will discuss the choices of tuning parameter in the following section.
+Now, the main challenge of applying the elastic net algorithm is to select the appropriate tuning parameters $\theta$ and $\phi$, and we will discuss the choice of tuning parameter in the following section.
 
 \section{Properties of Risk Factors}
-In this chapter, we briefly review the properties of the risk factors series. 
-The risk factors data set contains 145 risk factors at the monthly frequency for the period from July 1976 to December 2007.\footnote{For how those factors are constructed, please view \citeA{Feng2020}}
+Before we start to discuss the parameter tuning, we briefly review the properties of the risk factors series.
+The risk factors data set contains 145 risk factors at the monthly frequency for the period from July 1988 to December 2007.\footnote{For how those factors are constructed, please view \citeA{Feng2020}}
 As a standard practice of time series data, we exam the stationarity of the risk factor series by employing Augmented Dick-fuller (ADF) test  \cite{Dickey1979},  Phillips-Perron (PP) test \cite{Phillips1988}, and the Kwiatkowski-Phillips-Schmidt-Shin (KPSS) test \cite{Kwiatkowski1992}.
-Overall, the ADF test and PP test provides the same conclusions that all 145 risk factor series are unit-root free.
+Overall, the ADF test and PP test both provides the same conclusions that all 145 risk factor series are unit-root free.
 The KPSS test, however, disagrees with the ADF and PP test.
 If we take 0.05 as the threshold of p-value, the KPSS test concludes that there are six unit root processes across the 145 factors.
 We also present the correlation heat map of all 145 risk factors in the Figure \ref{figure:correlation} at the appendix \ref{factor_correlation}.
@@ -99,7 +102,7 @@ The selected tuning parameter $\theta$ values are shown in table \ref{table:opti
 \end{table}
 In order to fully investigate the behaviours of parameter tuning, on the basis of the six subgroups, we create tow addition groups.
 The Mix group contain five highly strong factors: factor with strength higher than 0.9, and five weak factors: factor with strength lower than 0.5.
-The Random group consist of ten randomly selected factors from all 145 risk factors.
+The Random group consist of ten randomly selected factors from all 145 risk factors, and the 10 factors are re-selected every replication.
 From table \ref{table:optimal_theta} we can see that the selected $\theta$ value in general increase with the factor strength increase.
 For weak factor group, the selected parameter value is 0.377.
 While for the strong factor group, the value is 0.413.
@@ -114,7 +117,7 @@ The mix factor group has the highest $\theta$ value of 0.448.
 %So we would expect the $\theta$ value to increase with the group strength decrease.
 
 
-The decreasing pattern of $\theta$ value can be explained by several reasons.
+The upward pattern of $\theta$ value can be explained by several reasons.
 First, MSE may not be an ideal criterion for parameter tuning under the scenario of applying Elastic net with regard to the financial return. 
 In our application, we find that the MSE for all $\theta - \phi$ combinations are very close to each other.
 The results of MSE for all combination are around 64.
@@ -175,21 +178,22 @@ But when facing strong factors with strength above 0.9, Elastic net on average o
 
 
 We then compare every single stock's factor selecting decision made by Lasso and Elastic net, and calculates in what degree those two methods will agree with each other.
-For every single company, if both Elastic net and Lasso select the same factor (generates factor loading not equals to zero), and disregard the same factor (generate factor loadings equal to zero), we call Elastic net and Lasso made a exact agreement of factor selecting.
-We also extend our standard of the agreement to 90\% interval. 
-If the Elastic net and Lasso achieve agreement in 90\% of factors' selection results, we would call they made a agreement on 90\%.
+For every single company, if both Elastic net and Lasso select the same factor (generates factor loading not equals to zero), and disregard the same factor (generate factor loadings equal to zero), we call Elastic net and Lasso made an exact agreement of factor selecting.
+%We also lower our comparison standard of the agreement to 90\% level. 
+%If the Elastic net and Lasso achieve agreements in 90\% of factors selecting decision, and opposite for 10\% of factors, we would call they made an agreement on 90\% level.
+%This step helps us to understand their selecting decision making from a broader view.
 The proportion of agreement is presented in the table \ref{table:proportion_agreement}.
 
 \begin{table}[h]
 	\centering
-	\caption{Proportion of Lasso Regression and Elastic Net produces same or largely similar results for 145 companies}
+	\caption{Proportion of Lasso Regression and Elastic Net produces same results for 145 companies}
 	\label{table:proportion_agreement}
 	\begin{tabular}{c|ccccccc}
 		\hline
 		\hline
 		\multicolumn{1}{l|}{Factor Group}                                         & \multicolumn{1}{l}{(0,0.5{]}} & \multicolumn{1}{l}{(0.5, 0.6{]}} & \multicolumn{1}{l}{(0.6, 0.7{]}} & \multicolumn{1}{l}{(0.7, 0.8{]}} & \multicolumn{1}{l}{(0.8,0.9{]}} & \multicolumn{1}{l}{(0.9,1{]}} & Mix    \\ \hline
-		\begin{tabular}[c]{@{}c@{}}Proportion of Agreement\\ (Exact)\end{tabular} & 68.7\%                        & 55.9\%                           & 42.8\%                           & 20.9\%                           & 17.7\%                          & 13.9\%                        & 34.6\% \\
-		\begin{tabular}[c]{@{}c@{}}Proportion of Agreement\\ (90\%)\end{tabular}  & 86.8\%                        & 72.0\%                           & 74.5\%                           & 72.0\%                           & 79.8\%                          & 74.4\%                        & 76.1\% \\ \hline\hline
+		\begin{tabular}[c]{@{}c@{}}Proportion of Agreement\\ (Exact)\end{tabular} & 68.7\%                        & 55.9\%                           & 42.8\%                           & 20.9\%                           & 17.7\%                          & 13.9\%                        & 34.6\% \\ \hline \hline
+%		\begin{tabular}[c]{@{}c@{}}Proportion of Agreement\\ (90\%)\end{tabular}  & 86.8\%                        & 72.0\%                           & 74.5\%                           & 72.0\%                           & 79.8\%                          & 74.4\%                        & 76.1\% \\ \hline\hline
 	\end{tabular}
 \end{table}
 
@@ -197,6 +201,8 @@ It is clear that the proportion of agreement, both exact agreed and 90\% agreed,
 Nearly 70\% of factors selection results are identical in the 0 to 0.5 strength group, but this number will decrease to 55\% after we move to the 0.5-0.6 factor strength group.
 Only 14\% of companies have identical factor selection results for group with strength between 0.9 and 1.
 For the mixed strength group, the exact agreed proportion is 34.6\%, ranked between the 0.6 to 0.7 group and 0.7 to 0.8 group.
+%If we focusing on the 90\% agreement column, we can see that under a looser condition, Elastic net and Lasso had made more similar selecting decision.
+%For the weak factor group, over 85\% stocks' factor selecting decision made by Elastic net and Lasso are close to each other.
 
 To provide an explanation of the disagreement increasing with factor strength increasing, we calculate the average absolute correlation coefficient among factors for each factor groups.
 For every two factors, we calculate the Pearson correlation coefficient, taking the absolute values and average all coefficients.
