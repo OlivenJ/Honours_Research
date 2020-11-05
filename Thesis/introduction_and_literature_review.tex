@@ -1,40 +1,31 @@
 \chapter{Introduction and Motivation}
 Capital Asset Pricing Model (CAPM) \cite{Sharpe1964, Lintner1965, Black1972} introduces a risk pricing paradigm.
-%The initial model only contains one variable, the difference between the average market return and the risk-free return of the market, named market factor to capture the co-movement of assets return and market return.
-The initial model contains only one market factor, which is the difference between average market return and risk free return of the market.
-It describe the co-movement between the asset return and the market return.
-%Later development of the CAPM model contains more factors, which are variables that represent the extra-market sources of risk, extended the CAPM into the multi-factor form.
-Later development extended the CAPM model into multi-factor form by adding more factors, which are variables that represent the extra-market sources of risk.
-%By adding variables that represent the extra-market risk resources, which is called factor in the asset pricing literature, the multi-factor CAPM model will divide the uncertainty of an asset's return into two parts: the systematic risk part, and the asset specified idiosyncratic risk part. 
-%After adding factor, an variable represents the extra-market sources of risk, the multi-factor CAPM model will divide the uncertainty of an asset's return into two parts, the systematic risk part, and the asset specified idiosyncratic part.
-The multi-factor CAPM model divided risk of an asset into two parts: the systematic part captured by the market factors, and the asset specified idiosyncratic part captured by the risk factors aggregately.
-%The systematic risk is captured by the market factor, which is denoted by the difference between the average market return and the risk-free return of the market.
-%The idiosyncratic risk will be explained by other different risk factors.
-Researchers (see \citeNP{Fama1992, Carhart1997, Kelly2019}) have shown that by adding different risk factors into the model, CAPM can more precisely price the idiosyncratic risk, provides a more accurate estimation of the risk premia of the asset, and therefore helps practitioners to construct the optimal portfolio.
+
+The initial model contains only the market factor, which is the difference between average market return and risk free return of the market.
+It describes the co-movement between the asset return and the market return.
+%Later developments extended the CAPM model into multi-factor form by adding more factors, which are variables that represent the extra-market sources of risk.
+Later developments extended the CAPM model into multi-factor form by adding more factors, which are variables that represent the additional  sources of risk.
+%\textbf{The multi-factor CAPM model divided risk of an asset into two parts: the systematic part captured by the market factor, and the asset specified idiosyncratic part captured by the risk factors aggregately.}
+The multi-factor CAPM model divided risk of an asset into two parts: the systematic part capture by the market factor as well as other different risk factors, and the asset specified idiosyncratic part which can not explained by the factors.
+Researchers (see \citeNP{Fama1992, Carhart1997, Kelly2019}) have shown that by adding different risk factors into the model, CAPM can more precisely price the risk of asset,  provides a more accurate estimation of the risk premia of the asset, and therefore helps practitioners to construct the optimal portfolio.
 An important topic in the field of finance is identifying unique risk factors.
-%Because of the, identifying unique risk factors has become an important topic in finance.
-Numerous researchers have contributed to this topic, and the direct result is an explosive growth of different risk factors.
+Numerous researchers have contributed to this topic, and the results has been an explosive growth of different risk factors in recent years.
  \citeA{Harvey2019} have documented and categorised over 500 factors from papers published in the top financial and economic journals, and they find the growth of new factors has sped up since 2008. 
  
  The large number of potential candidate factors construct a high dimension factor group, and practitioners have to select suitable factors from the group to construct their multi-factor CAPM model. 
-And due to the high-dimensionality, the computational burden will be enormous when people trying to apply some traditional variable selection method like the stepwise selection.
-%The high dimension factor group makes it hard for practitioners to find suitable factors when constructing the multi-factor CAPM model.
-%And because of the computational burden imposed by the high-dimension feature, some traditional variable selection method like stepwise selection will not be applicable.
-Another problem accompanies with the high dimension factor group is multiple-testing, or sometime known as data mining. 
-When claiming the significance of a factor, the researcher almost always relies on the significant test. With more tests complete, the likelihood of making a erroneous significant claim will increase
-%Therefore, when we have a large factor groups, we can find some factors will only have a very weak or even no correlation with the asset they trying to price \cite{Harvey2019}.
+%Due to the high-dimensionality, the computational burden will be enormous when people trying to apply some traditional variable selection method like the stepwise selection.
+Due to the high-dimensionality, some traditional variables selecting methods such as stepwise selecting are no longer feasible.
+Another problem with the high dimension factor group is multiple-testing, or sometime known as data mining. 
+When claiming the significance of a factor, the researcher almost always relies on a significant test. With more tests complete, the likelihood of making a erroneous significant claim will increase
 Therefore, when we have a large factor group, it is likely that we will find some factors only have a very weak or even no correlation with the asset they are trying to price \cite{Harvey2017}.
-Although multiple-testing problem can be corrected, lots of researchers did not take the multiple-testing problem into account when they are hunting for new factors.
-%\citeA{Hou2018} argues that because researchers did not take the multiple testing into consideration when discovering new factors, a large portion of published factor results can not been replicated.
-\citeA{Hou2018} reports that they can not replicate a large proportion of published factors due to the ignoring of multiple-testing problem.
-Some evidences (see \citeNP{Kan1999, Kleibergen2015}) have pointed out that, if the CAPM contains factor that has weak or even no correlation with the asset's return, the CAPM estimation would be distorted.
+Although multiple-testing problem can be corrected, lots of researchers did not take the multiple-testing problem into account when they are looking for new factors.
+\citeA{Hou2018} reports that they can not replicate a large proportion of published factors due to  ignoring of multiple-testing problem.
+Some evidences (see \citeNP{Kan1999, Kleibergen2015}) showed that, if the CAPM contains factor that has weak or even no correlation with the asset's return, the CAPM estimation would be distorted.
 Therefore, the question is not only how to select factors from a large group, but also how to identify factors that can independently provides information about the average return and risk relationship \cite{Cochrane2011}.
 
-%Therefore, the researchers not only have to identify factors from a large group, but they also need to identify risk factors that can provide independent information about average return and risk become a crucial question in the field of finance and asset pricing \cite{Cochrane2011}.
-%In order to answer this question, many scholars applied various methods to identify factors that can independently provide fresh information to explain risk-return relationship from a large existed factor pool.
+
 In order to answer this question, many scholars had applied various methods.
 For instance, \citeA{Harvey2017} provided a bootstrap method to adjust the threshold of significant test, trying to exclude some falsely significant factor caused by multiple-test problem.
-%In recent years, some other scholars are using machine learning methods to identify factors and eliminate redundant factors from a group of candidates.
 In recent years, more and more scholars are using machine learning methods on identifying factors.
 One stream of them has used a shrinkage and subset selection method called Lasso \cite{Tibshirani1996} and the variations of it to find suitable factors.
 An example of such application is made by \citeA{Rapach2013}.
@@ -44,25 +35,20 @@ However, there is an additional challenge.
 Factors, especially in high-dimensions, are usually highly correlated.
 Some methods lack the ability of handling the correlation when making selection decision.
 For instance, \citeA{Kozak2020} point out that when facing a group of correlated risk factors, Lasso will only pick several highly correlated factors in a almost random way, and then shrink other factors' coefficient into zero.
-%In other words, Lasso fails to handle the issue of correlated factors appropriately.
-%Hence, we can claim that the high-dimensionality and the correlativity of the factor group prevent the researchers and practitioners of adopting some methods.
 The correlation feature, with the high-dimensionality, further restricted the options when selecting the appropriate factors.
 
 Eventually, the main empirical problem of this paper is: how to select useful factors from a large group of possibly highly correlated candidates.
 We address this problem from two prospectives.
 On the one hand, we employ a new idea called factor strength.
 By estimating the strength of every factors, we want to reduce the dimensions of candidate factor group by allocating all factors into smaller subgroup base on their strength.
-% trying to reduce the dimension of candidate factors by allocating them into smaller subgroups base on their estimated strength.
 The concept of factor strength is introduced by \citeA{Pesaran2019}.
 They developed the idea to assess the significance of each factor.
-By measuring how many non-zero coefficient, or refer as loadings in financial literature, a factor can generate for different assets, we can obtain the strength of every risk factor.
+By measuring the number of non-zero coefficient, or refer as loadings in financial literature, a factor can generate for different assets, we can obtain the strength of every risk factor.
 With the factor strength, we can break down the high dimension group of candidate factors into small subgroups.
-It also provides a standard to evaluate the risk pricing performance of factor, enables us to compare the risk-pricing ability across factors.
-%So, we can use the strength as reference to evaluates how the factor selection method performed.
+It also provides a standard to evaluate the risk pricing performance of factor, enables us to compare the risk-pricing ability across factors.On the other hand, we use another variable selection method called Elastic Net \cite{Zou2005} to select factors from each subgroups.
 
-On the other hand, we use another variable selection method called Elastic Net \cite{Zou2005} to select factors from each subgroups.
 With regards of the factor strength, \citeA{Bailey2020} provide a consistent estimator, and we will use this method to examine the strength of each candidate factor.
-Under the second approach, unlike Lasso, elastic net contains an extra penalty term, which enables it to avoid the problem of handling correlated features.
+Regarding the second approach, unlike Lasso, elastic net contains an extra penalty term, which enables it to avoid the problem of handling correlated features.
 This trait makes Elastic net fit for our purpose.
 We will assess and compare the methods in their selection of risk factors.
 
@@ -78,42 +64,43 @@ Finally, we provide the conclusion and further discussion in chapter \ref{Conclu
 	\chapter{Related Literature}\label{Literature}
 This project is built on contributions to the field of asset pricing.
 First formulated by \citeA{Sharpe1964}, \citeA{Lintner1965}, and \citeA{Black1972}, the Capital Asset Pricing Model (CAPM) builds up the connection between expected asset return and the risk.
-The original CAPM model only contains the market factor, which is denoted by the difference between average market return and risk-free return.
-Then\citeA{Fama1992} extend the model to contain size factor (SMB) and the value factor (HML).
+The original CAPM model only contains the market factor, which is denoted by the difference between average market return and risk-free return of the market.
+Then researchers extended the model into multi-factor form.
+For instance, \citeA{Fama1992} extended the model to contain size factor (SMB) and the value factor (HML).
+%Then\citeA{Fama1992} extend the model to contain size factor (SMB) and the value factor (HML).
 This three-factor models became popular in the finance industry.
 \citeA{Carhart1997}, base on the Fama-French three factors model, added the momentum factor and makes it a new standard of factor pricing model.
 Some recent researches are attempting to extend the factor model even further.
 For instance, \citeA{Fama2015} create a five factors model base on their 1995 works by adding an investment factor and a profitability factor.
-They also created a six-factor model \cite{Fama2018}, by adding a momentum factor of their on version base on the five-factor models.
+They also created a six-factor model \cite{Fama2018}, by adding a momentum factor of their own version base on the five-factor models.
 \citeA{Kelly2019} proposed a new method named Instrumented Principle Component Analysis (IPCA) which can identify latent factor structure.
-They applied the IPCA and constructed a six-factor model, claimed their six-factor model outperforms most of the sparse factor models, such as the five-factor models published by Fama and French in 2015.
+They applied the IPCA and constructed a six-factor model, claimed their six-factor model outperforms most of the sparse factor models, such as the five-factor models published by \citeauthor{Fama2015} in 2015.
 
-In terms of assessing the strength of risk factors, this thesis also relates to papers discussing factors that have no or weak correlation with assets' return under the paradigm of the CAPM model.
-The Fama-MacBeth two-stage regression (FM two-stage regression) introduced by \citeA{Fama1973} is a standard method when trying to estimates the CAPM and its multi-factor extension. 
-\citeA{Kan1999} found that the test-statistic of FM two-stage regression will inflate when incorporating factors which are independent of the cross-section return.
+In terms of assessing the strength of risk factors, this thesis also relates to papers discussing factors that have no or weak correlation with assets' return under the paradigm of the CAPM.
+The Fama-MacBeth two-stage regression (FM regression) introduced by \citeA{Fama1973} is a standard method when trying to estimates the CAPM and its multi-factor extension. 
+\citeA{Kan1999} found that the test-statistic of FM regression will inflate when incorporating factors which are independent of the cross-section return.
 Therefore, when factors with no pricing power were added into the model, those factors may have the chance to pass the significant test falsely.
-\citeA{Kleibergen2015} found out that even when some factor-return relationship does not exist, the r-square and the t-statistic of the FM two-stage regression would become in favour of the conclusion of such structure presence. 
+\citeA{Kleibergen2015} found out that even when some factor-return relationship does not exist, the r-square and the t-statistic of the FM regression result would become in favour of the conclusion of such structure presence. 
 \citeA{Gospodinov2017} showed how the addition of a spurious factor will distort the statistical inference of parameters, and misleads the researchers to believe that they correctly specified the factor structure, even when the degree of misspecification is arbitrarily large.
 Besides, \citeA{Anatolyev2018} studied the behaviours of the model with the presence of weak factors under asymptotic settings, and they find the regression will lead to an inconsistent risk premia estimation result.
-%To address the problem of misspecified factor-return relationship, \citeA{Gospodinov2014} proposed a factor selection procedure, which bases on their statement, can eliminates the falsely presented factor robustly, and restores the inference. 
-	
 
 One challenge this thesis faces is the high dimensions of potential factors.
 \citeA{Harvey2019} documented over 500 published risk factors, and they indicated that more factors are discovered every year.
-Among all those risk factors, \citeA{Hou2018} tried to replicates 452 of them, and they find only 18\% to 35\% factors are reproducible.
+Among all those risk factors, \citeA{Hou2018} tried to replicate 452 of them, and they find only 18\% to 35\% factors are reproducible.
 For the reasons and findings above, this thesis also borrows from researchers that identify useful factors from a group of potential factors.
 \citeA{Harvey2015} examine over 300 factors published in journals, presents a new multi testing framework to exam the significance of factors.
 And they claim that a higher hurdle for the t-statistic is necessary when examining the significance of newly proposed factors.
 Some other methods are also developed for factor selection.
-\citeA{Gospodinov2014} proposed a factor selection procedure, which bases on their statement, can eliminates the falsely presented factor robustly, and restores the incorrect inference results caused by including factors with weak correlation with assets.
-\citeA{Barillas2018} introduces a Bayes test procedures.
+\citeA{Gospodinov2014} proposed a factor selection procedure, which bases on their statement, can eliminate the falsely presented factor robustly, and restore the incorrect inference results caused by including factors with weak correlation with assets.
+\citeA{Barillas2018} introduced a Bayes test procedures.
 It enables researchers to compare the probabilities of a collection of potential models, which can be constructed after giving a group of factors.
-In order to identify factors risk-pricing ability, \citeA{Pukthuanthong2019} defined several criteria for "genuine risk factor", and based on those criteria introduced a protocol to examine whether a factor is associated with the risk premium.
+In order to identify factors risk-pricing ability, \citeA{Pukthuanthong2019} defined several criteria for "genuine risk factor", and based on those criteria they introduced a protocol to examine whether a factor is associated with the risk premium.
 
-Once the factor strength is identified, the thesis will attempt to reconcile empirically the factor selection under machine learning techniques and the factor strength implied by the selection.
-\citeA{Gu2020} elaborate on the advantages of using emerging machine learning algorithms in measuring equity risk premiums.
-They obtained a higher predictive accuracy in measuring risk premium and demonstrated large economics gains using investment strategy base on the machine learning forecast results.
+Once the factor strength is identified, this thesis will attempt to reconcile empirically the factor selection under machine learning techniques and the factor strength implied by the selection.
 In recent years, machine learning algorithms have become popular in the finance studies, and various methods are adopted when selecting factors for the factor model.
+\citeA{Gu2020} elaborated on the advantages of using emerging machine learning algorithms in measuring equity risk premium.
+They obtained a higher predictive accuracy in measuring risk premium, and demonstrated large economics gains using investment strategy suggested by the machine learning forecast results.
+%In recent years, machine learning algorithms have become popular in the finance studies, and various methods are adopted when selecting factors for the factor model.
 \citeA{Lettau2020} apply Principle Components Analysis (PCA) when investigating the latent factor of the model. 
 Lasso, been innovated by \citeA{Tibshirani1996}, is a popular algorithm which can eliminate redundant features. 
 The derivation of Lasso has become increasingly popular in the factor selection.

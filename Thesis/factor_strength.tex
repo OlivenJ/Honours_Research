@@ -11,10 +11,10 @@ Consider the following multi-factor model for n different cross-section units an
 
 In the left-hand side, we have $x_{it}$ denotes the cross-section unit i at time t, where $i = 1, 2, \cdots, n$ and $t = 1,2, \cdots T$.  
 In the other hand side, $a_{i}$ is the constant term.
-We use $f_{jt}$ of $j = 1, 2, \cdots k$ to represent the factors included in the model, and $\beta_{ij}$ or represent the corresponding factor loading.
+We use $f_{jt}$ of $j = 1, 2, \cdots k$ to represent the factors included in the model, and $\beta_{ij}$ to represent the corresponding factor loadings.
 For the error term, we use $\varepsilon_{it}$.
 
-The factor strength relates to how many non-zero loadings correspond to a factor.
+The concept of factor strength relates to how many non-zero loadings correspond to a factor.
 More precisely, for a factor $f_{jt}$ with n different factor loading $\beta_{ij}$ and strength $\alpha_j$, we assume that:
 
 \begin{align*}
@@ -53,13 +53,14 @@ The t-test statistic will be $t_{iT} = \frac{\hat{\beta}_{iT} - 0}{\hat{\sigma}_
 Empirically, we calculate the t-statistic of $\hat{\beta}_i$ using:
 
 \[t_{i T}=\frac{\left(\bm{f}^{\prime} \bm{M}_{\tau} \bm{f}\right)^{1 / 2} \hat{\beta}_{i T}}{\hat{\sigma}_{i T}}=\frac{\left(\bm{f}^{\prime} \bm{M}_{\tau} \bm{f}\right)^{-1 / 2}\left(\bm{f}^{\prime} \bm{M}_{\tau} \bm{x}_{i}\right)}{\hat{\sigma}_{i T}} \tag{3} \label{test_statistic} \]
-Here, the $\bm{M}_{\tau} = \bm{I}_T - T^{-1}\bm{\tau}\bm{\tau^\prime}$, and the $\bm{\tau}$ is a $T\times 1$ vector with every elements equals to one, $\bm{f}$ and $\bm{x_i}$ are two vectors with: $\bm{f} = (f_1, f_2 \cdots, f_T)^{\prime}$   $\bm{x_i} = (x_{i1}, x_{i2}, \cdots, x_{iT})$.
+
+Here, the $\bm{M}_{\tau} = \bm{I}_T - T^{-1}\bm{\tau}\bm{\tau^\prime}$, and the $\bm{\tau}$ is a $T\times 1$ vector with every element equals to one, $\bm{f}$ and $\bm{x_i}$ are two vectors with: $\bm{f} = (f_1, f_2 \cdots, f_T)^{\prime}$   $\bm{x_i} = (x_{i1}, x_{i2}, \cdots, x_{iT})$.
 The denominator $\hat{\sigma}_{iT} = \frac{\sum_{i=1}^{T} \hat{v}^2_{it} }{T}$.
 
 Using this test statistic, we can then define an indicator function as: $\ell_{i,n} := {\bf1}[|\beta_i|>0]$.
 If the factor loading is non-zero , $\ell_{i,n} = 1$.
 In practice, we use the $\hat{\ell}_{i,nT} := {\bf1}[|t_{it}|>c_p(n)]$.
-Here, if the t-statistic $t_{iT}$ is greater than critical value $c_p(n)$, i.e. if the test result reject the null hypothesis, $\hat{\ell}_{i,n} = 1$, otherwise $\hat{\ell}_{i,n} = 0$.
+Here, if the t-statistic $t_{iT}$ is greater than critical value $c_p(n)$, i.e. if the test result reject the null hypothesis, we yield $\hat{\ell}_{i,n} = 1$, otherwise we have $\hat{\ell}_{i,n} = 0$.
 In other words, we are counting how many $\hat{\beta}_{iT}$ are significantly different from zero.
 With the indicator function, we then define $\hat{\pi}_{nT}$ as the fraction of significant factor loading amount to the total factor loading amount:
 
@@ -74,7 +75,7 @@ Suggested by \citeA{Bailey2019}, here, $\Phi^{-1}(\cdot)$ is the inverse cumulat
 Adopting this adjusted value helps to tackle the problem of multiple-testing.
 
 
-After obtaining the $\hat{\pi}_{nT}$, we can use the following formula provided by \citeA{Bailey2020} to estimate the strength of factor:
+After obtaining the $\hat{\pi}_{nT}$, we can use the following formula provided by \citeA{Bailey2020} to estimate the strength of corresponding factor:
 \[ \hat{\alpha} = \begin{cases}
 1+\frac{\ln(\hat{\pi}_{nT})}{\ln n} & \text{if}\; \hat{\pi}_{nT} > 0,\\
 0, & \text{if}\; \hat{\pi}_{nT} = 0.

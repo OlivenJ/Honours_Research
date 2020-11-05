@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2020.5.27)  1 NOV 2020 23:58
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2020.5.27)  5 NOV 2020 22:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -744,7 +744,7 @@ Chapter 3.
 [7
 
 ] [8] [9]
-Overfull \hbox (23.9848pt too wide) in paragraph at lines 103--107
+Overfull \hbox (23.9848pt too wide) in paragraph at lines 104--108
 \TU/TimesNewRoman(0)/m/n/12 and $[][] \OT1/ztmcm/m/n/12 = [][]$ \TU/TimesNewRom
 an(0)/m/n/12 For the denominator’s $[]$, it was from $[] \OT1/ztmcm/m/n/12 = \O
 ML/ztmcm/m/it/12 T[] [][] []$\TU/TimesNewRoman(0)/m/n/12 ,
@@ -810,12 +810,6 @@ Overfull \hbox (29.74391pt too wide) in paragraph at lines 191--198
 
 [30]) (./conclusion.tex [31]
 Chapter 7.
-
-Overfull \hbox (0.83676pt too wide) in paragraph at lines 3--6
-\TU/TimesNewRoman(0)/m/n/12 In this thesis, we propose the concept of factor st
-rength and the corresponding estimation method.
- []
-
 [32
 
 ] [33]) [34] (./thesis.bbl [35
@@ -957,11 +951,11 @@ Package rerunfilecheck Info: File `thesis.out' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 79.
  ) 
 Here is how much of TeX's memory you used:
- 14496 strings out of 479282
- 265686 string characters out of 5880512
+ 14494 strings out of 479282
+ 265595 string characters out of 5880512
  637842 words of memory out of 5000000
- 31863 multiletter control sequences out of 15000+600000
- 551630 words of font info for 101 fonts, out of 8000000 for 9000
+ 31862 multiletter control sequences out of 15000+600000
+ 551622 words of font info for 100 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  44i,14n,70p,704b,555s stack positions out of 5000i,500n,10000p,200000b,80000s
 

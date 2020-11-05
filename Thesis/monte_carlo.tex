@@ -5,7 +5,7 @@
 \section{Simulation Design}
 The experiments is designed to reflect the CAPM model and its extension.
 For simplicity, we first define $x_{it} := r_{it}- rf_{t}$.
-$r_{it}$ is the unit's return, and $rf_{t}$ represent the risk-free rate at time t, therefore, the $x_{it}$ is the excess return of unit i at time t.
+Here $r_{it}$ is the unit's return, and $rf_{t}$ represent the risk-free rate at time t, therefore, the $x_{it}$ is the excess return of unit i at time t.
 We use $f_{mt}:=r_{mt} - rf_{t}$ to denote the market factor, and $\beta_{im}$ to denote the market factor loading.
 The market factor is defined as the difference between the average market return and the risk free return.
 Here $r_{mt}$ is the average market return of hypothetically all assets in the universe.
@@ -97,19 +97,20 @@ The bias is calculated as the average of difference between the true factor stre
 The Root Square Mean Error (RMSE) comes from:
 \[ RMSE =[\frac{1}{R}\sum_{r=1}^{R}(bias_r)^2 ]^{1/2}\]
 Where the R represents the total number of replication.
-The size of the test is under the hypothesis that $H_0: \hat{\alpha_j} = \alpha_j,\;j =1, 2$ against the alternative hypothesis $H_1:\hat{\alpha_j} \neq \alpha_j,\; j=1,2$.
+The size of the test is under the hypothesis that $H_0: \hat{\alpha}_j = \alpha_j,\;j =1, 2$ against the alternative hypothesis $H_1:\hat{\alpha}_j \neq \alpha_j,\; j=1,2$.
 Here we employed the following test statistic from \citeA{Bailey2020}.
 
-	\[  z_{\hat{\alpha_j}:\alpha_j} =\frac{(\ln n)\left(\hat{\alpha_j}-\alpha_{j}\right)-p\left(n-n^{\hat{\alpha_j}}\right) n^{-\delta-\hat{\alpha_j}}}{\left[p\left(n-n^{\hat{\alpha}_j}\right) n^{-\delta-2 \hat{\alpha}_j}\left(1-\frac{p}{n^{\delta}}\right)\right]^{1 / 2}}\quad j=1,2 \tag{9}  \label{z_indicator}\]
+	\[  z_{\hat{\alpha}_j:\alpha_j} =\frac{(\ln n)\left(\hat{\alpha}_j-\alpha_{j}\right)-p\left(n-n^{\hat{\alpha}_j}\right) n^{-\delta-\hat{\alpha}_j}}{\left[p\left(n-n^{\hat{\alpha}_j}\right) n^{-\delta-2 \hat{\alpha}_j}\left(1-\frac{p}{n^{\delta}}\right)\right]^{1 / 2}}\quad j=1,2 \tag{9}  \label{z_indicator}\]
 
-Define a indicator function $\bm{1}(|z_{\hat{\alpha_j}:\alpha_j} |>c|H_0)$.
+Define a indicator function $\bm{1}(|z_{\hat{\alpha}_j:\alpha_j} |>c|H_0)$.
 For each replication, if this test statistic is greater than the critical value of standard normal distribution: $c = 1.96$, the indicator function will return value 1, and 0 otherwise.
 Therefore, we calculate the size of the test base on:
-	\[ size = \frac{\sum_{r=1}^{R} \bm{1}(|z_{\hat{\alpha_j}:\alpha_j} |>1.96|H_0)}{R} \quad j =1,2 \tag{10}, \label{size_calculator}\]
+	\[ size = \frac{\sum_{r=1}^{R} \bm{1}(|z_{\hat{\alpha}_j:\alpha_j} |>1.96|H_0)}{R} \quad j =1,2 \tag{10}, \label{size_calculator}\]
 
 
 For this Monte Carlo Simulation, we consider the different combinations of T and n with $T = \{120, 240, 360\}$, $n =\{100, 300, 500\} $.
-The market factor is designed to have strength $\alpha_m = 1$ all the time, and the strength of the other factor will be $\alpha_{x} = \{0.7, 0.75, 0.8,0.85, 0.9,0.95, 1\}$. For every setting, we will repeat the experiment 2000 times independently, all the constant and variables will be re-generate for each replication.
+The market factor is designed to have strength $\alpha_m = 1$ all the time, and the strength of the other factor will be $\alpha_{x} = \{0.7, 0.75, 0.8,0.85, 0.9,0.95, 1\}$. 
+For every setting, we will repeat the experiment 2000 times independently, all the constants and variables will be re-generate for each single replication.
 
 
  
@@ -129,16 +130,16 @@ The size of the test will not vary too much when the strength increases, so as t
 But we can observe that when observation amounts for each unit increase, in other words, when t increases, the size will shrink dramatically.
 The size will become lower than the 0.05 threshold after we extend the t to 240, or empirically speaking, when we included 20 years monthly return data into the estimation.
 Notice that, from the equation (\ref{z_indicator}), when $\hat{\alpha} = \alpha = 1$, the nominator becomes zero.
-Therefore, the size will collapse to zero in all settings, so we do not report the size for $\hat{\alpha} = \alpha = 1$
+Therefore, the size will collapse to zero in all settings, so we do not report the size for $\hat{\alpha} = \alpha = 1$.
 
-%For the two factors scenarios, we obtain similar conclusions in no correlation setting, weak correlation setting, and the strong correlation setting.
 For the two factors scenarios, we obtain similar conclusions across all three different correlation settings.
-The result of no correlation settings is shown in the table (\ref{table:exp2}), table (\ref{table:exp3}) shows the result when the correlation between two factors is 0.3, and the table (\ref{table:exp4}) presents the result of 0.7 correlation setting.
+The result of no correlation settings is shown in the table (\ref{table:exp2}). 
+Table (\ref{table:exp3}) shows the result when the correlation between two factors is 0.3, and the table (\ref{table:exp4}) presents the result of 0.7 correlation setting.
 Same as the single factor scenario, the estimation results improve when increasing either the observations amount t, or the cross-section units amount n.
 We also have the same unbiased estimation when true factor strength is unity under all unit-time combinations.
-In some cases, even when the factor strength is relatively weak, we can have unbiased estimation if the n and t are big enough. (see table (\ref{table:exp3})).
+In some cases, even when the factor strength is relatively weak, we can have unbiased estimation if the n and t are big enough (see table (\ref{table:exp3})).
 However, we should also notice that when t > n, the results of the size of the test in two factors setting are performing similar to the single factor result. 
 The size will shrink with the observation amount t increasing, and when we have time-series amounts t greater than 240, the size will be smaller than 0.05 threshold in all situations.
 However, it is worth notice that in the strong correlation setting, the size of the test is extremely big when the time span is relatively short, and the test size will not improve even we increase the sample size.
-Once we increase the t, the size of the test will reduce dramatically, and when we have the thirty year time period, the size of the test are almost all below the 0.05 threshold.
+Once we increase the t, the size of the test will reduce dramatically, and when we have the thirty-year time period, the size of the test are almost all below the 0.05 threshold.
 
