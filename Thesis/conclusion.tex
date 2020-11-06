@@ -17,10 +17,10 @@ The empirical results of feature selection indicates that Elastic net method and
 In another word, both Elastic net and Lasso can identify factor with weak strength and disregard those redundant features.
 However, since the factors with strong strength are almost all highly correlated, the Elastic net and Lasso fail to make a mutual agreement when facing strong factors.
 On average, Elastic net will selects two more factors than Lasso when facing factors with strength above 0.9.
-We also notice that when factors with different strength are mixed with each other, both lasso and elastic net can effectively pick up factor with strong strength and disregard weak factors.
+We also notice that when factors with different strength are mixed with each other, both lasso and Elastic net can effectively pick up factor with strong strength and disregard weak factors.
 
 \section{Possible Extension}
-During the empirical exploration, we discovered some possible extension of this paper, and because of the time-limit as well as other restrictions, we could not propose those extensions.
+During the empirical exploration, we discovered some possible extension of this thesis, and because of the time-limit as well as other restrictions, we could not propose those extensions.
 Here, we summarise those potential extensions to provide a starting point for future research.
 
 Firstly, when discussing the factor strength, we ignore the heterogeneity of companies and factors.
@@ -30,7 +30,7 @@ Therefore, one possible treatment is to group companies based on their industrie
 Also, \citeA{Harvey2019} suggests that newly proposed factors are more likely to encounter the multiple-testing problem, and hence they are more likely to be the factors that can not independently provides information to explain risk-return relationship.
 So, we could also categorised the factors base on their published time, and to investigates the relationship between factor strength and time.
 
-Secondly, as discussed in the chapter \ref{EN:parameter_tuning }, the principle of parameter tuning when applying elastic net is to select the parameter combination that minimise the MSE.
+Secondly, as discussed in the chapter \ref{EN:parameter_tuning }, the principle of parameter tuning when applying Elastic net is to select the parameter combination that minimise the MSE.
 However, the results present in the corresponding chapter indicates that MSE can not distinction different parameter combination significantly enough.
 Hence, considering use other criteria may lead to better performance of parameter tuning, and therefore improve the results of the Elastic net application.
 

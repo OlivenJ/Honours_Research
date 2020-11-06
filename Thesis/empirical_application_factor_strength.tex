@@ -3,6 +3,7 @@
 Researchers and practitioners have been using the CAPM model \cite{Sharpe1964, Lintner1965, Black1972} and its multi-factor extension like the Fama-French three factors model \cite{Fama1992} when they are trying to capture the uncertainty of asset's return.
 The surging amount of new factors \cite{Harvey2019} provides numerous option to construct the CAPM model, but it also requires users to pick the factors wisely.
 In this chapter, we will use the method introduced in the chapter \ref{strength} to estimates the factor strength of 146 candidate factors.
+We try to reduce the dimension of the factor group by grouping factors base on their strength.
 
 First, we introduce the data set used in this empirical chapter, and the setting for the estimation process.
 Then, we discuss the findings from the estimation results.
@@ -11,10 +12,10 @@ The estimated factors strength provides us a starting point when applied the Ela
 	\section{Description of Data for Factor Strength Estimation}\label{data}
 	
 
-In the empirical application part, we use the monthly returns of company securities listed on the U.S. market.
+In the empirical application part, we use the monthly securities returns of company listed on the U.S. market.
 The companies are selected from Standard Poor (S\&P) 500 index component companies.\footnote{The companies return data was obtained from the Global Finance Data: http://www.globalfinancialdata.com/,\\ Osiris: https://www.bvdinfo.com/en-gb/our-products/data/international/osiris, \\and Yahoo Finance: https://finance.yahoo.com/.}
 We prepared three data sets for different time spans: 10 years (January 2008 to December 2017, T = 120), 20 years (January 1998 to December 2017, T  = 240), and 30 years (January 1989 to December 2017, T = 360).
-The initial data set contains 505 companies, because of the components companies of the index are constantly changing, bankrupt comanies will be moved out, and new companies will be added in.
+The initial data set contains 505 companies, because of the component companies of the index are constantly changing, bankrupt companies will be moved out, and new companies will be added in.
 Also, some companies do not have enough observations.
 Therefore, for each of the datasets, the number of companies (n) is different, the dimensions of the data set are showing in the table (\ref{Data_set}).
 
@@ -31,15 +32,16 @@ Therefore, for each of the datasets, the number of companies (n) is different, t
 	\end{tabular}
 \end{table}
 For the risk-free rate, we use the one-month U.S. treasury bill return.\footnote{ The risk free rate was from the Kenneth R. French website: http://mba.tuck.dartmouth.edu/pages/faculty/ken.french/}
-For any company i, we calculate the companies return at month t ($r_{it}$) using the following formula:
+For every company i, we calculate the companies return at month t ($r_{it}$) using the following formula:
 \begin{align*}
 r_{it} = \frac{p_{i t} - p_{i t-1}}{p_{i t-1}}\times 100
 \end{align*}
-and thenf calculate the excess return $x_{it} = r_{it} - r_{ft}$.
+and then we calculate the excess return $x_{it} = r_{it} - r_{ft}$.
 Here the $p_{it}$ and $p_{i t-1}$ are the company's close stock price on the first trading day of month t and t-1.
 The price is adjusted for the dividends and splits.\footnote{The data is adjusted base on the Central for Research in Security Price (CRSP) method.}
 
 Concerning the factors, we use 145 different risk factors from \citeA{Feng2020}.
+The details of the factors are discussed in chapter \ref{EN:risk_factor}.
 The factor set also includes the market factor, represented by the difference between the average market return and risk-free return.
 The average market return is a weighted average return of all stocks in the U.S. market, calculated by CSRP.
 Each factor contains observations from January 1988 to December 2017.
@@ -90,20 +92,21 @@ We first look at the market factor strength. (see table \ref{table:market})
 %Although the value is close to unity, we still notice that the strength will increase slightly with the time span extended.
 %This might indicate that for the security returns, from the long run, it will more closely mimic the behaviours of the market than the short run. 
 %Then, we turn to the double factor CAPM setting.
-Because of the model we used in estimating strength contains both market factor and risk factor, we will re-estimate the market factor strength when estimating the strength for different risk factors.
+Because of the model we used in estimating strength contains both market factor and risk factor, we will re-estimate the market factor strength every time when we estimating the strength for different risk factors.
 This means that we will have 145 different market factor strength estimation results: $\alpha_{mj}$ for $j = 1,2, \cdots , 145$. 
 So, we calculate the average market factor strength here:
 \[ \bar{\alpha}_{m} = \frac{1}{145}\sum_{j= 1}^{145}\alpha_{jm}   \]
 %$\alpha_{im}$ is the estimated market factor strength for the $i^{th}$ risk factor setting.
-As the financial theory suggests, the estimated strength of market factor under all three scenarios shows consistently strong results.
+As the financial theory suggests, the estimated strengths of market factor under all three scenarios show consistently strong strength.
 The market factor strength across the three periods is close to unity, which indicates that the market factor can generate significant factor loading almost all time for every asset.
 Although the value is close to unity, we still notice that the strength will increase slightly with the time span extended.
-This might indicate that for the security returns, from the long run, it will more closely mimic the behaviours of the market than the short run. 
+This might indicate that the security return will more closely mimic the behaviours of the market from the long-run prospective.
+
 %Table\ref{table:market} shows that the estimated strength is consistent with the single factor settings.
 %All three data sets provides extremely strong results, strengths are close to one.
 %Overall, the market factor results indicates that the market factor can generate significant loadings for almost every companies' return at any time.
 
-When looking at other factors (see table \ref{table:top15}),  the ten-year data set in general provides a significantly weaker result, compares with the other two data sets results.
+When looking at different risk factors (see table \ref{table:top15}),  the ten-year data set in general provides a significantly weaker result, compares with the other two data sets results.
 Except for the market factor, no other factors from the ten-years result show strength above 0.8.
 The strongest factor besides the market factor is the beta factor which has strength around 0.75.
 In contrast, the strongest risk factor (factor other than market factor) in the twenty-year data set is the ndp (net debt-to-price), which has strength 0.937.
@@ -134,7 +137,7 @@ In ten year results, the number is zero.
 We also find that nearly 40\% of factors from the ten-year dataset show strength less than 0.5, which is almost four times higher than the twenty and thirty years proportion.
 When look at the ranking, we found that the top three factors are consistent for the twenty year data set result and thirty year data set result.
 The top three factors: ndq (Net debt-to-price ), salecash (sales to cash), and quick (quick ratio) are presents in both twenty and thirty years results with different order.
-We would expect when applying the elastic net method with the twenty-year and thirty-year data set, those three factors with the market factors would be selected.
+We would expect when applying the Elastic net method with the twenty-year and thirty-year data set, those three factors with the market factors are more likely to be selected than other weaker factor.
 
 Another interesting finding is that the roavol (Earnings volatility, 10th of ten-year result, 7th of twenty-year result, 5th of thirty-year result ), age (Years since first Compustat coverage, 11th of ten-year result, 9th of twenty-year result, 4th of thirty-year result), and ndp (net debt-to-price, 14th of ten-year result, 1st of twenty-year result, 2nd of thirty-year result) are all ranking high  in all three time periods estimated results.
 This indicates a persistent risk pricing ability of these three factors exist, even with the changes of the data set's dimensions.
@@ -171,12 +174,11 @@ This indicates a persistent risk pricing ability of these three factors exist, e
 \end{table}
 
 We also focus on some well-known factors, namely the Fama-French size factor (Small Minus Big SMB), Fama-French Value factor (High Minus Low: HML) \cite{Fama1992} and the Momentum factor (UMD) \cite{Carhart1997}.
-It is surprising that none of these three factors enters the top fifteen list for each data sets.
+It is surprising that none of these three factors enter the top fifteen list for each data sets.
 Except for the HML factor from the twenty and thirty-year data set has strength closely around 0.9, none of the other factors in any data set shows strength higher than 0.85.
-
 When using the ten-year data, both UMD and HML has strength around 0.67, and the SMB only has strength 0.512.
-Results from the twenty-year data set show that HML has strength 0.905, for SMB and UMD the strength are 0.770 and 0.733 respectively.
-Comparing with the twenty-year results, the thirty-year estimated strength change slightly, HML decreases to 0.894, SMB is 0.804 and UMD has strength 0.745.
+Result from the twenty-year data set shows that HML has strength 0.905, for SMB and UMD the strength are 0.770 and 0.733 respectively.
+Comparing with the twenty-year result, the thirty-year estimated strength changes slightly, HML decreases to 0.894, SMB is 0.804 and UMD has strength 0.745.
 Therefore, when using the strength as a criterion, we may only select the value factor to incorporate in the CAPM model when having twenty and thirty-year data.
 
 In general, we found that the twenty-year and thirty-year data sets provides similar estimated strength, while, in contrast, the estimated strengths from ten-year data set are significantly weaker.
@@ -185,30 +187,46 @@ For each subsamples, it contains 242 companies (n = 242).
 And for each company, we obtained 120 observations (t = 120). 
 The results are present in the table (\ref{table:thirty_decompose}) and figure (\ref{figure:thirty_decompose}).
 
-In general, we can conclude that about 80\% factors, their strength gradually increased from the first decade (January 1988 to December 1997) to the second decade (January 1998 to December 2007), and then decreased in the third decade (January 2008 to December 2017).
-This pattern can also be seen in the figure (\ref{figure:thirty_decompose}).
+
+In general, we can conclude that about 80\% factors follow a patten that the strength will increase from the first decade (January 1988 to December 1997) to the second decade (January 1998 to December 2007), and then decrease in the third decade (January 2008 to December 2017).
+Such pattern can also be observed from the figure (\ref{figure:thirty_decompose}).
 The drop of factor strength in the third decades can be reconciled with the ten-year data results shows a significantly weaker strength than the results from twenty and thirty years data set.
 
-Overall from the factor strength prospect, we would expect that for different time periods, we will have different candidate factors for the CAPM model.
-For the ten-year data set, we would expect that only the market factor be useful, and therefore the elastic net method applied latter may only select the market factor.
-If we use the twenty and thirty-year data, we will have a longer list for potential factors, 62 factors from the twenty-year estimation and 45 from the thirty years has strength greater than 0.8.
-Hence, we would expect the elastic net to select a less parsimonious model. 
+%Overall from the factor strength prospect, we would expect that for different time periods, we will have different candidate factors for the CAPM model.
+
+Overall from the factor strength prospect, we would expect that for different time periods, we will select different factors for the multi-factor CAPM model.
+%For the ten-year data set, we would expect that only the market factor be useful, and therefore the elastic net method applied latter may only select the market factor.
+For the ten-year data set, it seems that only the market factor can independently provides enough information for explaining the risk-return relationship of stocks.
+And if we apply the Elastic net to the ten-year data set, we will expect that only the market factor been selected.
+From the twenty and thirty-year data results, we will expect to see a longer list for potential factors, 62 factors from the twenty-year estimation and 45 from the thirty years has strength greater than 0.8.
+Hence, if we use factor strength as the criterion to select factors, we may need more carefully select from the list or relies on other methods.
+And we may expect the Elastic net method latter to select a more generous model.
+
+We also notice that for some factors, their strength decreases with time.
+For instance, the gma (gross profitability) factor and dwc (change in net non-cash working capital) factor (see figure \ref{figure:thirty_decompose}) has consecutive strength decrease from the 1987-1997 period to 2007-2017 period.
+And for most of the factors, their strength will decrease significantly from the 1997-2007 period to 2007-2017 period.
+Therefore, disqualify some factors as the candidate of the CAPM model when using recent year data is inevitable.
+
+%Hence, if we use factor strength as criterion to select factors, we may need more carefully select from the list, and we will expect the elastic net to select a more generous model.
+
+
+%Hence, we would expect the elastic net to select a less parsimonious model. 
 
 In terms of the findings we have above, there are several potential explanations.
 First, if we consider the structure of our data set, we will find that the longer the time span, the fewer companies are included.
 This is because the S\&P index will adjust the component, remove companies with inadequate behaviours, and add in new companies to reflect the market situation.
 Hence, those 242 companies in the thirty-year data set can be viewed as survivals after a series of financial and economic crisis.
 We would expect those companies will have above average performances, such as better profitability and administration, compared with other companies. 
+Such traits may indicates a potential bias of the estimation for longer-time span, comparing with the shorter results.
 
 
-Another possible explanation the happening of a series of political and financial unease from the time of late 20 century to 2008.
+
+This happening can also be contributed to a series of political and financial unease from the time of late 20 century to 2008.
 Crisis like the Russia financial crisis in 1998, the bankruptcy of Long Term Capital Management (LTCM) in 2000, the dot com bubble crisis in early 21st century and the Global Financial Crisis (GFC) in 2008 creates market disturbances.
 Such disturbances, however, provides extra correlations among factors.
-The extra correlations enable some factors provides additional pricing power risk.
+The extra correlations enable some factors provides additional risk pricing power.
 But we should also notice that the financial market has been disturbed by those crises so, therefore, some mechanism may no longer working properly during that period.
 Which means that those crises will also have negative influences on factor when they are capturing the risk-return relationship.
 
-We also need to notice that for some factors, their strength will decrease with time.
-For instance, the gma (gross profitability) factor and dwc (change in net non-cash working capital) factor (see figure \ref{figure:thirty_decompose}) has consecutive strength decrease from the 1987-1997 period to 2007-2017 period.
-And for most of the factors, their strength will decrease significantly from the 1997-2007 period to 2007-2017 period.
-Therefore, disqualify some factors as the candidate of the CAPM model when using recent year data is inevitable.
+
+

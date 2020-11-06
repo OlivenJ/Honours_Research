@@ -1,13 +1,13 @@
 \chapter{Empirical Application: Elastic Net}\label{Empirical:Elastic_net}
 As introduced in the previous chapter, the high-dimension risk factor group posts challenge when selecting factors.
-We want to identify factor that can independently provides information to explain the risk-return relationship. \cite{Cochrane2011}.
-In this chapter, we employed the Elastic net algorithm to discuss this problem.
+We want to identify factor that can independently provide information to explain the risk-return relationship. \cite{Cochrane2011}.
+In this chapter, we employ the Elastic net algorithm to discuss this problem.
 The application is build on the basis of factor strength we estimated in the chapter \ref{Empirical:factor_strength}.
-Factor strength provides a criterion to reduce the dimensions of potential factor groups.
+Factor strength provides a criterion to reduce the dimensions of potential factor group.
 The factor strength also works as a reference when evaluating the performances of algorithms.
 For the rest of this chapter, we first briefly introduce the core idea of the Elastic net method, explain what's different between Elastic net and other factor selection methods, especially the Ridge regression and Lasso regression.
-Then, we provide a full discussion of how to select the tuning parameter with regard to the Elastic net method when using r package \textit{glmnet} to implement the Elastic net.
-Finally, we compare and discuss the differences selection results of both elastic net methods and Lasso.
+Then, we provide a full discussion of how to select the tuning parameter with regard to the Elastic net method when using r package \textit{glmnet}.
+Finally, we compare and discuss the differences selection results of both Elastic net methods and Lasso.
 
 
 \section{Brief Introduction to Elastic Net} \label{Elastic_Net}
@@ -27,17 +27,17 @@ When applying the Elastic net, we focusing on the following loss function:
 Here, the estimated $\bm{\beta}_i$ loading value is subject to two penalty terms: the Lasso penalty $\lambda_1\sum_{j=1}^k|\beta_{ij}|$ and the Ridge penalty $\lambda_2\sum_{j = 1}^k\beta_{ij}^2$.
 The Elastic net estimation, in essence, is a combination method of Ridge regression and the Lasso regression.
 If setting $\lambda_1 = 0$, the Elastic net will collapse into the Lasso regression, and if $\lambda_2 = 0$, we will obtain same result as the Ridge regression.
-In the empirical application of this paper, the Elastic net estimation uses the following loss function \cite{Friedman2010}:
+In the empirical application of this thesis, the Elastic net estimation uses the following loss function \cite{Friedman2010}:
 \[		\bm{\beta}_{i} = \argmin_{\beta_{ij}}\{ \frac{1}{2N} (x_{it}-a_{iT} - \bm{\beta_{i}^{\prime}}\bm{f}_t ^2 ) +\phi P_{\theta}(\bm{\beta}_i)  \} \label{EN:empirical_formula}\tag{12} \]
 \[	P_{\theta}(\bm{\beta}_i) =\sum_{j=1}^k [ (1-\theta)\beta_{ij}^2 + \theta |\beta_{ij}|] \label{EN:elastic_net_penalty} \tag{13}\]
-Here \citeauthor{Zou2005} call the $P_{\theta}(\bm{\beta}_{i})$ as the elastic net penalty.
-Parameter $\theta$ acts as the turning parameter to determine how will the elastic net penalty is combined by the Lasso penalty and Ridge penalty.
+Here \citeauthor{Zou2005} call the $P_{\theta}(\bm{\beta}_{i})$ as the Elastic net penalty.
+Parameter $\theta$ acts as the turning parameter to determine how will the Elastic net penalty is combined by the Lasso penalty and Ridge penalty.
 When set $\theta = 1$, we have $P_{\theta}(\bm{\beta}_i) =\sum_{j=1}^k  |\beta_{ij}|$ which is identical to the Lasso penalty.
 Therefore we have the Elastic net collapse to the Lasso regression when $\theta = 1$.
 Similarly, when setting $\theta = 0$, we have the Elastic net collapse to the Ridge regression. 
 %and when $\theta = 0.5$, the Elastic net is the half-half combination of Lasso and Ridge.
 The other tuning parameter $\phi$ decides how strong the penalty terms is.
-If $\phi = 0$ the elastic net will become the OLS estimation.
+If $\phi = 0$ the Elastic net will become the OLS estimation.
 
 In this study, we use the data introduced in chapter \ref{data}, and the estimated factor strength from the chapter \ref{Empirical:factor_strength}.
 We will briefly review risk factors with their strength in the next section.
@@ -48,9 +48,10 @@ We would expect that when facing factor with strong strength, the algorithm will
 To simplify implementation of the Elastic net, we first run an OLS regression between the market factor and the excess return of each company, and use the resulting residuals as the dependent variable in the Elastic net regression.
 This step helps us to remove the potential influence of market factors, allowing the algorithms only focussing on the risk factors. 
 
-Now, the main challenge of applying the elastic net algorithm is to select the appropriate tuning parameters $\theta$ and $\phi$, and we will discuss the choice of tuning parameter in the following section.
+Now, the main challenge of applying the Elastic net algorithm is to select the appropriate tuning parameters $\theta$ and $\phi$, and we will discuss the choice of tuning parameter in the following section.
 
-\section{Properties of Risk Factors}
+\section{Properties of Risk Factors} \label{EN:risk_factor}
+
 Before we start to discuss the parameter tuning, we briefly review the properties of the risk factors series.
 The risk factors data set contains 145 risk factors at the monthly frequency for the period from July 1988 to December 2007.\footnote{For how those factors are constructed, please view \citeA{Feng2020}}
 As a standard practice of time series data, we exam the stationarity of the risk factor series by employing Augmented Dick-fuller (ADF) test  \cite{Dickey1979},  Phillips-Perron (PP) test \cite{Phillips1988}, and the Kwiatkowski-Phillips-Schmidt-Shin (KPSS) test \cite{Kwiatkowski1992}.
@@ -140,7 +141,7 @@ Therefore, those weak factors will be reserved by the algorithm, and hence, the 
 
 
 \section{Elastic Net Findings}
-We applied the elastic net algorithm with tuning parameters estimated in the previous chapter using the thirty-year data set.
+We applied the Elastic net algorithm with tuning parameters estimated in the previous chapter using the thirty-year data set.
 The reasons why we use the thirty-year data instead of ten or twenty years is because the Monte Carlo simulation result (see chapter \ref{MC_findings} and Appendix \ref{simulationtable}) indicates us that the estimation accuracy of factor strength will improve significantly when the time-series observation is large.
 Therefore, we use the factor strength estimated from the thirty-year data set.
 

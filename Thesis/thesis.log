@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2020.5.27)  5 NOV 2020 22:22
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2020.5.27)  6 NOV 2020 16:10
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -757,40 +757,40 @@ Chapter 4.
 ] [13] [14] [15]) (./empirical_application_factor_strength.tex [16]
 Chapter 5.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 15.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 16.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 15.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 16.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 15.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 16.
 [17
 
 ]
-Overfull \hbox (35.83759pt too wide) in paragraph at lines 25--32
+Overfull \hbox (35.83759pt too wide) in paragraph at lines 26--33
  [][] 
  []
 
 
-Overfull \hbox (20.24458pt too wide) in paragraph at lines 33--33
+Overfull \hbox (20.24458pt too wide) in paragraph at lines 34--34
 [][][]\TU/TimesNewRoman(0)/m/n/10 The risk free rate was from the Kenneth R. Fr
 ench website: http://mba.tuck.dartmouth.edu/pages/faculty/ken.french/| 
  []
 
 [18] [19]
-Overfull \hbox (15.03525pt too wide) in paragraph at lines 115--130
+Overfull \hbox (15.03525pt too wide) in paragraph at lines 118--133
  [][] 
  []
 
 [20]
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 142.
+               Default added (so using `tbp') on input line 145.
 
-[21] [22]) (./elastic_net_application.tex [23]
+[21] [22]) (./elastic_net_application.tex [23] [24]
 Chapter 6.
 
 Package mathptmx Warning: There are no bold math fonts on input line 18.
 
-[24
+[25
 
 ]
 Overfull \hbox (8.80841pt too wide) in paragraph at lines 26--31
@@ -799,20 +799,20 @@ Overfull \hbox (8.80841pt too wide) in paragraph at lines 26--31
 mcm/m/n/12 j\OML/ztmcm/m/it/12 ^^L[]\OMS/ztmcm/m/n/12 j$
  []
 
-[25] [26] [27] [28]
+[26] [27] [28] [29]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[29]
-Overfull \hbox (29.74391pt too wide) in paragraph at lines 191--198
+[30]
+Overfull \hbox (29.74391pt too wide) in paragraph at lines 192--199
  [][] 
  []
 
-[30]) (./conclusion.tex [31]
+[31]) (./conclusion.tex [32]
 Chapter 7.
-[32
+[33
 
-] [33]) [34] (./thesis.bbl [35
+] [34]) [35] (./thesis.bbl [36
 
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 519--540
@@ -821,14 +821,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 519--540
 ][][] []
  []
 
-[36] [37]
+[37] [38]
 Underfull \hbox (badness 10000) in paragraph at lines 1151--1173
 [][][][][][][] [] [][][][][][] [] [][][][][][][][][] [][][] [][][] [] [][][][][
 ][][][][][] [] [][][][] [] [][][][][] [] [][][][] [] [][][] [] [][][][][][][] [
 ]
  []
 
-[38]) [39] (./appendix.tex
+[39]) [40] (./appendix.tex
 Appendix A.
 
 LaTeX Warning: No positions in optional float specifier.
@@ -838,110 +838,110 @@ LaTeX Warning: No positions in optional float specifier.
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `tbp') on input line 177.
 
-) (./comparison_table.tex [40
+) (./comparison_table.tex [41
 
-] [41] [42] [43] [44]
+] [42] [43] [44] [45]
 Appendix B.
-[45
+[46
 
 
-] [46] [47] [48] [49] [50] [51
+] [47] [48] [49] [50] [51] [52
 
-] [52]
+] [53]
 Underfull \hbox (badness 10000) in paragraph at lines 1467--1474
 
  []
 
-[53]
+[54]
 File: ./plot/strength_comparison_I.png Graphic file (type bmp)
 <./plot/strength_comparison_I.png>
 
 
 LaTeX Warning: Float too large for page by 62.13849pt on input line 1486.
 
-[54]
+[55]
 File: ./plot/strength_comparison_II.png Graphic file (type bmp)
 <./plot/strength_comparison_II.png>
 
 
 LaTeX Warning: Float too large for page by 9.99287pt on input line 1495.
 
-[55]
+[56]
 File: ./plot/strength_comparison_III.png Graphic file (type bmp)
 <./plot/strength_comparison_III.png>
 
 
 LaTeX Warning: Float too large for page by 9.99287pt on input line 1502.
 
-[56]
+[57]
 File: ./plot/strength_comparison_IV.png Graphic file (type bmp)
 <./plot/strength_comparison_IV.png>
 
 
 LaTeX Warning: Float too large for page by 9.99287pt on input line 1509.
 
-[57]
+[58]
 File: ./plot/strength_comparison_V.png Graphic file (type bmp)
 <./plot/strength_comparison_V.png>
 
 
 LaTeX Warning: Float too large for page by 9.99287pt on input line 1516.
 
-[58]
+[59]
 File: ./plot/strength_comparison_IV.png Graphic file (type bmp)
 <./plot/strength_comparison_IV.png>
 
 
 LaTeX Warning: Float too large for page by 63.59442pt on input line 1526.
 
-[59]
+[60]
 File: ./plot/thirty_decompose_I.png Graphic file (type bmp)
 <./plot/thirty_decompose_I.png>
 
 
 LaTeX Warning: Float too large for page by 31.91473pt on input line 1535.
 
-[60]
+[61]
 File: ./plot/thirty_decompose_II.png Graphic file (type bmp)
 <./plot/thirty_decompose_II.png>
 
 
 LaTeX Warning: Float too large for page by 9.99287pt on input line 1543.
 
-[61]
+[62]
 File: ./plot/thirty_decompose_III.png Graphic file (type bmp)
 <./plot/thirty_decompose_III.png>
 
 
 LaTeX Warning: Float too large for page by 9.99287pt on input line 1550.
 
-[62]
+[63]
 File: ./plot/thirty_decompose_IV.png Graphic file (type bmp)
 <./plot/thirty_decompose_IV.png>
 
 
 LaTeX Warning: Float too large for page by 9.99287pt on input line 1557.
 
-[63]
+[64]
 File: ./plot/thirty_decompose_V.png Graphic file (type bmp)
 <./plot/thirty_decompose_V.png>
 
 
 LaTeX Warning: Float too large for page by 9.99287pt on input line 1564.
 
-[64]
+[65]
 File: ./plot/thirty_decompose_VI.png Graphic file (type bmp)
 <./plot/thirty_decompose_VI.png>
 
 
 LaTeX Warning: Float too large for page by 63.59442pt on input line 1574.
 
-[65]
+[66]
 File: ./plot/correlation_heat_map.png Graphic file (type bmp)
 <./plot/correlation_heat_map.png>
 )
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 79.
- [66]
+ [67]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 79.
  (./thesis.aux)
 Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 79.
@@ -951,12 +951,12 @@ Package rerunfilecheck Info: File `thesis.out' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 79.
  ) 
 Here is how much of TeX's memory you used:
- 14494 strings out of 479282
- 265595 string characters out of 5880512
- 637842 words of memory out of 5000000
- 31862 multiletter control sequences out of 15000+600000
+ 14495 strings out of 479282
+ 265611 string characters out of 5880512
+ 637896 words of memory out of 5000000
+ 31863 multiletter control sequences out of 15000+600000
  551622 words of font info for 100 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  44i,14n,70p,704b,555s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on thesis.pdf (74 pages).
+Output written on thesis.pdf (75 pages).

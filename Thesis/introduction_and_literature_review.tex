@@ -37,7 +37,7 @@ Some methods lack the ability of handling the correlation when making selection 
 For instance, \citeA{Kozak2020} point out that when facing a group of correlated risk factors, Lasso will only pick several highly correlated factors in a almost random way, and then shrink other factors' coefficient into zero.
 The correlation feature, with the high-dimensionality, further restricted the options when selecting the appropriate factors.
 
-Eventually, the main empirical problem of this paper is: how to select useful factors from a large group of possibly highly correlated candidates.
+Eventually, the main empirical problem of this thesis is: how to select useful factors from a large group of possibly highly correlated candidates.
 We address this problem from two prospectives.
 On the one hand, we employ a new idea called factor strength.
 By estimating the strength of every factors, we want to reduce the dimensions of candidate factor group by allocating all factors into smaller subgroup base on their strength.
@@ -48,7 +48,7 @@ With the factor strength, we can break down the high dimension group of candidat
 It also provides a standard to evaluate the risk pricing performance of factor, enables us to compare the risk-pricing ability across factors.On the other hand, we use another variable selection method called Elastic Net \cite{Zou2005} to select factors from each subgroups.
 
 With regards of the factor strength, \citeA{Bailey2020} provide a consistent estimator, and we will use this method to examine the strength of each candidate factor.
-Regarding the second approach, unlike Lasso, elastic net contains an extra penalty term, which enables it to avoid the problem of handling correlated features.
+Regarding the second approach, unlike Lasso, Elastic net contains an extra penalty term, which enables it to avoid the problem of handling correlated features.
 This trait makes Elastic net fit for our purpose.
 We will assess and compare the methods in their selection of risk factors.
 
@@ -107,4 +107,4 @@ The derivation of Lasso has become increasingly popular in the factor selection.
 For example, \citeA{Feng2019} used the double-selected Lasso method \cite{Belloni2014}, and \citeA{Freyberger2020} used a grouped lasso method \cite{Huang2010} when picking factors from a group of candidates. 
 \citeA{Kozak2020} arguing that the sparse factor model is ultimately futile by using a Bayesian-based method. 
 They constructed their estimator similar to the ridge regressor, but instead of putting the penalty on the sum of squared of factor coefficients, they impose the penalty base on the maximum squared Sharpe ration implied by the factor model.
-They also augmented their Bayesian based estimator with extra $L^1$, created a method,  similar but different to the elastic net algorithm which will be employed by our project. 
+They also augmented their Bayesian based estimator with extra $L^1$, created a method,  similar but different to the Elastic net algorithm which will be employed by our project. 
